@@ -1,10 +1,12 @@
 import { getPopupTemplate } from './popup-template.ts';
-import mapboxgl from 'mapbox-gl';
+import mapboxgl, { type MapOptions } from 'mapbox-gl';
+import type { Feature, FeatureCollection } from 'geojson';
+import type { BorderCrossingProperties, BorderCrossingGeometry } from './types';
 
 export function initMap() {
     const mapboxAccessToken = 'pk.eyJ1IjoiZGFuaWRlbyIsImEiOiJjbWRyNXB5dGswYWoxMmxxdnh0d2lvNXAyIn0.gujYWabrd2G8fqT2eEyS7g';
 
-    const geojson = {
+    const geojson: FeatureCollection<BorderCrossingGeometry, BorderCrossingProperties> = {
         type: 'FeatureCollection',
         features: [
             {
@@ -85,9 +87,9 @@ export function initMap() {
         ]
     };
 
-    const mapObject = {
+    const mapObject: MapOptions = {
         container: 'map',
-        center: [34.855499, 32.109333] as [number, number],
+        center: [34.855499, 32.109333],
         zoom: 9,
         style: 'mapbox://styles/danideo/cmdr64m8f00da01qs3oecbuk7',
     };
@@ -103,7 +105,7 @@ export function initMap() {
     });
 }
 
-function createMapboxPopup(feature: any, map: any) {
+function createMapboxPopup(feature: Feature<BorderCrossingGeometry, BorderCrossingProperties>, map: mapboxgl.Map) {
 
     const el = document.createElement('div');
     el.className = 'map-marker';

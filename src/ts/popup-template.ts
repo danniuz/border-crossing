@@ -29,7 +29,10 @@
 //     }
 // }
 
-export function getPopupTemplate(feature: any) {
+import type { Feature } from 'geojson';
+import type { BorderCrossingProperties, BorderCrossingGeometry } from './types';
+
+export function getPopupTemplate(feature: Feature<BorderCrossingGeometry, BorderCrossingProperties>) {
   return `
       <div class="popup">
         <div class="popup__content">

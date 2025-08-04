@@ -1,11 +1,4 @@
-/**
- * 
- * @param {Object} params 
- * @param {boolean} params.opened
- * @returns 
- */
-
-export function initAside(params: { opened: boolean }) {
+export function initAside(params: { opened: boolean }): void {
     const asideWrapper = document.getElementById('aside-wrapper') as HTMLDivElement;
     const asideTogglerOpened = document.getElementById('aside-toggler-opened') as HTMLButtonElement;
     const asideTogglerClosed = document.getElementById('aside-toggler-closed') as HTMLButtonElement;
