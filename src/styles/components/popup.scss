@@ -1,0 +1,160 @@
+// Popup Component Styles
+@use '../base/media' as *;
+
+.mapboxgl-popup {
+    width: 343px;
+    max-width: 343px !important;
+
+    @include tablet-min {
+        width: 752px;
+        max-width: 752px !important;
+    }
+}
+
+.mapboxgl-popup-content {
+    padding: 0;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+    border-top-color: transparent;
+}
+
+.popup {
+    display: flex;
+    height: 120px;
+    text-align: start;
+    background-color: var(--light-gray);
+    color: var(--dark-blue);
+
+    @include tablet-min {
+        height: 248px;
+    }
+
+    &__image {
+        width: 88px;
+
+        @include tablet-min {
+            width: 256px;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        padding: 16px 16px 8px 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet-min {
+            padding: 24px 24px 16px 0;
+        }
+    }
+
+    &__region {
+        margin-bottom: 4px;
+    }
+
+    &__title {
+        margin-bottom: 17px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 110%;
+
+        @include tablet-min {
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 100%;
+        }
+    }
+
+    &__address {
+        margin-bottom: 8px;
+        max-width: 408px;
+        align-items: flex-start;
+        gap: 8px;
+        display: none;
+
+        @include tablet-min {
+            display: flex;
+        }
+    }
+
+    &__contact {
+        margin-bottom: 24px;
+        align-items: center;
+        gap: 8px;
+        display: none;
+
+        @include tablet-min {
+            display: flex;
+        }
+    }
+
+    &__status-list {
+        display: flex;
+        gap: 6px;
+        margin-top: auto;
+
+        @include tablet-min {
+            gap: 8px;
+            margin-top: none;
+        }
+    }
+
+    &__status {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 6px 10px 6px 7px;
+        background-color: #fff;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 110%;
+
+        @include tablet-min {
+            padding: 6px 16px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 130%;
+            gap: 8px;
+        }
+    }
+
+    &__status-indicator {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: var(--new-red);
+        display: inline-flex;
+        flex-shrink: 0;
+
+        @include tablet-min {
+            width: 10px;
+            height: 10px;
+        }
+
+        &--active {
+            background-color: var(--new-green);
+        }
+    }
+
+    &__button {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #fff;
+        width: 64px;
+        height: 64px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        display: none;
+
+        @include tablet-min {
+            display: inline-flex;
+        }
+    }
+}

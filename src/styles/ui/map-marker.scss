@@ -1,3 +1,4 @@
+// Map Marker Component Styles
 .map-marker {
     cursor: pointer;
     border-radius: 50%;
@@ -50,22 +51,22 @@
             border: 1px solid var(--cyan);
         }
     }
-}
 
-.map-marker--selected {
-    width: 18px;
-    height: 18px;
+    &--selected {
+        width: 18px;
+        height: 18px;
 
-    &:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 31px;
-        height: 31px;
-        background-color: transparent;
-        border: 1px solid var(--cyan);
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 31px;
+            height: 31px;
+            background-color: transparent;
+            border: 1px solid var(--cyan);
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
     }
 }

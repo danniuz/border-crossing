@@ -1,0 +1,79 @@
+// Typography Styles
+body *,
+button,
+input,
+textarea,
+select {
+    font-family: 'IBM Plex Sans Hebrew', sans-serif;
+}
+
+.title {
+    &-h1 {
+        font-size: 60px;
+        line-height: 110%;
+        letter-spacing: -0.40%;
+    }
+
+    &-h2 {
+        font-size: 48px;
+        line-height: 110%;
+        letter-spacing: -0.40%;
+    }
+
+    &-h3 {
+        font-size: 32px;
+        line-height: 130%;
+    }
+
+    &-h4 {
+        font-size: 24px;
+        line-height: 130%;
+    }
+
+    &-h5 {
+        font-size: 18px;
+        line-height: 130%;
+    }
+
+    &-h6 {
+        font-size: 16px;
+        line-height: 120%;
+    }
+}
+
+.text {
+    &-subtitle {
+        font-size: 18px;
+        line-height: 130%;
+    }
+
+    &-xxl {
+        font-size: 36px;
+        line-height: 150%;
+    }
+
+    &-xl {
+        font-size: 24px;
+        line-height: 150%;
+    }
+
+    &-l {
+        font-size: 20px;
+        line-height: 130%;
+    }
+
+    &-m {
+        font-size: 18px;
+        line-height: 140%;
+    }
+
+    &-s {
+        font-size: 16px;
+        line-height: 130%;
+    }
+
+    &-xs {
+        font-size: 14px;
+        line-height: 110%;
+    }
+}

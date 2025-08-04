@@ -1,0 +1,91 @@
+// Aside Component Styles
+.aside {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+
+    &__wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100%;
+        background-color: #fff;
+        z-index: 1000;
+        transform: translateX(-100%);
+
+        &--opened {
+            transform: translateX(0);
+        }
+
+        &--ready {
+            transition: transform 0.3s ease-in-out;
+        }
+    }
+}
+
+.aside-toggler-button {
+    top: 0;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background-color: var(--cyan);
+    color: #00171F;
+    cursor: pointer;
+    border: none;
+    right: 0;
+    opacity: 0;
+    transform: translateX(-100%);
+
+    &--ready {
+        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    }
+
+    &--shown {
+        transform: translateX(100%);
+        opacity: 1;
+    }
+
+    &--closed {
+        height: 100%;
+    }
+
+    &__content {
+        width: 100%;
+        display: inline-flex;
+        min-width: max-content;
+        rotate: -90deg;
+        align-items: center;
+        justify-content: center;
+        gap: 11.5px;
+    }
+}
+
+.aside-toggler {
+    &__icon-wrapper {
+        width: 45px;
+        height: 45px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__icon {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__text {
+        line-height: 30px;
+        font-weight: 500;
+        font-size: 24px;
+        color: #00171F;
+    }
+}

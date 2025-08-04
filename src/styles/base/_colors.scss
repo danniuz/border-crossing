@@ -1,0 +1,15 @@
+// Color Variables
+$cyan: #5CD6FF;
+$light-gray: #DCE1E7;
+$dark-blue: #003459;
+$new-red: #F66A42;
+$new-green: #16C223;
+
+// CSS Variables for backward compatibility
+:root {
+    --cyan: #5CD6FF;
+    --light-gray: #DCE1E7;
+    --dark-blue: #003459;
+    --new-red: #F66A42;
+    --new-green: #16C223;
+}
