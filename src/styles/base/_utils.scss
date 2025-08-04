@@ -1,0 +1,46 @@
+@use './media' as *;
+
+// Hide utility classes for responsive design
+// Based on breakpoints: mobile-min: 375px, tablet-min: 980px, desktop-min: 1440px
+// Hide on mobile minimum (375px+)
+.hide-mobile-min {
+    @include mobile-min {
+        display: none !important;
+    }
+}
+
+// Hide on mobile maximum (below 375px)
+.hide-mobile-max {
+    @include mobile-max {
+        display: none !important;
+    }
+}
+
+// Hide on tablet minimum (980px+)
+.hide-tablet-min {
+    @include tablet-min {
+        display: none !important;
+    }
+}
+
+// Hide on tablet maximum (below 980px)
+.hide-tablet-max {
+
+    @include tablet-max {
+        display: none !important;
+    }
+}
+
+// Hide on desktop minimum (1440px+)
+.hide-desktop-min {
+    @include desktop-min {
+        display: none !important;
+    }
+}
+
+// Hide on desktop maximum (below 1440px)
+.hide-desktop-max {
+    @include desktop-max {
+        display: none !important;
+    }
+}

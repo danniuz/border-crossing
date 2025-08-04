@@ -1,29 +1,39 @@
-// Breakpoint Variables for Media Queries
-$mobile-min: 375px;
-$tablet-min: 980px;
-$desktop-min: 1440px;
+$mobile: 375px;
+$tablet: 980px;
+$desktop: 1440px;
 
-// Media Query Mixins
 @mixin mobile-min {
-    @media (min-width: #{$mobile-min}) {
+    @media (min-width: #{$mobile}) {
         @content;
     }
 }
 
 @mixin tablet-min {
-    @media (min-width: #{$tablet-min}) {
+    @media (min-width: #{$tablet}) {
         @content;
     }
 }
 
 @mixin desktop-min {
-    @media (min-width: #{$desktop-min}) {
+    @media (min-width: #{$desktop}) {
         @content;
     }
 }
 
-@mixin tablet-only {
-    @media (min-width: #{$tablet-min}) and (max-width: #{$desktop-min - 1px}) {
+@mixin mobile-max {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin tablet-max {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop-max {
+    @media (max-width: #{$desktop}) {
         @content;
     }
 }

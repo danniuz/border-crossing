@@ -34,18 +34,30 @@
       </div>
 
       <button id="aside-toggler-opened" class="aside-toggler-button aside-toggler-button--shown">
-        <div class="aside-toggler-button__content">
-          <span class="aside-toggler__icon-wrapper" style="transform: rotate(-90deg);">
+        <div class="aside-toggler-button__content hide-tablet-max">
+          <span class="aside-toggler__icon-wrapper" style="transform: rotate(180deg);">
             <img src="icons/arrow-right.svg" class="aside-toggler__icon" alt="Arrow Right">
+          </span>
+        </div>
+
+        <div class="aside-toggler-button__content hide-tablet-min">
+          <span class="aside-toggler__icon-wrapper">
+            <img src="icons/map.svg" class="aside-toggler__icon" alt="Map">
           </span>
         </div>
       </button>
 
       <button id="aside-toggler-closed" class="aside-toggler-button aside-toggler-button--closed">
-        <div class="aside-toggler-button__content">
+        <div class="aside-toggler-button__content aside-toggler-button__content--rotate-90 hide-tablet-max">
           <span class="aside-toggler__text">הצג רשימה</span>
           <span class="aside-toggler__icon-wrapper" style="transform: rotate(90deg);">
             <img src="icons/arrow-right.svg" class="aside-toggler__icon" alt="Arrow Right">
+          </span>
+        </div>
+
+        <div class="aside-toggler-button__content hide-tablet-min">
+          <span class="aside-toggler__icon-wrapper">
+            <img src="icons/list.svg" class="aside-toggler__icon" alt="List">
           </span>
         </div>
       </button>
