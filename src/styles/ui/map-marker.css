@@ -1,0 +1,71 @@
+.map-marker {
+    cursor: pointer;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    transition: background-color 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 31px;
+        height: 31px;
+        background-color: transparent;
+        border: 1px solid transparent;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        transition: border 0.3s ease-in-out;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 41px;
+        height: 41px;
+        background-color: transparent;
+        border: 1px solid transparent;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        transition: border 0.3s ease-in-out;
+    }
+
+    &:hover {
+        background-color: var(--cyan);
+        width: 18px;
+        height: 18px;
+
+        &:before {
+            border: 1px solid var(--cyan);
+        }
+
+        &:after {
+            border: 1px solid var(--cyan);
+        }
+    }
+}
+
+.map-marker--selected {
+    width: 18px;
+    height: 18px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 31px;
+        height: 31px;
+        background-color: transparent;
+        border: 1px solid var(--cyan);
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+    }
+}

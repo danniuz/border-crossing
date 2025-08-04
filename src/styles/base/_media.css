@@ -1,0 +1,13 @@
+/* Breakpoint Variables for Media Queries */
+
+/* Usage:
+   @media (max-width: var(--mobile)) { ... }
+   @media (min-width: var(--tablet)) { ... }
+   @media (min-width: var(--desktop)) { ... }
+*/
+
+:root {
+    --mobile: 375px;
+    --tablet: 980px;
+    --desktop: 1440px;
+}

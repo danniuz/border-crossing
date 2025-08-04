@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <title>Vite + TS</title>
+</head>
+
+<body dir="rtl">
+  <div id="aside-wrapper" class="aside__wrapper">
+    <div class="aside">
+      fsafa
+    </div>
+
+    <button id="aside-toggler-opened" class="aside-toggler-button aside-toggler-button--shown">
+      <div class="aside-toggler-button__content">
+        <span class="aside-toggler__icon-wrapper" style="transform: rotate(-90deg);">
+          <img src="icons/arrow-right.svg" class="aside-toggler__icon" alt="Arrow Right">
+        </span>
+      </div>
+    </button>
+
+    <button id="aside-toggler-closed" class="aside-toggler-button aside-toggler-button--closed">
+      <div class="aside-toggler-button__content">
+        <span class="aside-toggler__text">הצג רשימה</span>
+        <span class="aside-toggler__icon-wrapper" style="transform: rotate(90deg);">
+          <img src="icons/arrow-right.svg" class="aside-toggler__icon" alt="Arrow Right">
+        </span>
+      </div>
+    </button>
+  </div>
+  <div id="map"></div>
+
+  <script type="module" src="/src/main.ts"></script>
+
+
+</body>
+
+</html>

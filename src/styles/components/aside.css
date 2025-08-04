@@ -1,0 +1,88 @@
+.aside__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    transform: translateX(-100%);
+}
+
+.aside {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+.aside__wrapper.aside__wrapper--opened {
+    transform: translateX(0);
+}
+
+.aside__wrapper--ready {
+    transition: transform 0.3s ease-in-out;
+}
+
+.aside-toggler-button {
+    top: 0;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background-color: #5CD6FF;
+    color: #00171F;
+    cursor: pointer;
+    border: none;
+    right: 0;
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.aside-toggler-button--ready {
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.aside-toggler-button--shown {
+    transform: translateX(100%);
+    opacity: 1;
+}
+
+.aside-toggler-button--closed {
+    height: 100%;
+}
+
+.aside-toggler-button__content {
+    width: 100%;
+    display: inline-flex;
+    min-width: max-content;
+    rotate: -90deg;
+    align-items: center;
+    justify-content: center;
+    gap: 11.5px;
+}
+
+.aside-toggler__icon-wrapper {
+    width: 45px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aside-toggler__icon {
+    width: 100%;
+    height: 100%;
+}
+
+.aside-toggler__text {
+    line-height: 30px;
+    font-weight: 500;
+    font-size: 24px;
+    color: #00171F;
+}

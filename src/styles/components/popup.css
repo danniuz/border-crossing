@@ -1,0 +1,170 @@
+.mapboxgl-popup {
+    width: 343px;
+    max-width: 343px !important;
+}
+
+@media (min-width: 980px) {
+    .mapboxgl-popup {
+        width: 752px;
+        max-width: 752px !important;
+    }
+}
+
+.mapboxgl-popup-content {
+    padding: 0;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+    border-top-color: transparent;
+}
+
+.popup {
+    display: flex;
+    height: 120px;
+    text-align: start;
+    background-color: var(--light-gray);
+    color: var(--dark-blue);
+}
+
+@media (min-width: 980px) {
+    .popup {
+        height: 248px;
+    }
+}
+
+.popup__image {
+    width: 88px;
+}
+
+@media (min-width: 980px) {
+    .popup__image {
+        width: 256px;
+    }
+}
+
+.popup__content {
+    flex: 1;
+    padding: 16px 16px 8px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 980px) {
+    .popup__content {
+        padding: 24px 24px 16px 0;
+    }
+}
+
+.popup__region {
+    margin-bottom: 4px;
+}
+
+.popup__title {
+    margin-bottom: 17px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 110%;
+}
+
+@media (min-width: 980px) {
+    .popup__title {
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 100%;
+    }
+}
+
+.popup__address {
+    margin-bottom: 8px;
+    max-width: 408px;
+    align-items: flex-start;
+    gap: 8px;
+    display: none;
+}
+
+.popup__contact {
+    margin-bottom: 24px;
+    align-items: center;
+    gap: 8px;
+    display: none;
+}
+
+
+@media (min-width: 980px) {
+
+    .popup__address,
+    .popup__contact {
+        display: flex;
+    }
+}
+
+.popup__status-list {
+    display: flex;
+    gap: 6px;
+    margin-top: auto;
+}
+
+.popup__status {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 10px 6px 7px;
+    background-color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 110%;
+}
+
+.popup__status-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--new-red);
+    display: inline-flex;
+    flex-shrink: 0;
+}
+
+.popup__status-indicator--active {
+    background-color: var(--new-green);
+}
+
+.popup__button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    width: 64px;
+    height: 64px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    display: none;
+}
+
+@media (min-width: 980px) {
+    .popup__status-list {
+        gap: 8px;
+        margin-top: none;
+    }
+
+    .popup__status {
+        padding: 6px 16px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        gap: 8px;
+    }
+
+    .popup__status-indicator {
+        width: 10px;
+        height: 10px;
+    }
+
+    .popup__button {
+        display: inline-flex;
+    }
+}
