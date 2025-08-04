@@ -1,8 +1,7 @@
-import { initMap } from './js/map.ts';
-import { initAside } from './js/aside.ts';
+import { initMap } from './ts/map.ts';
+import { initAside } from './ts/aside.ts';
+import 'mapbox-gl/dist/mapbox-gl.css';
 import './style.scss'
 
-document.addEventListener('DOMContentLoaded', () => {
-  initMap();
-  initAside({ opened: false });
-});
+initMap();
+initAside({ opened: false });
