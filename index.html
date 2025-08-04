@@ -11,34 +11,49 @@
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&display=swap"
     rel="stylesheet">
   <title>Vite + TS</title>
+
+  <style>
+    .wrapper {
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+    }
+
+    .wrapper--visible {
+      opacity: 1;
+    }
+  </style>
 </head>
 
 <body dir="rtl">
-  <div id="aside-wrapper" class="aside__wrapper">
-    <div class="aside">
-      fsafa
+  <script type="module" src="/src/main.ts"></script>
+
+  <div id="wrapper" class="wrapper">
+    <div id="aside-wrapper" class="aside__wrapper">
+      <div class="aside">
+        fsafa
+      </div>
+
+      <button id="aside-toggler-opened" class="aside-toggler-button aside-toggler-button--shown">
+        <div class="aside-toggler-button__content">
+          <span class="aside-toggler__icon-wrapper" style="transform: rotate(-90deg);">
+            <img src="icons/arrow-right.svg" class="aside-toggler__icon" alt="Arrow Right">
+          </span>
+        </div>
+      </button>
+
+      <button id="aside-toggler-closed" class="aside-toggler-button aside-toggler-button--closed">
+        <div class="aside-toggler-button__content">
+          <span class="aside-toggler__text">הצג רשימה</span>
+          <span class="aside-toggler__icon-wrapper" style="transform: rotate(90deg);">
+            <img src="icons/arrow-right.svg" class="aside-toggler__icon" alt="Arrow Right">
+          </span>
+        </div>
+      </button>
     </div>
 
-    <button id="aside-toggler-opened" class="aside-toggler-button aside-toggler-button--shown">
-      <div class="aside-toggler-button__content">
-        <span class="aside-toggler__icon-wrapper" style="transform: rotate(-90deg);">
-          <img src="icons/arrow-right.svg" class="aside-toggler__icon" alt="Arrow Right">
-        </span>
-      </div>
-    </button>
-
-    <button id="aside-toggler-closed" class="aside-toggler-button aside-toggler-button--closed">
-      <div class="aside-toggler-button__content">
-        <span class="aside-toggler__text">הצג רשימה</span>
-        <span class="aside-toggler__icon-wrapper" style="transform: rotate(90deg);">
-          <img src="icons/arrow-right.svg" class="aside-toggler__icon" alt="Arrow Right">
-        </span>
-      </div>
-    </button>
+    <div id="map"></div>
   </div>
-  <div id="map"></div>
 
-  <script type="module" src="/src/main.ts"></script>
 
 
 </body>

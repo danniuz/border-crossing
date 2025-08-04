@@ -3,7 +3,7 @@ import mapboxgl, { type MapOptions } from 'mapbox-gl';
 import type { Feature, FeatureCollection } from 'geojson';
 import type { BorderCrossingProperties, BorderCrossingGeometry } from './types';
 
-export function initMap() {
+export function initMap(): mapboxgl.Map {
     const mapboxAccessToken = 'pk.eyJ1IjoiZGFuaWRlbyIsImEiOiJjbWRyNXB5dGswYWoxMmxxdnh0d2lvNXAyIn0.gujYWabrd2G8fqT2eEyS7g';
 
     const geojson: FeatureCollection<BorderCrossingGeometry, BorderCrossingProperties> = {
@@ -103,6 +103,8 @@ export function initMap() {
             createMapboxPopup(feature, map);
         }
     });
+
+    return map;
 }
 
 function createMapboxPopup(feature: Feature<BorderCrossingGeometry, BorderCrossingProperties>, map: mapboxgl.Map) {
