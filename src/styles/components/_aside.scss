@@ -5,9 +5,16 @@
     width: 100%;
     height: 100%;
     background: #fff;
+    position: absolute;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 1;
+
+    @include tablet-min {
+        position: initial;
+    }
 
     &__wrapper {
-        position: absolute;
+        position: initial;
         top: 0;
         left: 0;
         width: 100%;
@@ -15,10 +22,21 @@
         background-color: #fff;
         z-index: 1000;
 
-
         @include tablet-min {
+            position: absolute;
             transform: translateX(-100%);
             width: 300px;
+        }
+
+        &:not(.aside__wrapper--opened) {
+            .aside {
+                transform: translateX(-100%);
+                opacity: 0;
+
+                @include tablet-min {
+                    transform: initial
+                }
+            }
         }
 
         &--opened {
@@ -36,7 +54,7 @@
 .aside-toggler-button {
     padding: 0;
     margin: 0;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     position: absolute;
@@ -50,6 +68,7 @@
     z-index: 99;
     bottom: 16px;
     left: 16px;
+    transition: 0.3s ease-in-out;
 
     @include tablet-min {
         z-index: initial;
@@ -88,6 +107,7 @@
         justify-content: center;
         gap: 11.5px;
 
+
         &--rotate-90 {
             rotate: -90deg;
         }
@@ -104,8 +124,13 @@
     }
 
     &__icon {
-        width: 100%;
-        height: 100%;
+        width: 32px;
+        height: 32px;
+
+        @include tablet-min {
+            width: 100%;
+            height: 100%;
+        }
     }
 
     &__text {
