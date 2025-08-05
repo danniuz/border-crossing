@@ -1,7 +1,13 @@
-export function initAside(params: { opened: boolean }): void {
-    const asideWrapper = document.getElementById('aside-wrapper') as HTMLDivElement;
-    const asideTogglerOpened = document.getElementById('aside-toggler-opened') as HTMLButtonElement;
-    const asideTogglerClosed = document.getElementById('aside-toggler-closed') as HTMLButtonElement;
+import { FeatureItemComponent } from './feature-item-component.js';
+
+/**
+ * @param {Object} params
+ * @param {boolean} params.opened
+ */
+export function initAside(params) {
+    const asideWrapper = document.getElementById('aside-wrapper');
+    const asideTogglerOpened = document.getElementById('aside-toggler-opened');
+    const asideTogglerClosed = document.getElementById('aside-toggler-closed');
 
     if (params.opened) {
         asideWrapper.classList.add('aside__wrapper--opened');
@@ -22,10 +28,26 @@ export function initAside(params: { opened: boolean }): void {
         asideTogglerClosed.classList.toggle('aside-toggler-button--shown');
     });
 
-    // skip initial animation
     setTimeout(() => {
         asideWrapper.classList.add('aside__wrapper--ready');
         asideTogglerOpened.classList.add('aside-toggler-button--ready');
         asideTogglerClosed.classList.add('aside-toggler-button--ready');
     }, 100);
 }
+
+/**
+ * @param {import('./data/features.js').Feature} feature
+ * @param {HTMLElement} container
+ * @returns {FeatureItemComponent}
+ */
+export function createAsidePopup(feature, container) {
+    const featureItemComponent = new FeatureItemComponent(feature, {
+        showImage: true,
+        showButton: true,
+        className: 'popup--aside'
+    });
+
+    container.appendChild(featureItemComponent.getElement());
+    return featureItemComponent;
+}
+

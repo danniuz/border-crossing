@@ -8,9 +8,22 @@
     position: absolute;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     opacity: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-blue);
 
     @include tablet-min {
         position: initial;
+    }
+
+    &__feature-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        @include tablet-min {
+            gap: 16px;
+        }
     }
 
     &__wrapper {
@@ -25,7 +38,7 @@
         @include tablet-min {
             position: absolute;
             transform: translateX(-100%);
-            width: 300px;
+            width: 968px;
         }
 
         &:not(.aside__wrapper--opened) {

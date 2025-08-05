@@ -25,12 +25,15 @@
 </head>
 
 <body dir="rtl">
-  <script type="module" src="/src/main.ts"></script>
+  <script type="module" src="/src/main.js"></script>
 
   <div id="wrapper" class="wrapper">
     <div id="aside-wrapper" class="aside__wrapper">
       <div class="aside">
-        Menu
+        <div class="aside__content">
+          <div id="aside-feature-list" class="aside__feature-list"></div>
+          <!-- Items will be dynamically inserted here -->
+        </div>
       </div>
 
       <button id="aside-toggler-opened" class="aside-toggler-button aside-toggler-button--shown">

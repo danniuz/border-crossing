@@ -156,4 +156,60 @@
             display: inline-flex;
         }
     }
+
+    // Aside popup variants
+    &--aside {
+        height: auto;
+        min-height: 120px;
+        margin: 8px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+        @include tablet-min {
+            min-height: 200px;
+        }
+    }
+
+    &--aside-feature-item {
+        height: 120px;
+        min-height: 120px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+
+        @include tablet-min {
+            height: 230px;
+        }
+
+        .popup__content {
+            padding: 12px 12px 8px 0;
+
+            @include tablet-min {
+                padding: 16px 16px 12px 0;
+            }
+        }
+
+        .popup__title {
+            font-size: 16px;
+            margin-bottom: 12px;
+
+            @include tablet-min {
+                font-size: 20px;
+                margin-bottom: 16px;
+            }
+        }
+
+        .popup__status-list {
+            margin-top: auto;
+        }
+
+        .popup__image {
+            width: 120px;
+            height: auto;
+            object-fit: cover;
+
+            @include tablet-min {
+                width: 324px;
+                height: auto;
+            }
+        }
+    }
 }
