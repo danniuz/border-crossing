@@ -1,5 +1,3 @@
-import { FeatureItemComponent } from './feature-item-component.js';
-
 /**
  * @param {Object} params
  * @param {boolean} params.opened
@@ -33,21 +31,5 @@ export function initAside(params) {
         asideTogglerOpened.classList.add('aside-toggler-button--ready');
         asideTogglerClosed.classList.add('aside-toggler-button--ready');
     }, 100);
-}
-
-/**
- * @param {import('./data/features.js').Feature} feature
- * @param {HTMLElement} container
- * @returns {FeatureItemComponent}
- */
-export function createAsidePopup(feature, container) {
-    const featureItemComponent = new FeatureItemComponent(feature, {
-        showImage: true,
-        showButton: true,
-        className: 'popup--aside'
-    });
-
-    container.appendChild(featureItemComponent.getElement());
-    return featureItemComponent;
 }
 

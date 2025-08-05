@@ -72,25 +72,6 @@ export const borderCrossingFeatures = [
                 merchandise: false
             }
         }
-    },
-    {
-        type: 'Feature',
-        geometry: {
-            type: 'Point',
-            coordinates: [34.901499, 31.944333],
-        },
-        properties: {
-            title: "מעבר קרני",
-            area: "יהודה ושומרון",
-            lobbyImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU",
-            addressDescription: "המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום, צפונית לג'נין",
-            phoneNumber: "04-6582147",
-            statuses: {
-                pedestrians: false,
-                vehicles: true,
-                merchandise: true
-            }
-        }
     }
 ];
 
