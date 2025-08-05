@@ -73,7 +73,7 @@ export function initMap(): mapboxgl.Map {
         container: 'map',
         center: [34.855499, 32.109333],
         zoom: 9,
-        style: 'mapbox://styles/danideo/cmdr64m8f00da01qs3oecbuk7',
+        style: 'mapbox://styles/danideo/cmdycziua00ar01sc63x005c0',
     };
 
     mapboxgl.accessToken = mapboxAccessToken;
