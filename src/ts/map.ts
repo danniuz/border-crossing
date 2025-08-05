@@ -16,21 +16,15 @@ export function initMap(): mapboxgl.Map {
                     coordinates: [34.855499, 32.109333],
                 },
                 properties: {
-                    region: "יהודה ושומרון",
-                    name: "מעבר אליהו",
-                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU",
-                    location: {
-                        road: 60,
-                        junction: "ידרעל",
-                        direction: "ממשיך לכיוון דרום, צפונית לג'נין"
-                    },
-                    contact: {
-                        phone: "04-6582147"
-                    },
+                    title: "מעבר אליהו",
+                    area: "יהודה ושומרון",
+                    lobbyImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU",
+                    addressDescription: "המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום, צפונית לג'נין",
+                    phoneNumber: "04-6582147",
                     statuses: {
                         pedestrians: false,
                         vehicles: true,
-                        goods: true
+                        merchandise: true
                     }
                 }
             },
@@ -41,21 +35,15 @@ export function initMap(): mapboxgl.Map {
                     coordinates: [35.001499, 32.139333],
                 },
                 properties: {
-                    region: "יהודה ושומרון",
-                    name: "מעבר אליהו",
-                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU",
-                    location: {
-                        road: 60,
-                        junction: "ידרעל",
-                        direction: "ממשיך לכיוון דרום, צפונית לג'נין"
-                    },
-                    contact: {
-                        phone: "04-6582147"
-                    },
+                    title: "מעבר אליהו",
+                    area: "יהודה ושומרון",
+                    lobbyImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU",
+                    addressDescription: "המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום, צפונית לג'נין",
+                    phoneNumber: "04-6582147",
                     statuses: {
                         pedestrians: false,
                         vehicles: true,
-                        goods: true
+                        merchandise: true
                     }
                 }
             },
@@ -66,21 +54,15 @@ export function initMap(): mapboxgl.Map {
                     coordinates: [34.901499, 31.944333],
                 },
                 properties: {
-                    region: "יהודה ושומרון",
-                    name: "מעבר אליהו",
-                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU",
-                    location: {
-                        road: 60,
-                        junction: "ידרעל",
-                        direction: "ממשיך לכיוון דרום, צפונית לג'נין"
-                    },
-                    contact: {
-                        phone: "04-6582147"
-                    },
+                    title: "מעבר אליהו",
+                    area: "יהודה ושומרון",
+                    lobbyImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU",
+                    addressDescription: "המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום, צפונית לג'נין",
+                    phoneNumber: "04-6582147",
                     statuses: {
                         pedestrians: false,
                         vehicles: true,
-                        goods: true
+                        merchandise: true
                     }
                 }
             },
@@ -97,7 +79,6 @@ export function initMap(): mapboxgl.Map {
     mapboxgl.accessToken = mapboxAccessToken;
     const map = new mapboxgl.Map(mapObject);
 
-    // Wait for the map to load before adding markers
     map.on('load', () => {
         for (const feature of geojson.features) {
             createMapboxPopup(feature, map);

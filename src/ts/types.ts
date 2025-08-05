@@ -1,26 +1,15 @@
-
-export interface Location {
-    road: number;
-    junction: string;
-    direction: string;
-}
-
-export interface Contact {
-    phone: string;
-}
-
 export interface Statuses {
     pedestrians: boolean;
     vehicles: boolean;
-    goods: boolean;
+    merchandise: boolean;
 }
 
 export interface BorderCrossingProperties {
-    region: string;
-    name: string;
-    image: string;
-    location: Location;
-    contact: Contact;
+    title: string;
+    area: string;
+    lobbyImage: string;
+    addressDescription: string;
+    phoneNumber: string;
     statuses: Statuses;
 }
 
