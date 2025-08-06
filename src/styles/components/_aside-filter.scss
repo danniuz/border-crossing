@@ -1,0 +1,70 @@
+.aside-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: 16px;
+    }
+
+    &__title {
+        color: #fff;
+        margin-bottom: 6px;
+    }
+
+    &__counter {
+        color: #fff;
+        font-size: 16px;
+        line-height: 130%;
+    }
+
+    &__filter-list {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        align-items: center;
+    }
+
+    &__nav-list {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    &__radio-wrapper {
+        padding-inline-start: 24px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #fff;
+        }
+    }
+
+    &__link {
+        color: #fff;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    &__nav-item {
+        font-size: 16px;
+        line-height: 130%;
+        color: var(--dark-blue);
+        padding: 6px 16px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+
+        &--active {
+            background-color: var(--cyan);
+        }
+    }
+}

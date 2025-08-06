@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&display=swap"
     rel="stylesheet">
@@ -31,6 +33,38 @@
     <div id="aside-wrapper" class="aside__wrapper">
       <div class="aside">
         <div class="aside__content">
+
+          <div class="aside__header">
+            <h1 class="aside__header-title">כל המעברים</h1>
+
+            <div class="side-filter__wrapper">
+              <div class="aside-filter__title">סינון סוג פעילות</div>
+
+              <div class="aside-filter">
+                <div class="aside-filter__filter-list">
+                  <div class="aside-filter__nav-list">
+                    <button class="aside-filter__nav-item aside-filter__nav-item--active">הולכי רגל</button>
+                    <button class="aside-filter__nav-item">כלי רכב</button>
+                    <button class="aside-filter__nav-item">סחורות</button>
+                  </div>
+
+                  <a class="aside-filter__link">נקה סינון</a>
+
+                  <div class="aside-filter__radio-wrapper">
+                    <div class="form-check form-switch form-switch--lg">
+                      <input class="form-check-input form-check-input--green" type="checkbox"
+                        id="flexSwitchCheckDefault">
+                      <label class="form-check-label form-check-label--white" for="flexSwitchCheckDefault">פתוח
+                        עכשיו</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="aside-filter__counter">16 מעברים</div>
+              </div>
+            </div>
+          </div>
+
           <div id="aside-feature-list" class="aside__feature-list">
             <!-- Feature 1: מעבר אליהו -->
             <div class="popup popup--aside-feature-item" data-feature-index="0">
