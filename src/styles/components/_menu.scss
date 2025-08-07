@@ -1,0 +1,16 @@
+@use '../base/media' as *;
+
+.menu {
+    width: 100%;
+    right: 16px;
+    top: 12px;
+    height: 60px;
+    background-color: #cecece;
+    z-index: 99;
+
+    @include tablet-min {
+        width: 168px;
+        position: absolute;
+        height: 500px;
+    }
+}

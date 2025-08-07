@@ -30,12 +30,12 @@
         position: initial;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
         background-color: #fff;
         z-index: 1000;
 
         @include tablet-min {
+            width: 100%;
+            height: 100%;
             position: absolute;
             transform: translateX(-100%);
             width: 968px;
