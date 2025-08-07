@@ -43,9 +43,24 @@
               <div class="aside-filter">
                 <div class="aside-filter__filter-list">
                   <div class="aside-filter__nav-list">
-                    <button class="aside-filter__nav-item aside-filter__nav-item--active">הולכי רגל</button>
-                    <button class="aside-filter__nav-item">כלי רכב</button>
-                    <button class="aside-filter__nav-item">סחורות</button>
+                    <div class="aside-filter__nav-item">
+                      <input type="radio" id="filter-pedestrians" name="filter-type" value="pedestrians"
+                        class="aside-filter__nav-item-input" checked>
+                      <label for="filter-pedestrians" class="aside-filter__nav-item-label">הולכי
+                        רגל</label>
+                    </div>
+
+                    <div class="aside-filter__nav-item">
+                      <input type="radio" id="filter-vehicles" name="filter-type" value="vehicles"
+                        class="aside-filter__nav-item-input">
+                      <label for="filter-vehicles" class="aside-filter__nav-item-label">כלי רכב</label>
+                    </div>
+
+                    <div class="aside-filter__nav-item">
+                      <input type="radio" id="filter-goods" name="filter-type" value="goods"
+                        class="aside-filter__nav-item-input">
+                      <label for="filter-goods" class="aside-filter__nav-item-label">סחורות</label>
+                    </div>
                   </div>
 
                   <a class="aside-filter__link">נקה סינון</a>
