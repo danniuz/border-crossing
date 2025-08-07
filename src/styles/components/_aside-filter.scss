@@ -1,7 +1,14 @@
+@use '../base/media' as *;
+
 .aside-filter {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 16px;
+
+    @include tablet-min {
+        margin-top: 0;
+    }
 
     &__wrapper {
         display: flex;
@@ -12,19 +19,35 @@
     &__title {
         color: #fff;
         margin-bottom: 6px;
+        display: none;
+
+        @include tablet-min {
+            display: block;
+        }
     }
 
     &__counter {
         color: #fff;
         font-size: 16px;
         line-height: 130%;
+        display: none;
+
+        @include tablet-min {
+            display: block;
+        }
     }
 
     &__filter-list {
         display: flex;
-        flex-direction: row;
-        gap: 24px;
-        align-items: center;
+        flex-direction: column;
+        gap: 19px;
+        align-items: flex-start;
+
+        @include tablet-min {
+            gap: 24px;
+            flex-direction: row;
+            align-items: center;
+        }
     }
 
     &__nav-list {
@@ -61,8 +84,11 @@
     }
 
     &__radio-wrapper {
-        padding-inline-start: 24px;
         position: relative;
+
+        @include tablet-min {
+            padding-inline-start: 24px;
+        }
 
         &::before {
             content: '';
@@ -72,6 +98,11 @@
             height: 100%;
             width: 2px;
             background-color: #fff;
+            display: none;
+
+            @include tablet-min {
+                display: block;
+            }
         }
     }
 
@@ -79,5 +110,10 @@
         color: #fff;
         cursor: pointer;
         text-decoration: underline;
+        display: none;
+
+        @include tablet-min {
+            display: block;
+        }
     }
 }
