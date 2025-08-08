@@ -5,7 +5,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import './style.scss'
 
 const map = initMap();
-initAside({ opened: true });
+initAside({ opened: false });
 
 map.on('load', () => {
     const wrapper = document.querySelector('#wrapper');
