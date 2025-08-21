@@ -3,7 +3,6 @@
 .aside {
     z-index: 10;
     width: 100%;
-    height: 100%;
     background: #fff;
     position: absolute;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -11,15 +10,23 @@
     display: flex;
     flex-direction: column;
     background-color: var(--dark-blue);
+    height: calc(100vh - 286px);
 
     @include tablet-min {
+        height: 100%;
         position: initial;
+    }
+
+    &__content {
+        height: 100%;
     }
 
     &__feature-list {
         display: flex;
         flex-direction: column;
         gap: 8px;
+        overflow: auto;
+        height: 100%;
 
         @include tablet-min {
             gap: 16px;
@@ -32,10 +39,12 @@
         inset-inline-end: 0;
         background-color: #fff;
         z-index: 1000;
+        height: 100%;
+        max-width: 0;
 
         @include tablet-min {
             width: 100%;
-            height: 100%;
+            max-width: initial;
             position: absolute;
             transform: translateX(-100%);
             width: 968px;
