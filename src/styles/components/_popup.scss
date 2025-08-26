@@ -18,6 +18,28 @@
     border-top-color: transparent;
 }
 
+.popup--aside-feature-item,
+.mapboxgl-popup-content {
+    &:hover {
+        .popup__content {
+            background-color: #fff;
+        }
+
+        .popup__status {
+            background-color: var(--light-gray);
+        }
+
+        .popup__button {
+            background-color: var(--cyan-tag);
+
+            .popup__button-icon {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+
+
 .popup {
     display: flex;
     height: 120px;
@@ -39,13 +61,18 @@
 
     &__content {
         flex: 1;
-        padding: 16px 16px 8px 0;
         position: relative;
         display: flex;
         flex-direction: column;
+        padding-top: 12px;
+        padding-bottom: 8px;
+        padding-inline-start: 12px;
+        transition: background-color 0.3s ease;
 
         @include tablet-min {
-            padding: 24px 24px 16px 0;
+            padding-top: 16px;
+            padding-bottom: 12px;
+            padding-inline-start: 16px;
         }
     }
 
@@ -68,7 +95,6 @@
 
     &__address {
         margin-bottom: 8px;
-        max-width: 408px;
         align-items: flex-start;
         gap: 8px;
         display: none;
@@ -109,6 +135,7 @@
         font-weight: 400;
         font-size: 14px;
         line-height: 110%;
+        transition: background-color 0.3s ease;
 
         @include tablet-min {
             padding: 6px 16px;
@@ -150,7 +177,8 @@
         cursor: pointer;
         border: none;
         outline: none;
-        display: none;
+        // display: none;
+        transition: background-color 0.3s ease;
 
         @include tablet-min {
             display: inline-flex;
@@ -180,24 +208,12 @@
             height: 230px;
         }
 
-        .popup__content {
-            padding-top: 12px;
-            padding-bottom: 8px;
-            padding-inline-start: 12px;
-
-            @include tablet-min {
-                padding-top: 16px;
-                padding-bottom: 12px;
-                padding-inline-start: 16px;
-            }
-        }
-
         .popup__title {
             font-size: 16px;
             margin-bottom: 12px;
 
             @include tablet-min {
-                font-size: 20px;
+                font-size: 32px;
                 margin-bottom: 16px;
             }
         }
