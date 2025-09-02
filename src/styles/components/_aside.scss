@@ -25,12 +25,12 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
-        overflow: auto;
-        height: 100%;
-        padding-bottom: 250px;
+        height: calc(100% - 232px);
+        overflow-y: auto;
 
         @include tablet-min {
             gap: 16px;
+            height: calc(100% - 244px);
         }
     }
 
