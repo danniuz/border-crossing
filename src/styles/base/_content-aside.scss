@@ -1,17 +1,37 @@
 @use '../base/media' as *;
 
 .content-aside {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    
+    @include desktop-min {
+        width: 368px;
+    }
+
     &__title {
         font-weight: 400;
-        font-size: 48px;
+        font-size: 36px;
         line-height: 110%;
         color: var(--dark-blue);
-        margin-bottom: 32px;
+        margin-bottom: 24px;
+
+        @include tablet-min {
+            font-size: 51px;
+            margin-bottom: 40px;
+        }
+
+        @include desktop-min {
+            font-size: 48px;
+        }
     }
 
     &__card {
-        padding: 40px 24px;
-        width: 368px;
+        padding: 24px;
+
+        @include tablet-min {
+            padding: 40px 24px;
+        }
 
         &--blue {
             background-color: var(--dark-blue);
@@ -25,15 +45,36 @@
             margin-bottom: 16px;
         }
 
-        &-text {
+        p:not([class]) {
+            margin-bottom: 1em;
+            padding-top: 1px;
             font-weight: 400;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 140%;
             color: #fff;
 
-            &:not(:last-child) {
-                margin-bottom: 24px;
+            @include tablet-min {
+                font-size: 18px;
+            }
+            
+            &:first-child {
+                padding-top: 0;
+            }
+            
+            &:last-child {
+                margin-bottom: 0;
             }
         }
+
+        // &-text {
+        //     font-weight: 400;
+        //     font-size: 18px;
+        //     line-height: 140%;
+        //     color: #fff;
+
+        //     &:not(:last-child) {
+        //         margin-bottom: 24px;
+        //     }
+        // }
     }
 }

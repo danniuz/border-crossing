@@ -9,28 +9,52 @@
 }
 
 .main-content {
-    max-width: 1392px;
+    max-width: 100%;
     margin: 0 auto;
-    margin-top: 51px;
+    margin-top: 48px;
+    padding: 0 16px;
+
+    @include tablet-min {
+        margin-top: 80px;
+        max-width: 1039px;
+        transform: translateX(-70px);
+    }
+    
+    @include desktop-min {
+        margin-top: 120px;
+        max-width: 1424px;
+    }
     
     &__layout {
         display: flex;
-        gap: 64px;
+        flex-direction: column;
+        gap: 60px;
+
+        @include tablet-min {
+            gap: 80px;
+        }
+        
+        @include desktop-min {
+            flex-direction: row;
+            gap: 64px
+        }
     }
 
     &__page {
-        margin-top: 84.8px;
-    }
-
-    &__offset-70 {
-        transform: translateX(-70px);
+        @include desktop-min {
+            margin-top: 40px;
+        }
     }
 
     &__section {
         * {
             font-weight: 400;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 140%;
+
+            @include tablet-min {
+                font-size: 18px;
+            }
         }
 
         &:not(.main-content__section--dark) {
@@ -86,14 +110,26 @@
         }
 
         &:not(:last-child) {
-            margin-bottom: 144px;
+            margin-bottom: 60px;
+
+            @include tablet-min {
+                margin-bottom: 80px;
+            }
+
+            @include desktop-min {
+                margin-bottom: 144px;
+            }
         }
 
         &-title {
             font-weight: 500;
-            font-size: 24px;
+            font-size: 20px;
             line-height: 130%;
             margin-bottom: 16px;
+
+            @include tablet-min {
+                font-size: 24px;
+            }
         }
     }
 }
@@ -106,7 +142,12 @@
 
     &-list {
         display: flex;
-        gap: 40px;
+        flex-direction: column;
+        
+        @include tablet-min {
+            gap: 40px;
+            flex-direction: row;
+        }
     }
 
     &-row {
@@ -117,8 +158,12 @@
 
     &-cell-text {
         font-weight: 500;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 130%;
+
+        @include tablet-min {
+            font-size: 18px;
+        }
     }
 
     &-cell-value {
