@@ -8,14 +8,6 @@
     max-height: 320px;
 }
 
-.main-content__title {
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 110%;
-    color: var(--dark-blue);
-    margin-bottom: 32px;
-}
-
 .main-content {
     max-width: 1392px;
     margin: 0 auto;
@@ -26,11 +18,73 @@
         gap: 64px;
     }
 
+    &__page {
+        margin-top: 84.8px;
+    }
+
     &__offset-70 {
         transform: translateX(-70px);
     }
 
     &__section {
+        * {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 140%;
+        }
+
+        &:not(.main-content__section--dark) {
+            * {
+                color: var(--dark-blue);
+            }
+
+            .main-content__section-title {
+                color: var(--dark-blue);
+            }
+
+            .main-content__section-table-cell-text, .main-content__section-table-cell-value {
+                color: var(--dark-blue);
+            }
+
+            .main-content__section-table-row {
+                border-bottom: 1px solid var(--dark-blue);
+            }
+        }
+
+        &--dark {
+            background-color: var(--dark-blue);
+            padding: 40px 24px;
+
+            * {                
+                color: #fff;
+            }
+
+            .main-content__section-table-cell-text, .main-content__section-table-cell-value {
+                color: #fff;
+            }
+
+            .main-content__section-table-row {
+                border-bottom: 1px solid #fff;
+            }
+
+            .main-content__section-title {
+                color: var(--cyan-tag);
+            }
+        }
+
+        p:not([class]) {
+            margin-bottom: 1em;
+            padding-top: 1px;
+            
+            &:first-child {
+                padding-top: 0;
+            }
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
         &:not(:last-child) {
             margin-bottom: 144px;
         }
@@ -39,19 +93,7 @@
             font-weight: 500;
             font-size: 24px;
             line-height: 130%;
-            color: var(--dark-blue);
             margin-bottom: 16px;
-        }
-
-        &-p {
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 140%;
-
-            &:not(:last-child) {
-                margin-bottom: 20px;
-                color: var(--dark-blue);
-            }
         }
     }
 }
@@ -70,7 +112,6 @@
     &-row {
         display: flex;
         justify-content: space-between;
-        border-bottom: 1px solid var(--dark-blue);
         padding: 16px 0;
     }
 
@@ -78,13 +119,11 @@
         font-weight: 500;
         font-size: 18px;
         line-height: 130%;
-        color: var(--dark-blue);
     }
 
     &-cell-value {
         font-weight: 400;
         font-size: 18px;
         line-height: 140%;
-        color: var(--dark-blue);
     }
 }
