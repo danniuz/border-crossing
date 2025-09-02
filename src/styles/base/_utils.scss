@@ -44,3 +44,9 @@
         display: none !important;
     }
 }
+
+html:dir(ltr) {
+    .ltr-reverse-y {
+        transform: rotateY(180deg);
+    }
+}

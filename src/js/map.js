@@ -2,6 +2,12 @@ import { featureCollection } from './data/features.js';
 import mapboxgl from 'mapbox-gl';
 
 export function initMap() {
+    const mapHtml = document.getElementById('map');
+    
+    if (!mapHtml) {
+        return;
+    }
+
     const mapboxAccessToken = 'pk.eyJ1IjoiZGFuaWRlbyIsImEiOiJjbWRyNXB5dGswYWoxMmxxdnh0d2lvNXAyIn0.gujYWabrd2G8fqT2eEyS7g';
 
     const mapObject = {

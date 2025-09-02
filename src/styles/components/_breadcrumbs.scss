@@ -32,9 +32,3 @@
         }
     }
 }
-
-html:dir(ltr) {
-    .breadcrumbs__link-icon {
-        transform: rotate(180deg);
-    }
-}

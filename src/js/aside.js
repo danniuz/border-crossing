@@ -4,6 +4,11 @@
  */
 export function initAside(params) {
     const asideWrapper = document.getElementById('aside-wrapper');
+
+    if (!asideWrapper) {
+        return;
+    }
+
     const asideTogglerOpened = document.getElementById('aside-toggler-opened');
     const asideTogglerClosed = document.getElementById('aside-toggler-closed');
 

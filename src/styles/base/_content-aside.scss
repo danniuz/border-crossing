@@ -1,0 +1,31 @@
+@use '../base/media' as *;
+
+.content-aside {
+    &__card {
+        padding: 40px 24px;
+        width: 368px;
+
+        &--blue {
+            background-color: var(--dark-blue);
+        }
+
+        &-title {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 130%;
+            color: var(--cyan-tag);
+            margin-bottom: 16px;
+        }
+
+        &-text {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 140%;
+            color: #fff;
+
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
+        }
+    }
+}
