@@ -6,7 +6,7 @@
     transition: opacity 0.6s ease-in-out;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100%;
 }
 
 // .wrapper--visible {
@@ -30,4 +30,8 @@
     flex-direction: column;
     height: 100%;
     position: relative;
+}
+
+.container {
+    padding: 0 16px;
 }

@@ -12,17 +12,25 @@
     max-width: 100%;
     margin: 0 auto;
     margin-top: 48px;
-    padding: 0 16px;
+    transform: translateX(0);
 
     @include tablet-min {
         margin-top: 80px;
         max-width: 1039px;
-        transform: translateX(-70px);
     }
     
+    @include tablet-lg-min {
+        transform: translateX(-50px);
+    }
+
     @include desktop-min {
         margin-top: 120px;
         max-width: 1424px;
+        transform: translateX(0);
+    }
+
+    @include desktop-lg-min {
+        transform: translateX(-70px);
     }
     
     &__layout {
