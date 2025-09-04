@@ -1,0 +1,33 @@
+@use '../base/media' as *;
+
+.button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &__rect {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 130%;
+        padding: 8.5px 16px;
+
+        @include tablet-min {
+            padding: 10px 24px;
+            font-size: 20px;
+            line-height: 140%;
+        }
+
+        &--outline-dark-blue {
+            border: 1px solid var(--dark-blue);
+            color: var(--dark-blue);
+
+            @include tablet-min {
+                border-width: 2px;
+            }
+        }
+    }
+}

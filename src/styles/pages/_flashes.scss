@@ -1,0 +1,11 @@
+@use '../base/media' as *;
+
+.flashes {
+    &__faq {
+        margin-bottom: 48px;
+
+        @include tablet-min {
+            margin-bottom: 64px;
+        }
+    }
+}
