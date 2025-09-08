@@ -1,6 +1,7 @@
 import { initMap } from './js/map.js';
 import { initAside } from './js/aside.js';
 import { initFlashes } from './js/flashes.js';
+import { initNewsSwiper } from './js/news-swiper.js';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './style.scss'
@@ -25,3 +26,4 @@ function loadMap() {
 initAside({ opened: false });
 loadMap();
 initFlashes('flashes-faq');
+initNewsSwiper();

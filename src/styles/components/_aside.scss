@@ -25,7 +25,7 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
-        height: calc(100% - 232px);
+        height: calc(100% - 293px);
         overflow-y: auto;
 
         @include tablet-min {
@@ -44,11 +44,9 @@
         max-width: 0;
 
         @include tablet-min {
-            width: 100%;
             max-width: initial;
             position: absolute;
             transform: translateX(-100%);
-            width: 968px;
         }
 
         &:not(.aside__wrapper--opened) {
@@ -57,7 +55,9 @@
                 opacity: 0;
 
                 @include tablet-min {
-                    transform: initial
+                    transform: initial;
+                    overflow: hidden;
+                    width: 0;
                 }
             }
         }
@@ -125,6 +125,10 @@
         width: 64px;
         height: 64px;
         display: flex;
+    }
+
+    &:not(.aside-toggler-button--shown) {
+        display: none;
     }
 
     &--ready {
