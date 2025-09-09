@@ -10,12 +10,13 @@ export function initNewsSwiper() {
       loop: true,
     
       pagination: {
-        el: '.swiper-pagination',
+        el: '.news-swiper__swiper-pagination',
+        clickable: true,
       },
     
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.news-swiper__swiper-button-next',
+        prevEl: '.news-swiper__swiper-button-prev',
       },
     });
 }

@@ -51,10 +51,30 @@ html:dir(ltr) {
     }
 }
 
+html:dir(ltr) {
+    .ltr-reverse-none {
+        transform: rotateY(0deg);
+    }
+}
+
+.rotate-y {
+    transform: rotateY(180deg);
+}
+
 .overflow-hidden {
     overflow: hidden;
 }
 
 .ltr {
     direction: ltr;
+}
+
+.br-none {
+    display: none;
+}
+
+.br-tablet-min {
+    @include mobile-min {
+        display: block;
+    }
 }
