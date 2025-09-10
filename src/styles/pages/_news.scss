@@ -12,10 +12,13 @@
 .news-list {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 16px;
+    gap: 48px 16px;
+    margin-top: 16px;
+    margin-bottom: 48px;
 
     @include tablet-min {
         grid-template-columns: repeat(4, 1fr);
+        margin-bottom: 64px;
     }
 
     &__item {
@@ -26,10 +29,20 @@
 
         &-title {
             color: #003459;
+            margin-top: 16px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 130%;
+            padding-inline-end: 40px;
         }
 
         &-date {
+            margin-top: 4px;
             color: #48595F;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 130%;
+            padding-inline-end: 40px;
         }
 
 
@@ -40,7 +53,7 @@
                 grid-column: span 2;
             }
         }
-        
+
         &--small {
             grid-column: span 1;
         }
@@ -57,10 +70,15 @@
 
         &-tag {
             position: absolute;
-            top: 0;
-            left: 0;
-            background-color: #003459;
+            top: 8px;
+            inset-inline-start: 8px;
+            background-color: #00171F;
             color: #fff;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+            color: var(--cyan-tag);
+            padding: 4px 8px;
         }
 
         &-arrow {
