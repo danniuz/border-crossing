@@ -143,7 +143,7 @@
           </div>
 
           <div class="news-swiper__swiper-wrapper">
-            <div class="swiper news-swiper">
+            <div class="swiper news-swiper" id="news-swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide news-swiper__slide">
                   <picture class="main-content__cover-top">
@@ -185,15 +185,17 @@
             </div>
 
             <div class="news-swiper__swiper-pagination-wrapper">
-              <div class="swiper-pagination news-swiper__swiper-pagination"></div>
+              <div class="swiper-pagination news-swiper__swiper-pagination" id="news-swiper-swiper-pagination"></div>
             </div>
 
             <div class="news-swiper__swiper-button-actions">
-              <div class="swiper-button-prev news-swiper__swiper-button news-swiper__swiper-button-prev">
+              <div class="swiper-button-prev news-swiper__swiper-button news-swiper__swiper-button-prev"
+                id="news-swiper-button-prev">
                 <img class="news-swiper__pagination-icon rotate-y ltr-reverse-none"
                   src="/src/assets/icons/arrow-left-pagination.svg" alt="Arrow left">
               </div>
-              <div class="swiper-button-next news-swiper__swiper-button news-swiper__swiper-button-next">
+              <div class="swiper-button-next news-swiper__swiper-button news-swiper__swiper-button-next"
+                id="news-swiper-button-next">
                 <img class="news-swiper__pagination-icon ltr-reverse-y"
                   src="/src/assets/icons/arrow-left-pagination.svg" alt="Arrow Right">
               </div>
