@@ -99,6 +99,10 @@
                     font-size: 18px;
                     line-height: 130%;
                 }
+
+                &--blue {
+                    color: var(--dark-blue);
+                }
             }
 
             &-title {
@@ -115,6 +119,10 @@
                 @include tablet-min {
                     font-size: 60px;
                 }
+
+                &--blue {
+                    color: var(--dark-blue);
+                }
             }
         }
 
@@ -126,6 +134,14 @@
 
             @include tablet-min {
                 padding-bottom: 72px;
+            }
+
+            &--white {
+                background-color: #fff;
+
+                &::after {
+                    border-top-color: #fff !important;
+                }
             }
 
             &::after {

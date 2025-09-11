@@ -1,0 +1,11 @@
+@use '../base/media' as *;
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &__footer {
+        display: flex;
+    }
+}

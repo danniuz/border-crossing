@@ -25,7 +25,6 @@
 
 // Hide on tablet maximum (below 980px)
 .hide-tablet-max {
-
     @include tablet-max {
         display: none !important;
     }
@@ -74,7 +73,7 @@ html:dir(ltr) {
 }
 
 .br-tablet-min {
-    @include mobile-min {
+    @include tablet-min {
         display: block;
     }
 }
