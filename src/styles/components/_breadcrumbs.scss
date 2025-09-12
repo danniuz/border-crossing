@@ -8,6 +8,40 @@
     gap: 8px;
     z-index: 99;
 
+    .breadcrumbs__link-icon {
+        width: 16px;
+        height: 16px;
+        display: inline-flex;
+    }
+
+    &:not(.breadcrumbs--dark-blue) {
+        .breadcrumbs__link-icon {
+            &--home {
+                background-image: url('/public/icons/home-white.svg');
+            }
+
+            &--arrow {
+                background-image: url('/public/icons/arrow-left-breadcrumb-white.svg');
+            }
+        }
+    }
+
+    &--dark-blue {
+        .breadcrumbs__link-icon {
+            &--home {
+                background-image: url('/public/icons/home-dark-blue.svg');
+            }
+
+            &--arrow {
+                background-image: url('/public/icons/arrow-left-breadcrumb-dark-blue.svg');
+            }
+        }
+
+        .breadcrumbs__link-text {
+            color: var(--dark-blue);
+        }
+    }
+
     @include tablet-min {
         top: 72px;
         inset-inline-start: 200px;

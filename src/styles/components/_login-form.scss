@@ -4,8 +4,47 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    max-width: 317px;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .form-control {
+        &:not(:last-child) {
+            margin-top: 8px;
+        }
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: var(--dark-blue);
+    }
 
     &__footer {
         display: flex;
+        margin-top: 24px;
+        gap: 24px;
+        align-items: center;
+    }
+
+    &__footer-button {
+        background-color: var(--cyan-tag) !important;
+        padding: 0;
+        min-width: 64px;
+        min-height: 64px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        flex-shrink: 0;
+    }
+
+    &__error-text {
+        color: #EB0008;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
     }
 }

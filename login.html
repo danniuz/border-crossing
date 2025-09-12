@@ -24,7 +24,17 @@
   <script type="module" src="/src/main.js"></script>
   <div id="wrapper" class="wrapper">
     <div class="page-header">
-      <div class="marquee" id="marquee-container">
+      <div class="marquee">
+        <div class="marquee__controls">
+          <a class="marquee__link hide-tablet-max" href="">לכל ההודעות</a>
+          <button id="marqueeStart" class="button button__rect marquee__controls-action">
+            <img class="marquee__controls-action-image ltr-reverse-y" src="/src/assets/icons/play.svg" alt="Play">
+          </button>
+          <button id="marqueeStop" class="button button__rect marquee__controls-action">
+            <img class="marquee__controls-action-image ltr-reverse-y" src="/src/assets/icons/pause.svg" alt="Pause">
+          </button>
+        </div>
+
         <ul class="marquee__text-list" id="marquee-text">
           <li class="marquee__text-item">
             Lorem ipsum dolor sit amet.
@@ -149,10 +159,10 @@
 
       </div>
 
-      <div class="breadcrumbs">
+      <div class="breadcrumbs breadcrumbs--dark-blue">
         <a href="#" class="breadcrumbs__link">
-          <img src="icons/home.svg" class="breadcrumbs__link-icon" alt="Home">
-          <img src="icons/arrow-left-breadcrumb.svg" class="breadcrumbs__link-icon ltr-reverse-y" alt="Arrow Left">
+          <span class="breadcrumbs__link-icon breadcrumbs__link-icon--home"></span>
+          <span class="breadcrumbs__link-icon breadcrumbs__link-icon--arrow ltr-reverse-y"></span>
         </a>
 
         <a href="#" class="breadcrumbs__link">
@@ -183,7 +193,9 @@
               </div>
 
               <div class="login-form__footer">
-                <button type="submit" class="btn btn-primary">התחבר</button>
+                <button type="submit" class="login-form__footer-button button button__rect">
+                  <img src="/src/assets/icons/arrow-left.svg" alt="Login">
+                </button>
                 <div class="login-form__error-text">הסיסמה שהוזנה לא נכונה. בדקו ונסו שוב.</div>
               </div>
             </form>
@@ -219,7 +231,9 @@
               </div>
 
               <div class="login-form__footer">
-                <button type="submit" class="btn btn-primary">התחבר</button>
+                <button type="submit" class="login-form__footer-button button button__rect">
+                  <img src="/src/assets/icons/arrow-left.svg" alt="Login">
+                </button>
                 <div class="login-form__error-text">הסיסמה שהוזנה לא נכונה. בדקו ונסו שוב.</div>
               </div>
             </form>

@@ -27,6 +27,6 @@ function loadMap() {
 
 initAside({ opened: false });
 loadMap();
-initMarquee();
+initMarquee({ start: true });
 initFlashes('flashes-faq');
 initNewsSwiper();

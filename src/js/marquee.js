@@ -1,5 +1,11 @@
-export function initMarquee() {
+/**
+ * @param {Object} params
+ * @param {boolean} params.start
+ */
+export function initMarquee(params) {
     const marqueeText = document.getElementById("marquee-text");
+    const controlActiveClass = 'marquee__controls-action--active';
+
     if (!marqueeText) return;
 
     // tripple elements
@@ -17,7 +23,37 @@ export function initMarquee() {
 
     let posX = 0;
     // speed in px per frame
-    const speed = 0.5;
+    const speed = 0.6;
+
+    let req = null;
+
+    const marqueeStart = document.getElementById('marqueeStart');
+    const marqueeStop = document.getElementById('marqueeStop');
+
+    marqueeStart.addEventListener('click', () => {
+        if (!req) {
+            animate();
+            marqueeStop.classList.add(controlActiveClass);
+            marqueeStart.classList.remove(controlActiveClass);
+        }
+    });
+
+    marqueeStop.addEventListener('click', () => {
+        if (req) {
+            cancelAnimationFrame(req);
+            marqueeStart.classList.add(controlActiveClass);
+            marqueeStop.classList.remove(controlActiveClass);
+            req = null;
+        }
+    });
+
+
+    if (params.start) {
+        animate();
+        marqueeStop.classList.add(controlActiveClass);
+    } else {
+        marqueeStart.classList.add(controlActiveClass);
+    }
 
     function animate() {
         posX -= speed;
@@ -30,8 +66,6 @@ export function initMarquee() {
 
         marqueeText.style.transform = `translateY(-50%) translateX(${posX}px)`;
 
-        requestAnimationFrame(animate);
+        req = requestAnimationFrame(animate);
     }
-
-    animate();
 }
