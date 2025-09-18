@@ -105,6 +105,18 @@
                 }
             }
 
+            &-undertitle {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 130%;
+                color: #fff;
+
+                @include tablet-min {
+                    margin-top: 16px;
+                    font-size: 16px;
+                }
+            }
+
             &-title {
                 font-weight: 400;
                 font-size: 36px;
@@ -179,7 +191,7 @@
             gap: 24px;
 
             @include tablet-min {
-                gap: 40px;
+                gap: 16px;
             }
         }
     }
