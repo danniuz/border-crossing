@@ -3,6 +3,7 @@ import { initAside } from './js/aside.js';
 import { initFlashes } from './js/flashes.js';
 import { initNewsSwiper } from './js/news-swiper.js';
 import { initMarquee } from './js/marquee.js';
+import { initScrollToTop } from './js/scroll-to-top.js';
 import './js/form-interactions.js';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -30,3 +31,4 @@ loadMap();
 initMarquee({ start: true });
 initFlashes('flashes-faq');
 initNewsSwiper();
+initScrollToTop('#scroll-to-top', 500);

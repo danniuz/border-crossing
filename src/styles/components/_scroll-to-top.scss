@@ -1,0 +1,45 @@
+@use '../base/media' as *;
+
+.scroll-to-top {
+    position: fixed;
+    display: inline-flex;
+    bottom: 100px;
+    inset-inline-end: initial;
+    inset-inline-start: 16px;
+    z-index: -1;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--dark-blue);
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border: 1px solid white;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet-min {
+        inset-inline-start: initial;
+        inset-inline-end: 16px;
+        width: 64px;
+        height: 64px;
+        bottom: 400px;
+    }
+
+    &__icon {
+        width: 18px;
+        height: 18px;
+
+        @include tablet-min {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &--visible {
+        transform: translateX(0);
+        opacity: 1;
+        z-index: 1000;
+    }
+}
