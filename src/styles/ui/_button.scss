@@ -13,10 +13,10 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 130%;
-        padding: 8.5px 16px;
+        padding: 7px 15.5px;
 
         @include tablet-min {
-            padding: 10px 24px;
+            padding: 8px 22px;
             font-size: 20px;
             line-height: 140%;
         }
@@ -27,6 +27,15 @@
 
             @include tablet-min {
                 border-width: 2px;
+            }
+        }
+     
+        &--18 {
+            font-size: 18px;
+            line-height: 140%;
+
+            @include tablet-min {
+                font-size: 18px;
             }
         }
     }
