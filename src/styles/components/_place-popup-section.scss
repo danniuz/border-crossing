@@ -1,0 +1,35 @@
+@use '../base/media' as *;
+
+.place-popup-section {
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+
+    &--blue {
+        background-color: var(--dark-blue);
+    }
+
+    &__title {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        color: var(--dark-blue);
+        white-space: nowrap;
+    }
+
+    &__content {
+        display: flex;
+        gap: 16px;
+        width: 100%;
+        max-width: 752px;
+    }
+
+    &__content-paragraph {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 130%;
+        color: var(--dark-blue);
+    }
+}

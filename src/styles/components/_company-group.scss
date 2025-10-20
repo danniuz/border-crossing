@@ -1,0 +1,37 @@
+@use '../base/media' as *;
+
+.company-group {
+    padding: 32px 24px 24px 24px;
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        width: 498px;
+    }
+
+    &__logo {
+        object-fit: contain;
+        margin-inline-end: auto;
+    }
+
+    &__name {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        color: var(--dark-blue);
+    }
+
+    &__text {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 140%;
+        color: var(--dark-blue);
+    }
+}

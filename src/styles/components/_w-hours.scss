@@ -1,0 +1,103 @@
+@use '../base/media' as *;
+
+.w-hours {
+    &__item {
+        padding-top: 32px;
+        padding-bottom: 16px;
+        padding-inline-start: 24px;
+        padding-inline-end: 24px;
+        gap: 8px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    &__item-icon-wrapper {
+        height: 64px;
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    &__item-schedule-header {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        color: var(--dark-blue);
+    }
+
+    &__item-schedule-list {
+        display: flex;
+        flex-direction: column;
+        margin-top: 8px;
+        gap: 8px;
+    }
+
+    &__item-schedule {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        color: var(--dark-blue);
+
+        &-time {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 130%;
+        }
+
+        &-name {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 120%;
+        }
+    }
+
+    &__item-link-list-wrapper {
+        background-color: var(--gray-tag);
+        margin-top: 24px;
+    }
+
+    &__item-link-list-title {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 130%;
+        color: var(--dark-blue);
+        padding: 8px;
+    }
+
+    &__item-link-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    &__item-link-list-item {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: var(--dark-blue);
+        text-align: end;
+        display: inline-flex;
+        gap: 16px;
+        justify-content: end;
+        align-items: center;
+        text-decoration: none;
+
+        &:not(:last-child) {
+            border-bottom: 2px solid var(--dark-blue);
+        }
+
+        &-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--cyan-tag);
+            padding: 12px;
+        }
+    }
+}
