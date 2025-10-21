@@ -38,8 +38,8 @@
                             <img class="w-hours__item-icon" src="icons/w-hours/man.svg" alt="Man">
                         </div>
                         
-                        <div class="popup__status popup__status--bg-gray">
-                            <span class="popup__status-indicator"></span>
+                        <div class="w-hours__status w-hours__status--bg-gray">
+                            <span class="w-hours__status-indicator"></span>
                             הולכי רגל
                         </div>
                     </div>
@@ -67,8 +67,8 @@
                             <img class="w-hours__item-icon" src="icons/w-hours/car.svg" alt="Man">
                         </div>
 
-                        <div class="popup__status popup__status--bg-gray">
-                            <span class="popup__status-indicator"></span>
+                        <div class="w-hours__status w-hours__status--bg-gray">
+                            <span class="w-hours__status-indicator"></span>
                             הולכי רגל
                         </div>
                     </div>
@@ -96,8 +96,8 @@
                             <img class="w-hours__item-icon" src="icons/w-hours/big-car.svg" alt="Man">
                         </div>
 
-                        <div class="popup__status popup__status--bg-gray">
-                            <span class="popup__status-indicator popup__status-indicator--active"></span>
+                        <div class="w-hours__status w-hours__status--bg-gray">
+                            <span class="w-hours__status-indicator w-hours__status-indicator--active"></span>
                             הולכי רגל
                         </div>
                     </div>
@@ -122,6 +122,7 @@
 
                         <div class="w-hours__item-link-list-wrapper">
                             <div class="w-hours__item-link-list-title">קישורים</div>
+                            <div class="w-hours__item-link-list-subtitle">טקסט מסביר טקסט מסביר קסט מסביר</div>
             
                             <div class="w-hours__item-link-list">
                                 <a class="w-hours__item-link-list-item" href="#">
@@ -320,7 +321,7 @@
                         <div class="company-group__text">קבוצת T&M ישראל מובילה את תחום אספקת השירותים למוסדות ועסקים בישראל. </div>
                     </div>
 
-                    <button class="button button__rect button__rect--18 button__rect--cyan button--gap-16">
+                    <button class="company-group__action">
                         לכל המשרות
                         <img src="icons/arrow-up-left-sm.svg" alt="Arrow Up Left">
                     </button>
@@ -385,8 +386,26 @@
                 </div>
             </div>
 
-            <div class="place-popup-section__content">
-                <canvas style="height: 600px; display: block;" id="myChart"></canvas>
+            <div class="place-popup-section__content graph__content">
+                <div class="graph__legend">
+                    <div class="graph__legend-list">
+                        <div class="graph__legend-item">
+                            <span class="graph__legend-item-color graph__legend-item-color--turquise"></span>
+                            סחורות
+                        </div>
+                        <div class="graph__legend-item">
+                            <span class="graph__legend-item-color graph__legend-item-color--white"></span>
+                            כלי רכב
+                        </div>
+                        <div class="graph__legend-item">
+                            <span class="graph__legend-item-color graph__legend-item-color--cyan"></span>
+                            הולכי רגל
+                        </div>
+                    </div>
+                </div>
+                <div class="graph__chart">
+                    <canvas style="height: 600px; display: block;" id="myChart"></canvas>
+                </div>
             </div>
         </div>
     </div>

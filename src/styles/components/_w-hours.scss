@@ -14,8 +14,8 @@
             flex-direction: column;
             padding-top: 32px;
             padding-bottom: 16px;
-            padding-inline-start: 24px;
-            padding-inline-end: 24px;
+            padding-inline-start: 16px;
+            padding-inline-end: 16px;
         }
     }
 
@@ -41,9 +41,14 @@
     &__item-schedule-header {
         font-family: IBM Plex Sans Hebrew;
         font-weight: 500;
-        font-size: 24px;
-        line-height: 120%;
+        font-size: 18px;
+        line-height: 130%;
         color: var(--dark-blue);
+
+        @include tablet-sm-min {
+            font-size: 24px;
+            line-height: 120%;
+        }
     }
 
     &__item-schedule-list {
@@ -77,6 +82,15 @@
     &__item-link-list-wrapper {
         background-color: var(--gray-tag);
         margin-top: 24px;
+        max-width: initial;
+
+        @include tablet-min {
+            max-width: 208px;
+        }
+
+        @include desktop-min {
+            max-width: initial;
+        }
     }
 
     &__item-link-list-title {
@@ -86,9 +100,22 @@
         line-height: 130%;
         color: var(--dark-blue);
         padding: 8px;
+        padding-bottom: 4px;
+    }
+
+    &__item-link-list-subtitle {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: var(--dark-blue);
+        padding-top: 0 !important;
+        padding: 8px;
+        padding-bottom: 4px;
     }
 
     &__item-link-list {
+        margin-top: 12px;
         display: flex;
         flex-direction: column;
     }
@@ -116,6 +143,49 @@
             height: 40px;
             background-color: var(--cyan-tag);
             padding: 12px;
+        }
+    }
+
+    &__status {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 6px 10px 6px 7px;
+        background-color: #fff;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 110%;
+        transition: background-color 0.3s ease;
+        width: fit-content;
+
+        @include tablet-min {
+            padding: 6px 8px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 130%;
+            gap: 8px;
+        }
+
+        &--bg-gray {
+            background-color: var(--gray-tag);
+        }
+    }
+
+    &__status-indicator {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: var(--new-red);
+        display: inline-flex;
+        flex-shrink: 0;
+
+        @include tablet-min {
+            width: 10px;
+            height: 10px;
+        }
+
+        &--active {
+            background-color: var(--new-green);
         }
     }
 }

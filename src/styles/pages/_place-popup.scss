@@ -18,14 +18,14 @@ html:dir(ltr) {
         height: 227px;
         object-fit: cover;
 
-        @include tablet-min {
-            height: 100%;
+        @include desktop-min {
+            height: 440px;
         }
     }
 
     &__wrapper {
         overflow-y: auto;
-        max-width: 1352px;
+        max-width: 1240px;
         inset-inline-end: 0;
         top: 110px;
         position: fixed;
@@ -47,6 +47,10 @@ html:dir(ltr) {
 
         @include tablet-min {
             top: 53px;
+        }
+
+        @include desktop-min {
+            max-width: 1352px;
         }
     }
 
@@ -112,9 +116,15 @@ html:dir(ltr) {
     &__content {
         padding-inline-start: 16px;
         padding-inline-end: 16px;
-        padding-bottom: 16px;
+        padding-bottom: 80px;
 
-        @include tablet-min {
+        @include tablet-lg-min {
+            padding-inline-start: 108px;
+            padding-inline-end: 125px;
+            padding-bottom: 64px;
+        }
+
+        @include desktop-lg-min {
             padding-inline-start: 144px;
             padding-inline-end: 200px;
             padding-bottom: 64px;

@@ -9,19 +9,30 @@
 
     &__item {
         display: flex;
-        align-items: center;
         padding: 15px 0;
         border-bottom: 2px solid var(--dark-blue);
         color: var(--dark-blue);
+        align-items: flex-start;
+
+        @include tablet-sm-min {
+            padding: 16px 0;
+            align-items: center;
+        }
 
         &-icon {
-            width: 40px;
-            height: 40px;
+            width: 28px;
+            height: 28px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             background-color: #fff;
             border-radius: 50%;
+            flex-shrink: 0;
+
+            @include tablet-sm-min {
+                width: 40px;
+                height: 40px;
+            }
 
             img {
                 height: 17px;
@@ -42,7 +53,11 @@
             font-weight: 400;
             font-size: 16px;
             line-height: 130%;
-            padding-inline-start: 26px;
+            padding-inline-start: 16px;
+
+            @include tablet-sm-min {
+                padding-inline-start: 26px;
+            }
         }
     }
 }

@@ -1,38 +1,111 @@
 @use '../base/media' as *;
 
 .company-group {
-    padding: 32px 24px 24px 24px;
     background-color: #fff;
     display: flex;
     width: 100%;
     align-items: flex-end;
     justify-content: space-between;
+    flex-direction: column;
+    padding: 24px;
+
+    @include tablet-sm-min {
+        padding: 36px 24px 48px 24px;
+    }
+
+    @include desktop-min {
+        padding: 32px 24px 24px 24px;
+        flex-direction: row;
+        gap: 16px;
+    }
 
     &__content {
         display: flex;
         flex-direction: column;
-        width: 498px;
+        margin-bottom: 32px;
+        width: 100%;
+
+        @include tablet-sm-min {
+            margin-bottom: 0;
+        }
+
+        @include desktop-min {
+            width: 498px;
+        }
     }
 
     &__logo {
         object-fit: contain;
         margin-inline-end: auto;
-        margin-bottom: 32px;
+        width: 80px;
+        margin-bottom: 16px;
+
+        @include tablet-sm-min {
+            width: initial;
+            margin-bottom: 36px;
+            padding-right: 110px;
+        }
+
+        @include desktop-min {
+            padding-right: 0;
+            margin-bottom: 32px;
+        }
     }
 
     &__name {
         font-family: IBM Plex Sans Hebrew;
         font-weight: 500;
-        font-size: 24px;
-        line-height: 120%;
+        font-size: 18px;
+        line-height: 130%;
         color: var(--dark-blue);
+
+        @include tablet-sm-min {
+            font-size: 24px;
+            line-height: 120%;
+        }
     }
 
     &__text {
         font-family: IBM Plex Sans Hebrew;
         font-weight: 400;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 140%;
         color: var(--dark-blue);
+        margin-top: 8px;
+
+        @include tablet-sm-min {
+            font-size: 18px;
+        }
+    }
+
+    &__action {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background-color: transparent;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 11px 12px;
+        padding-inline-start: 24px;
+        margin: 0;
+        font-size: 16px;
+        gap: 8px;
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: var(--dark-blue);
+        background-color: var(--cyan-tag);
+        flex-shrink: 0;
+
+        @include tablet-sm-min {
+            padding: 12px 16px;
+            padding-inline-start: 32px;
+            gap: 16px;
+            font-size: 18px;
+            line-height: 140%;
+        }
+
     }
 }

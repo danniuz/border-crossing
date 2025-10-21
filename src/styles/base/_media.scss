@@ -11,6 +11,12 @@ $desktop-lg: 1580px;
     }
 }
 
+@mixin tablet-sm-max {
+    @media (max-width: #{$tablet-sm}) {
+        @content;
+    }
+}
+
 @mixin tablet-sm-min {
     @media (min-width: #{$tablet-sm + 1px}) {
         @content;

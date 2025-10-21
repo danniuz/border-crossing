@@ -193,7 +193,7 @@ export function initPlaceChart() {
             drawBorder: false,
           },
           ticks: {
-            display: false, // Hide the year labels
+            display: true, // Hide the year labels
           },
           border: {
             display: false,

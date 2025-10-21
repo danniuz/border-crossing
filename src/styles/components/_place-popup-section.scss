@@ -6,16 +6,25 @@
     flex-direction: column;
     gap: 16px;
 
-
     @include tablet-min {
+        gap: 16px;
+    }
+
+    @include desktop-min {
         justify-content: space-between;
         flex-direction: row;
+        gap: 40px;
     }
 
     &-footer {
         background-color: #fff;
         display: flex;
         position: relative;
+        flex-direction: column;
+
+        @include tablet-min {
+            flex-direction: row;
+        }
 
         &__action-list {
             position: absolute;
@@ -77,16 +86,23 @@
     &__title {
         width: 100%;
         max-width: 240px;
+        flex-shrink: 0;
 
         &-text {
             font-family: IBM Plex Sans Hebrew;
             font-weight: 500;
-            font-size: 24px;
-            line-height: 120%;
+
+            font-size: 18px;
+            line-height: 130%;
             color: var(--dark-blue);
 
             &--white {
                 color: #fff;
+            }
+
+            @include tablet-sm-min {
+                font-size: 24px;
+                line-height: 120%;
             }
         }
 
@@ -96,19 +112,27 @@
         display: flex;
         gap: 16px;
         width: 100%;
-        max-width: 752px;
         flex-direction: column;
 
         @include tablet-sm-min {
             flex-direction: row;
+        }
+
+        @include desktop-min {
+            max-width: 752px;
         }
     }
 
     &__content-paragraph {
         font-family: IBM Plex Sans Hebrew;
         font-weight: 400;
-        font-size: 20px;
-        line-height: 130%;
+        font-size: 16px;
+        line-height: 140%;
         color: var(--dark-blue);
+
+        @include tablet-sm-min {
+            font-size: 20px;
+            line-height: 130%;
+        }
     }
 }

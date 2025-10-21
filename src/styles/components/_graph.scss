@@ -21,6 +21,11 @@
         flex-direction: column;
         margin-top: 100%;
         gap: 24px;
+        display: none;
+
+        @include tablet-min {
+            display: flex;
+        }
     }
 
     &__tag-list-slot {
@@ -52,5 +57,50 @@
         background-color: var(--gray-tag);
         border: none;
         outline: none;
+    }
+}
+
+.graph__legend {
+    display: flex;
+    gap: 16px;
+    padding-top: 5px;
+}
+
+.graph__content {
+    flex-direction: column;
+    gap: 60px;
+}
+
+.graph__legend-list {
+    display: flex;
+    gap: 16px;
+}
+
+.graph__legend-item {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: #fff;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.graph__legend-item-color {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+
+    &--turquise {
+        background-color: #007EA7;
+    }
+
+    &--white {
+        background-color: #fff;
+    }
+
+    &--cyan {
+        background-color: var(--cyan-tag);
     }
 }
