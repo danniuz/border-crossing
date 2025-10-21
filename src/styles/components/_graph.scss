@@ -1,0 +1,56 @@
+@use '../base/media' as *;
+
+.graph {
+    &__year-list {
+        display: inline-flex;
+        justify-content: space-between;
+        width: 525px;
+        margin-inline-start: 100px;
+    }
+
+    &__year-item {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        color: var(--dark-blue);
+    }
+
+    &__tag-list-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: 100%;
+        gap: 24px;
+    }
+
+    &__tag-list-slot {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__tag-list-title {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: #fff;
+    }
+
+    &__tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    &__tag-list-item {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--dark-blue);
+        padding: 6px 16px;
+        background-color: var(--gray-tag);
+        border: none;
+        outline: none;
+    }
+}

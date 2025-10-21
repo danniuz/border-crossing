@@ -27,7 +27,9 @@
         </div>
 
         <div class="place-popup-section">
-            <div class="place-popup-section__title">שעות פעילות</div>
+            <div class="place-popup-section__title">
+                <div class="place-popup-section__title-text">שעות פעילות</div>
+            </div>
 
             <div class="place-popup-section__content">
                 <div class="w-hours__item">
@@ -127,8 +129,9 @@
         </div>
 
         <div class="place-popup-section">
-            <div class="place-popup-section__title">אודות המעבר</div>
-
+            <div class="place-popup-section__title">
+                <div class="place-popup-section__title-text">היקפי תנועה</div>
+            </div>
             <div class="place-popup-section__content">
                 <div class="place-popup-section__content-paragraph">
                     המעבר אוזרח בינואר 2006 ופועלים בו שני מתחמים: מעבר הולכי רגל ומעבר סחורות. מעבר
@@ -141,7 +144,9 @@
         </div>
 
         <div class="place-popup-section">
-            <div class="place-popup-section__title">כללי</div>
+            <div class="place-popup-section__title">
+                <div class="place-popup-section__title-text">כללי</div>
+            </div>
 
             <div class="place-popup-section__content">
                 <div class="place-navigation__list">
@@ -164,7 +169,9 @@
         </div>
 
         <div class="place-popup-section">
-            <div class="place-popup-section__title">גופים הפועלים במעבר</div>
+            <div class="place-popup-section__title">
+                <div class="place-popup-section__title-text">גופים הפועלים במעבר</div>
+            </div>
 
             <div class="place-popup-section__content">
                 <div class="transition-operations__grid">
@@ -289,7 +296,9 @@
         </div>
 
         <div class="place-popup-section">
-            <div class="place-popup-section__title">חברה מפעילה</div>
+            <div class="place-popup-section__title">
+                <div class="place-popup-section__title-text">חברה מפעילה</div>
+            </div>
 
             <div class="place-popup-section__content">
                 <div class="company-group">
@@ -300,19 +309,95 @@
                         <div class="company-group__text">קבוצת T&M ישראל מובילה את תחום אספקת השירותים למוסדות ועסקים בישראל. </div>
                     </div>
 
-                    <button class="button button__rect button__rect--18 button__rect--cyan">
+                    <button class="button button__rect button__rect--18 button__rect--cyan button--gap-16">
                         לכל המשרות
                         <img src="icons/arrow-up-left-sm.svg" alt="Arrow Up Left">
                     </button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="place-popup-section place-popup-section--blue">
-            <div class="place-popup-section__title">היקפי תנועה</div>
+    <div class="place-popup__content place-popup-section--graph">
+        <div class="place-popup-section">
+            <div class="place-popup-section__title">
+                <div class="place-popup-section__title-text place-popup-section__title-text--white">היקפי תנועה</div>
+
+                <div class="graph__tag-list-wrapper">
+                    <div class="graph__tag-list-slot">
+                        <div class="graph__tag-list-title">
+                            סינון לפי שנה
+                        </div>
+
+                        <div class="graph__tag-list">
+                            <div class="graph__tag-list-item">
+                                ינואר
+                            </div>
+                            <div class="graph__tag-list-item">
+                                חודשית
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="graph__tag-list-slot">
+                        <div class="graph__tag-list-title">
+                            סינון לפי שנה
+                        </div>
+
+                        <div class="graph__tag-list">
+                            <div class="graph__tag-list-item">
+                                ינואר
+                            </div>
+                            <div class="graph__tag-list-item">
+                                אוקטובר
+                            </div>
+                            <div class="graph__tag-list-item">
+                                חודשית
+                            </div>
+                            <div class="graph__tag-list-item">
+                                יולי
+                            </div>
+                            <div class="graph__tag-list-item">
+                                ספטמבר
+                            </div>
+                            <div class="graph__tag-list-item">
+                                חודשית
+                            </div>
+                            <div class="graph__tag-list-item">
+                                יולי
+                            </div>
+                            <button class="graph__tag-list-item">
+                                טמבר
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="place-popup-section__content">
-                <canvas id="myChart"></canvas>
+                <canvas style="height: 600px; display: block;" id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="place-popup-section-footer">
+        <div class="place-popup-section-footer__action-list">
+            <button class="place-popup-section-footer__action-button">
+                <img src="icons/arrow-right.svg" alt="Arrow Right">
+            </button>
+            <button class="place-popup-section-footer__action-button">
+                <img class="rotate-y" src="icons/arrow-right.svg" alt="Arrow Right">
+            </button>
+        </div>
+        <div class="place-popup-section-footer__start">
+            <div class="place-popup-section-footer__title place-popup-section__title--gray">ריכוז נתוני תנועה של הולכי רגל, כלי רכב וסחורות במעברי רמי"ם</div>
+        </div>
+
+        <div class="place-popup-section-footer__end">
+            <div class="graph__year-list">
+                <div class="graph__year-item">2022</div>
+                <div class="graph__year-item">2023</div>
+                <div class="graph__year-item">2024</div>
             </div>
         </div>
     </div>

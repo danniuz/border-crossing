@@ -5,17 +5,84 @@
     display: flex;
     justify-content: space-between;
 
-    &--blue {
+    &-footer {
+        background-color: #fff;
+        display: flex;
+        position: relative;
+
+        &__action-list {
+            position: absolute;
+            top: 0;
+            inset-inline-end: 0;
+            background-color: var(--gray-tag);
+        }
+
+        &__action-button {
+            width: 64px;
+            height: 64px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background-color: var(--gray-tag);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: var(--cyan-tag);
+            }
+        }
+
+        &__start {
+            padding-inline-start: 144px;
+            flex-shrink: 0;
+            padding-top: 16px;
+            padding-inline-end: 24px;
+            padding-bottom: 64px;
+            background-color: var(--gray-tag);
+        }
+
+        &__end {
+            padding-inline-end: 200px;
+            padding-top: 26px;
+            width: 100%;
+        }
+
+        &__title {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 140%;
+            text-align: right;
+            color: var(--dark-blue);
+            max-width: 240px;
+            width: 100%;
+        }
+    }
+
+    &--graph {
         background-color: var(--dark-blue);
+        padding-top: 40px;
+        padding-bottom: 0 !important;
     }
 
     &__title {
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 120%;
-        color: var(--dark-blue);
-        white-space: nowrap;
+        width: 100%;
+        max-width: 240px;
+
+        &-text {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 120%;
+            color: var(--dark-blue);
+
+            &--white {
+                color: #fff;
+            }
+        }
+
     }
 
     &__content {

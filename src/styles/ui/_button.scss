@@ -9,6 +9,10 @@
     align-items: center;
     justify-content: center;
 
+    &--gap-16 {
+        gap: 16px;
+    }
+
     &__rect {
         font-weight: 400;
         font-size: 18px;
