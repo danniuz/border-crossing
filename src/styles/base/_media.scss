@@ -1,4 +1,5 @@
 $mobile: 375px;
+$tablet-sm: 720px;
 $tablet: 980px;
 $tablet-lg: 1144px;
 $desktop: 1440px;
@@ -6,6 +7,12 @@ $desktop-lg: 1580px;
 
 @mixin mobile-min {
     @media (min-width: #{$mobile + 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet-sm-min {
+    @media (min-width: #{$tablet-sm + 1px}) {
         @content;
     }
 }

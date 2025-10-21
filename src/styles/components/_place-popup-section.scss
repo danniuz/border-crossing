@@ -3,7 +3,14 @@
 .place-popup-section {
     margin-top: 48px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 16px;
+
+
+    @include tablet-min {
+        justify-content: space-between;
+        flex-direction: row;
+    }
 
     &-footer {
         background-color: #fff;
@@ -90,6 +97,11 @@
         gap: 16px;
         width: 100%;
         max-width: 752px;
+        flex-direction: column;
+
+        @include tablet-sm-min {
+            flex-direction: row;
+        }
     }
 
     &__content-paragraph {
