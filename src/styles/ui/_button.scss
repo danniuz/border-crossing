@@ -9,6 +9,10 @@
     align-items: center;
     justify-content: center;
 
+    &--gap-16 {
+        gap: 16px;
+    }
+
     &__rect {
         font-weight: 400;
         font-size: 18px;
@@ -21,6 +25,11 @@
             line-height: 140%;
         }
 
+        &--cyan {
+            background-color: var(--cyan);
+            color: var(--dark-blue);
+        }
+
         &--outline-dark-blue {
             border: 1px solid var(--dark-blue);
             color: var(--dark-blue);
@@ -29,7 +38,7 @@
                 border-width: 2px;
             }
         }
-     
+
         &--18 {
             font-size: 18px;
             line-height: 140%;

@@ -1,0 +1,146 @@
+@use '../base/media' as *;
+
+.place-popup-section {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include tablet-min {
+        gap: 16px;
+    }
+
+    @include desktop-min {
+        justify-content: space-between;
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    &-footer {
+        background-color: #fff;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        padding-top: 30px;
+
+        @include tablet-min {
+            flex-direction: row;
+        }
+
+        &__action-list {
+            position: absolute;
+            top: 0;
+            inset-inline-end: 0;
+            background-color: var(--gray-tag);
+        }
+
+        &__action-button {
+            width: 64px;
+            height: 64px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background-color: var(--gray-tag);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: var(--cyan-tag);
+            }
+        }
+
+        &__content {
+            padding-inline-end: 120px;
+        }
+
+        &__title {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 140%;
+            text-align: right;
+            color: var(--dark-blue);
+            width: 100%;
+            margin-left: 80px;
+        }
+    }
+
+    &-graph {
+        background-color: var(--dark-blue);
+        padding-top: 16px;
+        padding-bottom: 0 !important;
+
+        @include desktop-min {
+            padding-top: 40px;
+        }
+
+        .place-popup-section {
+            position: relative;
+
+            @include desktop-max {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &-graph__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__title {
+        width: 100%;
+        max-width: 240px;
+        flex-shrink: 0;
+
+        &-text {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 500;
+
+            font-size: 18px;
+            line-height: 130%;
+            color: var(--dark-blue);
+
+            &--white {
+                color: #fff;
+            }
+
+            @include tablet-sm-min {
+                font-size: 24px;
+                line-height: 120%;
+            }
+        }
+
+    }
+
+    &__content {
+        display: flex;
+        gap: 16px;
+        width: 100%;
+        flex-direction: column;
+
+        @include tablet-sm-min {
+            flex-direction: row;
+        }
+
+        @include desktop-min {
+            max-width: 752px;
+        }
+    }
+
+    &__content-paragraph {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: var(--dark-blue);
+
+        @include tablet-sm-min {
+            font-size: 20px;
+            line-height: 130%;
+        }
+    }
+}

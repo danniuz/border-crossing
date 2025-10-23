@@ -1,0 +1,63 @@
+@use '../base/media' as *;
+
+.place-navigation {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__item {
+        display: flex;
+        padding: 15px 0;
+        border-bottom: 2px solid var(--dark-blue);
+        color: var(--dark-blue);
+        align-items: flex-start;
+
+        @include tablet-sm-min {
+            padding: 16px 0;
+            align-items: center;
+        }
+
+        &-icon {
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border-radius: 50%;
+            flex-shrink: 0;
+
+            @include tablet-sm-min {
+                width: 40px;
+                height: 40px;
+            }
+
+            img {
+                height: 17px;
+            }
+        }
+
+        &-value {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 130%;
+            color: var(--dark-blue);
+            margin-inline-start: 8px;
+        }
+
+        &-text {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 130%;
+            padding-inline-start: 16px;
+
+            @include tablet-sm-min {
+                padding-inline-start: 26px;
+            }
+        }
+    }
+}

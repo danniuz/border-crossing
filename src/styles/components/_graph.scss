@@ -1,0 +1,130 @@
+@use '../base/media' as *;
+
+html:dir(ltr) {
+    .graph__mobile-tag-button {
+        background-position: right 12px center;
+    }
+}
+
+.graph {
+    &__tag-list-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        display: none;
+
+        @include desktop-min {
+            display: flex;
+            margin-bottom: 80px;
+            margin-top: 0;
+        }
+    }
+
+    &__mobile-tag-button {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        inset-inline-end: 0;
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 130%;
+        color: var(--dark-blue);
+        padding: 8px 16px;
+        padding-inline-end: 32px;
+        background-color: #ECEEF0;
+        outline: none;
+        background-image: url("data:image/svg+xml;utf8,<svg width='14' height='8' viewBox='0 0 14 8' xmlns='http://www.w3.org/2000/svg'><path d='M1.06129 6.71777L6.71815 1.06092L12.375 6.71777' stroke='%23003459' stroke-width='1.5' stroke-linecap='square' fill='none'/></svg>");
+
+        background-repeat: no-repeat;
+        background-position: left 12px center;
+        background-size: 14px 8px;
+        appearance: none;
+
+        @include desktop-min {
+            display: none;
+        }
+    }
+
+    &__tag-list-slot {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__tag-list-title {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: #fff;
+    }
+
+    &__tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    &__tag-list-item {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--dark-blue);
+        padding: 6px 16px;
+        background-color: var(--gray-tag);
+        border: none;
+        outline: none;
+        transition: .2s;
+
+        &--active,
+        &:hover {
+            background-color: var(--cyan-tag);
+        }
+    }
+}
+
+.graph__legend {
+    display: flex;
+    gap: 16px;
+    padding-top: 5px;
+}
+
+.graph__content {
+    flex-direction: column;
+    gap: 60px;
+}
+
+.graph__legend-list {
+    display: flex;
+    gap: 16px;
+}
+
+.graph__legend-item {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: #fff;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.graph__legend-item-color {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+
+    &--turquise {
+        background-color: #007EA7;
+    }
+
+    &--white {
+        background-color: #fff;
+    }
+
+    &--cyan {
+        background-color: var(--cyan-tag);
+    }
+}

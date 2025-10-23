@@ -1,0 +1,133 @@
+@use '../base/media' as *;
+
+.transition-operations {
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        width: 100%;
+    }
+
+    &__grid-item {
+        display: inline-flex;
+        flex: 1;
+        flex-shrink: 0;
+        background-color: #fff;
+        flex-direction: column;
+        padding: 16px 8px;
+        padding-bottom: 0;
+        padding-inline-end: 0;
+
+        @include tablet-sm-min {
+            padding-top: 24px;
+            padding-inline-start: 24px;
+        }
+    }
+
+    &__grid-item-content {
+        display: flex;
+        gap: 16px;
+        flex-direction: column;
+
+        @include tablet-sm-min {
+            gap: 24px;
+            flex-direction: row;
+        }
+    }
+
+    &__logo-wrapper {
+        width: 48px;
+        height: 48px;
+        display: inline-flex;
+        flex-shrink: 0;
+    }
+
+    &__logo {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        object-fit: contain;
+    }
+
+    &__grid-item-main-content {
+        display: flex;
+        flex-direction: column;
+        color: var(--dark-blue);
+
+        @include desktop-min {
+            max-width: 232px;
+        }
+    }
+
+    &__grid-item-title {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 130%;
+
+        @include tablet-sm-min {
+            font-size: 24px;
+            line-height: 120%;
+        }
+    }
+
+    &__grid-item-name {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        margin-top: 8px;
+
+        @include tablet-sm-min {
+            font-size: 18px;
+            line-height: 140%;
+            margin-top: 16px;
+        }
+    }
+
+    &__grid-item-text {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 130%;
+        margin-top: 8px;
+    }
+
+    &__grid-item-footer {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: auto;
+        margin-top: 24px;
+    }
+
+    &__grid-item-footer-link {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: var(--dark-blue);
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+            color: var(--dark-blue);
+        }
+    }
+
+    &__grid-item-footer-link-icon-wrapper {
+        width: 40px;
+        height: 40px;
+        background-color: var(--gray-tag);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__grid-item-footer-link-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
