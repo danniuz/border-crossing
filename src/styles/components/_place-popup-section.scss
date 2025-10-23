@@ -16,61 +16,12 @@
         gap: 40px;
     }
 
-    &-footer {
-        background-color: #fff;
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        padding-top: 30px;
-
-        @include tablet-min {
-            flex-direction: row;
-        }
-
-        &__action-list {
-            position: absolute;
-            top: 0;
-            inset-inline-end: 0;
-            background-color: var(--gray-tag);
-        }
-
-        &__action-button {
-            width: 64px;
-            height: 64px;
-            cursor: pointer;
-            border: none;
-            outline: none;
-            background-color: var(--gray-tag);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s ease;
-
-            &:hover {
-                background-color: var(--cyan-tag);
-            }
-        }
-
-        &__content {
-            padding-inline-end: 120px;
-        }
-
-        &__title {
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 140%;
-            text-align: right;
-            color: var(--dark-blue);
-            width: 100%;
-            margin-left: 80px;
-        }
-    }
-
     &-graph {
         background-color: var(--dark-blue);
         padding-top: 16px;
         padding-bottom: 0 !important;
+        display: flex;
+        flex-direction: column;
 
         @include desktop-min {
             padding-top: 40px;
@@ -78,6 +29,7 @@
 
         .place-popup-section {
             position: relative;
+            padding-bottom: 0;
 
             @include desktop-max {
                 margin-top: 0;

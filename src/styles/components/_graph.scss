@@ -6,6 +6,63 @@ html:dir(ltr) {
     }
 }
 
+.graph-footer {
+    background-color: #fff;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: 64px;
+
+    @include tablet-min {
+        flex-direction: row;
+    }
+
+    &__action-list {
+        background-color: var(--gray-tag);
+        display: inline-flex;
+        position: absolute;
+        top: 0;
+        inset-inline-end: 0;
+    }
+
+    &__action-button {
+        width: 64px;
+        height: 64px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background-color: var(--gray-tag);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: var(--cyan-tag);
+        }
+    }
+
+    &__content {
+        padding-inline-end: 120px;
+    }
+
+    &__title {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 140%;
+        text-align: right;
+        color: var(--dark-blue);
+        width: 100%;
+        margin-left: 80px;
+        display: inline-flex;
+        align-items: center;
+        height: 100%;
+    }
+}
+
 .graph {
     &__tag-list-wrapper {
         display: flex;
@@ -24,7 +81,7 @@ html:dir(ltr) {
         display: inline-block;
         position: absolute;
         top: 0;
-        inset-inline-end: 0;
+        inset-inline-end: 16px;
         font-family: IBM Plex Sans Hebrew;
         font-weight: 500;
         font-size: 16px;
