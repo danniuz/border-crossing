@@ -31,7 +31,7 @@ html:dir(ltr) {
         position: fixed;
         background-color: #fff;
         z-index: 9999;
-        height: calc(100% - 53px);
+        height: calc(100% - 106px);
         width: 100%;
         transform: translateX(-100%);
         transition: transform 0.2s ease-out;
@@ -49,8 +49,9 @@ html:dir(ltr) {
             top: 53px;
         }
 
-        @include desktop-min {
+        @include tablet-min {
             max-width: 1352px;
+            height: calc(100% - 53px);
         }
     }
 
