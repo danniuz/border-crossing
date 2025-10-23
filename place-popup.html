@@ -330,9 +330,16 @@
         </div>
     </div>
 
-    <div class="place-popup__content place-popup-section--graph">
+    <div class="place-popup__content place-popup-section-graph">
         <div class="place-popup-section">
-            <div class="place-popup-section__title">
+            <select class="graph__mobile-tag-button" name="city">
+                <option value="moscow">תצוגה</option>
+                <option value="kazan">תצוגה</option>
+                <option value="petersburg" selected>תצוגה</option>
+              </select>
+
+
+            <div class="place-popup-section__title place-popup-section-graph__title">
                 <div class="place-popup-section__title-text place-popup-section__title-text--white">היקפי תנועה</div>
 
                 <div class="graph__tag-list-wrapper">
@@ -342,12 +349,12 @@
                         </div>
 
                         <div class="graph__tag-list">
-                            <div class="graph__tag-list-item">
+                            <button class="graph__tag-list-item graph__tag-list-item--active">
                                 ינואר
-                            </div>
-                            <div class="graph__tag-list-item">
+                            </button>
+                            <button class="graph__tag-list-item">
                                 חודשית
-                            </div>
+                            </button>
                         </div>
                     </div>
 
@@ -357,27 +364,27 @@
                         </div>
 
                         <div class="graph__tag-list">
-                            <div class="graph__tag-list-item">
+                            <button class="graph__tag-list-item">
                                 ינואר
-                            </div>
-                            <div class="graph__tag-list-item">
+                            </button>
+                            <button class="graph__tag-list-item">
                                 אוקטובר
-                            </div>
-                            <div class="graph__tag-list-item">
+                            </button>
+                            <button class="graph__tag-list-item">
                                 חודשית
-                            </div>
-                            <div class="graph__tag-list-item">
+                            </button>
+                            <button class="graph__tag-list-item">
                                 יולי
-                            </div>
-                            <div class="graph__tag-list-item">
+                            </button>
+                            <button class="graph__tag-list-item">
                                 ספטמבר
-                            </div>
-                            <div class="graph__tag-list-item">
+                            </button>
+                            <button class="graph__tag-list-item">
                                 חודשית
-                            </div>
-                            <div class="graph__tag-list-item">
+                            </button>
+                            <button class="graph__tag-list-item">
                                 יולי
-                            </div>
+                            </button>
                             <button class="graph__tag-list-item">
                                 טמבר
                             </button>
@@ -410,7 +417,7 @@
         </div>
     </div>
 
-    <div class="place-popup-section-footer">
+    <div class="place-popup-section-footer place-popup__content">
         <div class="place-popup-section-footer__action-list">
             <button class="place-popup-section-footer__action-button">
                 <img src="icons/arrow-right.svg" alt="Arrow Right">
@@ -419,16 +426,9 @@
                 <img class="rotate-y" src="icons/arrow-right.svg" alt="Arrow Right">
             </button>
         </div>
-        <div class="place-popup-section-footer__start">
-            <div class="place-popup-section-footer__title place-popup-section__title--gray">ריכוז נתוני תנועה של הולכי רגל, כלי רכב וסחורות במעברי רמי"ם</div>
-        </div>
 
-        <div class="place-popup-section-footer__end">
-            <div class="graph__year-list">
-                <div class="graph__year-item">2022</div>
-                <div class="graph__year-item">2023</div>
-                <div class="graph__year-item">2024</div>
-            </div>
+        <div class="place-popup-section__content place-popup-section-footer__content">
+            <div class="place-popup-section-footer__title place-popup-section__title--gray">ריכוז נתוני תנועה של הולכי רגל, כלי רכב וסחורות במעברי רמי"ם</div>
         </div>
     </div>
 </div>

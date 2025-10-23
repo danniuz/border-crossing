@@ -21,6 +21,7 @@
         display: flex;
         position: relative;
         flex-direction: column;
+        padding-top: 30px;
 
         @include tablet-min {
             flex-direction: row;
@@ -50,19 +51,8 @@
             }
         }
 
-        &__start {
-            padding-inline-start: 144px;
-            flex-shrink: 0;
-            padding-top: 16px;
-            padding-inline-end: 24px;
-            padding-bottom: 64px;
-            background-color: var(--gray-tag);
-        }
-
-        &__end {
-            padding-inline-end: 200px;
-            padding-top: 26px;
-            width: 100%;
+        &__content {
+            padding-inline-end: 120px;
         }
 
         &__title {
@@ -72,15 +62,33 @@
             line-height: 140%;
             text-align: right;
             color: var(--dark-blue);
-            max-width: 240px;
             width: 100%;
+            margin-left: 80px;
         }
     }
 
-    &--graph {
+    &-graph {
         background-color: var(--dark-blue);
-        padding-top: 40px;
+        padding-top: 16px;
         padding-bottom: 0 !important;
+
+        @include desktop-min {
+            padding-top: 40px;
+        }
+
+        .place-popup-section {
+            position: relative;
+
+            @include desktop-max {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &-graph__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     &__title {
