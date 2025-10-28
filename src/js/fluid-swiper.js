@@ -13,6 +13,10 @@ export function initFluidSwiper(mainSelector, options = {}) {
   const swiper = new Swiper(mainSelector, {
     direction: 'horizontal',
     loop: true,
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    spaceBetween: 30,
+    loopAdditionalSlides: 1,
 
     pagination: {
       el: paginationSelector,
