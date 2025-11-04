@@ -1,6 +1,7 @@
 /**
  * @param {Object} params
  * @param {string[]} params.avoidEventBubbleClasses
+ * @param {number} params.worksMinWidth
  */
 export function initAccordion(
   accordionSelector,
@@ -8,9 +9,15 @@ export function initAccordion(
   accordionOpenedClass,
   params = {},
 ) {
-  const { avoidEventBubbleClasses = [] } = params;
+  const { avoidEventBubbleClasses = [], worksMinWidth = 0 } = params;
+
+  if (worksMinWidth && window.innerWidth <= worksMinWidth) {
+    return;
+  }
 
   const accordionTemplate = document.querySelector(accordionSelector);
+
+  console.log(accordionSelector);
 
   if (!accordionTemplate) {
     return;
@@ -18,6 +25,8 @@ export function initAccordion(
 
   const accordionItems =
     accordionTemplate.getElementsByClassName(accordionItemClass);
+
+  console.log(accordionItems);
 
   Array.from(accordionItems).forEach((item) => {
     item.addEventListener('click', (event) => {

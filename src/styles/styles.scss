@@ -2,6 +2,7 @@
 @use './components/components';
 @use './ui/ui';
 @use './pages/pages';
+@use './base/media' as *;
 
 .wrapper {
     transition: opacity 0.6s ease-in-out;
@@ -38,4 +39,8 @@
 
 .container {
     padding: 0 16px;
+
+    @include tablet-max {
+        max-width: 100%;
+    }
 }
