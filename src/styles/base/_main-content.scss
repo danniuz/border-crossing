@@ -63,7 +63,7 @@
         flex-direction: column;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 24px;
+        margin-top: 40px;
 
         @include desktop-max {
             max-width: 720px;
@@ -135,6 +135,10 @@
                 &--blue {
                     color: var(--dark-blue);
                 }
+
+                &--mw-384px {
+                    max-width: 384px;
+                }
             }
         }
 
@@ -168,7 +172,7 @@
                 border-right: 50vw solid transparent;
                 border-top: 33px solid var(--dark-blue);
                 pointer-events: none;
-                z-index: 1;
+                z-index: inherit;
             }
         }
     }

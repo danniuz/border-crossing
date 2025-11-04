@@ -1,0 +1,52 @@
+@use '../base/media' as *;
+
+.infograph-list {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    flex-direction: column;
+
+    @include tablet-min {
+        flex-direction: row;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        flex: 1;
+        flex-shrink: 0;
+
+        @include tablet-min {
+            gap: 8px;
+        }
+
+        &-value {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 130%;
+            text-align: center;
+            color: var(--dark-blue);
+
+            @include tablet-min {
+                font-size: 60px;
+                line-height: 110%;
+            }
+        }
+
+        &-text {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 130%;
+            text-align: center;
+            color: var(--dark-blue);
+
+            @include tablet-min {
+                font-size: 22px;
+            }
+        }
+    }
+}
