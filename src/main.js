@@ -8,6 +8,7 @@ import './js/form-interactions.js';
 import { initPlacePopup } from './js/place-popup.js';
 import { initStairsGallery } from './js/stairs-gallery.js';
 import { initFluidSwiper } from './js/fluid-swiper.js';
+import { initTextSwiper } from './js/text-swiper.js';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './style.scss';
@@ -19,6 +20,7 @@ function loadMap() {
     return;
   }
 }
+
 
 initAside({ opened: true });
 loadMap();
@@ -41,4 +43,9 @@ initFluidSwiper('#about-us-swiper', {
   paginationSelector: '#fluid-swiper-swiper-pagination',
   nextBtnSelector: '#fluid-swiper-button-next',
   prevBtnSelector: '#fluid-swiper-button-prev',
+});
+
+
+initTextSwiper('#about-text-swiper', {
+  paginationSelector: '#about-text-swiper-pagination',
 });

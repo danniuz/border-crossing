@@ -6,35 +6,72 @@
     width: 100%;
     overflow: visible;
 
+    &__slide-content-text {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 110%;
+        text-align: right;
+        margin-top: 8px;
+        color: var(--dark-blue);
+        padding-inline-start: 6px;
+
+        @include tablet-min {
+            font-size: 18px;
+            margin-top: 16px;
+            font-size: 16px;
+            line-height: 130%;
+            padding-inline-start: 16px;
+        }
+    }
+
     .swiper-slide {
         transition: padding-top 0.1s ease-in-out;
-        width: 1008px !important;
+        width: 100% !important;
 
         &:not(.swiper-slide-active) {
-            height: 660px !important;
+            @include tablet-min {
+                height: 660px !important;
+            }
         }
 
         img {
             height: 100%;
         }
+
+        @include tablet-min {
+            width: 1008px !important;
+        }
     }
 
     .swiper-slide-active {
-        height: 574px !important;
-        margin-top: 48px;
+    
+        @include tablet-min {
+            margin-top: 48px;
+            height: 574px !important;
+        }
+        
     }
 
     .swiper-slide-next {
-        clip-path: polygon(0% 0%, 100% 7%, 100% 94%, 0% 100%);
+        @include tablet-min {
+            clip-path: polygon(0% 0%, 100% 7%, 100% 94%, 0% 100%);
+        }
     }
 
     .swiper-slide-prev {
-        clip-path: polygon(100% 0%, 0% 7%, 0% 94%, 100% 100%);
+        @include tablet-min {
+            clip-path: polygon(100% 0%, 0% 7%, 0% 94%, 100% 100%);
+        }
     }
 
     &__swiper-wrapper {
         position: relative;
         overflow: visible;
+
+        @include tablet-max {
+            padding-bottom: 16px !important;
+        }
     }
 
 
@@ -67,46 +104,23 @@
     &__swiper-button {
         width: 40px;
         height: 40px;
-        border: 1px solid #fff;
+        border: 2px solid var(--dark-blue);
         position: static;
-        background-color: var(--dark-blue);
+        background-color: transparent;
         cursor: pointer;
         z-index: 10;
+        transition: background-color 0.3s ease;
 
-        &:after {
-            display: none;
-        }
-    }
+        &:hover {
+            background-color: var(--dark-blue);
 
-    &__swiper-pagination-wrapper {
-        max-width: 704px;
-        position: relative;
-        margin: 0 auto;
-    }
-
-    &__swiper-pagination {
-        width: max-content !important;
-        inset-inline-start: 16px !important;
-        display: inline-flex;
-        gap: 8px;
-        bottom: -27px !important;
-        top: initial !important;
-
-        .swiper-pagination-bullet {
-            opacity: 1;
-            background-color: #fff;
-            width: 24px;
-            height: 3px;
-            border-radius: 0;
-            margin: 0 !important;
-
-            &-active {
-                background-color: var(--cyan-tag);
+            img {
+                filter: brightness(0) invert(1);
             }
         }
 
-        @include tablet-min {
-            visibility: hidden;
+        &:after {
+            display: none;
         }
     }
 }
