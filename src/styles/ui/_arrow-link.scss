@@ -1,0 +1,38 @@
+@use '../base/media' as *;
+
+.arrow-link {
+    background-color: #F2F4F5;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--dark-blue);
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+        color: var(--dark-blue);
+
+        &__icon-wrapper {
+            background-color: var(--dark-blue);
+        }
+    }
+
+    &__icon-wrapper {
+        width: 40px;
+        height: 40px;
+        background-color: var(--gray-tag);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+    }
+}

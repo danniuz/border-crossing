@@ -12,6 +12,7 @@ import { initTextSwiper } from './js/text-swiper.js';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './style.scss';
+import { initWorldBenefitsSwiper } from './js/world-benefits-swiper.js';
 
 function loadMap() {
   const map = initMap();
@@ -20,7 +21,6 @@ function loadMap() {
     return;
   }
 }
-
 
 initAside({ opened: true });
 loadMap();
@@ -32,6 +32,7 @@ initAccordion(
   'manager-speech__statement-item--opened',
   {
     avoidEventBubbleClasses: ['manager-speech__statement-item-link'],
+    worksMinWidth: 980,
   },
 );
 initNewsSwiper();
@@ -45,7 +46,12 @@ initFluidSwiper('#about-us-swiper', {
   prevBtnSelector: '#fluid-swiper-button-prev',
 });
 
-
-initTextSwiper('#about-text-swiper', {
+initTextSwiper('#manager-speech-statement-list', {
   paginationSelector: '#about-text-swiper-pagination',
+  worksMaxWidth: 980,
+});
+
+initWorldBenefitsSwiper('#world-benefits-list', {
+  paginationSelector: '#world-benefits-swiper-pagination',
+  worksMaxWidth: 980,
 });

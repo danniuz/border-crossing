@@ -1,4 +1,4 @@
-export function initTextSwiper(mainSelector, options = {}) {
+export function initWorldBenefitsSwiper(mainSelector, options = {}) {
   const fluidSwiper = document.querySelector(mainSelector);
   const { paginationSelector, worksMaxWidth = 0 } = options;
 
@@ -16,7 +16,8 @@ export function initTextSwiper(mainSelector, options = {}) {
 
   const swiper = new Swiper(mainSelector, {
     direction: 'horizontal',
-
+    slidesPerView: 'auto',
+    spaceBetween: 16,
     pagination: {
       el: paginationSelector,
       clickable: true,
