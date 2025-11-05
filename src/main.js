@@ -33,6 +33,7 @@ initAccordion(
   {
     avoidEventBubbleClasses: ['manager-speech__statement-item-link'],
     worksMinWidth: 980,
+    singleOpened: true,
   },
 );
 initNewsSwiper();
