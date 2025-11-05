@@ -39,7 +39,7 @@
         height: 260px;
 
 
-        @include desktop-min {
+        @include tablet-lg-min {
             width: 180px;
             height: 450px;
         }

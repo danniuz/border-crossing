@@ -34,8 +34,8 @@
 
     @include desktop-min {
         margin-top: 120px;
-        max-width: 1424px;
     }
+
 
     &,
     &__top {
@@ -44,18 +44,18 @@
         }
 
         @include tablet-lg-min {
-            transform: translateX(-50px);
+            transform: translateX(-80px);
         }
 
         @include desktop-min {
-            max-width: 1424px;
+            max-width: 1008px;
             transform: translateX(0);
         }
 
         @include desktop-lg-min {
             transform: translateX(-70px);
+            max-width: 1296px;
         }
-
     }
 
     &__top {
@@ -66,7 +66,7 @@
         margin-top: 40px;
 
         @include desktop-max {
-            max-width: 720px;
+            max-width: 1039px;
         }
 
         @include tablet-min {
@@ -76,7 +76,7 @@
         @include desktop-min {
             flex-direction: row;
             justify-content: space-between;
-            padding-inline-start: 160px;
+            // padding-inline-start: 160px;
         }
 
         @include desktop-lg-min {
