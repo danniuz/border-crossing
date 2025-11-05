@@ -118,7 +118,7 @@
         max-width: 344px;
         width: 100%;
 
-        @include desktop-min {
+        @include desktop-lg-min {
             max-width: 457px;
         }
     }
