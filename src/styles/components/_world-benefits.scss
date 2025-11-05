@@ -1,21 +1,63 @@
 @use '../base/media' as *;
 
 .world-benefits {
-    &__wrapper {
+    &__main-content {
         margin-top: 56px;
+        margin-bottom: 120px;
+        z-index: 1;
 
         @include desktop-min {
+            margin-bottom: 145px !important;
+            max-width: 1330px;
+        }
+
+        @include tablet-lg-min {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include tablet-min {
             margin-top: 120px;
+            margin-bottom: 120px;
         }
 
         .swiper-slide {
             width: initial !important;
+
+            @include tablet-min {
+
+                &:nth-child(1),
+                &:nth-child(5) {
+                    transform: translateY(-40px);
+                }
+
+                &:nth-child(3) {
+                    transform: translateY(-120px);
+                }
+            }
+
+            @include tablet-lg-min {
+
+                &:nth-child(1),
+                &:nth-child(5) {
+                    transform: translateY(-40px);
+                }
+
+                &:nth-child(3) {
+                    transform: translateY(-80px);
+                }
+            }
         }
 
         .swiper-wrapper {
             @include tablet-min {
+                padding-top: 120px;
                 display: flex;
                 gap: 24px;
+            }
+
+            @include tablet-lg-min {
+                padding-top: 80px;
             }
         }
     }

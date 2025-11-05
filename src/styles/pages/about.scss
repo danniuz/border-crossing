@@ -18,3 +18,11 @@
 .about-text-swiper-wrapper {
     padding-bottom: 76px;
 }
+
+.about-footer {
+    margin-top: 0;
+
+    &::after {
+        border-top-color: var(--gray-tag);
+    }
+}

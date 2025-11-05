@@ -28,15 +28,15 @@
     }
 
     &__main-content {
-        margin-top: 88px;
+        // margin-top: 88px;
 
-        @include tablet-min {
-            margin-top: 90px;
-        }
+        // @include tablet-min {
+        //     margin-top: 90px;
+        // }
 
-        @include desktop-min {
-            margin-top: 39px;
-        }
+        // @include desktop-min {
+        //     margin-top: 39px;
+        // }
     }
 
     &__img-wrapper {

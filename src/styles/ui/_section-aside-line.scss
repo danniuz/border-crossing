@@ -1,0 +1,36 @@
+@use '../base/media' as *;
+
+.section-aside-line {
+    position: absolute;
+    width: 2px;
+    height: 1020px;
+    inset-inline-start: -52px;
+    background-image: repeating-linear-gradient(to bottom,
+            #DCE2E7 0px,
+            #DCE2E7 16px,
+            transparent 16px,
+            transparent 32px);
+
+    @include desktop-lg-min {
+        inset-inline-start: -36px;
+    }
+
+    &:after,
+    &:before {
+        content: '';
+        background-color: #5CD6FF;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        inset-inline-start: -4px;
+    }
+
+    &:after {
+        top: 0;
+    }
+
+    &:before {
+        bottom: 0;
+    }
+}
