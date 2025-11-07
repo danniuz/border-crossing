@@ -1,0 +1,49 @@
+@use '../base/media' as *;
+
+.main-content__section {
+    .info {
+        &__flashes {
+            &-title {
+                font-family: IBM Plex Sans Hebrew;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 130%;
+                text-align: right;
+                margin-bottom: 8px;
+                color: var(--dark-blue);
+
+            }
+
+            &-description {
+                font-family: IBM Plex Sans Hebrew;
+                font-weight: 400;
+                font-size: 28px;
+                line-height: 130%;
+                text-align: right;
+                margin-bottom: 24px;
+                color: var(--dark-blue);
+
+                @include desktop-min {
+                    font-size: 48px;
+                    line-height: 110%;
+                    margin-bottom: 40px;
+                }
+            }
+
+            &-counter {
+                font-family: IBM Plex Sans Hebrew;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 130%;
+                text-align: right;
+                margin-bottom: 16px;
+                margin-top: 40px;
+                color: #48595F;
+
+                @include desktop-min {
+                    margin-top: 32px;
+                }
+            }
+        }
+    }
+}

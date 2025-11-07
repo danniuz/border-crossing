@@ -1,0 +1,195 @@
+@use '../base/media' as *;
+
+.main-content__section {
+    .feature-benefits {
+        &__title {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 130%;
+            color: var(--dark-blue);
+            margin-bottom: 24px;
+
+            @include tablet-min {
+                margin-bottom: 48px;
+                font-size: 48px;
+                line-height: 110%;
+            }
+        }
+
+        &__subtitle {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 130%;
+            color: var(--dark-blue);
+            margin-bottom: 8px;
+        }
+
+        &__card-wrapper-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        &__card-wrapper-list-heading {
+            display: inline-flex;
+            gap: 8px;
+            margin-bottom: 8px;
+            align-items: center;
+
+            &-icon {
+                // 
+            }
+
+            &-title {
+                font-family: IBM Plex Sans Hebrew;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 110%;
+                color: var(--dark-blue);
+            }
+        }
+
+        &__card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            @include tablet-min {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+
+        &__card-item {
+            padding: 24px;
+            background-color: var(--dark-blue);
+            box-shadow: 0px 4px 10px 0px #0000001A;
+
+            @include tablet-min {
+                padding: 48px 24px;
+            }
+
+            &:nth-child(1) {
+                @include tablet-min {
+                    width: calc(62% - 8px);
+                }
+            }
+
+            &:nth-child(2) {
+                @include tablet-min {
+                    width: calc(38% - 8px);
+                }
+            }
+
+            &:nth-child(n+3) {
+                @include tablet-min {
+                    width: calc(50% - 8px);
+                }
+            }
+
+            &:last-child {
+                width: 100%;
+            }
+
+            &-image {
+                margin-bottom: 24px;
+
+                @include tablet-min {
+                    width: 60px;
+                    height: 60px;
+                    margin-bottom: 40px;
+                }
+            }
+
+            &-title {
+                font-family: IBM Plex Sans Hebrew;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 130%;
+                color: #fff;
+
+                @include tablet-min {
+                    font-size: 24px;
+                    line-height: 120%;
+                }
+            }
+
+            &-description {
+                font-family: IBM Plex Sans Hebrew;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;
+                color: #fff;
+                margin-top: 8px;
+
+                @include tablet-min {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        &__card-item-points {
+            &-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                margin-top: 16px;
+
+                @include tablet-min {
+                    margin-top: 32px;
+                    flex-direction: row;
+                }
+            }
+
+            &-col {
+                @include tablet-min {
+                    max-width: 220px;
+                }
+
+                &-title {
+                    font-family: IBM Plex Sans Hebrew;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 130%;
+                    color: #fff;
+                    margin-bottom: 16px;
+
+                    @include tablet-min {
+                        font-size: 18px;
+                        margin-bottom: 16px;
+                    }
+                }
+
+                &-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                &-item {
+                    padding-inline-start: 14px;
+                    position: relative;
+                    color: #fff;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        inset-inline-start: 0;
+                        top: 12px;
+                        transform: translateY(-50%);
+                        width: 6px;
+                        height: 6px;
+                        background-color: var(--cyan-tag);
+                        border-radius: 50%;
+
+                        @include tablet-min {
+                            top: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,770 @@
+<!doctype html>
+<html dir="rtl" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    >
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    >
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    ></script>
+
+    <title>Vite + TS</title>
+  </head>
+
+  <body>
+    <script type="module" src="/src/main.js"></script>
+    <div id="wrapper" class="wrapper">
+      <div class="page-header">
+        <div class="marquee">
+          <div class="marquee__controls">
+            <a class="marquee__link hide-tablet-max" href="">לכל ההודעות</a>
+            <button
+              id="marqueeStart"
+              class="button button__rect marquee__controls-action"
+            >
+              <img
+                class="marquee__controls-action-image ltr-reverse-y"
+                src="/src/assets/icons/play.svg"
+                alt="Play"
+              >
+            </button>
+            <button
+              id="marqueeStop"
+              class="button button__rect marquee__controls-action"
+            >
+              <img
+                class="marquee__controls-action-image ltr-reverse-y"
+                src="/src/assets/icons/pause.svg"
+                alt="Pause"
+              >
+            </button>
+          </div>
+
+          <ul class="marquee__text-list" id="marquee-text">
+            <li class="marquee__text-item">Lorem ipsum dolor sit amet.</li>
+            <li class="marquee__text-item">Lorem, ipsum.</li>
+            <li class="marquee__text-item">Lorem ipsum dolor sit amet.</li>
+            <li class="marquee__text-item">Lorem, ipsum.</li>
+            <li class="marquee__text-item">Lorem ipsum dolor sit.</li>
+            <li class="marquee__text-item">hello world</li>
+            <li class="marquee__text-item">another big text line</li>
+            <li class="marquee__text-item">just for test</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="page-content bg-gray">
+        <div class="menu">
+          <div class="menu__logo-list">
+            <a href="#" class="menu__logo-link">
+              <img class="menu__logo-image" src="icons/logo-1.svg" alt="Logo 1">
+              <span class="menu__logo-text">רשות מעברים יבשתיים</span>
+            </a>
+
+            <a href="#" class="menu__logo-link">
+              <img class="menu__logo-image" src="icons/logo-2.svg" alt="Logo 2">
+              <span class="menu__logo-text">משרד הביטחון</span>
+            </a>
+          </div>
+
+          <div class="menu__nav-wrapper">
+            <div class="menu__nav-item">
+              <a href="#" class="menu__nav-link menu__nav-link--dark-blue-tag">
+                מידע שימושי
+                <img
+                  src="icons/menu-nav-icon-arrow--cyan.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  alt="Arrow Left"
+                >
+              </a>
+            </div>
+
+            <div class="menu__nav-item">
+              <a href="#" class="menu__nav-link  menu__nav-link--dark-blue-tag">
+                כתבות ועידכונים
+
+                <img
+                  src="icons/menu-nav-icon-arrow--cyan.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  alt="Arrow Left"
+                >
+              </a>
+            </div>
+
+            <div class="menu__nav-item">
+              <a
+                href="#"
+                class="menu__nav-link menu__nav-link--active  menu__nav-link--dark-blue-tag"
+              >
+                אודות
+                <img
+                  src="icons/menu-nav-icon-arrow--cyan.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  alt="Arrow Left"
+                >
+              </a>
+            </div>
+
+            <div class="menu__nav-item ">
+              <a
+                href="#"
+                class="menu__nav-link  menu__nav-link--blue-tag menu__nav-link--with-arrow"
+              >
+                צור קשר
+                <img
+                  src="icons/menu-nav-icon-arrow--white.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--arrow"
+                  alt="Arrow Up Left"
+                >
+                <img
+                  src="icons/menu-nav-icon-arrow--white.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  alt="Arrow Left"
+                >
+              </a>
+            </div>
+
+            <div class="menu__nav-item">
+              <a
+                href="#"
+                class="menu__nav-link  menu__nav-link--c-dark-blue menu__nav-link--cyan-tag menu__nav-link--with-arrow"
+              >
+                לכל המעברים
+                <img
+                  src="icons/menu-nav-icon-arrow--dark-blue.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--arrow"
+                  alt="Arrow Up Left"
+                >
+                <img
+                  src="icons/menu-nav-icon-arrow--dark-blue.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  alt="Arrow Left"
+                >
+              </a>
+            </div>
+
+            <div class="menu__nav-item">
+              <a href="#" class="menu__nav-link  menu__nav-link--white-tag">
+                חיפוש
+                <img
+                  src="icons/magnify.svg"
+                  class="menu__nav-link-icon"
+                  alt="Magnify"
+                >
+              </a>
+            </div>
+
+            <div class="menu__nav-item">
+              <a
+                href="#"
+                class="menu__nav-link  menu__nav-link--c-white menu__nav-link--white-tag"
+              >
+                איזור אישי
+              </a>
+            </div>
+
+            <div class="menu__nav-row">
+              <div class="menu__nav-item">
+                <a
+                  href="#"
+                  class="menu__nav-link  menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
+                >
+                  <img
+                    src="icons/accessibility.svg"
+                    class="menu__nav-link-icon"
+                    alt="Accessibility"
+                  >
+                </a>
+              </div>
+
+              <div class="menu__nav-item">
+                <a
+                  href="#"
+                  class="menu__nav-link  menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
+                >
+                  <img
+                    src="icons/lang.svg"
+                    class="menu__nav-link-icon"
+                    alt="Language"
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="breadcrumbs">
+          <a href="#" class="breadcrumbs__link">
+            <span
+              class="breadcrumbs__link-icon breadcrumbs__link-icon--home"
+            ></span>
+            <span
+              class="breadcrumbs__link-icon breadcrumbs__link-icon--arrow ltr-reverse-y"
+            ></span>
+          </a>
+
+          <a href="#" class="breadcrumbs__link">
+            <span class="breadcrumbs__link-text">כל המעברים</span>
+          </a>
+        </div>
+
+        <div class="main-content__top-wrapper">
+          <div class="main-content__top">
+            <div class="main-content__top-header">
+              <div class="main-content__top-header-subtitle">מידע שימושי</div>
+              <h2 class="main-content__top-header-title">
+                מידע שימוש
+                <br class="br-none br-tablet-min">
+                לפני המעבר
+              </h2>
+            </div>
+
+            <div class="info-swiper__swiper-wrapper">
+              <div class="swiper info-swiper" id="info-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide info-swiper__slide">
+                    <picture class="main-content__cover-top">
+                      <source
+                        media="(min-width: 980px)"
+                        srcset="/src/assets/images/hero-lady-lg.png"
+                      >
+                      <img
+                        class="main-content__cover-top-img--md w-100"
+                        src="/src/assets/images/hero-lady-sm.png"
+                        alt=""
+                      >
+                    </picture>
+
+                    <div class="info-swiper__card">
+                      <div class="info-swiper__card-content">
+                        <img
+                          class="info-swiper__card-icon"
+                          src="/src/assets/icons/globe-waller.svg"
+                          alt="Instagram"
+                        >
+                        <h4 class="info-swiper__card-title">
+                          ודא שיש ברשותך אחת מהתעודות הבאות
+                        </h4>
+
+                        <div class="info-swiper__card-benefit-text">
+                          יש להציג אחת מהתעודות:
+                        </div>
+
+                        <ul class="info-swiper__card-benefit-list">
+                          <li class="info-swiper__card-benefit-item">
+                            הדרך: באחריות לאומיתלאומיתלאומיתלאומית לאומית לאומית
+                            לאומית לאומית
+                          </li>
+                          <li class="info-swiper__card-benefit-item">
+                            הדרך: באחריות לאומית
+                          </li>
+                          <li class="info-swiper__card-benefit-item">
+                            הדרך: באחריות לאומית
+                          </li>
+                          <li class="info-swiper__card-benefit-item">
+                            הדרך: באחריות לאומית
+                          </li>
+                          <li class="info-swiper__card-benefit-item">
+                            הדרך: באחריות לאומית
+                          </li>
+                          <li class="info-swiper__card-benefit-item">
+                            הדרך: באחריות לאומית
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="info-swiper__card-footer">
+                        <a href="#" class="info-swiper__card-footer-link">
+                          <div class="info-swiper__card-footer-link-text">
+                            להמשך קריאה
+                          </div>
+                          <img
+                            src="icons/arrow-up-left.svg"
+                            class="info-swiper__card-footer-link-icon"
+                            alt="Arrow Up Left"
+                          >
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide info-swiper__slide">
+                    <picture class="main-content__cover-top">
+                      <source
+                        media="(min-width: 980px)"
+                        srcset="/src/assets/images/hero-lady-lg.png"
+                      >
+                      <img
+                        class="main-content__cover-top-img--md w-100"
+                        src="/src/assets/images/hero-lady-sm.png"
+                        alt=""
+                      >
+                    </picture>
+                  </div>
+
+                  <div class="swiper-slide info-swiper__slide">
+                    <picture class="main-content__cover-top">
+                      <source
+                        media="(min-width: 980px)"
+                        srcset="/src/assets/images/hero-lady-lg.png"
+                      >
+                      <img
+                        class="main-content__cover-top-img--md w-100"
+                        src="/src/assets/images/hero-lady-sm.png"
+                        alt=""
+                      >
+                    </picture>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-swiper__swiper-pagination-wrapper">
+                <div
+                  class="swiper-pagination info-swiper__swiper-pagination"
+                  id="info-swiper-swiper-pagination"
+                ></div>
+              </div>
+
+              <div class="info-swiper__swiper-button-actions">
+                <div
+                  class="swiper-button-prev info-swiper__swiper-button info-swiper__swiper-button-prev"
+                  id="info-swiper-button-prev"
+                >
+                  <img
+                    class="info-swiper__pagination-icon rotate-y ltr-reverse-none"
+                    src="/src/assets/icons/arrow-left-pagination.svg"
+                    alt="Arrow left"
+                  >
+                </div>
+                <div
+                  class="swiper-button-next info-swiper__swiper-button info-swiper__swiper-button-next"
+                  id="info-swiper-button-next"
+                >
+                  <img
+                    class="info-swiper__pagination-icon ltr-reverse-y"
+                    src="/src/assets/icons/arrow-left-pagination.svg"
+                    alt="Arrow Right"
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-content container main-content--extra-mt">
+          <div class="main-content__layout main-content__layout-sm">
+            <div class="content-aside">
+              <div class="smooth-aside-link__list">
+                <a
+                  href="#"
+                  class="smooth-aside-link__item smooth-aside-link__item--active"
+                  >טיפים לעוברים</a
+                >
+                <a href="#" class="smooth-aside-link__item">כללי התנהגות</a>
+                <a href="#" class="smooth-aside-link__item">שאלות ותשובות</a>
+              </div>
+            </div>
+
+            <div class="main-content__page mt-0">
+              <div class="main-content__section">
+                <div class="smooth-drive">
+                  <div class="smooth-drive__subtitle">טיפים לעוברים</div>
+                  <div class="smooth-drive__title">טיפים למעבר חלק ובטוח</div>
+
+                  <div class="smooth-drive__card-list">
+                    <div class="smooth-drive__card-item">
+                      <img
+                        src="src/assets/icons/smooth-drive/biometric.svg"
+                        class="smooth-drive__card-item-image"
+                        alt=""
+                      >
+                      <div class="smooth-drive__card-item-title">
+                        הכינו את היד לסריקה ביומטרית
+                      </div>
+                      <div class="smooth-drive__card-item-description">
+                        יש לוודא שהיד נקייה וללא שמן/לכלוך, כדי שטביעת האצבע
+                        תיקלט.
+                      </div>
+                    </div>
+                    <div class="smooth-drive__card-item">
+                      <img
+                        src="src/assets/icons/smooth-drive/bag.svg"
+                        class="smooth-drive__card-item-image"
+                        alt=""
+                      >
+                      <div class="smooth-drive__card-item-title">
+                        הביאו רק את מה שנחוץ
+                      </div>
+                      <div class="smooth-drive__card-item-description">
+                        אוכל, לבוש וציוד הכרחי בלבד. אין להביא כלי עבודה – למעט
+                        מקרים שאושרו מראש.
+                      </div>
+                    </div>
+                    <div class="smooth-drive__card-item">
+                      <img
+                        src="src/assets/icons/smooth-drive/time.svg"
+                        class="smooth-drive__card-item-image"
+                        alt=""
+                      >
+                      <div class="smooth-drive__card-item-title">
+                        הגיעו בזמן שנקבע לכם
+                      </div>
+                      <div class="smooth-drive__card-item-description">
+                        כדי להימנע מהמתנה ממושכת – הקפידו להגיע סמוך לשעת
+                        האיסוף.
+                      </div>
+                    </div>
+                    <div class="smooth-drive__card-item">
+                      <img
+                        src="src/assets/icons/smooth-drive/car.svg"
+                        class="smooth-drive__card-item-image"
+                        alt=""
+                      >
+                      <div class="smooth-drive__card-item-title">מעבר רכב</div>
+                      <div class="smooth-drive__card-item-description">
+                        בהגעתך למעבר רכב, יש לבצע עצירה מלאה ולפתוח חלון
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="main-content__section">
+                <div class="feature-benefits">
+                  <div class="feature-benefits__subtitle">טיפים לעוברים</div>
+                  <div class="feature-benefits__title">
+                    טיפים למעבר חלק ובטוח
+                  </div>
+
+                  <div class="feature-benefits__card-wrapper-list">
+                    <div class="feature-benefits__card-wrapper-list-heading">
+                      <img
+                        class="feature-benefits__card-wrapper-list-heading-icon"
+                        src="src/assets/icons/smooth-drive/form.svg"
+                      >
+                      <div
+                        class="feature-benefits__card-wrapper-list-heading-title"
+                      >
+                        כללי
+                      </div>
+                    </div>
+
+                    <div class="feature-benefits__card-list">
+                      <div class="feature-benefits__card-item">
+                        <img
+                          src="src/assets/icons/smooth-drive/passport.svg"
+                          class="feature-benefits__card-item-image"
+                          alt=""
+                        >
+                        <div class="feature-benefits__card-item-title">
+                          חובה לשאת עמך תעודה מזהה / דרכון + תעודת מעבר לנדרשים
+                          לכך- ללא תיעוד נדרש אין מעבר
+                        </div>
+
+                        <div class="feature-benefits__card-item-points-wrapper">
+                          <div class="feature-benefits__card-item-points-col">
+                            <div
+                              class="feature-benefits__card-item-points-col-title"
+                            >
+                              אזרחים
+                            </div>
+
+                            <div
+                              class="feature-benefits__card-item-points-col-list"
+                            >
+                              <div
+                                class="feature-benefits__card-item-points-col-item"
+                              >
+                                תעודת זהות ישראלית
+                              </div>
+                              <div
+                                class="feature-benefits__card-item-points-col-item"
+                              >
+                                תעודת זהות ישראלית
+                              </div>
+                              <div
+                                class="feature-benefits__card-item-points-col-item"
+                              >
+                                תעודת זהות ישראלית
+                              </div>
+                            </div>
+                          </div>
+                          <div class="feature-benefits__card-item-points-col">
+                            <div
+                              class="feature-benefits__card-item-points-col-title"
+                            >
+                              אזרחים
+                            </div>
+
+                            <div
+                              class="feature-benefits__card-item-points-col-list"
+                            >
+                              <div
+                                class="feature-benefits__card-item-points-col-item"
+                              >
+                                תעודת זהות ישראלית
+                              </div>
+                              <div
+                                class="feature-benefits__card-item-points-col-item"
+                              >
+                                תעודת זהות פלסטינאית + היתר כניסה בתוקף
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="feature-benefits__card-item">
+                        <img
+                          src="src/assets/icons/smooth-drive/kids.svg"
+                          class="feature-benefits__card-item-image"
+                          alt=""
+                        >
+                        <div class="feature-benefits__card-item-title">
+                          ילדים עד גיל 16 – חייבים להיות מלווים על ידי אחד
+                          ההורים
+                        </div>
+
+                        <div class="feature-benefits__card-item-description">
+                          שם הילד חייב להופיע בספח תעודות זהות ההורה
+                        </div>
+                      </div>
+                      <div class="feature-benefits__card-item">
+                        <img
+                          src="src/assets/icons/smooth-drive/emergency.svg"
+                          class="feature-benefits__card-item-image"
+                          alt=""
+                        >
+                        <div class="feature-benefits__card-item-title">
+                          בעת אירוע חירום יש להישמע להנחיות של עובדי הביטחון
+                        </div>
+                      </div>
+                      <div class="feature-benefits__card-item">
+                        <img
+                          src="src/assets/icons/smooth-drive/no-camera.svg"
+                          class="feature-benefits__card-item-image"
+                          alt=""
+                        >
+                        <div class="feature-benefits__card-item-title">
+                          לידיעתכם חל איסור לצלם בשטחי המעבר
+                        </div>
+                      </div>
+
+                      <div class="feature-benefits__card-item">
+                        <img
+                          src="src/assets/icons/smooth-drive/stop.svg"
+                          class="feature-benefits__card-item-image"
+                          alt=""
+                        >
+                        <div class="feature-benefits__card-item-title">
+                          חמושים? – חל איסור על התערבות באירוע ביטחוני בשטח
+                          המעבר!
+                        </div>
+
+                        <div class="feature-benefits__card-item-description">
+                          נוכחות של גורם זר ואינו מוכר בשטח האירוע עשויה להוביל
+                          לתגובה מצד מערך הביטחון.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="main-content__section">
+                <div class="info__flashes-title">שאלות ותשובות</div>
+                <div class="info__flashes-description">
+                  כל התשובות במקום אחד
+                </div>
+
+                <div class="content-aside__tag-list">
+                  <label
+                    class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
+                  >
+                    <input type="checkbox" class="content-aside__tag-checkbox">
+                    <span class="content-aside__tag-text">מעברים</span>
+                  </label>
+                  <label
+                    class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
+                  >
+                    <input type="checkbox" class="content-aside__tag-checkbox">
+                    <span class="content-aside__tag-text">מעברים</span>
+                  </label>
+                  <label
+                    class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
+                  >
+                    <input type="checkbox" class="content-aside__tag-checkbox">
+                    <span class="content-aside__tag-text">טכנולוגיה</span>
+                  </label>
+                  <label
+                    class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
+                  >
+                    <input type="checkbox" class="content-aside__tag-checkbox">
+                    <span class="content-aside__tag-text"
+                      >טכנולוגיה וחדשנות</span
+                    >
+                  </label>
+                  <label
+                    class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
+                  >
+                    <input type="checkbox" class="content-aside__tag-checkbox">
+                    <span class="content-aside__tag-text">מעברים</span>
+                  </label>
+                  <label
+                    class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
+                  >
+                    <input type="checkbox" class="content-aside__tag-checkbox">
+                    <span class="content-aside__tag-text">מעברים</span>
+                  </label>
+                </div>
+
+                <div class="info__flashes-counter">40 שאלות</div>
+
+                <div class="flashes__faq faq__list" id="flashes-faq">
+                  <div class="faq__item faq__item--opened">
+                    <div class="faq__item-header">
+                      <h4 class="faq__item-header-text">
+                        הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל
+                        ממעבר ארז
+                      </h4>
+
+                      <button class="faq__item-toggler">
+                        <img
+                          src="icons/arrow-top--blue.svg"
+                          class="faq__item-toggler--icon"
+                          alt="Arrow Top"
+                        >
+                      </button>
+                    </div>
+                    <div class="faq__item-content">
+                      <div>
+                        הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל
+                        ממעבר ארז
+                      </div>
+                      <a class="faq__statement-item-link">
+                        להמשך קריאה
+                        <div
+                          class="faq__statement-item-link-arrow-icon-wrapper"
+                        >
+                          <img
+                            src="icons/arrow-up-left-sm.svg"
+                            class="faq__statement-item-link-arrow-icon"
+                            alt="Arrow Up Left"
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="faq__item">
+                    <div class="faq__item-header">
+                      <h4 class="faq__item-header-text">
+                        הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל
+                        ממעבר ארז
+                      </h4>
+
+                      <button class="faq__item-toggler">
+                        <img
+                          src="icons/arrow-top--blue.svg"
+                          class="faq__item-toggler--icon"
+                          alt="Arrow Top"
+                        >
+                      </button>
+                    </div>
+                    <div class="faq__item-content">
+                      הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
+                      ארז
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  class="button button__rect button__rect--18 button__rect--outline-dark-blue"
+                >
+                  הצג עוד מבזקים
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer footer--gray-bg">
+        <div class="footer__inner">
+          <div class="footer__main">
+            <div class="footer__text-wrapper">
+              <h4 class="footer__text-subtitle">רשות המעברים היבשתיים</h4>
+              <h2 class="footer__text-title">ביטחון שמוביל את הדרך</h2>
+            </div>
+            <div class="footer__nav">
+              <a href="#" class="footer__nav-link">אודות</a>
+              <a href="#" class="footer__nav-link">אודות</a>
+              <a href="#" class="footer__nav-link">אודות</a>
+              <a href="#" class="footer__nav-link">אודות</a>
+              <a href="#" class="footer__nav-link">אודות</a>
+              <a href="#" class="footer__nav-link">אודות</a>
+            </div>
+          </div>
+
+          <div class="footer__sub">
+            <div class="footer__social-wrapper">
+              <a href="" class="footer__social-link">
+                <img
+                  class="footer__social-link-image"
+                  src="/src/assets/icons/yt.svg"
+                  alt="Youtube"
+                >
+              </a>
+              <a href="" class="footer__social-link">
+                <img
+                  class="footer__social-link-image"
+                  src="/src/assets/icons/inst.svg"
+                  alt="Instagram"
+                >
+              </a>
+              <a href="" class="footer__social-link">
+                <img
+                  class="footer__social-link-image"
+                  src="/src/assets/icons/fb.svg"
+                  alt="Facebook"
+                >
+              </a>
+            </div>
+
+            <div class="footer__subnav">
+              <a href="#" class="footer__subnav-link">אודות</a>
+              <a href="#" class="footer__subnav-link">אודות</a>
+              <a href="#" class="footer__subnav-link">אודות</a>
+            </div>
+
+            <div class="footer__powered-by ltr">
+              Powered by
+              <img
+                class="footer__powered-by-logo"
+                src="/src/assets/icons/powered-by-logo.svg"
+                alt="Powered by logo"
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
