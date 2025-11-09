@@ -30,16 +30,26 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
+
+            &:not(:first-child) {
+                margin-top: 56px;
+            }
         }
 
         &__card-wrapper-list-heading {
             display: inline-flex;
             gap: 8px;
-            margin-bottom: 8px;
             align-items: center;
 
+            @include tablet-min {
+                gap: 16px;
+            }
+
             &-icon {
-                // 
+                @include tablet-min {
+                    width: 60px;
+                    height: 60px;
+                }
             }
 
             &-title {
@@ -188,6 +198,62 @@
                             top: 14px;
                         }
                     }
+                }
+            }
+        }
+
+        &__card-item-numpoint {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            &--gap-lg {
+                gap: 24px;
+
+                @include tablet-min {
+                    gap: 8px;
+                }
+            }
+
+            &-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+
+                @include tablet-min {
+                    flex-direction: row;
+                    gap: 48px;
+                }
+            }
+
+            &-list {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            &-number {
+                font-family: IBM Plex Sans Hebrew;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 110%;
+                color: var(--cyan-tag);
+
+                @include tablet-min {
+                    font-size: 24px;
+                    line-height: 120%;
+                }
+            }
+
+            &-text {
+                font-family: IBM Plex Sans Hebrew;
+                font-weight: 500;
+                font-size: 18px;
+                color: #fff;
+
+                @include tablet-min {
+                    font-size: 24px;
+                    line-height: 120%;
                 }
             }
         }
