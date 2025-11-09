@@ -4,9 +4,23 @@
     position: relative;
     background-color: var(--dark-blue);
     padding: 120px 16px 40px 16px;
-    overflow: hidden;
 
     &--gray-bg {
+        &::before {
+            content: '';
+            background-color: var(--gray-tag);
+            height: 64px;
+            width: 100%;
+            top: -64px;
+            position: absolute;
+            left: 0;
+
+            @include tablet-min {
+                height: 160px;
+                top: -160px;
+            }
+        }
+
         &::after {
             border-top-color: var(--gray-tag) !important;
         }
@@ -39,7 +53,7 @@
 
         @include tablet-min {
             border-left-width: 50vh;
-            border-right-width: 85vh;
+            border-right-width: 75vh;
         }
     }
 
