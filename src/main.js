@@ -13,6 +13,7 @@ import { initTextSwiper } from './js/text-swiper.js';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './style.scss';
 import { initWorldBenefitsSwiper } from './js/world-benefits-swiper.js';
+import { initInfoSwiper } from './js/info-swiper.js';
 
 function loadMap() {
   const map = initMap();
@@ -37,6 +38,7 @@ initAccordion(
   },
 );
 initNewsSwiper();
+initInfoSwiper();
 initScrollToTop('#scroll-to-top', 500);
 initPlacePopup();
 initStairsGallery();

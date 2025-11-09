@@ -50,9 +50,21 @@
             line-height: 130%;
         }
 
+        &--lg {
+            font-size: 18px;
+            line-height: 130px;
+        }
+
+        &--white {
+            background-color: #fff;
+        }
+
         &:has(input:checked) {
-            background-color: red;
-            color: white;
+            background-color: var(--dark-blue);
+
+            .content-aside__tag-text {
+                color: white;
+            }
         }
     }
 
@@ -62,6 +74,7 @@
 
     &__tag-text {
         user-select: none;
+        transition: color 0.2s ease;
     }
 
     &__title {

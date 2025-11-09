@@ -4,6 +4,10 @@
 @use './pages/pages';
 @use './base/media' as *;
 
+html {
+    scroll-behavior: smooth;
+}
+
 .wrapper {
     transition: opacity 0.6s ease-in-out;
     display: flex;
@@ -35,6 +39,15 @@
     flex-direction: column;
     height: 100%;
     flex: 1;
+    padding-bottom: 64px;
+
+    @include tablet-min {
+        padding-bottom: 160px;
+    }
+}
+
+.bg-gray {
+    background-color: #F2F4F5;
 }
 
 .container {

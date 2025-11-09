@@ -20,9 +20,12 @@
     }
 
     &__swiper-button-actions {
+        position: absolute;
+        bottom: 0;
+        height: 40px;
+        inset-inline-start: 0;
         visibility: hidden;
         margin-inline-start: auto;
-        margin-inline-end: 16px;
         gap: 8px;
         position: relative;
         display: flex;

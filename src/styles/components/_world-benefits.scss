@@ -6,9 +6,12 @@
         margin-bottom: 120px;
         z-index: 1;
 
+        @include desktop-lg-min {
+            max-width: 1330px;
+        }
+
         @include desktop-min {
             margin-bottom: 145px !important;
-            max-width: 1330px;
         }
 
         @include tablet-lg-min {
