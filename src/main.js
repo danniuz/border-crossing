@@ -14,6 +14,8 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import './style.scss';
 import { initWorldBenefitsSwiper } from './js/world-benefits-swiper.js';
 import { initInfoSwiper } from './js/info-swiper.js';
+import { initInfographListAnimation } from './js/infograph-list-animation.js';
+// import { initInfographListAnimation } from './js/infograph-list-animation.js';
 
 function loadMap() {
   const map = initMap();
@@ -23,7 +25,7 @@ function loadMap() {
   }
 }
 
-initAside({ opened: true });
+initAside({ opened: false });
 loadMap();
 initMarquee({ start: true });
 initAccordion('#flashes-faq', 'faq__item', 'faq__item--opened');
@@ -58,3 +60,4 @@ initWorldBenefitsSwiper('#world-benefits-list', {
   paginationSelector: '#world-benefits-swiper-pagination',
   worksMaxWidth: 980,
 });
+initInfographListAnimation();
