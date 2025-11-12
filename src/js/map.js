@@ -8,13 +8,20 @@ export function initMap() {
     return;
   }
 
+  const isMobile = window.innerWidth < 1220;
+
+  const getCoordinates = () =>
+    isMobile ? [34.734238, 32.220142] : [34.134238, 32.220142];
+
+  const getZoom = () => (isMobile ? 7.2 : 8.5);
+
   const mapboxAccessToken =
     'pk.eyJ1IjoiZGFuaWRlbyIsImEiOiJjbWRyNXB5dGswYWoxMmxxdnh0d2lvNXAyIn0.gujYWabrd2G8fqT2eEyS7g';
 
   const mapObject = {
     container: 'map',
-    center: [34.634238, 32.320142],
-    zoom: 8.5,
+    center: getCoordinates(),
+    zoom: getZoom(),
     style: 'mapbox://styles/danideo/cmdycziua00ar01sc63x005c0',
   };
 

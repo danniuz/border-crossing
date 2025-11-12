@@ -112,6 +112,10 @@
 
     &__content-text-wrapper {
         flex-shrink: 0;
+
+        @include desktop-min {
+            margin-inline-start: 40px;
+        }
     }
 
     &__content-text {
