@@ -14,6 +14,9 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import './style.scss';
 import { initWorldBenefitsSwiper } from './js/world-benefits-swiper.js';
 import { initInfoSwiper } from './js/info-swiper.js';
+import { initInfographListAnimation } from './js/infograph-list-animation.js';
+import { initAutoScrollAccordion } from './js/auto-scroll-accordion.js';
+import { initFadeUp } from './js/fade-up-gsap.js';
 
 function loadMap() {
   const map = initMap();
@@ -23,18 +26,21 @@ function loadMap() {
   }
 }
 
-initAside({ opened: true });
+initAside({ opened: false });
 loadMap();
 initMarquee({ start: true });
 initAccordion('#flashes-faq', 'faq__item', 'faq__item--opened');
-initAccordion(
+initAutoScrollAccordion(
   '#manager-speech-statement-list',
   'manager-speech__statement-item',
   'manager-speech__statement-item--opened',
   {
     avoidEventBubbleClasses: ['manager-speech__statement-item-link'],
     worksMinWidth: 980,
-    singleOpened: true,
+    enableScrollTrigger: true,
+    scrollBoxHeight: 200,
+    imageSelector: '#manager-speech-img',
+    // hitBoxHelper: true,
   },
 );
 initNewsSwiper();
@@ -49,12 +55,19 @@ initFluidSwiper('#about-us-swiper', {
   prevBtnSelector: '#fluid-swiper-button-prev',
 });
 
-initTextSwiper('#manager-speech-statement-list', {
-  paginationSelector: '#about-text-swiper-pagination',
-  worksMaxWidth: 980,
-});
+initTextSwiper(
+  '#manager-speech-statement-list',
+  'manager-speech__statement-item',
+  {
+    paginationSelector: '#about-text-swiper-pagination',
+    worksMaxWidth: 980,
+    imageSelector: '#manager-speech-img',
+  },
+);
 
 initWorldBenefitsSwiper('#world-benefits-list', {
   paginationSelector: '#world-benefits-swiper-pagination',
   worksMaxWidth: 980,
 });
+initInfographListAnimation();
+initFadeUp('#about-fluid-swiper-wrapper');

@@ -29,6 +29,9 @@
     <script
       src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"
     ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"
+    ></script>
 
     <title>Vite + TS</title>
   </head>
@@ -320,21 +323,29 @@
 
           <div class="main-content container about__infograph-list-wrapper">
             <div class="main-content__layout main-content__layout-sm">
-              <div class="infograph-list">
+              <div id="infograph-list" class="infograph-list">
                 <div class="infograph-list__item">
-                  <div class="infograph-list__item-value">100%</div>
+                  <div data-type="number" class="infograph-list__item-value">
+                    4
+                  </div>
                   <div class="infograph-list__item-text">גבולות גזרה</div>
                 </div>
                 <div class="infograph-list__item">
-                  <div class="infograph-list__item-value">100%</div>
+                  <div data-type="number" class="infograph-list__item-value">
+                    99
+                  </div>
                   <div class="infograph-list__item-text">גבולות גזרה</div>
                 </div>
                 <div class="infograph-list__item">
-                  <div class="infograph-list__item-value">100%</div>
+                  <div data-type="text" class="infograph-list__item-value">
+                    24/7
+                  </div>
                   <div class="infograph-list__item-text">גבולות גזרה</div>
                 </div>
                 <div class="infograph-list__item">
-                  <div class="infograph-list__item-value">100%</div>
+                  <div data-type="number" class="infograph-list__item-value">
+                    431
+                  </div>
                   <div class="infograph-list__item-text">גבולות גזרה</div>
                 </div>
               </div>
@@ -348,6 +359,7 @@
               <div class="manager-speech__img-wrapper">
                 <img
                   class="manager-speech__img"
+                  id="manager-speech-img"
                   src="https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg"
                   alt=""
                 >
@@ -362,6 +374,7 @@
                     <div class="swiper-slide">
                       <div
                         class="manager-speech__statement-item manager-speech__statement-item--opened"
+                        data-img-src="https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg"
                       >
                         <div class="manager-speech__statement-item-title">
                           דבר המנהל
@@ -398,8 +411,11 @@
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-slide ">
-                      <div class="manager-speech__statement-item">
+                    <div class="swiper-slide">
+                      <div
+                        class="manager-speech__statement-item"
+                        data-img-src="https://images.pexels.com/photos/1906153/pexels-photo-1906153.jpeg"
+                      >
                         <div class="manager-speech__statement-item-title">
                           דבר המנהל
                         </div>
@@ -436,7 +452,10 @@
                       </div>
                     </div>
                     <div class="swiper-slide">
-                      <div class="manager-speech__statement-item">
+                      <div
+                        class="manager-speech__statement-item"
+                        data-img-src="https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg"
+                      >
                         <div class="manager-speech__statement-item-title">
                           דבר המנהל
                         </div>
@@ -488,7 +507,10 @@
 
         <div class="overflow-hidden">
           <div class="fluid-swiper-content container main-content">
-            <div class="fluid-swiper__swiper-wrapper">
+            <div
+              id="about-fluid-swiper-wrapper"
+              class="fluid-swiper__swiper-wrapper"
+            >
               <div class="swiper fluid-swiper" id="about-us-swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide fluid-swiper__slide">

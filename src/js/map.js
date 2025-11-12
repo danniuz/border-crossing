@@ -2,31 +2,39 @@ import { featureCollection } from './data/features.js';
 import mapboxgl from 'mapbox-gl';
 
 export function initMap() {
-    const mapHtml = document.getElementById('map');
-    
-    if (!mapHtml) {
-        return;
+  const mapHtml = document.getElementById('map');
+
+  if (!mapHtml) {
+    return;
+  }
+
+  const isMobile = window.innerWidth < 1220;
+
+  const getCoordinates = () =>
+    isMobile ? [34.734238, 32.220142] : [34.134238, 32.220142];
+
+  const getZoom = () => (isMobile ? 7.2 : 8.5);
+
+  const mapboxAccessToken =
+    'pk.eyJ1IjoiZGFuaWRlbyIsImEiOiJjbWRyNXB5dGswYWoxMmxxdnh0d2lvNXAyIn0.gujYWabrd2G8fqT2eEyS7g';
+
+  const mapObject = {
+    container: 'map',
+    center: getCoordinates(),
+    zoom: getZoom(),
+    style: 'mapbox://styles/danideo/cmdycziua00ar01sc63x005c0',
+  };
+
+  mapboxgl.accessToken = mapboxAccessToken;
+  const map = new mapboxgl.Map(mapObject);
+
+  map.on('load', () => {
+    for (const feature of featureCollection.features) {
+      createMapboxPopup(feature, map);
     }
+  });
 
-    const mapboxAccessToken = 'pk.eyJ1IjoiZGFuaWRlbyIsImEiOiJjbWRyNXB5dGswYWoxMmxxdnh0d2lvNXAyIn0.gujYWabrd2G8fqT2eEyS7g';
-
-    const mapObject = {
-        container: 'map',
-        center: [34.855499, 32.109333],
-        zoom: 9,
-        style: 'mapbox://styles/danideo/cmdycziua00ar01sc63x005c0',
-    };
-
-    mapboxgl.accessToken = mapboxAccessToken;
-    const map = new mapboxgl.Map(mapObject);
-
-    map.on('load', () => {
-        for (const feature of featureCollection.features) {
-            createMapboxPopup(feature, map);
-        }
-    });
-
-    return map;
+  return map;
 }
 
 /**
@@ -34,19 +42,19 @@ export function initMap() {
  * @param {mapboxgl.Map} map
  */
 function createMapboxPopup(feature, map) {
-    const el = document.createElement('div');
-    el.className = 'map-marker';
+  const el = document.createElement('div');
+  el.className = 'map-marker';
 
-    el.addEventListener('click', () => {
-        el.classList.add('map-marker--selected');
+  el.addEventListener('click', () => {
+    el.classList.add('map-marker--selected');
 
-        map.flyTo({
-            center: feature.geometry.coordinates,
-            essential: true
-        });
+    map.flyTo({
+      center: feature.geometry.coordinates,
+      essential: true,
     });
+  });
 
-    const popupHTML = `
+  const popupHTML = `
         <div class="popup">
             <div class="popup__content">
                 <p class="popup__region text-xs">${feature.properties.area}</p>
@@ -81,18 +89,19 @@ function createMapboxPopup(feature, map) {
         </div>
     `;
 
-    const tooltipPopup = new mapboxgl.Popup({ offset: 15, closeButton: false })
-        .setHTML(popupHTML);
+  const tooltipPopup = new mapboxgl.Popup({
+    offset: 15,
+    closeButton: false,
+  }).setHTML(popupHTML);
 
-    tooltipPopup.on('close', () => {
-        el.classList.remove('map-marker--selected');
-    });
+  tooltipPopup.on('close', () => {
+    el.classList.remove('map-marker--selected');
+  });
 
-    new mapboxgl
-        .Marker({
-            element: el,
-        })
-        .setLngLat(feature.geometry.coordinates)
-        .setPopup(tooltipPopup)
-        .addTo(map);
-} 
+  new mapboxgl.Marker({
+    element: el,
+  })
+    .setLngLat(feature.geometry.coordinates)
+    .setPopup(tooltipPopup)
+    .addTo(map);
+}

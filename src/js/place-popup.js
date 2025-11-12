@@ -7,12 +7,6 @@ export function initPlacePopup() {
     return;
   }
 
-  fetch('place-popup.html')
-    .then((response) => response.text())
-    .then((html) => {
-      showPopup(html);
-    });
-
   PlacePopupTogglers.forEach((toggler) => {
     toggler.addEventListener('click', () => {
       fetch('place-popup.html')
