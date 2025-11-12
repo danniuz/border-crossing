@@ -12,11 +12,9 @@ export function initFluidSwiper(mainSelector, options = {}) {
 
   const swiper = new Swiper(mainSelector, {
     direction: 'horizontal',
-    loop: false,
+    loop: true,
     slidesPerView: '1',
     spaceBetween: 8,
-
-
     pagination: {
       el: paginationSelector,
       clickable: true,
@@ -25,6 +23,12 @@ export function initFluidSwiper(mainSelector, options = {}) {
     navigation: {
       nextEl: nextBtnSelector,
       prevEl: prevBtnSelector,
+    },
+
+    on: {
+      init: function () {
+        this.slideTo(1, 0);
+      },
     },
 
     breakpoints: {
