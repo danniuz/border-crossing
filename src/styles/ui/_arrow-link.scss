@@ -29,6 +29,20 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
+
+        &--white {
+            background-color: #fff;
+        }
+
+        &--lg {
+            width: 40px;
+            height: 40px;
+
+            @include tablet-min {
+                width: 64px;
+                height: 64px;
+            }
+        }
     }
 
     &__icon {

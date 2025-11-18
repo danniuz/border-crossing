@@ -1,29 +1,19 @@
 @use '../base/media' as *;
 
 .world-benefits {
-    &__main-content {
-        margin-top: 56px;
-        margin-bottom: 120px;
-        z-index: 1;
+    &__wrapper {
+        z-index: 2;
+    }
 
-        @include desktop-lg-min {
-            max-width: 1330px;
-        }
+    &__wrapper--black-grid {
+        background-image: url('/public/images/full-grid-bg-info.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #00171F;
+        background-size: cover;
+    }
 
-        @include desktop-min {
-            margin-bottom: 145px !important;
-        }
-
-        @include tablet-lg-min {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @include tablet-min {
-            margin-top: 120px;
-            margin-bottom: 120px;
-        }
-
+    &__content {
         .swiper-slide {
             width: initial !important;
 
@@ -65,15 +55,75 @@
         }
     }
 
+    &__main-content--lg {
+        margin-top: 165px;
+        margin-bottom: 172px;
+        z-index: 1;
+
+        @include desktop-lg-min {
+            max-width: 1330px;
+        }
+
+        @include desktop-min {
+            margin-top: 175px !important;
+            margin-bottom: 120px !important;
+        }
+
+        @include tablet-lg-min {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include tablet-min {
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+    }
+
+    &__main-content {
+        margin-top: 56px;
+        margin-bottom: 120px;
+        z-index: 1;
+
+        @include desktop-lg-min {
+            max-width: 1330px;
+        }
+
+        @include desktop-min {
+            margin-bottom: 145px !important;
+        }
+
+        @include tablet-lg-min {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include tablet-min {
+            margin-top: 120px;
+            margin-bottom: 120px;
+        }
+    }
+
     &__header {
         margin-bottom: 32px;
 
         @include tablet-min {
             margin-bottom: 6px;
+            max-width: 420px;
         }
 
         @include desktop-lg-min {
             margin-bottom: 40px;
+        }
+
+        &--mb {
+            @include tablet-min {
+                margin-bottom: 40px;
+            }
+
+            @include desktop-lg-min {
+                margin-bottom: 80px;
+            }
         }
 
         &-subtitle {
@@ -123,13 +173,43 @@
         width: 240px;
     }
 
+    &--lg-height {
+        height: 413px;
+
+        @include tablet-min {
+            height: 380px;
+        }
+
+        @include desktop-lg-min {
+            height: 480px;
+        }
+
+        .world-benefits-item__header {
+            height: 100%;
+        }
+    }
+
+    &__full-image {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
     &__header {
         width: 100%;
         height: 169px;
-        background-color: var(--white-tag);
         display: flex;
         align-items: center;
         justify-content: center;
+
+        &--bg-white {
+            background-color: var(--white-tag);
+        }
 
         @include tablet-min {
             height: 150px;
@@ -157,12 +237,21 @@
         padding-top: 24px;
         color: #fff;
 
+        &--transparent {
+            background-color: transparent;
+        }
+
         @include tablet-min {
             padding-top: 12px;
         }
 
         @include desktop-lg-min {
             padding-top: 16px;
+        }
+
+        &-tag {
+            margin: 0 8px;
+            width: max-content;
         }
 
         &-title {
