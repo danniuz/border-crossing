@@ -1,0 +1,55 @@
+@use '../base/media' as *;
+
+.home {
+    &__raw-content {
+        @include tablet-min {
+            flex-direction: row;
+        }
+    }
+
+    &__aside-title {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 100%;
+        color: var(--dark-blue);
+
+        @include tablet-min {
+            font-size: 40px;
+            line-height: 110%;
+        }
+
+        @include desktop-min {
+            font-size: 48px;
+        }
+    }
+
+    &__benefits {
+        display: flex;
+        justify-content: flex-end;
+
+        @include desktop-lg-min {
+            justify-content: start;
+        }
+    }
+
+    &-chips__section {
+        margin-top: 80px;
+        margin-bottom: 80px;
+
+        @include tablet-min {
+            margin-top: 120px;
+            margin-bottom: 120px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        @include desktop-min {
+            margin-top: 205px;
+        }
+
+        @include desktop-lg-min {
+            justify-content: start;
+        }
+    }
+}

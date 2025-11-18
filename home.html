@@ -1,0 +1,985 @@
+<!doctype html>
+<html dir="rtl" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    >
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    >
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    ></script>
+
+    <title>Vite + TS</title>
+  </head>
+
+  <body>
+    <script type="module" src="/src/main.js"></script>
+    <div id="wrapper" class="wrapper">
+      <div class="page-header">
+        <div class="marquee">
+          <div class="marquee__controls">
+            <a class="marquee__link hide-tablet-max" href="">לכל ההודעות</a>
+            <button
+              id="marqueeStart"
+              class="button button__rect marquee__controls-action"
+            >
+              <img
+                class="marquee__controls-action-image ltr-reverse-y"
+                src="/src/assets/icons/play.svg"
+                alt="Play"
+              >
+            </button>
+            <button
+              id="marqueeStop"
+              class="button button__rect marquee__controls-action"
+            >
+              <img
+                class="marquee__controls-action-image ltr-reverse-y"
+                src="/src/assets/icons/pause.svg"
+                alt="Pause"
+              >
+            </button>
+          </div>
+
+          <ul class="marquee__text-list" id="marquee-text">
+            <li class="marquee__text-item">Lorem ipsum dolor sit amet.</li>
+            <li class="marquee__text-item">Lorem, ipsum.</li>
+            <li class="marquee__text-item">Lorem ipsum dolor sit amet.</li>
+            <li class="marquee__text-item">Lorem, ipsum.</li>
+            <li class="marquee__text-item">Lorem ipsum dolor sit.</li>
+            <li class="marquee__text-item">hello world</li>
+            <li class="marquee__text-item">another big text line</li>
+            <li class="marquee__text-item">just for test</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="page-content">
+        <div class="menu">
+          <div class="menu__logo-list">
+            <a href="#" class="menu__logo-link">
+              <img class="menu__logo-image" src="icons/logo-1.svg" alt="Logo 1">
+              <span class="menu__logo-text">רשות מעברים יבשתיים</span>
+            </a>
+
+            <a href="#" class="menu__logo-link">
+              <img class="menu__logo-image" src="icons/logo-2.svg" alt="Logo 2">
+              <span class="menu__logo-text">משרד הביטחון</span>
+            </a>
+          </div>
+
+          <div class="menu__nav-wrapper">
+            <div class="menu__nav-item">
+              <a href="#" class="menu__nav-link menu__nav-link--dark-blue-tag">
+                מידע שימושי
+                <img
+                  src="icons/menu-nav-icon-arrow--cyan.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  alt="Arrow Left"
+                >
+              </a>
+            </div>
+
+            <div class="menu__nav-item">
+              <a href="#" class="menu__nav-link  menu__nav-link--dark-blue-tag">
+                כתבות ועידכונים
+
+                <img
+                  src="icons/menu-nav-icon-arrow--cyan.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  alt="Arrow Left"
+                >
+              </a>
+            </div>
+
+            <div class="menu__nav-item">
+              <a
+                href="#"
+                class="menu__nav-link menu__nav-link--active  menu__nav-link--dark-blue-tag"
+              >
+                אודות
+                <img
+                  src="icons/menu-nav-icon-arrow--cyan.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  alt="Arrow Left"
+                >
+              </a>
+            </div>
+
+            <div class="menu__nav-item ">
+              <a
+                href="#"
+                class="menu__nav-link  menu__nav-link--blue-tag menu__nav-link--with-arrow"
+              >
+                צור קשר
+                <img
+                  src="icons/menu-nav-icon-arrow--white.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--arrow"
+                  alt="Arrow Up Left"
+                >
+                <img
+                  src="icons/menu-nav-icon-arrow--white.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  alt="Arrow Left"
+                >
+              </a>
+            </div>
+
+            <div class="menu__nav-item">
+              <a
+                href="#"
+                class="menu__nav-link  menu__nav-link--c-dark-blue menu__nav-link--cyan-tag menu__nav-link--with-arrow"
+              >
+                לכל המעברים
+                <img
+                  src="icons/menu-nav-icon-arrow--dark-blue.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--arrow"
+                  alt="Arrow Up Left"
+                >
+                <img
+                  src="icons/menu-nav-icon-arrow--dark-blue.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  alt="Arrow Left"
+                >
+              </a>
+            </div>
+
+            <div class="menu__nav-item">
+              <a href="#" class="menu__nav-link  menu__nav-link--white-tag">
+                חיפוש
+                <img
+                  src="icons/magnify.svg"
+                  class="menu__nav-link-icon"
+                  alt="Magnify"
+                >
+              </a>
+            </div>
+
+            <div class="menu__nav-item">
+              <a
+                href="#"
+                class="menu__nav-link  menu__nav-link--c-white menu__nav-link--white-tag"
+              >
+                איזור אישי
+              </a>
+            </div>
+
+            <div class="menu__nav-row">
+              <div class="menu__nav-item">
+                <a
+                  href="#"
+                  class="menu__nav-link  menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
+                >
+                  <img
+                    src="icons/accessibility.svg"
+                    class="menu__nav-link-icon"
+                    alt="Accessibility"
+                  >
+                </a>
+              </div>
+
+              <div class="menu__nav-item">
+                <a
+                  href="#"
+                  class="menu__nav-link  menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
+                >
+                  <img
+                    src="icons/lang.svg"
+                    class="menu__nav-link-icon"
+                    alt="Language"
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="breadcrumbs">
+          <a href="#" class="breadcrumbs__link">
+            <span
+              class="breadcrumbs__link-icon breadcrumbs__link-icon--home"
+            ></span>
+            <span
+              class="breadcrumbs__link-icon breadcrumbs__link-icon--arrow ltr-reverse-y"
+            ></span>
+          </a>
+
+          <a href="#" class="breadcrumbs__link">
+            <span class="breadcrumbs__link-text">כל המעברים</span>
+          </a>
+        </div>
+
+        <div class="main-content__strict-top-wrapper">
+          <div class="main-content__strict-top"></div>
+        </div>
+
+        <div class="main-content container section-aside-line-content relative">
+          <span class="section-aside-line"></span>
+          <div class="main-content__layout main-content__layout-sm">
+            <div class="safe-area">
+              <div class="safe-area__subtitle">החזון</div>
+              <div class="safe-area__title">רשת ביטחון וגשר לכלכלה</div>
+
+              <div class="safe-area__content">
+                <div class="safe-area__sm-image-wrapper">
+                  <picture>
+                    <source
+                      media="(min-width: 980px)"
+                      srcset="/src/assets/images/open-street.jpg"
+                    >
+                    <img
+                      class="main-content__sm-image"
+                      src="/src/assets/images/open-street.jpg"
+                      alt=""
+                    >
+                  </picture>
+                </div>
+
+                <div class="safe-area__lg-image-wrapper">
+                  <picture>
+                    <source
+                      media="(min-width: 980px)"
+                      srcset="/src/assets/images/parking-lady.png"
+                    >
+                    <img
+                      class="main-content__lg-image"
+                      src="/src/assets/images/parking-lady.png"
+                      alt=""
+                    >
+                  </picture>
+                </div>
+
+                <div class="value-benefits__list">
+                  <div class="value-benefits__item value-benefits__item--right">
+                    <div class="value-benefits__item-content">
+                      <div class="value-benefits__item-content-title">
+                        אחריות מרחיבה
+                      </div>
+                      <div class="value-benefits__item-content-text">
+                        ראייה כוללת – אחריות על הכלכלה, הביטחון, והחיים של
+                        אנשים.
+                      </div>
+                    </div>
+
+                    <img
+                      class="value-benefits__item-image"
+                      src="/src/assets/value-benefits/arrow-right.svg"
+                      alt=""
+                    >
+                  </div>
+                  <div class="value-benefits__item value-benefits__item--up">
+                    <div class="value-benefits__item-content">
+                      <div class="value-benefits__item-content-title">
+                        שליחות ומצוינות
+                      </div>
+                      <div class="value-benefits__item-content-text">
+                        מחויבות לשליחות לאומית וציבורית – תפקיד משמעותי בעל ערך
+                        למדינה ולחברה.
+                      </div>
+                    </div>
+
+                    <img
+                      class="value-benefits__item-image"
+                      src="/src/assets/value-benefits/arrow-up.svg"
+                      alt=""
+                    >
+                  </div>
+                  <div
+                    class="value-benefits__item value-benefits__item--boost-up"
+                  >
+                    <div class="value-benefits__item-content">
+                      <div class="value-benefits__item-content-title">
+                        שיתופיות
+                      </div>
+                      <div class="value-benefits__item-content-text">
+                        עבודה בשיתוף פעולה עם גופי ביטחון, רשויות, גורמים עסקיים
+                        וממשלות שכנות.
+                      </div>
+                    </div>
+
+                    <img
+                      class="value-benefits__item-image"
+                      src="/src/assets/value-benefits/boost-up.svg"
+                      alt=""
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="wide-text__wrapper bg-dark-blue with-triangle-1--bottom with-triangle-1--top with-triangle--dark-blue"
+        >
+          <div class="main-content mt-0 wide-text container">
+            <div class="wide-text__content">
+              <p>hello</p>
+              <p></p>
+              <p>
+                גוף ביטחוני המפעיל רשת מעברים לאומית, ממוקד במניעת טרור והתעצמות
+                ארגוני הטרור בזירה הפלסטינאית, מיישם את מדיניות הממשלה תוך שימור
+                נורמות שירות, מרקם חיים וצמיחה כלכלית.
+              </p>
+
+              <button class="button__link-45-arrow wide-text__link">
+                לכל המשרות
+                <img src="icons/arrow-up-left-sm.svg" alt="Arrow Up Left">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="main-content container with-triangle-2--bottom with-triangle--white z-1"
+        >
+          <div
+            class="main-content__layout main-content__layout-sm home__raw-content"
+          >
+            <div class="content-aside home__aside">
+              <div class="home__aside-title">
+                16 מעברים <br>2 גבולות גזרה
+              </div>
+
+              <div>
+                <button class="button__link-45-arrow mt-40">
+                  לכל המשרות
+                  <img src="icons/arrow-up-left-sm.svg" alt="Arrow Up Left">
+                </button>
+              </div>
+            </div>
+
+            <div class="main-content__page mt-0">
+              <div class="main-content__section">
+                <div class="home__benefits">
+                  <div class="home-benefits-list">
+                    <div class="home-benefits-item">
+                      <picture class="home-benefits-item__image">
+                        <source
+                          media="(min-width: 981px)"
+                          srcset="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqWulRCY8ctI3XLB8MjnLLKJcPzqotX2gzxXIt0Hd11YSAK1F-wR4r1aNISiwYJ4NcILw&amp;usqp=CAU"
+                        >
+                        <img
+                          class="home-benefits-item__image"
+                          src="https://images.pexels.com/photos/7919/pexels-photo.jpg"
+                          alt=""
+                        >
+                      </picture>
+                      <div class="home-benefits-item__content">
+                        <div class="home-benefits-item__title">גבולות גזרה</div>
+
+                        <div class="home-benefits-item__text">
+                          לחיצה בכל הכרטיסיה תעביר לדף מעבר רלוונטי. כולל גם
+                          לחיצה בחץ התחתון. לחיצה על ניווט תפתח את הפופאפ
+                        </div>
+
+                        <a
+                          class="arrow-link__icon-wrapper arrow-link home-benefits-item__link"
+                        >
+                          <img
+                            src="icons/arrow-up-left-sm.svg"
+                            class="arrow-link__icon"
+                            alt="Arrow Up Left"
+                          >
+                        </a>
+                      </div>
+                    </div>
+                    <div class="home-benefits-item">
+                      <picture class="home-benefits-item__image">
+                        <source
+                          media="(min-width: 981px)"
+                          srcset="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqWulRCY8ctI3XLB8MjnLLKJcPzqotX2gzxXIt0Hd11YSAK1F-wR4r1aNISiwYJ4NcILw&amp;usqp=CAU"
+                        >
+                        <img
+                          class="home-benefits-item__image"
+                          src="https://images.pexels.com/photos/7919/pexels-photo.jpg"
+                          alt=""
+                        >
+                      </picture>
+                      <div class="home-benefits-item__content">
+                        <div class="home-benefits-item__title">גבולות גזרה</div>
+
+                        <div class="home-benefits-item__text">
+                          לחיצה בכל הכרטיסיה תעביר לדף מעבר רלוונטי. כולל גם
+                          לחיצה בחץ התחתון. לחיצה על ניווט תפתח את הפופאפ
+                        </div>
+
+                        <a
+                          class="arrow-link__icon-wrapper arrow-link home-benefits-item__link"
+                        >
+                          <img
+                            src="icons/arrow-up-left-sm.svg"
+                            class="arrow-link__icon"
+                            alt="Arrow Up Left"
+                          >
+                        </a>
+                      </div>
+                    </div>
+                    <div class="home-benefits-item">
+                      <picture class="home-benefits-item__image">
+                        <source
+                          media="(min-width: 981px)"
+                          srcset="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqWulRCY8ctI3XLB8MjnLLKJcPzqotX2gzxXIt0Hd11YSAK1F-wR4r1aNISiwYJ4NcILw&amp;usqp=CAU"
+                        >
+                        <img
+                          class="home-benefits-item__image"
+                          src="https://images.pexels.com/photos/7919/pexels-photo.jpg"
+                          alt=""
+                        >
+                      </picture>
+                      <div class="home-benefits-item__content">
+                        <div class="home-benefits-item__title">גבולות גזרה</div>
+
+                        <div class="home-benefits-item__text">
+                          לחיצה בכל הכרטיסיה תעביר לדף מעבר רלוונטי. כולל גם
+                          לחיצה בחץ התחתון. לחיצה על ניווט תפתח את הפופאפ
+                        </div>
+
+                        <a
+                          class="arrow-link__icon-wrapper arrow-link home-benefits-item__link"
+                        >
+                          <img
+                            src="icons/arrow-up-left-sm.svg"
+                            class="arrow-link__icon"
+                            alt="Arrow Up Left"
+                          >
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="main-content__section home-chips__section">
+                <div class="home-chips">
+                  <div class="home-chips__item">
+                    <div class="home-chips__item-content">
+                      <h4 class="home-chips__item-title">גבולות גזרה</h4>
+
+                      <div class="home-chips__status-list">
+                        <div
+                          class="home-chips__status home-chips__status--bg-gray"
+                        >
+                          <span class="home-chips__status-indicator"></span>
+                          הולכי רגל
+                        </div>
+
+                        <div
+                          class="home-chips__status home-chips__status--bg-gray"
+                        >
+                          <span
+                            class="home-chips__status-indicator home-chips__status-indicator--active"
+                          ></span>
+                          הולכי רגל
+                        </div>
+                      </div>
+
+                      <div class="home-chips__item-action-list">
+                        <a
+                          class="arrow-link__icon-wrapper arrow-link home-chips__item-link-pointer"
+                        >
+                          <img
+                            src="icons/pointer-up-left--blue.svg"
+                            class="home-chips__item-link-pointer-icon"
+                            alt="Arrow Up Left"
+                          >
+                          <span class="home-chips__item-link-pointer-text"
+                            >ניווט</span
+                          >
+                        </a>
+                        <a
+                          class="arrow-link__icon-wrapper arrow-link__icon-wrapper--white arrow-link home-chips__item-link-arrow"
+                        >
+                          <img
+                            src="icons/arrow-up-left-sm.svg"
+                            class="arrow-link__icon"
+                            alt="Arrow Up Left"
+                          >
+                        </a>
+                      </div>
+                      <img
+                        class="home-chips__item-image"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx1RB6TW9mq2E7pnL_Jj0gli3PRwWxIQFTHW0YbtnAC9Oczu5p_p8M4FALJdv9Z8yFV-c&usqp=CAU"
+                        alt=""
+                      >
+                    </div>
+                  </div>
+                  <div class="home-chips__item">
+                    <div class="home-chips__item-content">
+                      <h4 class="home-chips__item-title">גבולות גזרה</h4>
+
+                      <div class="home-chips__status-list">
+                        <div
+                          class="home-chips__status home-chips__status--bg-gray"
+                        >
+                          <span class="home-chips__status-indicator"></span>
+                          הולכי רגל
+                        </div>
+
+                        <div
+                          class="home-chips__status home-chips__status--bg-gray"
+                        >
+                          <span
+                            class="home-chips__status-indicator home-chips__status-indicator--active"
+                          ></span>
+                          הולכי רגל
+                        </div>
+                      </div>
+
+                      <div class="home-chips__item-action-list">
+                        <a
+                          class="arrow-link__icon-wrapper arrow-link home-chips__item-link-pointer"
+                        >
+                          <img
+                            src="icons/pointer-up-left--blue.svg"
+                            class="home-chips__item-link-pointer-icon"
+                            alt="Arrow Up Left"
+                          >
+                          <span class="home-chips__item-link-pointer-text"
+                            >ניווט</span
+                          >
+                        </a>
+                        <a
+                          class="arrow-link__icon-wrapper arrow-link__icon-wrapper--white arrow-link home-chips__item-link-arrow"
+                        >
+                          <img
+                            src="icons/arrow-up-left-sm.svg"
+                            class="arrow-link__icon"
+                            alt="Arrow Up Left"
+                          >
+                        </a>
+                      </div>
+                      <img
+                        class="home-chips__item-image"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx1RB6TW9mq2E7pnL_Jj0gli3PRwWxIQFTHW0YbtnAC9Oczu5p_p8M4FALJdv9Z8yFV-c&usqp=CAU"
+                        alt=""
+                      >
+                    </div>
+                  </div>
+                  <div class="home-chips__item">
+                    <div class="home-chips__item-content">
+                      <h4 class="home-chips__item-title">גבולות גזרה</h4>
+
+                      <div class="home-chips__status-list">
+                        <div
+                          class="home-chips__status home-chips__status--bg-gray"
+                        >
+                          <span class="home-chips__status-indicator"></span>
+                          הולכי רגל
+                        </div>
+
+                        <div
+                          class="home-chips__status home-chips__status--bg-gray"
+                        >
+                          <span
+                            class="home-chips__status-indicator home-chips__status-indicator--active"
+                          ></span>
+                          הולכי רגל
+                        </div>
+                      </div>
+
+                      <div class="home-chips__item-action-list">
+                        <a
+                          class="arrow-link__icon-wrapper home-chips__item-link-pointer"
+                        >
+                          <img
+                            src="icons/pointer-up-left--blue.svg"
+                            class="home-chips__item-link-pointer-icon"
+                            alt="Arrow Up Left"
+                          >
+                          <span class="home-chips__item-link-pointer-text"
+                            >ניווט</span
+                          >
+                        </a>
+                        <a
+                          class="arrow-link__icon-wrapper arrow-link__icon-wrapper--white home-chips__item-link-arrow"
+                        >
+                          <img
+                            src="icons/arrow-up-left-sm.svg"
+                            class="arrow-link__icon"
+                            alt="Arrow Up Left"
+                          >
+                        </a>
+                      </div>
+
+                      <img
+                        class="home-chips__item-image"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx1RB6TW9mq2E7pnL_Jj0gli3PRwWxIQFTHW0YbtnAC9Oczu5p_p8M4FALJdv9Z8yFV-c&usqp=CAU"
+                        alt=""
+                      >
+                    </div>
+                  </div>
+                  <div class="home-chips__item">
+                    <div class="home-chips__item-content">
+                      <h4 class="home-chips__item-title">גבולות גזרה</h4>
+
+                      <div class="home-chips__status-list">
+                        <div
+                          class="home-chips__status home-chips__status--bg-gray"
+                        >
+                          <span class="home-chips__status-indicator"></span>
+                          הולכי רגל
+                        </div>
+
+                        <div
+                          class="home-chips__status home-chips__status--bg-gray"
+                        >
+                          <span
+                            class="home-chips__status-indicator home-chips__status-indicator--active"
+                          ></span>
+                          הולכי רגל
+                        </div>
+                      </div>
+
+                      <div class="home-chips__item-action-list">
+                        <a
+                          class="arrow-link__icon-wrapper arrow-link home-chips__item-link-pointer"
+                        >
+                          <img
+                            src="icons/pointer-up-left--blue.svg"
+                            class="home-chips__item-link-pointer-icon"
+                            alt="Arrow Up Left"
+                          >
+                          <span class="home-chips__item-link-pointer-text"
+                            >ניווט</span
+                          >
+                        </a>
+                        <a
+                          class="arrow-link__icon-wrapper arrow-link__icon-wrapper--white arrow-link home-chips__item-link-arrow"
+                        >
+                          <img
+                            src="icons/arrow-up-left-sm.svg"
+                            class="arrow-link__icon"
+                            alt="Arrow Up Left"
+                          >
+                        </a>
+                      </div>
+                      <img
+                        class="home-chips__item-image"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx1RB6TW9mq2E7pnL_Jj0gli3PRwWxIQFTHW0YbtnAC9Oczu5p_p8M4FALJdv9Z8yFV-c&usqp=CAU"
+                        alt=""
+                      >
+                    </div>
+                  </div>
+
+                  <button class="home-chips__load-more">הצג עוד כתבות</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="world-benefits__wrapper world-benefits__wrapper--black-grid with-triangle-2--bottom with-triangle--dark"
+        >
+          <div
+            class="main-content container section-aside-line-content relative"
+          >
+            <div class="world-benefits__main-content--lg">
+              <span class="section-aside-line"></span>
+              <div class="world-benefits__content">
+                <div
+                  class="world-benefits__header world-benefits__header--mb hide-tablet-max"
+                >
+                  <h2 class="world-benefits__header-title color-white">
+                    דרוכים לכל תרחיש. בכל שעה. בכל מקום.
+                  </h2>
+                </div>
+
+                <div class="swiper about-text-swiper" id="world-benefits-list">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div
+                        class="world-benefits-item world-benefits-item--lg-height"
+                      >
+                        <img
+                          class="world-benefits-item__full-image"
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqWulRCY8ctI3XLB8MjnLLKJcPzqotX2gzxXIt0Hd11YSAK1F-wR4r1aNISiwYJ4NcILw&usqp=CAU"
+                          alt=""
+                        >
+                        <div class="world-benefits-item__header"></div>
+
+                        <div
+                          class="world-benefits-item__content world-benefits-item__content--transparent"
+                        >
+                          <label
+                            class="world-benefits-item__content-tag content-aside__tag-item content-aside__tag-item--4-16 content-aside__tag-item--dark"
+                          >
+                            <span class="content-aside__tag-text"
+                              >שיתופי פעולה</span
+                            >
+                          </label>
+
+                          <div class="world-benefits-item__content-title mb-24">
+                            שיתוף פעולה לשמירה על ערכי טבע ועתיקות
+                          </div>
+
+                          <div
+                            class="world-benefits-item__content-link-wrapper"
+                          >
+                            <a
+                              class="arrow-link__icon-wrapper arrow-link__icon-wrapper--lg arrow-link"
+                            >
+                              <img
+                                src="icons/arrow-up-left-sm.svg"
+                                class="arrow-link__icon"
+                                alt="Arrow Up Left"
+                              >
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div
+                        class="world-benefits-item world-benefits-item--lg-height"
+                      >
+                        <img
+                          class="world-benefits-item__full-image"
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqWulRCY8ctI3XLB8MjnLLKJcPzqotX2gzxXIt0Hd11YSAK1F-wR4r1aNISiwYJ4NcILw&usqp=CAU"
+                          alt=""
+                        >
+                        <div class="world-benefits-item__header"></div>
+
+                        <div
+                          class="world-benefits-item__content world-benefits-item__content--transparent"
+                        >
+                          <label
+                            class="world-benefits-item__content-tag content-aside__tag-item content-aside__tag-item--4-16 content-aside__tag-item--dark"
+                          >
+                            <span class="content-aside__tag-text"
+                              >שיתופי פעולה</span
+                            >
+                          </label>
+                          <div class="world-benefits-item__content-title mb-24">
+                            שיתוף פעולה לשמירה על ערכי טבע ועתיקות
+                          </div>
+
+                          <div
+                            class="world-benefits-item__content-link-wrapper"
+                          >
+                            <a
+                              class="arrow-link__icon-wrapper arrow-link__icon-wrapper--lg arrow-link"
+                            >
+                              <img
+                                src="icons/arrow-up-left-sm.svg"
+                                class="arrow-link__icon"
+                                alt="Arrow Up Left"
+                              >
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div
+                        class="world-benefits-item world-benefits-item--lg-height"
+                      >
+                        <img
+                          class="world-benefits-item__full-image"
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqWulRCY8ctI3XLB8MjnLLKJcPzqotX2gzxXIt0Hd11YSAK1F-wR4r1aNISiwYJ4NcILw&usqp=CAU"
+                          alt=""
+                        >
+                        <div class="world-benefits-item__header"></div>
+
+                        <div
+                          class="world-benefits-item__content world-benefits-item__content--transparent"
+                        >
+                          <label
+                            class="world-benefits-item__content-tag content-aside__tag-item content-aside__tag-item--4-16 content-aside__tag-item--dark"
+                          >
+                            <span class="content-aside__tag-text">מעברים</span>
+                          </label>
+                          <div class="world-benefits-item__content-title mb-24">
+                            שיתוף פעולה לשמירה על ערכי טבע ועתיקות
+                          </div>
+
+                          <div
+                            class="world-benefits-item__content-link-wrapper"
+                          >
+                            <a
+                              class="arrow-link__icon-wrapper arrow-link__icon-wrapper--lg arrow-link"
+                            >
+                              <img
+                                src="icons/arrow-up-left-sm.svg"
+                                class="arrow-link__icon"
+                                alt="Arrow Up Left"
+                              >
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div
+                        class="world-benefits-item world-benefits-item--lg-height"
+                      >
+                        <img
+                          class="world-benefits-item__full-image"
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqWulRCY8ctI3XLB8MjnLLKJcPzqotX2gzxXIt0Hd11YSAK1F-wR4r1aNISiwYJ4NcILw&usqp=CAU"
+                          alt=""
+                        >
+                        <div class="world-benefits-item__header"></div>
+
+                        <div
+                          class="world-benefits-item__content world-benefits-item__content--transparent"
+                        >
+                          <label
+                            class="world-benefits-item__content-tag content-aside__tag-item content-aside__tag-item--4-16 content-aside__tag-item--dark"
+                          >
+                            <span class="content-aside__tag-text">מעברים</span>
+                          </label>
+                          <div class="world-benefits-item__content-title mb-24">
+                            שיתוף פעולה לשמירה על ערכי טבע ועתיקות
+                          </div>
+
+                          <div
+                            class="world-benefits-item__content-link-wrapper"
+                          >
+                            <a
+                              class="arrow-link__icon-wrapper arrow-link__icon-wrapper--lg arrow-link"
+                            >
+                              <img
+                                src="icons/arrow-up-left-sm.svg"
+                                class="arrow-link__icon"
+                                alt="Arrow Up Left"
+                              >
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div
+                        class="world-benefits-item world-benefits-item--lg-height"
+                      >
+                        <img
+                          class="world-benefits-item__full-image"
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqWulRCY8ctI3XLB8MjnLLKJcPzqotX2gzxXIt0Hd11YSAK1F-wR4r1aNISiwYJ4NcILw&usqp=CAU"
+                          alt=""
+                        >
+                        <div class="world-benefits-item__header"></div>
+
+                        <div
+                          class="world-benefits-item__content world-benefits-item__content--transparent"
+                        >
+                          <label
+                            class="world-benefits-item__content-tag content-aside__tag-item content-aside__tag-item--4-16 content-aside__tag-item--dark"
+                          >
+                            <span class="content-aside__tag-text"
+                              >שיתופי פעולה</span
+                            >
+                          </label>
+                          <div class="world-benefits-item__content-title mb-24">
+                            שיתוף פעולה לשמירה על ערכי טבע ועתיקות
+                          </div>
+
+                          <div
+                            class="world-benefits-item__content-link-wrapper"
+                          >
+                            <a
+                              class="arrow-link__icon-wrapper arrow-link__icon-wrapper--lg arrow-link"
+                            >
+                              <img
+                                src="icons/arrow-up-left-sm.svg"
+                                class="arrow-link__icon"
+                                alt="Arrow Up Left"
+                              >
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flat-pagination-wrapper">
+                  <div
+                    class="swiper-pagination flat-pagination bt-30"
+                    id="world-benefits-swiper-pagination"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <div class="footer__main">
+            <div class="footer__text-wrapper">
+              <h4 class="footer__text-subtitle">רשות המעברים היבשתיים</h4>
+              <h2 class="footer__text-title">ביטחון שמוביל את הדרך</h2>
+            </div>
+            <div class="footer__nav">
+              <a href="#" class="footer__nav-link">אודות</a>
+              <a href="#" class="footer__nav-link">אודות</a>
+              <a href="#" class="footer__nav-link">אודות</a>
+              <a href="#" class="footer__nav-link">אודות</a>
+              <a href="#" class="footer__nav-link">אודות</a>
+              <a href="#" class="footer__nav-link">אודות</a>
+            </div>
+          </div>
+
+          <div class="footer__sub">
+            <div class="footer__social-wrapper">
+              <a href="" class="footer__social-link">
+                <img
+                  class="footer__social-link-image"
+                  src="/src/assets/icons/yt.svg"
+                  alt="Youtube"
+                >
+              </a>
+              <a href="" class="footer__social-link">
+                <img
+                  class="footer__social-link-image"
+                  src="/src/assets/icons/inst.svg"
+                  alt="Instagram"
+                >
+              </a>
+              <a href="" class="footer__social-link">
+                <img
+                  class="footer__social-link-image"
+                  src="/src/assets/icons/fb.svg"
+                  alt="Facebook"
+                >
+              </a>
+            </div>
+
+            <div class="footer__subnav">
+              <a href="#" class="footer__subnav-link">אודות</a>
+              <a href="#" class="footer__subnav-link">אודות</a>
+              <a href="#" class="footer__subnav-link">אודות</a>
+            </div>
+
+            <div class="footer__powered-by ltr">
+              Powered by
+              <img
+                class="footer__powered-by-logo"
+                src="/src/assets/icons/powered-by-logo.svg"
+                alt="Powered by logo"
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

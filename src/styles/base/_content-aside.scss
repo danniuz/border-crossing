@@ -50,9 +50,18 @@
             line-height: 130%;
         }
 
+        &--dark {
+            background-color: #00171F;
+            color: var(--cyan-tag);
+        }
+
+        &--4-16 {
+            padding: 4px 16px !important;
+        }
+
         &--lg {
             font-size: 18px;
-            line-height: 130px;
+            line-height: 130%;
         }
 
         &--white {
