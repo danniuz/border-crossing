@@ -2,6 +2,7 @@ $mobile: 375px;
 $tablet-sm: 720px;
 $tablet: 980px;
 $tablet-lg: 1144px;
+$desktop-sm: 1240px;
 $desktop: 1440px;
 $desktop-lg: 1580px;
 
@@ -34,6 +35,21 @@ $desktop-lg: 1580px;
         @content;
     }
 }
+
+
+@mixin desktop-sm-min {
+    @media (min-width: #{$desktop-sm + 1px}) {
+        @content;
+    }
+}
+
+
+@mixin desktop-sm-max {
+    @media (max-width: #{$desktop-sm}) {
+        @content;
+    }
+}
+
 
 @mixin mobile-max {
     @media (max-width: #{$mobile}) {

@@ -10,7 +10,7 @@
         color: var(--dark-blue);
         margin-bottom: 8px;
 
-        @include desktop-min {
+        @include desktop-sm-min {
             font-size: 18px;
             line-height: 130%;
         }
@@ -24,7 +24,7 @@
         color: var(--dark-blue);
         margin-bottom: 48px;
 
-        @include desktop-min {
+        @include desktop-sm-min {
             font-size: 48px;
             line-height: 130%;
             margin-bottom: 80px;
@@ -36,7 +36,7 @@
         grid-template-columns: 1fr 2fr;
         column-gap: 16px;
 
-        @include desktop-lg-min {
+        @include desktop-sm-min {
             grid-template-columns: 2fr 1fr 2fr;
         }
     }
@@ -45,7 +45,7 @@
         width: 100%;
         clip-path: polygon(0% 0%, 100% 6%, 100% 94%, 0% 100%);
 
-        @include desktop-min {
+        @include desktop-sm-min {
             clip-path: polygon(0% 0%, 100% 6%, 100% 96%, 0% 100%);
         }
 
@@ -60,7 +60,7 @@
             object-fit: cover;
             object-position: 20%;
 
-            @include desktop-lg-min {
+            @include desktop-sm-min {
                 height: 100%;
             }
         }
@@ -70,7 +70,7 @@
         width: 100%;
         padding: 20px 0;
 
-        @include desktop-lg-min {
+        @include desktop-sm-min {
             padding-top: 50px;
             padding-bottom: 32px;
         }
@@ -93,7 +93,7 @@
 
         padding-top: 0;
 
-        @include desktop-lg-min {
+        @include desktop-sm-min {
             grid-column: 1;
             grid-row: 1;
         }
