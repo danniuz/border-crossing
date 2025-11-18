@@ -26,6 +26,19 @@
         }
     }
 
+    &__title {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 14px;
+        line-height: 110%;
+
+        @include tablet-min {
+            font-size: 18px;
+            line-height: 130%;
+        }
+    }
+
     &__link {
         margin-top: 32px;
     }
