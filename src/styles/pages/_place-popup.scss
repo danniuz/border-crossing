@@ -4,6 +4,10 @@ html:dir(ltr) {
     .place-popup {
         &__wrapper {
             transform: translateX(100%);
+
+            &--open {
+                transform: translateX(0);
+            }
         }
 
         &--closing {
