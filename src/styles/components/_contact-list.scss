@@ -1,0 +1,51 @@
+@use '../base/media' as *;
+
+.main-content__section {
+    .contact-list {
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            width: 100%;
+
+            @include tablet-min {
+                flex-direction: row;
+                gap: 40px;
+            }
+
+            @include desktop-lg-min {
+                margin-top: 90px;
+            }
+        }
+
+        &__list {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+        }
+
+        &__item {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px;
+            align-items: center;
+            border-bottom: 1px solid var(--dark-blue);
+        }
+
+        &__item-title {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 130%;
+            color: var(--dark-blue);
+        }
+
+        &__item-value {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 140%;
+            color: var(--dark-blue);
+        }
+    }
+}
