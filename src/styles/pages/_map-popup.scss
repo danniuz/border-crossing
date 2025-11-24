@@ -1,0 +1,136 @@
+@use '../base/media' as *;
+
+.map-popup {
+    height: 100%;
+
+    &__banner-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__wrapper {
+        inset-inline-end: 0;
+        position: fixed;
+        z-index: 9999;
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.2s ease-out;
+        opacity: 0;
+        top: 0;
+        background-color: #003459;
+
+        &--open {
+            opacity: 1;
+        }
+
+        &--closing {
+            opacity: 0;
+        }
+    }
+
+
+    &__close {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        background-color: #fff;
+        width: 40px;
+        height: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
+        @include tablet-min {
+            width: 64px;
+            height: 64px;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}
+
+
+.map-warning {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100% - 80px);
+    background-color: #fff;
+    padding: 40px 14px;
+    transform: translate(-50%, -50%);
+    max-width: 790px;
+
+    @include tablet-min {
+        padding: 40px 80px;
+    }
+
+    &__text {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: center;
+        color: var(--dark-blue);
+
+        @include tablet-min {
+            font-size: 22px;
+            line-height: 130%;
+            color: #000;
+        }
+    }
+
+    &__actions {
+        margin-top: 64px;
+        gap: 8px;
+        display: flex;
+        justify-content: center;
+
+        @include tablet-min {
+            margin-top: 40px;
+            gap: 24px;
+        }
+    }
+
+    &__action-reject,
+    &__action-accept {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 9px 22px;
+        border: 1.2px solid transparent;
+        color: #00171F;
+
+        @include tablet-min {
+            font-size: 18px;
+            line-height: 140%;
+            padding: 10px 38px;
+        }
+    }
+
+    &__action-reject {
+        background-color: #fff;
+        border-color: var(--dark-blue);
+    }
+
+    &__action-accept {
+        border-color: var(--cyan-tag);
+        background-color: var(--cyan-tag);
+    }
+}

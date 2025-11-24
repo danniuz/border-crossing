@@ -17,6 +17,7 @@ import { initInfoSwiper } from './js/info-swiper.js';
 import { initInfographListAnimation } from './js/infograph-list-animation.js';
 import { initAutoScrollAccordion } from './js/auto-scroll-accordion.js';
 import { initFadeUp } from './js/fade-up-gsap.js';
+import { initMapPopup } from './js/map-popup.js';
 
 function loadMap() {
   const map = initMap();
@@ -48,6 +49,7 @@ initInfoSwiper();
 initScrollToTop('#scroll-to-top', 500);
 initPlacePopup();
 initStairsGallery();
+initMapPopup();
 
 initFluidSwiper('#about-us-swiper', {
   paginationSelector: '#fluid-swiper-swiper-pagination',
