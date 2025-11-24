@@ -30,7 +30,9 @@ function loadMap() {
 initAside({ opened: false });
 loadMap();
 initMarquee({ start: true });
-initAccordion('#flashes-faq', 'faq__item', 'faq__item--opened');
+initAccordion('#flashes-faq', 'faq__item', 'faq__item--opened', {
+  avoidEventBubbleClasses: ['faq__item-link-list-item'],
+});
 initAutoScrollAccordion(
   '#manager-speech-statement-list',
   'manager-speech__statement-item',
