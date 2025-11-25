@@ -1,294 +1,460 @@
 <!doctype html>
 <html dir="rtl" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    >
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&display=swap"
-    rel="stylesheet">
-  <title>Vite + TS</title>
-</head>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    ></script>
 
-<body>
-  <script type="module" src="/src/main.js"></script>
-  <div id="wrapper" class="wrapper">
-    <div class="page-header">
-      <div class="page-header__textline">
-        hello world
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"
+    ></script>
+    <title>Vite + TS</title>
+  </head>
+
+  <body>
+    <script type="module" src="/src/main.js"></script>
+    <div id="wrapper" class="wrapper">
+      <div class="page-header">
+        <div class="page-header__textline">hello world</div>
       </div>
-    </div>
 
-    <div class="page-content">
-      <div class="menu">
-        <div class="menu__logo-list">
-          <a href="#" class="menu__logo-link">
-            <img class="menu__logo-image" src="icons/logo-1.svg" alt="Logo 1">
-            <span class="menu__logo-text">רשות מעברים יבשתיים</span>
-          </a>
+      <div class="page-content">
+        <div class="menu">
+          <div class="menu__logo-list">
+            <a href="#" class="menu__logo-link">
+              <img class="menu__logo-image" src="icons/logo-1.svg" alt="Logo 1">
+              <span class="menu__logo-text">רשות מעברים יבשתיים</span>
+            </a>
 
-          <a href="#" class="menu__logo-link">
-            <img class="menu__logo-image" src="icons/logo-2.svg" alt="Logo 2">
-            <span class="menu__logo-text">משרד הביטחון</span>
-          </a>
-        </div>
-
-        <div class="menu__nav-wrapper">
-          <div class="menu__nav-item">
-            <a href="#" class="menu__nav-link menu__nav-link--dark-blue-tag">
-              מידע
-              שימושי
-              <img src="icons/menu-nav-icon-arrow--cyan.svg"
-                class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow " alt="Arrow Left">
+            <a href="#" class="menu__logo-link">
+              <img class="menu__logo-image" src="icons/logo-2.svg" alt="Logo 2">
+              <span class="menu__logo-text">משרד הביטחון</span>
             </a>
           </div>
 
-          <div class="menu__nav-item">
-            <a href="#" class="menu__nav-link  menu__nav-link--dark-blue-tag">
-              כתבות
-              ועידכונים
-
-              <img src="icons/menu-nav-icon-arrow--cyan.svg"
-                class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow " alt="Arrow Left">
-            </a>
-          </div>
-
-          <div class="menu__nav-item">
-            <a href="#" class="menu__nav-link menu__nav-link--active  menu__nav-link--dark-blue-tag">
-              אודות
-              <img src="icons/menu-nav-icon-arrow--cyan.svg"
-                class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow " alt="Arrow Left">
-            </a>
-          </div>
-
-          <div class="menu__nav-item ">
-            <a href="#" class="menu__nav-link  menu__nav-link--blue-tag menu__nav-link--with-arrow">
-              צור קשר
-              <img src="icons/menu-nav-icon-arrow--white.svg" class="menu__nav-link-icon menu__nav-link-icon--arrow"
-                alt="Arrow Up Left">
-              <img src="icons/menu-nav-icon-arrow--white.svg"
-                class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow " alt="Arrow Left">
-            </a>
-          </div>
-
-          <div class="menu__nav-item">
-            <a href="#"
-              class="menu__nav-link  menu__nav-link--c-dark-blue menu__nav-link--cyan-tag menu__nav-link--with-arrow">
-              לכל המעברים
-              <img src="icons/menu-nav-icon-arrow--dark-blue.svg" class="menu__nav-link-icon menu__nav-link-icon--arrow"
-                alt="Arrow Up Left">
-              <img src="icons/menu-nav-icon-arrow--dark-blue.svg"
-                class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow " alt="Arrow Left">
-            </a>
-          </div>
-
-          <div class="menu__nav-item">
-            <a href="#" class="menu__nav-link  menu__nav-link--white-tag">
-              חיפוש
-              <img src="icons/magnify.svg" class="menu__nav-link-icon" alt="Magnify">
-            </a>
-          </div>
-
-          <div class="menu__nav-item">
-            <a href="#" class="menu__nav-link  menu__nav-link--c-white menu__nav-link--white-tag">
-              איזור אישי
-            </a>
-          </div>
-
-          <div class="menu__nav-row">
+          <div class="menu__nav-wrapper">
             <div class="menu__nav-item">
-              <a href="#"
-                class="menu__nav-link  menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon">
-                <img src="icons/accessibility.svg" class="menu__nav-link-icon" alt="Accessibility">
+              <a href="#" class="menu__nav-link menu__nav-link--dark-blue-tag">
+                מידע שימושי
+                <img
+                  src="icons/menu-nav-icon-arrow--cyan.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  alt="Arrow Left"
+                >
               </a>
             </div>
 
             <div class="menu__nav-item">
-              <a href="#"
-                class="menu__nav-link  menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon">
-                <img src="icons/lang.svg" class="menu__nav-link-icon" alt="Language">
+              <a href="#" class="menu__nav-link  menu__nav-link--dark-blue-tag">
+                כתבות ועידכונים
+
+                <img
+                  src="icons/menu-nav-icon-arrow--cyan.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  alt="Arrow Left"
+                >
               </a>
             </div>
-          </div>
-        </div>
 
-      </div>
-
-      <div class="breadcrumbs">
-        <a href="#" class="breadcrumbs__link">
-          <span class="breadcrumbs__link-icon breadcrumbs__link-icon--home"></span>
-          <span class="breadcrumbs__link-icon breadcrumbs__link-icon--arrow ltr-reverse-y"></span>
-        </a>
-
-        <a href="#" class="breadcrumbs__link">
-          <span class="breadcrumbs__link-text">כל המעברים</span>
-        </a>
-      </div>
-
-      <img class="main-content__cover-top" src="/src/assets/images/cars-header.png" alt="">
-
-      <!-- terms -->
-      <div class="main-content container">
-        <div class="main-content__layout">
-          <div class="content-aside">
-            <h2 class="content-aside__title">תנאי שימוש</h2>
-            <div class="content-aside__card content-aside__card--blue">
-              <h3 class="content-aside__card-title">זכויות יוצרים</h3>
-              <p>מציע את המידע בשירות מקוון זה/באתר מידע ברשת האינטרנט (להלן: השירות) בכפוף לתנאים הבאים. המונח "משתמש"
-                להלן משמעו כל אדם או תאגיד אשר יוצר קשר או מתקשר עם השירות.</p>
-              <p>הפרסומים באתר נועדו לסייע לציבור הרחב על ידי מתן מידע כללי, ראשוני ובלתי מחייב בלבד. המידע הניתן כאן
-                אינו מחליף, מוסיף, גורע או משנה מהוראת כל דין או נוהל, והוא כפוף לשינויים כפי שיהיו מעת לעת. בכל מקרה של
-                ספק או סתירה, יקבעו ההוראות שבחוק, בתקנות, בצווים ובנהלים.</p>
-              <p></p>
-              <p></p>
-              <p>אין במידע הניתן כאן כדי לחייב את המוסד לביטוח לאומי על סניפיו ויחידותיו, או ליצור זכויות שאינן מוקנות
-                בהוראת כל דין.</p>
+            <div class="menu__nav-item">
+              <a
+                href="#"
+                class="menu__nav-link menu__nav-link--active  menu__nav-link--dark-blue-tag"
+              >
+                אודות
+                <img
+                  src="icons/menu-nav-icon-arrow--cyan.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  alt="Arrow Left"
+                >
+              </a>
             </div>
-          </div>
 
-          <div class="main-content__page">
-            <div class="main-content__section main-content__section--dark">
-              <h2 class="main-content__section-title">זכויות יוצרים</h2>
-              <div class="main-content__section-text-wrapper">
-                <p>לפי דיני זכויות היוצרים התקפים בישראל, ועל פי אמנות בין-לאומיות, זכויות היוצרים בפרסומי המוסד, כולל
-                  אלו המתפרסמים בשירות זה, שייכות למוסד לביטוח לאומי. זכויות יוצרים אלו חולשות, בין השאר, על טקסט,
-                  תמונות, איורים, מפות, קטעי צליל, קטעי וידיאו, גרפיקה ויישומי תוכנה (להלן: החומר המוגן), אלא אם כן נקבע
-                  באופן מפורש כי זכויות היוצרים בחומר המוגן שייכות לגורם אחר.</p>
-                <p></p>
-                <p></p>
-                <p>המשתמש רשאי לעשות "שימוש הוגן" בחומר המוגן, לפי הכללים הקבועים בדין. שימוש הוגן כולל ציטוט סביר מתוך
-                  החומר המוגן.</p>
-                <p></p>
-                <p></p>
-                <p>המצטט כאמור חייב לציין את המקור לציטוט, בין אם הוא המוסד לביטוח לאומי ובין אם הוא גורם אחר. אסור
-                  למשתמש לעשות בחומר המוגן כל סילוף, פגימה או שינוי אחר, או כל פעולה שיש בה משום הפחתת ערך ביחס לחומר
-                  המוגן, העלולה לפגוע בכבודו או בשמו של בעל זכויות היוצרים בו.</p>
-                <p>בכפוף לדיני זכויות יוצרים, אסור למשתמש להעתיק, להפיץ מחדש, לשדר מחדש או לפרסם חומר מוגן, ללא הסכמה
-                  מראש ובכתב מאת המוסד לביטוח לאומי.</p>
+            <div class="menu__nav-item ">
+              <a
+                href="#"
+                class="menu__nav-link  menu__nav-link--blue-tag menu__nav-link--with-arrow"
+              >
+                צור קשר
+                <img
+                  src="icons/menu-nav-icon-arrow--white.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--arrow"
+                  alt="Arrow Up Left"
+                >
+                <img
+                  src="icons/menu-nav-icon-arrow--white.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  alt="Arrow Left"
+                >
+              </a>
+            </div>
+
+            <div class="menu__nav-item">
+              <a
+                href="#"
+                class="menu__nav-link  menu__nav-link--c-dark-blue menu__nav-link--cyan-tag menu__nav-link--with-arrow"
+              >
+                לכל המעברים
+                <img
+                  src="icons/menu-nav-icon-arrow--dark-blue.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--arrow"
+                  alt="Arrow Up Left"
+                >
+                <img
+                  src="icons/menu-nav-icon-arrow--dark-blue.svg"
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  alt="Arrow Left"
+                >
+              </a>
+            </div>
+
+            <div class="menu__nav-item">
+              <a href="#" class="menu__nav-link  menu__nav-link--white-tag">
+                חיפוש
+                <img
+                  src="icons/magnify.svg"
+                  class="menu__nav-link-icon"
+                  alt="Magnify"
+                >
+              </a>
+            </div>
+
+            <div class="menu__nav-item">
+              <a
+                href="#"
+                class="menu__nav-link  menu__nav-link--c-white menu__nav-link--white-tag"
+              >
+                איזור אישי
+              </a>
+            </div>
+
+            <div class="menu__nav-row">
+              <div class="menu__nav-item">
+                <a
+                  href="#"
+                  class="menu__nav-link  menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
+                >
+                  <img
+                    src="icons/accessibility.svg"
+                    class="menu__nav-link-icon"
+                    alt="Accessibility"
+                  >
+                </a>
               </div>
-            </div>
 
-            <div class="main-content__section">
-              <h2 class="main-content__section-title">זכויות יוצרים</h2>
-              <div class="main-content__section-text-wrapper">
-                <p>לפי דיני זכויות היוצרים התקפים בישראל, ועל פי אמנות בין-לאומיות, זכויות היוצרים בפרסומי המוסד, כולל
-                  אלו המתפרסמים בשירות זה, שייכות למוסד לביטוח לאומי. זכויות יוצרים אלו חולשות, בין השאר, על טקסט,
-                  תמונות, איורים, מפות, קטעי צליל, קטעי וידיאו, גרפיקה ויישומי תוכנה (להלן: החומר המוגן), אלא אם כן נקבע
-                  באופן מפורש כי זכויות היוצרים בחומר המוגן שייכות לגורם אחר.</p>
-                <p>המשתמש רשאי לעשות "שימוש הוגן" בחומר המוגן, לפי הכללים הקבועים בדין. שימוש הוגן כולל ציטוט סביר מתוך
-                  החומר המוגן.</p>
-                <p>המצטט כאמור חייב לציין את המקור לציטוט, בין אם הוא המוסד לביטוח לאומי ובין אם הוא גורם אחר. אסור
-                  למשתמש לעשות בחומר המוגן כל סילוף, פגימה או שינוי אחר, או כל פעולה שיש בה משום הפחתת ערך ביחס לחומר
-                  המוגן, העלולה לפגוע בכבודו או בשמו של בעל זכויות היוצרים בו.</p>
-                <p>בכפוף לדיני זכויות יוצרים, אסור למשתמש להעתיק, להפיץ מחדש, לשדר מחדש או לפרסם חומר מוגן, ללא הסכמה
-                  מראש ובכתב מאת המוסד לביטוח לאומי.</p>
-              </div>
-            </div>
-
-            <div class="main-content__section">
-              <h2 class="main-content__section-title">פניות לרשות המעברים</h2>
-              <div class="main-content__section-table-list">
-                <div class="main-content__section-table">
-                  <div class="main-content__section-table-row">
-                    <p class="main-content__section-table-cell-text">​משאבי אנוש</p>
-                    <p class="main-content__section-table-cell-value">​073-3531843</p>
-                  </div>
-                  <div class="main-content__section-table-row">
-                    <p class="main-content__section-table-cell-text">​משאבי אנוש</p>
-                    <p class="main-content__section-table-cell-value">​073-3531843</p>
-                  </div>
-                  <div class="main-content__section-table-row">
-                    <p class="main-content__section-table-cell-text">​משאבי אנוש</p>
-                    <p class="main-content__section-table-cell-value">​073-3531843</p>
-                  </div>
-                </div>
-                <div class="main-content__section-table">
-                  <div class="main-content__section-table-row">
-                    <p class="main-content__section-table-cell-text">​משאבי אנוש</p>
-                    <p class="main-content__section-table-cell-value">​073-3531843</p>
-                  </div>
-                  <div class="main-content__section-table-row">
-                    <p class="main-content__section-table-cell-text">​משאבי אנוש</p>
-                    <p class="main-content__section-table-cell-value">​073-3531843</p>
-                  </div>
-                  <div class="main-content__section-table-row">
-                    <p class="main-content__section-table-cell-text">​משאבי אנוש</p>
-                    <p class="main-content__section-table-cell-value">​073-3531843</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="main-content__section">
-              <h2 class="main-content__section-title">זכויות יוצרים</h2>
-              <div class="main-content__section-text-wrapper">
-                <p>לפי דיני זכויות היוצרים התקפים בישראל, ועל פי אמנות בין-לאומיות, זכויות היוצרים בפרסומי המוסד, כולל
-                  אלו המתפרסמים בשירות זה, שייכות למוסד לביטוח לאומי. זכויות יוצרים אלו חולשות, בין השאר, על טקסט,
-                  תמונות, איורים, מפות, קטעי צליל, קטעי וידיאו, גרפיקה ויישומי תוכנה (להלן: החומר המוגן), אלא אם כן נקבע
-                  באופן מפורש כי זכויות היוצרים בחומר המוגן שייכות לגורם אחר.</p>
-                <p>המשתמש רשאי לעשות "שימוש הוגן" בחומר המוגן, לפי הכללים הקבועים בדין. שימוש הוגן כולל ציטוט סביר מתוך
-                  החומר המוגן.</p>
-                <p>המצטט כאמור חייב לציין את המקור לציטוט, בין אם הוא המוסד לביטוח לאומי ובין אם הוא גורם אחר. אסור
-                  למשתמש לעשות בחומר המוגן כל סילוף, פגימה או שינוי אחר, או כל פעולה שיש בה משום הפחתת ערך ביחס לחומר
-                  המוגן, העלולה לפגוע בכבודו או בשמו של בעל זכויות היוצרים בו.</p>
-                <p>בכפוף לדיני זכויות יוצרים, אסור למשתמש להעתיק, להפיץ מחדש, לשדר מחדש או לפרסם חומר מוגן, ללא הסכמה
-                  מראש ובכתב מאת המוסד לביטוח לאומי.</p>
+              <div class="menu__nav-item">
+                <a
+                  href="#"
+                  class="menu__nav-link  menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
+                >
+                  <img
+                    src="icons/lang.svg"
+                    class="menu__nav-link-icon"
+                    alt="Language"
+                  >
+                </a>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="breadcrumbs">
+          <a href="#" class="breadcrumbs__link">
+            <span
+              class="breadcrumbs__link-icon breadcrumbs__link-icon--home"
+            ></span>
+            <span
+              class="breadcrumbs__link-icon breadcrumbs__link-icon--arrow ltr-reverse-y"
+            ></span>
+          </a>
+
+          <a href="#" class="breadcrumbs__link">
+            <span class="breadcrumbs__link-text">כל המעברים</span>
+          </a>
+        </div>
+
+        <picture class="fade-up-base" src="/media/axtfmgvt/terms-banner.png">
+          <source
+            media="(max-width: 375px)"
+            srcset="/src/assets/images/cars-header.png"
+          >
+          <source
+            media="(max-width: 1440px)"
+            srcset="/src/assets/images/cars-header.png"
+          >
+          <img
+            class="main-content__cover-top"
+            src="/src/assets/images/cars-header.png"
+            alt=""
+          >
+        </picture>
+
+        <!-- terms -->
+        <div class="main-content container">
+          <div class="main-content__layout">
+            <div class="content-aside content-aside--sticky">
+              <h2 class="content-aside__title">תנאי שימוש</h2>
+              <div class="content-aside__card content-aside__card--blue">
+                <h3 class="content-aside__card-title">זכויות יוצרים</h3>
+                <p>
+                  מציע את המידע בשירות מקוון זה/באתר מידע ברשת האינטרנט (להלן:
+                  השירות) בכפוף לתנאים הבאים. המונח "משתמש" להלן משמעו כל אדם או
+                  תאגיד אשר יוצר קשר או מתקשר עם השירות.
+                </p>
+                <p>
+                  הפרסומים באתר נועדו לסייע לציבור הרחב על ידי מתן מידע כללי,
+                  ראשוני ובלתי מחייב בלבד. המידע הניתן כאן אינו מחליף, מוסיף,
+                  גורע או משנה מהוראת כל דין או נוהל, והוא כפוף לשינויים כפי
+                  שיהיו מעת לעת. בכל מקרה של ספק או סתירה, יקבעו ההוראות שבחוק,
+                  בתקנות, בצווים ובנהלים.
+                </p>
+                <p></p>
+                <p></p>
+                <p>
+                  אין במידע הניתן כאן כדי לחייב את המוסד לביטוח לאומי על סניפיו
+                  ויחידותיו, או ליצור זכויות שאינן מוקנות בהוראת כל דין.
+                </p>
+              </div>
+            </div>
+
+            <div class="main-content__page">
+              <div class="main-content__section main-content__section--dark">
+                <h2 class="main-content__section-title">זכויות יוצרים</h2>
+                <div class="main-content__section-text-wrapper">
+                  <p>
+                    לפי דיני זכויות היוצרים התקפים בישראל, ועל פי אמנות
+                    בין-לאומיות, זכויות היוצרים בפרסומי המוסד, כולל אלו
+                    המתפרסמים בשירות זה, שייכות למוסד לביטוח לאומי. זכויות
+                    יוצרים אלו חולשות, בין השאר, על טקסט, תמונות, איורים, מפות,
+                    קטעי צליל, קטעי וידיאו, גרפיקה ויישומי תוכנה (להלן: החומר
+                    המוגן), אלא אם כן נקבע באופן מפורש כי זכויות היוצרים בחומר
+                    המוגן שייכות לגורם אחר.
+                  </p>
+                  <p></p>
+                  <p></p>
+                  <p>
+                    המשתמש רשאי לעשות "שימוש הוגן" בחומר המוגן, לפי הכללים
+                    הקבועים בדין. שימוש הוגן כולל ציטוט סביר מתוך החומר המוגן.
+                  </p>
+                  <p></p>
+                  <p></p>
+                  <p>
+                    המצטט כאמור חייב לציין את המקור לציטוט, בין אם הוא המוסד
+                    לביטוח לאומי ובין אם הוא גורם אחר. אסור למשתמש לעשות בחומר
+                    המוגן כל סילוף, פגימה או שינוי אחר, או כל פעולה שיש בה משום
+                    הפחתת ערך ביחס לחומר המוגן, העלולה לפגוע בכבודו או בשמו של
+                    בעל זכויות היוצרים בו.
+                  </p>
+                  <p>
+                    בכפוף לדיני זכויות יוצרים, אסור למשתמש להעתיק, להפיץ מחדש,
+                    לשדר מחדש או לפרסם חומר מוגן, ללא הסכמה מראש ובכתב מאת המוסד
+                    לביטוח לאומי.
+                  </p>
+                </div>
+              </div>
+
+              <div class="main-content__section">
+                <h2 class="main-content__section-title">זכויות יוצרים</h2>
+                <div class="main-content__section-text-wrapper">
+                  <p>
+                    לפי דיני זכויות היוצרים התקפים בישראל, ועל פי אמנות
+                    בין-לאומיות, זכויות היוצרים בפרסומי המוסד, כולל אלו
+                    המתפרסמים בשירות זה, שייכות למוסד לביטוח לאומי. זכויות
+                    יוצרים אלו חולשות, בין השאר, על טקסט, תמונות, איורים, מפות,
+                    קטעי צליל, קטעי וידיאו, גרפיקה ויישומי תוכנה (להלן: החומר
+                    המוגן), אלא אם כן נקבע באופן מפורש כי זכויות היוצרים בחומר
+                    המוגן שייכות לגורם אחר.
+                  </p>
+                  <p>
+                    המשתמש רשאי לעשות "שימוש הוגן" בחומר המוגן, לפי הכללים
+                    הקבועים בדין. שימוש הוגן כולל ציטוט סביר מתוך החומר המוגן.
+                  </p>
+                  <p>
+                    המצטט כאמור חייב לציין את המקור לציטוט, בין אם הוא המוסד
+                    לביטוח לאומי ובין אם הוא גורם אחר. אסור למשתמש לעשות בחומר
+                    המוגן כל סילוף, פגימה או שינוי אחר, או כל פעולה שיש בה משום
+                    הפחתת ערך ביחס לחומר המוגן, העלולה לפגוע בכבודו או בשמו של
+                    בעל זכויות היוצרים בו.
+                  </p>
+                  <p>
+                    בכפוף לדיני זכויות יוצרים, אסור למשתמש להעתיק, להפיץ מחדש,
+                    לשדר מחדש או לפרסם חומר מוגן, ללא הסכמה מראש ובכתב מאת המוסד
+                    לביטוח לאומי.
+                  </p>
+                </div>
+              </div>
+
+              <div class="main-content__section">
+                <h2 class="main-content__section-title">פניות לרשות המעברים</h2>
+                <div class="main-content__section-table-list">
+                  <div class="main-content__section-table">
+                    <div class="main-content__section-table-row">
+                      <p class="main-content__section-table-cell-text">
+                        ​משאבי אנוש
+                      </p>
+                      <p class="main-content__section-table-cell-value">
+                        ​073-3531843
+                      </p>
+                    </div>
+                    <div class="main-content__section-table-row">
+                      <p class="main-content__section-table-cell-text">
+                        ​משאבי אנוש
+                      </p>
+                      <p class="main-content__section-table-cell-value">
+                        ​073-3531843
+                      </p>
+                    </div>
+                    <div class="main-content__section-table-row">
+                      <p class="main-content__section-table-cell-text">
+                        ​משאבי אנוש
+                      </p>
+                      <p class="main-content__section-table-cell-value">
+                        ​073-3531843
+                      </p>
+                    </div>
+                  </div>
+                  <div class="main-content__section-table">
+                    <div class="main-content__section-table-row">
+                      <p class="main-content__section-table-cell-text">
+                        ​משאבי אנוש
+                      </p>
+                      <p class="main-content__section-table-cell-value">
+                        ​073-3531843
+                      </p>
+                    </div>
+                    <div class="main-content__section-table-row">
+                      <p class="main-content__section-table-cell-text">
+                        ​משאבי אנוש
+                      </p>
+                      <p class="main-content__section-table-cell-value">
+                        ​073-3531843
+                      </p>
+                    </div>
+                    <div class="main-content__section-table-row">
+                      <p class="main-content__section-table-cell-text">
+                        ​משאבי אנוש
+                      </p>
+                      <p class="main-content__section-table-cell-value">
+                        ​073-3531843
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="main-content__section">
+                <h2 class="main-content__section-title">זכויות יוצרים</h2>
+                <div class="main-content__section-text-wrapper">
+                  <p>
+                    לפי דיני זכויות היוצרים התקפים בישראל, ועל פי אמנות
+                    בין-לאומיות, זכויות היוצרים בפרסומי המוסד, כולל אלו
+                    המתפרסמים בשירות זה, שייכות למוסד לביטוח לאומי. זכויות
+                    יוצרים אלו חולשות, בין השאר, על טקסט, תמונות, איורים, מפות,
+                    קטעי צליל, קטעי וידיאו, גרפיקה ויישומי תוכנה (להלן: החומר
+                    המוגן), אלא אם כן נקבע באופן מפורש כי זכויות היוצרים בחומר
+                    המוגן שייכות לגורם אחר.
+                  </p>
+                  <p>
+                    המשתמש רשאי לעשות "שימוש הוגן" בחומר המוגן, לפי הכללים
+                    הקבועים בדין. שימוש הוגן כולל ציטוט סביר מתוך החומר המוגן.
+                  </p>
+                  <p>
+                    המצטט כאמור חייב לציין את המקור לציטוט, בין אם הוא המוסד
+                    לביטוח לאומי ובין אם הוא גורם אחר. אסור למשתמש לעשות בחומר
+                    המוגן כל סילוף, פגימה או שינוי אחר, או כל פעולה שיש בה משום
+                    הפחתת ערך ביחס לחומר המוגן, העלולה לפגוע בכבודו או בשמו של
+                    בעל זכויות היוצרים בו.
+                  </p>
+                  <p>
+                    בכפוף לדיני זכויות יוצרים, אסור למשתמש להעתיק, להפיץ מחדש,
+                    לשדר מחדש או לפרסם חומר מוגן, ללא הסכמה מראש ובכתב מאת המוסד
+                    לביטוח לאומי.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <div class="footer__main">
+            <div class="footer__text-wrapper">
+              <h4 class="footer__text-subtitle">רשות המעברים היבשתיים</h4>
+              <h2 class="footer__text-title">ביטחון שמוביל את הדרך</h2>
+            </div>
+            <div class="footer__nav">
+              <a href="#" class="footer__nav-link">אודות</a>
+              <a href="#" class="footer__nav-link">אודות</a>
+              <a href="#" class="footer__nav-link">אודות</a>
+              <a href="#" class="footer__nav-link">אודות</a>
+              <a href="#" class="footer__nav-link">אודות</a>
+              <a href="#" class="footer__nav-link">אודות</a>
+            </div>
+          </div>
+
+          <div class="footer__sub">
+            <div class="footer__social-wrapper">
+              <a href="" class="footer__social-link">
+                <img
+                  class="footer__social-link-image"
+                  src="/src/assets/icons/yt.svg"
+                  alt="Youtube"
+                >
+              </a>
+              <a href="" class="footer__social-link">
+                <img
+                  class="footer__social-link-image"
+                  src="/src/assets/icons/inst.svg"
+                  alt="Instagram"
+                >
+              </a>
+              <a href="" class="footer__social-link">
+                <img
+                  class="footer__social-link-image"
+                  src="/src/assets/icons/fb.svg"
+                  alt="Facebook"
+                >
+              </a>
+            </div>
+
+            <div class="footer__subnav">
+              <a href="#" class="footer__subnav-link">אודות</a>
+              <a href="#" class="footer__subnav-link">אודות</a>
+              <a href="#" class="footer__subnav-link">אודות</a>
+            </div>
+
+            <div class="footer__powered-by ltr">
+              Powered by
+              <img
+                class="footer__powered-by-logo"
+                src="/src/assets/icons/powered-by-logo.svg"
+                alt="Powered by logo"
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-
-    <footer class="footer">
-      <div class="footer__inner">
-        <div class="footer__main">
-          <div class="footer__text-wrapper">
-            <h4 class="footer__text-subtitle">רשות המעברים היבשתיים</h4>
-            <h2 class="footer__text-title">ביטחון שמוביל את הדרך</h2>
-          </div>
-          <div class="footer__nav">
-            <a href="#" class="footer__nav-link">אודות</a>
-            <a href="#" class="footer__nav-link">אודות</a>
-            <a href="#" class="footer__nav-link">אודות</a>
-            <a href="#" class="footer__nav-link">אודות</a>
-            <a href="#" class="footer__nav-link">אודות</a>
-            <a href="#" class="footer__nav-link">אודות</a>
-          </div>
-        </div>
-
-        <div class="footer__sub">
-          <div class="footer__social-wrapper">
-            <a href="" class="footer__social-link">
-              <img class="footer__social-link-image" src="/src/assets/icons/yt.svg" alt="Youtube">
-            </a>
-            <a href="" class="footer__social-link">
-              <img class="footer__social-link-image" src="/src/assets/icons/inst.svg" alt="Instagram">
-            </a>
-            <a href="" class="footer__social-link">
-              <img class="footer__social-link-image" src="/src/assets/icons/fb.svg" alt="Facebook">
-            </a>
-          </div>
-
-          <div class="footer__subnav">
-            <a href="#" class="footer__subnav-link">אודות</a>
-            <a href="#" class="footer__subnav-link">אודות</a>
-            <a href="#" class="footer__subnav-link">אודות</a>
-          </div>
-
-          <div class="footer__powered-by ltr">
-            Powered by <img class="footer__powered-by-logo" src="/src/assets/icons/powered-by-logo.svg"
-              alt="Powered by logo">
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
-</body>
-
+  </body>
 </html>

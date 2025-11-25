@@ -6,14 +6,14 @@ $desktop-sm: 1240px;
 $desktop: 1440px;
 $desktop-lg: 1580px;
 
-@mixin mobile-min {
-    @media (min-width: #{$mobile + 1px}) {
+@mixin desktop-only {
+    @media (min-width: #{$desktop}) and (max-width: #{$desktop}) {
         @content;
     }
 }
 
-@mixin tablet-sm-max {
-    @media (max-width: #{$tablet-sm}) {
+@mixin mobile-min {
+    @media (min-width: #{$mobile + 1px}) {
         @content;
     }
 }
@@ -43,9 +43,29 @@ $desktop-lg: 1580px;
     }
 }
 
+@mixin tablet-lg-min {
+    @media (min-width: #{$tablet-lg + 1px}) {
+        @content;
+    }
+}
+
+
+@mixin desktop-lg-min {
+    @media (min-width: #{$desktop-lg + 1px}) {
+        @content;
+    }
+}
+
 
 @mixin desktop-sm-max {
     @media (max-width: #{$desktop-sm}) {
+        @content;
+    }
+}
+
+
+@mixin tablet-sm-max {
+    @media (max-width: #{$tablet-sm}) {
         @content;
     }
 }
@@ -69,12 +89,6 @@ $desktop-lg: 1580px;
     }
 }
 
-@mixin tablet-lg-min {
-    @media (min-width: #{$tablet-lg + 1px}) {
-        @content;
-    }
-}
-
 
 @mixin desktop-max {
     @media (max-width: #{$desktop}) {
@@ -84,12 +98,6 @@ $desktop-lg: 1580px;
 
 @mixin desktop-lg-max {
     @media (max-width: #{$desktop-lg}) {
-        @content;
-    }
-}
-
-@mixin desktop-lg-min {
-    @media (min-width: #{$desktop-lg + 1px}) {
         @content;
     }
 }
