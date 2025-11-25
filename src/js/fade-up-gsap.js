@@ -8,6 +8,7 @@ export function initFadeUp(selector, options = {}) {
   } = options;
 
   const elements = document.querySelectorAll(selector);
+  console.log(elements);
 
   if (elements.length === 0) {
     return;

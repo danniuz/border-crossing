@@ -32,7 +32,42 @@
 
     <div id="wrapper" class="wrapper">
       <div class="page-header">
-        <div class="page-header__textline">hello world</div>
+        <div class="marquee">
+          <div class="marquee__controls">
+            <a class="marquee__link hide-tablet-max" href="">לכל ההודעות</a>
+            <button
+              id="marqueeStart"
+              class="button button__rect marquee__controls-action"
+            >
+              <img
+                class="marquee__controls-action-image"
+                src="/src/assets/icons/play.svg"
+                alt="Play"
+              >
+            </button>
+            <button
+              id="marqueeStop"
+              class="button button__rect marquee__controls-action"
+            >
+              <img
+                class="marquee__controls-action-image ltr-reverse-y"
+                src="/src/assets/icons/pause.svg"
+                alt="Pause"
+              >
+            </button>
+          </div>
+
+          <ul class="marquee__text-list" id="marquee-text">
+            <li class="marquee__text-item">Lorem ipsum dolor sit amet.</li>
+            <li class="marquee__text-item">Lorem, ipsum.</li>
+            <li class="marquee__text-item">Lorem ipsum dolor sit amet.</li>
+            <li class="marquee__text-item">Lorem, ipsum.</li>
+            <li class="marquee__text-item">Lorem ipsum dolor sit.</li>
+            <li class="marquee__text-item">hello world</li>
+            <li class="marquee__text-item">another big text line</li>
+            <li class="marquee__text-item">just for test</li>
+          </ul>
+        </div>
       </div>
 
       <div class="page-content">

@@ -74,4 +74,6 @@ initWorldBenefitsSwiper('#world-benefits-list', {
   worksMaxWidth: 980,
 });
 initInfographListAnimation();
+
 initFadeUp('#about-fluid-swiper-wrapper');
+initFadeUp('.fade-up-base');
