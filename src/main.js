@@ -77,3 +77,28 @@ initInfographListAnimation();
 
 initFadeUp('#about-fluid-swiper-wrapper');
 initFadeUp('.fade-up-base');
+
+////////////////////////////////////////
+// consern about this, beta for ksenia :D
+document.addEventListener('DOMContentLoaded', () => {
+  stickyAsideSetTop();
+});
+
+window.addEventListener('resize', () => {
+  stickyAsideSetTop();
+});
+
+function stickyAsideSetTop() {
+  if (typeof document === 'undefined') {
+    return;
+  }
+
+  const stickyTop = document.querySelector('.main-content__prefix-top--sticky');
+  const stickyAside = document.querySelector('.content-aside--sticky');
+
+  if (!stickyTop || !stickyAside) {
+    return;
+  }
+  stickyAside.setAttribute('style', `top: ${stickyTop.offsetHeight + 30}px`);
+}
+//////////////////////////////////////////////

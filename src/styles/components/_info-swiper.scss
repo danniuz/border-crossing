@@ -10,7 +10,7 @@
         max-width: 1008px;
     }
 
-    @include desktop-min {
+    @include desktop-sm-min {
         max-width: 704px;
         padding-top: 14px;
     }
@@ -34,7 +34,7 @@
             padding: initial;
         }
 
-        @include desktop-min {
+        @include desktop-sm-min {
             transform: translateY(-14px);
         }
 
@@ -54,7 +54,7 @@
         width: 96px;
         justify-content: space-between;
 
-        @include desktop-min {
+        @include desktop-sm-min {
             visibility: visible;
             top: calc(100% + 21px);
         }
@@ -83,7 +83,7 @@
         z-index: 10;
         position: relative;
 
-        @include desktop-min {
+        @include desktop-sm-min {
             margin: 0;
             max-width: 240px;
             margin-top: -387px;
@@ -100,7 +100,7 @@
         &-icon {
             margin-bottom: 16px;
 
-            @include desktop-min {
+            @include desktop-sm-min {
                 margin-bottom: 8px;
             }
         }
@@ -108,7 +108,7 @@
         &-content {
             padding: 24px 16px 0 40px;
 
-            @include desktop-min {
+            @include desktop-sm-min {
                 padding: 48px 16px 0 16px;
             }
         }
@@ -119,7 +119,7 @@
             line-height: 130%;
             color: var(--dark-blue);
 
-            @include desktop-min {
+            @include desktop-sm-min {
                 font-size: 24px;
                 line-height: 120%;
                 margin-bottom: 16px;
@@ -141,6 +141,10 @@
             @include desktop-lg-min {
                 margin-bottom: 24px;
             }
+
+            p {
+                padding-bottom: 8px;
+            }
         }
 
         &-benefit-list {
@@ -161,7 +165,7 @@
             padding-inline-start: 12px;
             position: relative;
 
-            @include desktop-min {
+            @include desktop-sm-min {
                 padding-inline-start: 0;
             }
 
@@ -176,7 +180,7 @@
                 background-color: var(--cyan-tag);
                 border-radius: 50%;
 
-                @include desktop-min {
+                @include desktop-sm-min {
                     content: none;
                 }
             }
@@ -211,9 +215,22 @@
             }
 
             &-icon {
-                width: 40px;
-                height: 40px;
-                background-color: var(--cyan-tag);
+                width: 18px;
+                height: 18px;
+
+                &-box {
+                    width: 40px;
+                    height: 40px;
+                    background-color: var(--cyan-tag);
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+
+                @include desktop-lg-min {
+                    transform: rotate(-135deg);
+                }
             }
 
             &-text {
@@ -252,7 +269,7 @@
             }
         }
 
-        @include desktop-min {
+        @include desktop-sm-min {
             visibility: hidden;
         }
     }

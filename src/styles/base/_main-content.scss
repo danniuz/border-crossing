@@ -22,6 +22,14 @@
     }
 }
 
+.main-content__prefix-top {
+    &--sticky {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+}
+
 html:dir(ltr) {
     .main-content {
 
@@ -110,11 +118,8 @@ html:dir(rtl) {
             max-width: 1039px;
         }
 
-        @include tablet-min {
+        @include desktop-sm-min {
             margin-top: 70px;
-        }
-
-        @include desktop-min {
             flex-direction: row;
             justify-content: space-between;
             // padding-inline-start: 160px;
@@ -164,7 +169,7 @@ html:dir(rtl) {
                 line-height: 100%;
                 color: #fff;
 
-                @include desktop-min {
+                @include desktop-sm-min {
                     font-size: 51px;
                     line-height: 110%;
                 }
@@ -188,6 +193,12 @@ html:dir(rtl) {
             padding-top: 36px;
             padding-bottom: 40px;
             position: relative;
+
+            &--sticky {
+                position: sticky;
+                top: 0;
+                z-index: 50;
+            }
 
             @include tablet-min {
                 padding-bottom: 72px;

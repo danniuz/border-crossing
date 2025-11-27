@@ -3,9 +3,11 @@
 .smooth-aside-link {
 
     &__list-wrapper {
-        @include desktop-min {
-            position: sticky;
-            top: 0;
+        position: sticky;
+        top: 700px;
+
+        @include desktop-lg-min {
+            top: 780px;
         }
     }
 
