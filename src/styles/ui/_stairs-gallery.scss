@@ -32,6 +32,16 @@
         &:nth-child(3) {
             margin-top: 138px;
         }
+
+        @include tablet-min {
+            &:nth-child(1) {
+                margin-top: 24px;
+            }
+
+            &:nth-child(3) {
+                margin-top: 75px;
+            }
+        }
     }
 
     &__item {

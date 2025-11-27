@@ -3,69 +3,83 @@
  * @param {boolean} params.start
  */
 export function initMarquee(params) {
-    const marqueeText = document.getElementById("marquee-text");
-    const controlActiveClass = 'marquee__controls-action--active';
+  const marqueeText = document.getElementById('marquee-text');
+  const controlActiveClass = 'marquee__controls-action--active';
 
-    if (!marqueeText) return;
+  if (!marqueeText) return;
 
-    // tripple elements
-    const items = Array.from(marqueeText.children);
+  // tripple elements
+  const items = Array.from(marqueeText.children);
 
-    items.forEach(item => {
-        const clone = item.cloneNode(true);
-        marqueeText.appendChild(clone);
-    });
+  items.forEach((item) => {
+    const clone = item.cloneNode(true);
+    marqueeText.appendChild(clone);
+  });
 
-    items.forEach(item => {
-        const clone = item.cloneNode(true);
-        marqueeText.appendChild(clone);
-    });
+  items.forEach((item) => {
+    const clone = item.cloneNode(true);
+    marqueeText.appendChild(clone);
+  });
 
-    let posX = 0;
-    // speed in px per frame
-    const speed = 0.6;
+  // speed in px per frame
+  const speed = 0.6;
+  const scrollWidth = marqueeText.scrollWidth / 2;
 
-    let req = null;
+  const isLTR = document.documentElement.dir === 'ltr';
 
-    const marqueeStart = document.getElementById('marqueeStart');
-    const marqueeStop = document.getElementById('marqueeStop');
+  // Initialize position based on direction
+  // For LTR: start from negative position so content comes from left
+  // For RTL: start from 0, content moves left
+  let posX = isLTR ? -scrollWidth : 0;
 
-    marqueeStart.addEventListener('click', () => {
-        if (!req) {
-            animate();
-            marqueeStop.classList.add(controlActiveClass);
-            marqueeStart.classList.remove(controlActiveClass);
-        }
-    });
+  let req = null;
 
-    marqueeStop.addEventListener('click', () => {
-        if (req) {
-            cancelAnimationFrame(req);
-            marqueeStart.classList.add(controlActiveClass);
-            marqueeStop.classList.remove(controlActiveClass);
-            req = null;
-        }
-    });
+  const marqueeStart = document.getElementById('marqueeStart');
+  const marqueeStop = document.getElementById('marqueeStop');
 
+  marqueeStart.addEventListener('click', () => {
+    if (!req) {
+      animate();
+      marqueeStop.classList.add(controlActiveClass);
+      marqueeStart.classList.remove(controlActiveClass);
+    }
+  });
 
-    if (params.start) {
-        animate();
-        marqueeStop.classList.add(controlActiveClass);
+  marqueeStop.addEventListener('click', () => {
+    if (req) {
+      cancelAnimationFrame(req);
+      marqueeStart.classList.add(controlActiveClass);
+      marqueeStop.classList.remove(controlActiveClass);
+      req = null;
+    }
+  });
+
+  if (params.start) {
+    animate();
+    marqueeStop.classList.add(controlActiveClass);
+  } else {
+    marqueeStart.classList.add(controlActiveClass);
+  }
+
+  function animate() {
+    if (isLTR) {
+      // Move from left to right
+      posX += speed;
+      // When we've moved one full width (from -scrollWidth to scrollWidth), reset for seamless loop
+      if (posX >= scrollWidth) {
+        posX = -scrollWidth;
+      }
     } else {
-        marqueeStart.classList.add(controlActiveClass);
+      // Move from right to left (default RTL behavior)
+      posX -= speed;
+      // When we've moved one full width, reset to 0 for seamless loop
+      if (-posX >= scrollWidth) {
+        posX = 0;
+      }
     }
 
-    function animate() {
-        posX -= speed;
+    marqueeText.style.transform = `translateY(-50%) translateX(${posX}px)`;
 
-        const scrollWidth = marqueeText.scrollWidth / 2;
-
-        if (-posX >= scrollWidth) {
-            posX = 0;
-        }
-
-        marqueeText.style.transform = `translateY(-50%) translateX(${posX}px)`;
-
-        req = requestAnimationFrame(animate);
-    }
+    req = requestAnimationFrame(animate);
+  }
 }
