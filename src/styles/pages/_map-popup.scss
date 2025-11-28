@@ -67,14 +67,14 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: calc(100% - 80px);
-    background-color: #fff;
-    padding: 40px 14px;
+    width: calc(100% - 64px);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px 24px 24px 24px;
     transform: translate(-50%, -50%);
     max-width: 790px;
 
     @include tablet-min {
-        padding: 40px 80px;
+        padding: 48px 80px;
     }
 
     &__text {
@@ -86,17 +86,19 @@
         color: var(--dark-blue);
 
         @include tablet-min {
-            font-size: 22px;
-            line-height: 130%;
-            color: #000;
+            font-size: 18px;
+            color: var(--dark-blue);
         }
     }
 
     &__actions {
-        margin-top: 64px;
-        gap: 8px;
+        margin-top: 24px;
+        gap: 16px;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        max-width: 243px;
+        margin-left: auto;
+        margin-right: auto;
 
         @include tablet-min {
             margin-top: 40px;
@@ -104,33 +106,39 @@
         }
     }
 
-    &__action-reject,
-    &__action-accept {
+    &__action-reject {
         font-family: IBM Plex Sans Hebrew;
         font-weight: 400;
         font-size: 16px;
         line-height: 140%;
+        color: var(--dark-blue);
         border: none;
         outline: none;
+        width: 36px;
+        border-bottom: 1px solid var(--dark-blue);
+        margin: auto;
+        padding-left: 0;
+        padding-right: 0;
+        background-color: transparent;
+    }
+
+    &__action-map {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: var(--dark-blue);
+        padding: 10px;
+        border: 1.5px solid var(--dark-blue);
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        text-decoration: none;
         cursor: pointer;
-        padding: 9px 22px;
-        border: 1.2px solid transparent;
-        color: #00171F;
 
-        @include tablet-min {
-            font-size: 18px;
-            line-height: 140%;
-            padding: 10px 38px;
+        &:hover {
+            color: var(--dark-blue);
         }
-    }
-
-    &__action-reject {
-        background-color: #fff;
-        border-color: var(--dark-blue);
-    }
-
-    &__action-accept {
-        border-color: var(--cyan-tag);
-        background-color: var(--cyan-tag);
     }
 }
