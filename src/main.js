@@ -18,6 +18,7 @@ import { initInfographListAnimation } from './js/infograph-list-animation.js';
 import { initAutoScrollAccordion } from './js/auto-scroll-accordion.js';
 import { initFadeUp } from './js/fade-up-gsap.js';
 import { initMapPopup } from './js/map-popup.js';
+import { initVideoPopup } from './js/video-popup.js';
 
 function loadMap() {
   const map = initMap();
@@ -52,6 +53,7 @@ initScrollToTop('#scroll-to-top', 500);
 initPlacePopup();
 initStairsGallery();
 initMapPopup();
+initVideoPopup();
 
 initFluidSwiper('#about-us-swiper', {
   paginationSelector: '#fluid-swiper-swiper-pagination',
@@ -77,28 +79,3 @@ initInfographListAnimation();
 
 initFadeUp('#about-fluid-swiper-wrapper');
 initFadeUp('.fade-up-base');
-
-////////////////////////////////////////
-// consern about this, beta for ksenia :D
-document.addEventListener('DOMContentLoaded', () => {
-  stickyAsideSetTop();
-});
-
-window.addEventListener('resize', () => {
-  stickyAsideSetTop();
-});
-
-function stickyAsideSetTop() {
-  if (typeof document === 'undefined') {
-    return;
-  }
-
-  const stickyTop = document.querySelector('.main-content__prefix-top--sticky');
-  const stickyAside = document.querySelector('.content-aside--sticky');
-
-  if (!stickyTop || !stickyAside) {
-    return;
-  }
-  stickyAside.setAttribute('style', `top: ${stickyTop.offsetHeight + 30}px`);
-}
-//////////////////////////////////////////////

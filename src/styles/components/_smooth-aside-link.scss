@@ -2,14 +2,14 @@
 
 .smooth-aside-link {
 
-    &__list-wrapper {
-        position: sticky;
-        top: 700px;
+    // &__list-wrapper {
+    //     position: sticky;
+    //     top: 700px;
 
-        @include desktop-lg-min {
-            top: 780px;
-        }
-    }
+    //     @include desktop-lg-min {
+    //         top: 780px;
+    //     }
+    // }
 
     &__list {
         display: flex;
