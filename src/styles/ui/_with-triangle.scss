@@ -26,6 +26,7 @@
 
 .with-triangle-1--top {
     position: relative;
+    overflow: hidden;
 
     &::before {
         content: "";
@@ -52,6 +53,7 @@
 
 .with-triangle-1--bottom {
     position: relative;
+    overflow: hidden;
 
     &::after {
         content: "";
@@ -78,6 +80,7 @@
 
 .with-triangle-2--bottom {
     position: relative;
+    overflow: hidden;
 
     &::after {
         content: "";

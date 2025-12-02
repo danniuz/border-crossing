@@ -6,10 +6,12 @@
     flex-shrink: 0;
 
     &--sticky {
-        position: sticky;
-        top: 20px;
-        align-self: flex-start;
-        height: fit-content;
+        @include desktop-min {
+            position: sticky;
+            top: 20px;
+            align-self: flex-start;
+            height: fit-content;
+        }
     }
 
     @include desktop-min {
