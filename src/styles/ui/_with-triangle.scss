@@ -26,7 +26,6 @@
 
 .with-triangle-1--top {
     position: relative;
-    overflow: hidden;
 
     &::before {
         content: "";
@@ -36,8 +35,8 @@
         top: -20px;
         width: 0;
         height: 0;
-        border-left: 75vw solid transparent;
-        border-right: 35vw solid transparent;
+        border-left: 77vw solid transparent;
+        border-right: 23vw solid transparent;
         border-bottom: 20px solid transparent;
         pointer-events: none;
         z-index: inherit;
@@ -45,15 +44,14 @@
         @include tablet-min {
             top: -25px;
             border-bottom-width: 25px;
-            border-left: 45vw solid transparent;
-            border-right: 75vw solid transparent;
+            border-left: 40vw solid transparent;
+            border-right: 60vw solid transparent;
         }
     }
 }
 
 .with-triangle-1--bottom {
     position: relative;
-    overflow: hidden;
 
     &::after {
         content: "";
@@ -63,24 +61,23 @@
         bottom: -20px;
         width: 0;
         height: 0;
-        border-left: 35vw solid transparent;
-        border-right: 75vw solid transparent;
+        border-left: 23vw solid transparent;
+        border-right: 77vw solid transparent;
         border-top: 20px solid transparent;
         pointer-events: none;
         z-index: inherit;
 
         @include tablet-min {
-            bottom: -28px;
-            border-top-width: 28px;
-            border-left: 35vw solid transparent;
-            border-right: 75vw solid transparent;
+            bottom: -33px;
+            border-top-width: 35px;
+            border-left: 40vw solid transparent;
+            border-right: 60vw solid transparent;
         }
     }
 }
 
 .with-triangle-2--bottom {
     position: relative;
-    overflow: hidden;
 
     &::after {
         content: "";
@@ -90,15 +87,15 @@
         bottom: -20px;
         width: 0;
         height: 0;
-        border-left: 35vw solid transparent;
-        border-right: 75vw solid transparent;
+        border-left: 23vw solid transparent;
+        border-right: 77vw solid transparent;
         border-top: 20px solid transparent;
         pointer-events: none;
         z-index: inherit;
 
         @include tablet-min {
-            bottom: -28px;
-            border-top-width: 28px;
+            bottom: -33px;
+            border-top-width: 35px;
             border-left: 60vw solid transparent;
             border-right: 40vw solid transparent;
         }

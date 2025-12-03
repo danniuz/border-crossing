@@ -1,6 +1,10 @@
 @use '../base/media' as *;
 
 .wide-text {
+    @include desktop-only {
+        margin-right: 292px;
+    }
+
     &__wrapper {
         margin-top: 80px;
         margin-bottom: 80px;

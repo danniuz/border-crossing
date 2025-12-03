@@ -33,15 +33,19 @@
 html:dir(ltr) {
     .main-content {
 
-        &,
-        &__top {
+        &__layout {
+            transform: translateX(0);
 
             @include desktop-only {
-                transform: translateX(160px) !important;
+                transform: translateX(108px) !important;
             }
 
             @include desktop-lg-min {
                 transform: translateX(70px);
+            }
+
+            @include desktop-min {
+                transform: translateX(0);
             }
         }
     }
@@ -49,15 +53,19 @@ html:dir(ltr) {
 
 html:dir(rtl) {
     .main-content {
+        &__layout {
+            transform: translateX(0);
 
-        &,
-        &__top {
             @include desktop-only {
                 transform: translateX(-160px) !important;
             }
 
             @include desktop-lg-min {
                 transform: translateX(-70px);
+            }
+
+            @include desktop-min {
+                transform: translateX(0);
             }
         }
     }
@@ -67,7 +75,6 @@ html:dir(rtl) {
     max-width: 100%;
     margin: 0 auto;
     margin-top: 48px;
-    transform: translateX(0);
 
     @include tablet-min {
         margin-top: 80px;
@@ -94,12 +101,6 @@ html:dir(rtl) {
     &__top {
         @include tablet-min {
             max-width: 1039px;
-        }
-
-        @include tablet-lg-min {}
-
-        @include desktop-min {
-            transform: translateX(0);
         }
 
         @include desktop-lg-min {

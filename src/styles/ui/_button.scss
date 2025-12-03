@@ -68,6 +68,11 @@
         background-color: var(--cyan-tag);
         flex-shrink: 0;
 
+        &:hover {
+            text-decoration: none;
+            color: var(--dark-blue);
+        }
+
         @include tablet-sm-min {
             padding: 12px 16px;
             padding-inline-start: 32px;
