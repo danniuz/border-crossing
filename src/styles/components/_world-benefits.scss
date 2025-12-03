@@ -173,6 +173,33 @@
         width: 240px;
     }
 
+    &--hoverable {
+        z-index: -123;
+
+        &:hover {
+            .world-benefits-item__full-image {
+                scale: 1.05;
+            }
+
+            .arrow-link__icon-wrapper {
+                background-color: var(--cyan-tag);
+
+                .arrow-link__icon {
+                    rotate: -45deg;
+                }
+            }
+
+        }
+
+        .world-benefits-item__full-image {
+            transition: scale 0.3s ease;
+        }
+
+        .arrow-link__icon-wrapper {
+            transition: background-color 0.3s ease;
+        }
+    }
+
     &--lg-height {
         height: 413px;
 

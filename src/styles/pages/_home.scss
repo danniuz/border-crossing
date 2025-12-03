@@ -7,6 +7,16 @@
         }
     }
 
+    &__aside {
+        @include tablet-min {
+            position: sticky;
+            top: 20px;
+            align-self: flex-start;
+            height: fit-content;
+        }
+
+    }
+
     &__aside-title {
         font-family: IBM Plex Sans Hebrew;
         font-weight: 400;
