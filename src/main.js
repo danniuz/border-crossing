@@ -33,6 +33,8 @@ loadMap();
 initMarquee({ start: true });
 initAccordion('#flashes-faq', 'faq__item', 'faq__item--opened', {
   avoidEventBubbleClasses: ['faq__item-link-list-item'],
+  singleOpened: true,
+  firstOpened: true,
 });
 initAutoScrollAccordion(
   '#manager-speech-statement-list',

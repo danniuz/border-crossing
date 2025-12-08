@@ -1,201 +1,165 @@
-@use '../base/media' as *;
+@use "../base/media" as *;
 
 .footer {
-    position: relative;
-    background-color: var(--dark-blue);
-    padding: 120px 16px 40px 16px;
-    overflow: hidden;
+  background-color: var(--dark-blue);
+  padding-top: 64px;
+  color: #fff;
+  padding-left: 16px;
+  padding-right: 16px;
 
-    &--gray-bg {
-        &::after {
-            border-top-color: var(--gray-tag) !important;
-        }
+  &__subtitle {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 110%;
+    margin-bottom: 12px;
+  }
 
-        &::before {
-            content: '';
-            width: 100%;
-            position: absolute;
-            left: 0;
-            top: -64px;
-            height: 64px;
-            background-color: var(--gray-tag);
+  &__title {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100%;
+    text-align: right;
+    margin-bottom: 24px;
+    max-width: 305px;
+  }
 
-            @include tablet-min {
-                top: -160px;
-                height: 160px;
-            }
-        }
-    }
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
 
     @include tablet-min {
-        padding-top: 192px;
-        padding-bottom: 72px;
+      flex-direction: row;
     }
 
-    @include desktop-min {
-        padding-bottom: 192px;
+    @include desktop-sm-min {
+      padding-right: 308px;
+    }
+  }
+
+  &-main-links {
+    display: flex;
+    gap: 56px;
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    @include desktop-lg-min {
-        padding-bottom: 290px;
-    }
+    &__link {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 130%;
+      padding: 8px 0;
+      color: #fff;
+      cursor: pointer;
+      text-decoration: none;
 
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 0;
-        border-left: 50vw solid transparent;
-        border-right: 50vw solid transparent;
-        border-top: 32px solid #fff;
-
-        @include tablet-min {
-            border-left-width: 50vh;
-            border-right-width: 85vh;
-        }
-    }
-
-    &__inner {
-        max-width: 1007px;
-        margin: 0 auto;
-
-        @include desktop-lg-min {
-            max-width: 1580px;
-        }
-    }
-
-    &__main {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-
-        @include tablet-min {
-            flex-direction: row;
-        }
-    }
-
-    &__text-wrapper {
-        display: flex;
-        flex-direction: column;
-
-        @include tablet-min {
-            margin-top: auto;
-            width: 100%;
-        }
-    }
-
-    &__text-subtitle {
-        color: #fff;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 140%;
-        margin-bottom: 8px;
-
-        @include tablet-min {
-            font-size: 32px;
-        }
-    }
-
-    &__text-title {
-        color: #fff;
-        font-weight: 400;
-        font-size: 36px;
-        line-height: 120%;
-
-        @include tablet-min {
-            font-size: 68px;
-        }
-    }
-
-    &__nav {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        max-width: 240px;
-        width: 100%;
-
-        @include tablet-min {
-            margin-bottom: 61px;
-            gap: 16px;
-        }
-    }
-
-    &__nav-link {
-        color: #fff;
-        padding: 8px 0;
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 400;
-        font-size: 22px;
-        line-height: 130%;
+      &:hover {
         text-decoration: none;
-        cursor: pointer;
-
-        @include tablet-min {
-            font-size: 28px;
-        }
-
-        &:hover {
-            text-decoration: underline;
-            color: #fff;
-        }
-    }
-
-    &__sub {
-        margin-top: 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        margin-inline-end: 16px;
-    }
-
-    &__social-wrapper {
-        display: flex;
-        gap: 16px;
-    }
-
-    &__social-link {
-        padding: 8px;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    &__subnav {
-        display: flex;
-        gap: 16px;
-
-        &-link {
-            color: #fff;
-            text-decoration: none;
-            cursor: pointer;
-            padding: 8px;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 130%;
-
-            &:hover {
-                text-decoration: underline;
-                color: #fff;
-            }
-        }
-    }
-
-    &__powered-by {
-        font-weight: 400;
-        font-style: Regular;
-        font-size: 14px;
-        line-height: 100%;
         color: #fff;
-        margin-top: 48px;
+      }
+    }
+  }
 
-        @include tablet-min {
-            display: none;
-        }
+  &-social {
+    &__list {
+      display: flex;
+      gap: 16px;
+      justify-content: flex-end;
+      margin-top: 24px;
     }
 
-    &__powered-by-logo {
-        margin-left: 4px;
+    &__link {
+      cursor: pointer;
     }
+  }
+
+  &__sub {
+    margin-top: 16px;
+    padding-top: 8px;
+    padding-bottom: 16px;
+    position: relative;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "link-list link-list"
+      "language-selector powered-by";
+
+    @include tablet-min {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #f2f4f5;
+    }
+
+    &-link-list {
+      display: flex;
+      gap: 16px;
+      grid-area: link-list;
+    }
+
+    &-powered-by {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      grid-area: powered-by;
+      justify-content: flex-end;
+      font-family: Ploni ML v2 AAA;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 100%;
+    }
+
+    &-link-item {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 130%;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      padding: 8px;
+
+      &:hover {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+
+  &__language-selector-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    grid-area: language-selector;
+    margin-left: auto;
+
+    @include tablet-min {
+      margin-left: 0;
+    }
+  }
 }
