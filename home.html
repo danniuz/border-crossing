@@ -1023,20 +1023,39 @@
           </div>
 
           <div class="footer__sub">
-            <button class="footer__language-selector-button">
-              <img
-                class="footer__language-selector-icon"
-                src="/src/assets/icons/globe.svg"
-                alt="Powered by logo"
-              />
+            <div class="footer__language-selector-wrapper">
+              <button class="footer__language-selector-button">
+                <img
+                  class="footer__language-selector-icon"
+                  src="/src/assets/icons/globe.svg"
+                  alt="Language selector"
+                />
 
-              עברית
-              <img
-                class="footer__language-selector-icon"
-                src="/src/assets/icons/chevron-down.svg"
-                alt="Powered by logo"
-              />
-            </button>
+                <span class="footer__language-selector-text">עברית</span>
+                <img
+                  class="footer__language-selector-icon"
+                  src="/src/assets/icons/chevron-down.svg"
+                  alt="Dropdown"
+                />
+              </button>
+
+              <ul class="footer__language-dropdown">
+                <li>
+                  <a
+                    href="#"
+                    class="footer__language-item footer__language-item--active"
+                  >
+                    עברית
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="footer__language-item">English</a>
+                </li>
+                <li>
+                  <a href="#" class="footer__language-item">العربية</a>
+                </li>
+              </ul>
+            </div>
 
             <div class="footer__sub-link-list">
               <a href="#" class="footer__sub-link-item">אודות</a>

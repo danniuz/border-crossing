@@ -142,6 +142,17 @@
     }
   }
 
+  &__language-selector-wrapper {
+    position: relative;
+    grid-area: language-selector;
+    margin-left: auto;
+    display: inline-flex;
+
+    @include tablet-min {
+      margin-left: 0;
+    }
+  }
+
   &__language-selector-button {
     display: flex;
     align-items: center;
@@ -155,11 +166,72 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 130%;
-    grid-area: language-selector;
-    margin-left: auto;
 
-    @include tablet-min {
-      margin-left: 0;
+    &--opened {
+      .footer__language-selector-icon:last-child {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__language-selector-icon {
+    transition: transform 0.2s ease;
+  }
+
+  &__language-selector-text {
+    display: inline-block;
+  }
+
+  &__language-dropdown {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    margin-bottom: 8px;
+    background-color: var(--dark-blue);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    list-style: none;
+    padding: 8px 0;
+    margin: 0;
+    min-width: 120px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+
+    &--opened {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    li {
+      margin: 0;
+    }
+  }
+
+  &__language-item {
+    display: block;
+    padding: 8px 16px;
+    color: #fff;
+    text-decoration: none;
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+      color: #fff;
+    }
+
+    &--active {
+      background-color: rgba(255, 255, 255, 0.15);
+      font-weight: 600;
     }
   }
 }
