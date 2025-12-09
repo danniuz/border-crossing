@@ -3,7 +3,7 @@
 .breadcrumbs {
   display: flex;
   position: absolute;
-  top: 130px;
+  top: 77px;
   inset-inline-start: 16px;
   gap: 8px;
   z-index: 99;
@@ -43,7 +43,7 @@
   }
 
   @include tablet-min {
-    top: 72px;
+    top: 20px;
     inset-inline-start: 200px;
   }
 

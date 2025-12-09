@@ -7,12 +7,32 @@
   padding-left: 16px;
   padding-right: 16px;
 
+  @include tablet-min {
+    padding-top: 103px;
+  }
+
+  @include desktop-lg-min {
+    padding-top: 144px;
+  }
+
   &__subtitle {
     font-family: IBM Plex Sans Hebrew;
     font-weight: 500;
     font-size: 14px;
     line-height: 110%;
     margin-bottom: 12px;
+
+    @include tablet-min {
+      font-size: 18px;
+      line-height: 130%;
+      margin-bottom: 14px;
+    }
+
+    @include desktop-lg-min {
+      font-size: 24px;
+      line-height: 130%;
+      margin-bottom: 8px;
+    }
   }
 
   &__title {
@@ -20,9 +40,52 @@
     font-weight: 400;
     font-size: 32px;
     line-height: 100%;
-    text-align: right;
     margin-bottom: 24px;
     max-width: 305px;
+
+    @include tablet-min {
+      font-size: 48px;
+      line-height: 130%;
+      margin-bottom: 32px;
+      max-width: 500px;
+    }
+
+    @include desktop-lg-min {
+      font-size: 56px;
+      line-height: 110%;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__main,
+  &__sub,
+  &-social {
+    @include tablet-min {
+      max-width: 1008px;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-inline-start: 100px;
+    }
+
+    @include desktop-sm-min {
+      margin-inline-start: 308px;
+    }
+  }
+
+  &__main {
+    @include desktop-lg-min {
+      margin: auto;
+      margin-inline-start: 328px !important;
+      max-width: 1161px !important;
+    }
+  }
+
+  &__sub,
+  &-social {
+    @include desktop-min {
+      margin-inline-end: 80px;
+      max-width: 100%;
+    }
   }
 
   &__main {
@@ -31,11 +94,18 @@
     gap: 64px;
 
     @include tablet-min {
+      max-width: 1008px;
       flex-direction: row;
+      justify-content: space-between;
+      margin-inline-start: 100px;
     }
 
     @include desktop-sm-min {
-      padding-right: 308px;
+      margin-inline-start: 308px;
+    }
+
+    @include desktop-lg-min {
+      gap: 160px;
     }
   }
 
@@ -43,10 +113,26 @@
     display: flex;
     gap: 56px;
 
+    @include tablet-min {
+      gap: 80px;
+    }
+
+    @include desktop-lg-min {
+      gap: 160px;
+    }
+
     &__list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+
+      @include tablet-min {
+        gap: 8px;
+        padding-top: 40px;
+      }
+
+      @include desktop-lg-min {
+        gap: 16px;
+      }
     }
 
     &__link {
@@ -63,6 +149,14 @@
         text-decoration: none;
         color: #fff;
       }
+
+      @include tablet-min {
+        font-size: 18px;
+      }
+
+      @include desktop-lg-min {
+        font-size: 24px;
+      }
     }
   }
 
@@ -72,6 +166,10 @@
       gap: 16px;
       justify-content: flex-end;
       margin-top: 24px;
+
+      @include tablet-min {
+        margin-top: 64px;
+      }
     }
 
     &__link {
@@ -83,7 +181,6 @@
     margin-top: 16px;
     padding-top: 8px;
     padding-bottom: 16px;
-    position: relative;
     display: grid;
     gap: 16px;
     grid-template-columns: 1fr 1fr;
@@ -91,10 +188,18 @@
     grid-template-areas:
       "link-list link-list"
       "language-selector powered-by";
+    position: relative;
 
     @include tablet-min {
+      position: static;
       display: flex;
       justify-content: flex-end;
+      margin-top: 24px;
+      padding-top: 32px;
+    }
+
+    @include desktop-lg-min {
+      gap: 32px;
     }
 
     &::before {
@@ -105,12 +210,22 @@
       width: 100%;
       height: 1px;
       background-color: #f2f4f5;
+
+      @include tablet-min {
+        top: initial;
+        transform: translateY(-32px);
+        width: 100vw;
+      }
     }
 
     &-link-list {
       display: flex;
       gap: 16px;
       grid-area: link-list;
+
+      @include desktop-lg-min {
+        gap: 32px;
+      }
     }
 
     &-powered-by {
@@ -123,6 +238,34 @@
       font-weight: 400;
       font-size: 14px;
       line-height: 100%;
+
+      @include tablet-min {
+        font-size: 18px;
+        padding-inline-start: 32px;
+        margin-inline-start: 8px;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 10%;
+          inset-inline-start: 0;
+          width: 1px;
+          height: 80%;
+          background-color: #f2f4f5;
+        }
+      }
+
+      @include desktop-lg-min {
+        font-size: 24px;
+        padding-inline-start: 48px;
+      }
+
+      &-logo {
+        @include tablet-min {
+          width: 128px;
+        }
+      }
     }
 
     &-link-item {
@@ -138,6 +281,10 @@
       &:hover {
         text-decoration: none;
         color: #fff;
+      }
+
+      @include tablet-min {
+        font-size: 18px;
       }
     }
   }
@@ -171,6 +318,10 @@
       .footer__language-selector-icon:last-child {
         transform: rotate(180deg);
       }
+    }
+
+    @include tablet-min {
+      font-size: 18px;
     }
   }
 
@@ -222,6 +373,10 @@
     line-height: 130%;
     cursor: pointer;
     transition: background-color 0.2s ease;
+
+    @include tablet-min {
+      font-size: 18px;
+    }
 
     &:hover {
       background-color: rgba(255, 255, 255, 0.1);
