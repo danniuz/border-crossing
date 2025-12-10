@@ -1,108 +1,111 @@
-@use './media' as *;
+@use "./media" as *;
 
 // Hide utility classes for responsive design
 // Based on breakpoints: mobile-min: 375px, tablet-min: 980px, desktop-min: 1440px
 // Hide on mobile minimum (375px+)
 .hide-mobile-min {
-    @include mobile-min {
-        display: none !important;
-    }
+  @include mobile-min {
+    display: none !important;
+  }
 }
 
 // Hide on mobile maximum (below 375px)
 .hide-mobile-max {
-    @include mobile-max {
-        display: none !important;
-    }
+  @include mobile-max {
+    display: none !important;
+  }
 }
 
 // Hide on tablet minimum (980px+)
 .hide-tablet-min {
-    @include tablet-min {
-        display: none !important;
-    }
+  @include tablet-min {
+    display: none !important;
+  }
 }
 
 // Hide on tablet maximum (below 980px)
 .hide-tablet-max {
-    @include tablet-max {
-        display: none !important;
-    }
+  @include tablet-max {
+    display: none !important;
+  }
 }
 
 // Hide on desktop minimum (1440px+)
 .hide-desktop-min {
-    @include desktop-min {
-        display: none !important;
-    }
+  @include desktop-min {
+    display: none !important;
+  }
 }
 
 // Hide on desktop maximum (below 1440px)
 .hide-desktop-max {
-    @include desktop-max {
-        display: none !important;
-    }
+  @include desktop-max {
+    display: none !important;
+  }
 }
 
 html:dir(ltr) {
-    .ltr-reverse-y {
-        transform: rotateY(180deg);
-    }
+  .ltr-reverse-y {
+    transform: rotateY(180deg);
+  }
 }
 
 html:dir(ltr) {
-    .ltr-reverse-none {
-        transform: rotateY(0deg);
-    }
+  .ltr-reverse-none {
+    transform: rotateY(0deg);
+  }
 }
 
 .rotate-y {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .overflow-hidden {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .ltr {
-    direction: ltr;
+  direction: ltr;
 }
 
 .br-none {
-    display: none;
+  display: none;
 }
 
 .br-tablet-min {
-    @include tablet-min {
-        display: block;
-    }
+  @include tablet-min {
+    display: block;
+  }
 }
 
 .mw-100 {
-    max-width: 100% !important
+  max-width: 100% !important;
 }
 
 .object-fit-cover {
-    object-fit: cover;
+  object-fit: cover;
 }
 
 .color-white {
-    color: #fff !important;
+  color: #fff !important;
 }
 
-
 .mb-24 {
-    margin-bottom: 24px !important;
+  margin-bottom: 24px !important;
 }
 
 .z-1 {
-    z-index: 1;
+  z-index: 1;
 }
 
 .mt-40 {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .mb-0 {
-    margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.relative {
+  position: relative;
 }

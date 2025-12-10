@@ -1,42 +1,41 @@
-@use '../base/media' as *;
-
+@use "../base/media" as *;
 
 .flat-pagination {
-    width: max-content !important;
-    inset-inline-start: 16px !important;
-    display: inline-flex;
-    gap: 8px;
-    top: initial !important;
+  width: max-content !important;
+  inset-inline-start: 0 !important;
+  display: inline-flex;
+  gap: 8px;
+  top: initial !important;
 
-    .swiper-pagination-bullet {
-        opacity: 1;
-        background-color: #ECEEF0;
-        width: 24px;
-        height: 3px;
-        border-radius: 0;
-        margin: 0 !important;
+  .swiper-pagination-bullet {
+    opacity: 1;
+    background-color: #eceef0;
+    width: 24px;
+    height: 3px;
+    border-radius: 0;
+    margin: 0 !important;
 
-        &-active {
-            background-color: var(--cyan-tag);
-        }
+    &-active {
+      background-color: var(--cyan-tag);
+    }
+  }
+
+  &-wrapper {
+    max-width: 704px;
+    position: relative;
+
+    inset-inline-start: 0;
+
+    .bt-40 {
+      bottom: -40px !important;
     }
 
-    &-wrapper {
-        max-width: 704px;
-        position: relative;
-
-        right: -12px;
-
-        .bt-40 {
-            bottom: -40px !important;
-        }
-
-        .bt-30 {
-            bottom: -30px !important;
-        }
-
-        .bt-34 {
-            bottom: -34px !important;
-        }
+    .bt-30 {
+      bottom: -30px !important;
     }
+
+    .bt-34 {
+      bottom: -34px !important;
+    }
+  }
 }
