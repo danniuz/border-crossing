@@ -207,6 +207,9 @@
         margin: 0;
         top: 12px;
         transition: background-color 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
 
         @include tablet-min {
             top: 0;
@@ -217,8 +220,8 @@
 
     &__item-toggler--icon {
         transform: rotate(180deg);
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
 
         @include tablet-min {
             width: 24px;

@@ -19,6 +19,7 @@ import { initAutoScrollAccordion } from './js/auto-scroll-accordion.js';
 import { initFadeUp } from './js/fade-up-gsap.js';
 import { initMapPopup } from './js/map-popup.js';
 import { initVideoPopup } from './js/video-popup.js';
+import { initLanguageSelector } from './js/language-selector.js';
 
 function loadMap() {
   const map = initMap();
@@ -33,6 +34,8 @@ loadMap();
 initMarquee({ start: true });
 initAccordion('#flashes-faq', 'faq__item', 'faq__item--opened', {
   avoidEventBubbleClasses: ['faq__item-link-list-item'],
+  singleOpened: true,
+  firstOpened: true,
 });
 initAutoScrollAccordion(
   '#manager-speech-statement-list',
@@ -79,3 +82,8 @@ initInfographListAnimation();
 
 initFadeUp('#about-fluid-swiper-wrapper');
 initFadeUp('.fade-up-base');
+
+initLanguageSelector(
+  '.footer__language-selector-button',
+  '.footer__language-dropdown',
+);

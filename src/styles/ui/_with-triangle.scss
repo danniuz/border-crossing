@@ -1,103 +1,127 @@
-@use '../base/media' as *;
-
-
+@use "../base/media" as *;
 
 @mixin with-triangle-color($color) {
-    &::after {
-        border-top-color: $color !important;
-    }
+  &::after {
+    border-top-color: $color !important;
+  }
 
-    &::before {
-        border-bottom-color: $color !important;
-    }
+  &::before {
+    border-bottom-color: $color !important;
+  }
 }
 
 .with-triangle--dark-blue {
-    @include with-triangle-color(var(--dark-blue));
+  @include with-triangle-color(var(--dark-blue));
 }
 
 .with-triangle--white {
-    @include with-triangle-color(#fff);
+  @include with-triangle-color(#fff);
 }
 
 .with-triangle--dark {
-    @include with-triangle-color(#00171F);
+  @include with-triangle-color(#00171f);
 }
 
 .with-triangle-1--top {
-    position: relative;
+  position: relative;
 
-    &::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: -20px;
-        width: 0;
-        height: 0;
-        border-left: 77vw solid transparent;
-        border-right: 23vw solid transparent;
-        border-bottom: 20px solid transparent;
-        pointer-events: none;
-        z-index: inherit;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20px;
+    width: 0;
+    height: 0;
+    border-left: 77vw solid transparent;
+    border-right: 23vw solid transparent;
+    border-bottom: 20px solid transparent;
+    pointer-events: none;
+    z-index: inherit;
 
-        @include tablet-min {
-            top: -25px;
-            border-bottom-width: 25px;
-            border-left: 40vw solid transparent;
-            border-right: 60vw solid transparent;
-        }
+    @include tablet-min {
+      top: -23px;
+      border-bottom-width: 25px;
+      border-left: 40vw solid transparent;
+      border-right: 60vw solid transparent;
     }
+  }
 }
 
 .with-triangle-1--bottom {
-    position: relative;
+  position: relative;
 
-    &::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -20px;
-        width: 0;
-        height: 0;
-        border-left: 23vw solid transparent;
-        border-right: 77vw solid transparent;
-        border-top: 20px solid transparent;
-        pointer-events: none;
-        z-index: inherit;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    width: 0;
+    height: 0;
+    border-left: 23vw solid transparent;
+    border-right: 77vw solid transparent;
+    border-top: 20px solid transparent;
+    pointer-events: none;
+    z-index: inherit;
 
-        @include tablet-min {
-            bottom: -33px;
-            border-top-width: 35px;
-            border-left: 40vw solid transparent;
-            border-right: 60vw solid transparent;
-        }
+    @include tablet-min {
+      bottom: -33px;
+      border-top-width: 35px;
+      border-left: 40vw solid transparent;
+      border-right: 60vw solid transparent;
     }
+  }
 }
 
 .with-triangle-2--bottom {
-    position: relative;
+  position: relative;
 
-    &::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -20px;
-        width: 0;
-        height: 0;
-        border-left: 23vw solid transparent;
-        border-right: 77vw solid transparent;
-        border-top: 20px solid transparent;
-        pointer-events: none;
-        z-index: inherit;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    width: 0;
+    height: 0;
+    border-left: 23vw solid transparent;
+    border-right: 77vw solid transparent;
+    border-top: 20px solid transparent;
+    pointer-events: none;
+    z-index: inherit;
 
-        @include tablet-min {
-            bottom: -33px;
-            border-top-width: 35px;
-            border-left: 60vw solid transparent;
-            border-right: 40vw solid transparent;
-        }
+    @include tablet-min {
+      bottom: -33px;
+      border-top-width: 35px;
+      border-left: 60vw solid transparent;
+      border-right: 40vw solid transparent;
     }
+  }
+}
+
+.with-triangle-3--bottom {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    width: 0;
+    height: 0;
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+    border-top: 20px solid transparent;
+    pointer-events: none;
+    z-index: inherit;
+
+    @include tablet-min {
+      bottom: -33px;
+      border-top-width: 35px;
+      border-left: 50vw solid transparent;
+      border-right: 50vw solid transparent;
+    }
+  }
 }
