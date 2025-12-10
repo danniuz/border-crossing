@@ -1,323 +1,328 @@
-@use '../base/media' as *;
+@use "../base/media" as *;
 
 .world-benefits {
-    &__wrapper {
-        z-index: 2;
+  &__wrapper {
+    z-index: 2;
+  }
+
+  &__main-content {
+    .main-content__layout {
+      display: block !important;
+    }
+  }
+
+  &__wrapper--black-grid {
+    background-image: url("/public/images/full-grid-bg-info.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #00171f;
+    background-size: cover;
+  }
+
+  &__content {
+    .swiper-slide {
+      width: initial !important;
+
+      @include tablet-min {
+        margin: 0 !important;
+
+        &:nth-child(1),
+        &:nth-child(5) {
+          transform: translateY(-40px);
+        }
+
+        &:nth-child(3) {
+          transform: translateY(-120px);
+        }
+      }
+
+      @include tablet-lg-min {
+        &:nth-child(1),
+        &:nth-child(5) {
+          transform: translateY(-40px);
+        }
+
+        &:nth-child(3) {
+          transform: translateY(-80px);
+        }
+      }
     }
 
-    &__wrapper--black-grid {
-        background-image: url('/public/images/full-grid-bg-info.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: #00171F;
-        background-size: cover;
+    .swiper-wrapper {
+      @include tablet-min {
+        padding-top: 120px;
+        display: flex;
+        gap: 24px;
+      }
+
+      @include tablet-lg-min {
+        padding-top: 80px;
+      }
+    }
+  }
+
+  &__main-content--lg {
+    margin-top: 165px;
+    margin-bottom: 172px;
+    z-index: 1;
+
+    @include desktop-lg-min {
+      max-width: 1330px;
     }
 
-    &__content {
-        .swiper-slide {
-            width: initial !important;
-
-            @include tablet-min {
-
-                &:nth-child(1),
-                &:nth-child(5) {
-                    transform: translateY(-40px);
-                }
-
-                &:nth-child(3) {
-                    transform: translateY(-120px);
-                }
-            }
-
-            @include tablet-lg-min {
-
-                &:nth-child(1),
-                &:nth-child(5) {
-                    transform: translateY(-40px);
-                }
-
-                &:nth-child(3) {
-                    transform: translateY(-80px);
-                }
-            }
-        }
-
-        .swiper-wrapper {
-            @include tablet-min {
-                padding-top: 120px;
-                display: flex;
-                gap: 24px;
-            }
-
-            @include tablet-lg-min {
-                padding-top: 80px;
-            }
-        }
+    @include desktop-min {
+      margin-top: 175px !important;
+      margin-bottom: 120px !important;
     }
 
-    &__main-content--lg {
-        margin-top: 165px;
-        margin-bottom: 172px;
-        z-index: 1;
-
-        @include desktop-lg-min {
-            max-width: 1330px;
-        }
-
-        @include desktop-min {
-            margin-top: 175px !important;
-            margin-bottom: 120px !important;
-        }
-
-        @include tablet-lg-min {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @include tablet-min {
-            margin-top: 100px;
-            margin-bottom: 100px;
-        }
+    @include tablet-lg-min {
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    &__main-content {
-        margin-top: 56px;
-        margin-bottom: 120px;
-        z-index: 1;
-
-        @include desktop-lg-min {
-            max-width: 1330px;
-        }
-
-        @include desktop-min {
-            margin-bottom: 145px !important;
-        }
-
-        @include tablet-lg-min {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @include tablet-min {
-            margin-top: 120px;
-            margin-bottom: 120px;
-        }
-    }
-
-    &__header {
-        margin-bottom: 32px;
-
-        @include tablet-min {
-            margin-bottom: 6px;
-            max-width: 420px;
-        }
-
-        @include desktop-lg-min {
-            margin-bottom: 40px;
-        }
-
-        &--mb {
-            @include tablet-min {
-                margin-bottom: 40px;
-            }
-
-            @include desktop-lg-min {
-                margin-bottom: 80px;
-            }
-        }
-
-        &-subtitle {
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 110%;
-            color: var(--dark-blue);
-            margin-bottom: 8px;
-
-            @include tablet-min {
-                font-size: 18px;
-                line-height: 130%;
-            }
-        }
-
-        &-title {
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 400;
-            font-size: 28px;
-            line-height: 130%;
-            color: var(--dark-blue);
-
-            @include tablet-min {
-                font-size: 40px;
-                line-height: 110%;
-            }
-
-            @include desktop-lg-min {
-                font-size: 48px;
-                line-height: 110%;
-            }
-        }
-    }
-}
-
-.world-benefits-item {
-    display: inline-flex;
-    flex-direction: column;
-    width: 224px;
 
     @include tablet-min {
-        width: 180px;
+      margin-top: 100px;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__main-content {
+    margin-top: 56px;
+    margin-bottom: 120px;
+    z-index: 1;
+
+    @include desktop-lg-min {
+      max-width: 1330px;
+    }
+
+    @include desktop-min {
+      margin-bottom: 145px !important;
+    }
+
+    @include tablet-lg-min {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include tablet-min {
+      margin-top: 120px;
+      margin-bottom: 120px;
+    }
+  }
+
+  &__header {
+    margin-bottom: 32px;
+
+    @include tablet-min {
+      margin-bottom: 6px;
+      max-width: 420px;
     }
 
     @include desktop-lg-min {
-        width: 240px;
+      margin-bottom: 40px;
     }
 
-    &--hoverable {
-        z-index: -123;
+    &--mb {
+      @include tablet-min {
+        margin-bottom: 40px;
+      }
 
-        &:hover {
-            .world-benefits-item__full-image {
-                scale: 1.05;
-            }
-
-            .arrow-link__icon-wrapper {
-                background-color: var(--cyan-tag);
-
-                .arrow-link__icon {
-                    rotate: -45deg;
-                }
-            }
-
-        }
-
-        .world-benefits-item__full-image {
-            transition: scale 0.3s ease;
-        }
-
-        .arrow-link__icon-wrapper {
-            transition: background-color 0.3s ease;
-        }
+      @include desktop-lg-min {
+        margin-bottom: 80px;
+      }
     }
 
-    &--lg-height {
-        height: 413px;
+    &-subtitle {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 110%;
+      color: var(--dark-blue);
+      margin-bottom: 8px;
 
-        @include tablet-min {
-            height: 380px;
-        }
-
-        @include desktop-lg-min {
-            height: 480px;
-        }
-
-        .world-benefits-item__header {
-            height: 100%;
-        }
+      @include tablet-min {
+        font-size: 18px;
+        line-height: 130%;
+      }
     }
 
-    &__full-image {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        max-width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
+    &-title {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 130%;
+      color: var(--dark-blue);
+
+      @include tablet-min {
+        font-size: 40px;
+        line-height: 110%;
+      }
+
+      @include desktop-lg-min {
+        font-size: 48px;
+        line-height: 110%;
+      }
+    }
+  }
+}
+
+.world-benefits-item {
+  display: inline-flex;
+  flex-direction: column;
+  width: 224px;
+
+  @include tablet-min {
+    width: 180px;
+  }
+
+  @include desktop-lg-min {
+    width: 240px;
+  }
+
+  &--hoverable {
+    z-index: -123;
+
+    &:hover {
+      .world-benefits-item__full-image {
+        scale: 1.05;
+      }
+
+      .arrow-link__icon-wrapper {
+        background-color: var(--cyan-tag);
+
+        .arrow-link__icon {
+          rotate: -45deg;
+        }
+      }
     }
 
-    &__header {
-        width: 100%;
-        height: 169px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &--bg-white {
-            background-color: var(--white-tag);
-        }
-
-        @include tablet-min {
-            height: 150px;
-        }
-
-        @include desktop-lg-min {
-            height: 200px;
-        }
-
-        &-image {
-            max-width: 120px;
-
-            @include tablet-min {
-                max-width: 105px;
-            }
-
-            @include desktop-lg-min {
-                max-width: 140px;
-            }
-        }
+    .world-benefits-item__full-image {
+      transition: scale 0.3s ease;
     }
 
-    &__content {
-        background-color: var(--dark-blue);
-        padding-top: 24px;
-        color: #fff;
-
-        &--transparent {
-            background-color: transparent;
-        }
-
-        @include tablet-min {
-            padding-top: 12px;
-        }
-
-        @include desktop-lg-min {
-            padding-top: 16px;
-        }
-
-        &-tag {
-            margin: 0 8px;
-            width: max-content;
-        }
-
-        &-title {
-            padding: 0 8px;
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 110%;
-
-            @include tablet-min {
-                font-size: 18px;
-                line-height: 130%;
-            }
-
-            @include desktop-lg-min {
-                font-size: 24px;
-                line-height: 120%;
-            }
-        }
-
-        &-text {
-            padding: 16px 8px 24px 8px;
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 140%;
-
-            @include tablet-min {
-                padding: 6px 6px 18px 6px;
-            }
-
-            @include desktop-lg-min {
-                padding: 8px 8px 24px 8px;
-            }
-        }
-
-        &-link-wrapper {
-            display: flex;
-            justify-content: flex-end;
-        }
+    .arrow-link__icon-wrapper {
+      transition: background-color 0.3s ease;
     }
+  }
+
+  &--lg-height {
+    height: 413px;
+
+    @include tablet-min {
+      height: 380px;
+    }
+
+    @include desktop-lg-min {
+      height: 480px;
+    }
+
+    .world-benefits-item__header {
+      height: 100%;
+    }
+  }
+
+  &__full-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  &__header {
+    width: 100%;
+    height: 169px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--bg-white {
+      background-color: var(--white-tag);
+    }
+
+    @include tablet-min {
+      height: 150px;
+    }
+
+    @include desktop-lg-min {
+      height: 200px;
+    }
+
+    &-image {
+      max-width: 120px;
+
+      @include tablet-min {
+        max-width: 105px;
+      }
+
+      @include desktop-lg-min {
+        max-width: 140px;
+      }
+    }
+  }
+
+  &__content {
+    background-color: var(--dark-blue);
+    padding-top: 24px;
+    color: #fff;
+
+    &--transparent {
+      background-color: transparent;
+    }
+
+    @include tablet-min {
+      padding-top: 12px;
+    }
+
+    @include desktop-lg-min {
+      padding-top: 16px;
+    }
+
+    &-tag {
+      margin: 0 8px;
+      width: max-content;
+    }
+
+    &-title {
+      padding: 0 8px;
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 110%;
+
+      @include tablet-min {
+        font-size: 18px;
+        line-height: 130%;
+      }
+
+      @include desktop-lg-min {
+        font-size: 24px;
+        line-height: 120%;
+      }
+    }
+
+    &-text {
+      padding: 16px 8px 24px 8px;
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+
+      @include tablet-min {
+        padding: 6px 6px 18px 6px;
+      }
+
+      @include desktop-lg-min {
+        padding: 8px 8px 24px 8px;
+      }
+    }
+
+    &-link-wrapper {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
 }

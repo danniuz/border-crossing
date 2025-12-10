@@ -1,220 +1,230 @@
-@use '../base/media' as *;
+@use "../base/media" as *;
 
 .manager-speech {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 100%;
 
+  @include tablet-min {
+    gap: 32px;
+    flex-direction: row;
+  }
+
+  @include desktop-min {
+    gap: 126px;
+  }
+
+  .swiper-wrapper {
     @include tablet-min {
-        gap: 32px;
-        flex-direction: row;
+      gap: 24px;
+      display: flex;
+      flex-direction: column;
+      max-width: 640px;
     }
 
     @include desktop-min {
-        gap: 126px;
+      gap: 40px;
+    }
+  }
+
+  &__main-content {
+    // margin-top: 88px;
+
+    // @include tablet-min {
+    //     margin-top: 90px;
+    // }
+
+    // @include desktop-min {
+    //     margin-top: 39px;
+    // }
+  }
+
+  &__img-wrapper {
+    width: 342px;
+    margin-bottom: auto;
+    margin-inline-end: auto;
+    height: 190px;
+    position: relative;
+    clip-path: polygon(100% 0%, 0% 4%, 0% 96%, 100% 100%);
+
+    @include tablet-min {
+      clip-path: polygon(100% 0%, 0% 4%, 0% 96%, 100% 100%);
+      width: 372px;
+      height: 550px;
+      margin-inline-end: initial;
+      flex-shrink: 0;
     }
 
-    .swiper-wrapper {
-        @include tablet-min {
-            gap: 24px;
-            display: flex;
-            flex-direction: column;
-            max-width: 640px;
-        }
+    @include desktop-min {
+      width: 496px;
+      height: 734px;
+    }
+  }
 
-        @include desktop-min {
-            gap: 40px;
-        }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+
+    &.fade-out {
+      opacity: 0;
     }
 
-    &__main-content {
-        // margin-top: 88px;
+    &.fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-        // @include tablet-min {
-        //     margin-top: 90px;
-        // }
+  &__statement-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    padding-inline-start: 0;
+    transition: background-image 0.3s ease;
 
-        // @include desktop-min {
-        //     margin-top: 39px;
-        // }
+    @include tablet-min {
+      gap: 16px;
+      padding-inline-start: 19px;
     }
 
-    &__img-wrapper {
-        width: 342px;
-        margin-bottom: auto;
-        margin-left: auto;
-        margin-right: auto;
-        height: 190px;
-        position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 100%;
+      background-image: linear-gradient(
+        180deg,
+        var(--gray-tag) 0%,
+        var(--gray-tag) 100%
+      );
+      inset-inline-start: 0;
+      top: 0;
 
-        @include tablet-min {
-            width: 372px;
-            height: 550px;
-            margin-left: initial;
-            margin-right: initial;
-            flex-shrink: 0;
-        }
-
-        @include desktop-min {
-            width: 496px;
-            height: 734px;
-        }
+      @include tablet-max {
+        content: none;
+      }
     }
 
-    &__img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
+    &--opened {
+      .manager-speech__statement-item-content {
+        padding-top: 0px;
+        max-height: 500px;
         opacity: 1;
         transform: translateY(0);
-        transition: opacity 0.4s ease, transform 0.4s ease;
-
-        &.fade-out {
-            opacity: 0;
-        }
-
-        &.fade-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-    }
-
-    &__statement-item {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        position: relative;
-        padding-inline-start: 0;
-        transition: background-image 0.3s ease;
 
         @include tablet-min {
-            gap: 16px;
-            padding-inline-start: 19px;
+          padding-top: 16px;
         }
+      }
 
-        &::before {
-            content: '';
-            position: absolute;
-            width: 4px;
-            height: 100%;
-            background-image: linear-gradient(180deg, var(--gray-tag) 0%, var(--gray-tag) 100%);
-            inset-inline-start: 0;
-            top: 0;
-
-            @include tablet-max {
-                content: none;
-            }
-        }
-
-        &--opened {
-            .manager-speech__statement-item-content {
-                padding-top: 0px;
-                max-height: 500px;
-                opacity: 1;
-                transform: translateY(0);
-
-                @include tablet-min {
-                    padding-top: 16px;
-                }
-            }
-
-            &::before {
-                background-image: linear-gradient(180deg, var(--cyan-tag) 0px, var(--cyan-tag) 11px, var(--cyan-tag) 11px, var(--cyan-tag) 100%);
-
-                @include tablet-max {
-                    content: none;
-                }
-            }
-        }
-    }
-
-    &__statement-item-content {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        transition: opacity 0.2s ease, transform 0.3s ease, max-height 0.4s ease, padding-top 0.3s ease;
-        max-height: 0;
-        opacity: 0;
-        transform: translateY(-10px);
-        overflow: hidden;
-        padding-top: 0;
+      &::before {
+        background-image: linear-gradient(
+          180deg,
+          var(--cyan-tag) 0px,
+          var(--cyan-tag) 11px,
+          var(--cyan-tag) 11px,
+          var(--cyan-tag) 100%
+        );
 
         @include tablet-max {
-            padding-top: 0px;
-            max-height: 500px;
-            opacity: 1;
-            transform: translateY(0);
+          content: none;
         }
+      }
+    }
+  }
+
+  &__statement-item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: opacity 0.2s ease, transform 0.3s ease, max-height 0.4s ease,
+      padding-top 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    overflow: hidden;
+    padding-top: 0;
+
+    @include tablet-max {
+      padding-top: 0px;
+      max-height: 500px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__statement-item-title {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    color: var(--dark-blue);
+    padding-top: 0;
+    cursor: pointer;
+
+    @include tablet-min {
+      padding-top: 16px;
+      font-size: 22px;
+    }
+  }
+
+  &__statement-item-text {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: var(--dark-blue);
+
+    @include tablet-min {
+      font-size: 18px;
+      line-height: 140%;
+    }
+  }
+
+  &__statement-item-link {
+    background-color: #f2f4f5;
+    color: #fff;
+    margin-inline-end: auto;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--dark-blue);
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--dark-blue);
+
+      &-arrow-icon-wrapper {
+        background-color: var(--dark-blue);
+      }
     }
 
-    &__statement-item-title {
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 130%;
-        color: var(--dark-blue);
-        padding-top: 0;
-        cursor: pointer;
-
-        @include tablet-min {
-            padding-top: 16px;
-            font-size: 22px;
-        }
+    &-arrow-icon-wrapper {
+      width: 40px;
+      height: 40px;
+      background-color: var(--gray-tag);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    &__statement-item-text {
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 130%;
-        color: var(--dark-blue);
-
-        @include tablet-min {
-            font-size: 18px;
-            line-height: 140%;
-        }
+    &-arrow-icon {
+      width: 20px;
+      height: 20px;
     }
-
-    &__statement-item-link {
-        background-color: #F2F4F5;
-        color: #fff;
-        margin-inline-end: auto;
-        display: inline-flex;
-        align-items: center;
-        border: none;
-        outline: none;
-        background-color: transparent;
-        color: var(--dark-blue);
-        gap: 8px;
-        text-decoration: none;
-        cursor: pointer;
-
-        &:hover {
-            text-decoration: underline;
-            color: var(--dark-blue);
-
-            &-arrow-icon-wrapper {
-                background-color: var(--dark-blue);
-            }
-        }
-
-        &-arrow-icon-wrapper {
-            width: 40px;
-            height: 40px;
-            background-color: var(--gray-tag);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        &-arrow-icon {
-            width: 20px;
-            height: 20px;
-        }
-    }
+  }
 }

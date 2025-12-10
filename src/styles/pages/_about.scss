@@ -1,20 +1,30 @@
-@use '../base/media' as *;
+@use "../base/media" as *;
 
 .about {
-    &__top-wrapper {
-        // min-height: 810px;
-        height: 740px;
-    }
+  &__top-wrapper {
+    // min-height: 810px;
+    height: 740px;
+  }
 
-    &__infograph-list-wrapper {
-        margin-top: 32px;
+  &__infograph-list-wrapper {
+    margin-top: 32px;
 
-        @include tablet-min {
-            margin-top: 120px;
-        }
+    @include tablet-min {
+      margin-top: 120px;
     }
+  }
 }
 
 .about-text-swiper-wrapper {
-    padding-bottom: 76px;
+  padding-bottom: 76px;
+}
+
+.about-text-swiper {
+  width: calc(100% + 16px);
+  //   transform: translateX(16px);
+
+  @include tablet-min {
+    width: 100%;
+    // transform: none;
+  }
 }
