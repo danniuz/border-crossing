@@ -199,11 +199,7 @@ html:dir(rtl) {
       }
 
       @include tablet-min {
-        padding-bottom: 72px;
-      }
-
-      @include desktop-lg-min {
-        padding-bottom: 111px;
+        padding-bottom: 20px;
       }
 
       &--white {
