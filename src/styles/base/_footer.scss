@@ -238,6 +238,14 @@
       font-weight: 400;
       font-size: 14px;
       line-height: 100%;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+        color: #fff;
+      }
 
       @include tablet-min {
         font-size: 18px;

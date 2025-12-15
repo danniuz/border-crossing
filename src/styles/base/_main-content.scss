@@ -75,7 +75,7 @@ html:dir(rtl) {
   margin-top: 48px;
 
   @include tablet-min {
-    margin-top: 80px;
+    margin-top: 78px;
   }
 
   @include desktop-min {
@@ -191,6 +191,7 @@ html:dir(rtl) {
       padding-top: 36px;
       padding-bottom: 40px;
       position: relative;
+      margin-bottom: 32px;
 
       &--sticky {
         position: sticky;

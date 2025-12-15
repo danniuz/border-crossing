@@ -1,5 +1,13 @@
 @use "../base/media" as *;
 
+html:dir(ltr) {
+  .button__link-45-arrow {
+    img {
+      transform: rotateY(180deg);
+    }
+  }
+}
+
 .button {
   border: none;
   outline: none;

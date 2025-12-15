@@ -1,5 +1,11 @@
 @use "../base/media" as *;
 
+html:dir(ltr) {
+  .contact-us__aside-link-image {
+    transform: rotateY(180deg);
+  }
+}
+
 .contact-us {
   &__layout {
     gap: 40px;
@@ -229,6 +235,11 @@
       font-size: 16px;
       line-height: 140%;
       color: #fff;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
     }
   }
 }
