@@ -1,153 +1,158 @@
-@use '../base/media' as *;
+@use "../base/media" as *;
+
+html:dir(ltr) {
+  .passangers__rect-item-link-icon {
+    transform: rotateY(180deg);
+  }
+}
 
 .main-content__section {
-    .passangers {
-        &__title {
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 400;
-            font-size: 28px;
-            line-height: 130%;
-            color: var(--dark-blue);
-            margin-bottom: 11px;
+  .passangers {
+    &__title {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 130%;
+      color: var(--dark-blue);
+      margin-bottom: 11px;
 
-            @include tablet-min {
-                font-size: 48px;
-                line-height: 110%;
-                margin-bottom: 16px;
-            }
-        }
-
-        &__tag-list {
-            margin-top: 0;
-        }
-
-        &__list {
-            display: grid;
-            grid-template-columns: repeat(1fr);
-            gap: 16px;
-            margin-top: 32px;
-            margin-bottom: 48px;
-
-            @include tablet-min {
-                margin-bottom: 64px;
-                margin-top: 40px;
-            }
-
-            @include tablet-sm-min {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        &__item {
-            box-shadow: 0px 4px 10px 0px #0000001A;
-            padding: 16px 16px 16px 40px;
-            background-color: #fff;
-            position: relative;
-
-            @include tablet-min {
-                padding: 24px 24px 40px 40px;
-            }
-        }
-
-        &__item-header-sm {
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 110%;
-            color: var(--dark-blue);
-            margin-bottom: 2px;
-
-            @include tablet-min {
-                margin-bottom: 4px;
-            }
-        }
-
-        &__item-header-lg {
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 130%;
-            color: var(--dark-blue);
-            margin-bottom: 16px;
-
-            @include tablet-min {
-                font-size: 24px;
-                line-height: 120%;
-                margin-bottom: 24px;
-            }
-        }
-
-        &__text-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 8px;
-
-            &-text--sm {
-                font-family: IBM Plex Sans Hebrew;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 110%;
-                color: var(--dark-blue);
-
-                @include tablet-min {
-                    font-size: 16px;
-                    line-height: 130%;
-                }
-            }
-
-            &-text--lg {
-                font-family: IBM Plex Sans Hebrew;
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 130%;
-                color: var(--dark-blue);
-            }
-
-            &-icon-wrapper {
-                width: 28px;
-                height: 28px;
-                border-radius: 50%;
-                background-color: var(--gray-tag);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-
-                @include tablet-min {
-                    width: 40px;
-                    height: 40px;
-                }
-            }
-
-            &-icon {
-                width: 16px;
-                height: 16px;
-
-                @include tablet-min {
-                    width: 18px;
-                    height: 18px;
-                }
-            }
-        }
-
-        &__rect-item-link {
-            width: 40px;
-            height: 40px;
-            background-color: #DCE2E7;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            inset-inline-end: 0;
-            bottom: 0;
-            cursor: pointer;
-
-
-            &-icon {
-                width: 20px;
-                height: 20px;
-            }
-        }
+      @include tablet-min {
+        font-size: 48px;
+        line-height: 110%;
+        margin-bottom: 16px;
+      }
     }
+
+    &__tag-list {
+      margin-top: 0;
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(1fr);
+      gap: 16px;
+      margin-top: 32px;
+      margin-bottom: 48px;
+
+      @include tablet-min {
+        margin-bottom: 64px;
+        margin-top: 40px;
+      }
+
+      @include tablet-sm-min {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    &__item {
+      box-shadow: 0px 4px 10px 0px #0000001a;
+      padding: 16px 16px 16px 40px;
+      background-color: #fff;
+      position: relative;
+
+      @include tablet-min {
+        padding: 24px 24px 40px 40px;
+      }
+    }
+
+    &__item-header-sm {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 110%;
+      color: var(--dark-blue);
+      margin-bottom: 2px;
+
+      @include tablet-min {
+        margin-bottom: 4px;
+      }
+    }
+
+    &__item-header-lg {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 130%;
+      color: var(--dark-blue);
+      margin-bottom: 16px;
+
+      @include tablet-min {
+        font-size: 24px;
+        line-height: 120%;
+        margin-bottom: 24px;
+      }
+    }
+
+    &__text-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+
+      &-text--sm {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 110%;
+        color: var(--dark-blue);
+
+        @include tablet-min {
+          font-size: 16px;
+          line-height: 130%;
+        }
+      }
+
+      &-text--lg {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 130%;
+        color: var(--dark-blue);
+      }
+
+      &-icon-wrapper {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background-color: var(--gray-tag);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        @include tablet-min {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      &-icon {
+        width: 16px;
+        height: 16px;
+
+        @include tablet-min {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+
+    &__rect-item-link {
+      width: 40px;
+      height: 40px;
+      background-color: #dce2e7;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      inset-inline-end: 0;
+      bottom: 0;
+      cursor: pointer;
+
+      &-icon {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
 }
