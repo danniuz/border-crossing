@@ -66,7 +66,7 @@ html:dir(ltr) {
     display: flex;
     flex-direction: column;
     box-shadow: 0px 4px 10px 0px #0000001a;
-
+    margin-bottom: auto;
     // &--330px {
     //   @include tablet-min {
     //     width: 330px;
@@ -157,7 +157,7 @@ html:dir(ltr) {
   &__aside-button {
     margin-top: 24px;
 
-    @include desktop-min {
+    @include desktop-lg-min {
       margin-top: 40px;
     }
   }
@@ -192,7 +192,14 @@ html:dir(ltr) {
   .t-row {
     border: 1px solid #fff;
     padding: 15px 16px;
-    width: 100%;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet-min {
+      gap: 16px;
+      min-width: 295px;
+    }
 
     &__list {
       display: flex;
@@ -229,6 +236,7 @@ html:dir(ltr) {
       }
     }
 
+    p,
     &__table-row {
       font-family: IBM Plex Sans Hebrew;
       font-weight: 400;
