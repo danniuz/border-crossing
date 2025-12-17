@@ -2,7 +2,7 @@
 
 .world-benefits {
   &__wrapper {
-    z-index: 2;
+    // z-index: 2;
   }
 
   &__main-content {
@@ -37,6 +37,7 @@
       }
 
       @include tablet-lg-min {
+
         &:nth-child(1),
         &:nth-child(5) {
           transform: translateY(-40px);
