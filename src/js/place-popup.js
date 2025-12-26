@@ -28,6 +28,7 @@ function showPopup(html) {
 
   const placePopupWrapper = document.createElement('div');
   placePopupWrapper.classList.add('place-popup__wrapper');
+  placePopupWrapper.classList.add('scrollbar-secondary');
   placePopupWrapper.innerHTML = html;
 
   document.body.appendChild(placePopupWrapper);

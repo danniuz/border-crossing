@@ -22,7 +22,7 @@ html:dir(ltr) {
         height: 227px;
         object-fit: cover;
 
-        @include desktop-min {
+        @include desktop-sm-min {
             height: 440px;
         }
     }
@@ -54,6 +54,11 @@ html:dir(ltr) {
         }
 
         @include tablet-min {
+            max-width: 1240px;
+            height: calc(100% - 53px);
+        }
+
+        @include desktop-lg-min {
             max-width: 1352px;
             height: calc(100% - 53px);
         }
@@ -69,10 +74,15 @@ html:dir(ltr) {
         background-color: #fff;
         width: 64px;
         height: 64px;
+        display: none;
 
         img {
             width: 24px;
             height: 24px;
+        }
+
+        @include desktop-sm-min {
+            display: block;
         }
     }
 
