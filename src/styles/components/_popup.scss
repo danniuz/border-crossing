@@ -3,10 +3,12 @@
 .mapboxgl-popup {
     width: 343px;
     max-width: 343px !important;
+    margin-top: 180px;
 
     @include tablet-min {
         width: 752px;
         max-width: 752px !important;
+        margin-top: -30px;
     }
 }
 
@@ -51,6 +53,10 @@
         height: 248px;
     }
 
+    &__button-icon {
+        width: 26px;
+    }
+
     &__image {
         width: 88px;
 
@@ -70,9 +76,9 @@
         transition: background-color 0.3s ease;
 
         @include tablet-min {
-            padding-top: 16px;
-            padding-bottom: 12px;
-            padding-inline-start: 16px;
+            padding-top: 24px;
+            padding-bottom: 16px;
+            padding-inline-start: 24px;
             padding-inline-end: 64px;
         }
 
@@ -187,7 +193,7 @@
         cursor: pointer;
         border: none;
         outline: none;
-        // display: none;
+        display: none;
         transition: background-color 0.3s ease;
 
         @include tablet-min {

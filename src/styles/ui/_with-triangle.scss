@@ -78,6 +78,32 @@
   }
 }
 
+.with-triangle-1--bottom-inside {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -1px;
+    width: 0;
+    height: 0;
+    border-left: 0 solid transparent;
+    border-right: 0 solid transparent;
+    border-bottom: 0 solid transparent;
+    pointer-events: none;
+    z-index: inherit;
+
+    @include tablet-min {
+      bottom: -1px;
+      border-bottom-width: 35px;
+      border-left: 60vw solid transparent;
+      border-right: 40vw solid transparent;
+    }
+  }
+}
+
 .with-triangle-2--bottom {
   position: relative;
 

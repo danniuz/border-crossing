@@ -20,6 +20,7 @@ import { initFadeUp } from './js/fade-up-gsap.js';
 import { initMapPopup } from './js/map-popup.js';
 import { initVideoPopup } from './js/video-popup.js';
 import { initLanguageSelector } from './js/language-selector.js';
+import { initHomeStrictTopVideoAnimation } from './js/home-strict-top-video-animation.js';
 
 function loadMap() {
   const map = initMap();
@@ -87,3 +88,5 @@ initLanguageSelector(
   '.footer__language-selector-button',
   '.footer__language-dropdown',
 );
+
+initHomeStrictTopVideoAnimation();

@@ -1,6 +1,218 @@
 @use '../base/media' as *;
 
 .home {
+    &__strict-top-menu-actions {
+        @include tablet-min {
+            transform: translateY(30px);
+            opacity: 0;
+            z-index: 99;
+            max-width: 270px;
+            width: 100%;
+            position: absolute;
+            inset-inline-end: 24px;
+            top: 532px;
+
+            &:hover {
+                .home__strict-top-menu-button {
+                    transform: none;
+                }
+            }
+        }
+    }
+
+    &__strict-top-menu {
+        margin-top: 16px;
+        z-index: 99;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 40px;
+
+        @include tablet-min {
+            flex-direction: column-reverse;
+        }
+
+        &-button {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 500;
+            color: #fff;
+            font-size: 18px;
+            line-height: 130%;
+            padding: 24px;
+            width: 100%;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            @include tablet-min {
+                padding: 27.5px 20px;
+
+                &:nth-child(4) {
+                    transform: translateY(245px) scale(0.8);
+                    z-index: 1;
+                }
+
+                &:nth-child(3) {
+                    transform: translateY(160px) scale(0.86);
+                    z-index: 2;
+                }
+
+                &:nth-child(2) {
+                    transform: translateY(80px) scale(0.93);
+                    z-index: 3;
+                }
+
+                &:nth-child(1) {
+                    z-index: 4;
+                }
+
+            }
+
+            &--dark {
+                background-color: #00171F;
+                color: #fff;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+
+            &--dark-blue {
+                background-color: var(--dark-blue);
+                color: #fff;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+
+            &--blue {
+                background-color: var(--blue-tag);
+                color: #fff;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+
+            &--cyan {
+                background-color: var(--cyan-tag);
+                color: #00171F;
+
+                &:hover {
+                    color: #00171F;
+                }
+            }
+        }
+
+        &-button-icon {
+            width: 24px;
+            height: 24px;
+            transform: rotate(-45deg);
+        }
+    }
+
+
+    &__strict-top-text {
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        &-logo {
+            width: 58px;
+            margin-bottom: 24px;
+
+            @include desktop-sm-min {
+                width: 72px;
+            }
+        }
+
+        &-title {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 110%;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 8px;
+
+            @include desktop-sm-min {
+                font-size: 32px;
+                line-height: 100%;
+            }
+        }
+
+        &-subtitle {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 100%;
+            text-align: center;
+            color: #fff;
+
+            @include desktop-sm-min {
+                font-size: 80px;
+                line-height: 100%;
+            }
+        }
+    }
+
+    &__strict-top {
+        height: 602px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include desktop-sm-min {
+            height: 980px;
+        }
+
+        &-wrapper {
+            background-color: #00171f;
+            height: 100%;
+        }
+
+    }
+
+    &__strict-top-video {
+        height: 220px;
+        width: 45px;
+
+
+        @include desktop-sm-min {
+            height: 600px;
+            width: 240px;
+        }
+
+        object-fit: cover;
+        cursor: pointer;
+        transition: none;
+
+        &-wrapper {
+            display: flex;
+
+            &--animated {
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+        }
+    }
+
     &__raw-content {
         @include tablet-min {
             flex-direction: row;

@@ -82,7 +82,7 @@ function createMapboxPopup(feature, map) {
                     </div>
                 </div>
                 <button class="popup__button">
-                    <img src="icons/arrow-up-left.svg" class="popup__button-icon" alt="Arrow Up Left">
+                    <img src="icons/arrow-up-left-sm.svg" class="popup__button-icon" alt="Arrow Up Left">
                 </button>
             </div>
             <img class="popup__image" src="${feature.properties.lobbyImage}" alt="${feature.properties.title}">
