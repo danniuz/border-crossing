@@ -1,7 +1,7 @@
 export function initHomeStrictTopVideoAnimation() {
     const { gsap } = window;
     
-    const homeStrictTopVideo = document.getElementById('home-strict-top-video');
+    const homeStrictTopVideo = document.getElementById('home-strict-top-video-to-animate');
     const homeStrictTopVideoWrapper = document.getElementById('home-strict-top-video-wrapper');
     const homeStrictTopTextWrapper = document.getElementById('home-strict-top-text-wrapper');
     const homeStrictTopMenuActions = document.getElementById('home-strict-top-menu-actions');
@@ -12,7 +12,7 @@ export function initHomeStrictTopVideoAnimation() {
 
     let isAnimating = false;
 
-    homeStrictTopVideo.addEventListener('click', () => {
+    homeStrictTopVideoWrapper.addEventListener('click', () => {
         if (isAnimating) {
             return;
         }

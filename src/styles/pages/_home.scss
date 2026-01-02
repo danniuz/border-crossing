@@ -1,277 +1,366 @@
-@use '../base/media' as *;
+@use "../base/media" as *;
+
+.home__strict-top-video-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+html:dir(ltr) {
+  .home__strict-top-video {
+    &:nth-child(1) {
+      clip-path: polygon(100% 5%, 0% 0%, 0% 100%, 100% 95%);
+    }
+    &:nth-child(2) {
+      clip-path: polygon(100% 5%, 0% 0%, 0% 100%, 100% 95%);
+
+      @include desktop-sm-min {
+        clip-path: polygon(100% 4%, 0% 0%, 0% 100%, 100% 96%);
+      }
+    }
+    &:nth-child(4) {
+      clip-path: polygon(0% 5%, 100% 0%, 100% 100%, 0% 95%);
+
+      @include desktop-sm-min {
+        clip-path: polygon(0% 4%, 100% 0%, 100% 100%, 0% 96%);
+      }
+    }
+    &:nth-child(5) {
+      clip-path: polygon(0% 5%, 100% 0%, 100% 100%, 0% 95%);
+    }
+  }
+}
+
+.home__strict-top-video {
+  &:nth-child(1),
+  &:nth-child(5) {
+    height: 275px;
+    width: 37px;
+
+    @include desktop-sm-min {
+      height: 750px;
+      width: 110px;
+    }
+  }
+
+  &:nth-child(2),
+  &:nth-child(4) {
+    height: 245px;
+    width: 38px;
+
+    @include desktop-sm-min {
+      height: 661px;
+      width: 114px;
+    }
+  }
+
+  &:nth-child(1) {
+    clip-path: polygon(100% 0%, 0% 5%, 0% 95%, 100% 100%);
+  }
+
+  &:nth-child(2) {
+    clip-path: polygon(100% 0%, 0% 5%, 0% 95%, 100% 100%);
+
+    @include desktop-sm-min {
+      clip-path: polygon(100% 0%, 0% 4%, 0% 96%, 100% 100%);
+    }
+  }
+
+  &:nth-child(4) {
+    clip-path: polygon(0% 0%, 100% 5%, 100% 95%, 0% 100%);
+
+    @include desktop-sm-min {
+      clip-path: polygon(0% 0%, 100% 4%, 100% 96%, 0% 100%);
+    }
+  }
+
+  &:nth-child(5) {
+    clip-path: polygon(0% 0%, 100% 5%, 100% 95%, 0% 100%);
+  }
+}
 
 .home {
-    &__strict-top-menu-actions {
-        @include tablet-min {
-            transform: translateY(30px);
-            opacity: 0;
-            z-index: 99;
-            max-width: 270px;
-            width: 100%;
-            position: absolute;
-            inset-inline-end: 24px;
-            top: 532px;
+  &__strict-top-menu-actions {
+    @include tablet-min {
+      transform: translateY(30px);
+      opacity: 0;
+      z-index: 99;
+      max-width: 270px;
+      width: 100%;
+      position: absolute;
+      inset-inline-end: 24px;
+      top: 150px;
 
-            &:hover {
-                .home__strict-top-menu-button {
-                    transform: none;
-                }
-            }
+      &:hover {
+        .home__strict-top-menu-button {
+          transform: none;
         }
+      }
     }
 
-    &__strict-top-menu {
-        margin-top: 16px;
-        z-index: 99;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        margin-bottom: 40px;
+    @include desktop-sm-min {
+      top: 532px;
+    }
+  }
 
-        @include tablet-min {
-            flex-direction: column-reverse;
-        }
+  &__strict-top-video-wrapper {
+    display: flex;
+    gap: 4px;
 
-        &-button {
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 500;
-            color: #fff;
-            font-size: 18px;
-            line-height: 130%;
-            padding: 24px;
-            width: 100%;
-            justify-content: space-between;
-            cursor: pointer;
-            transition: transform 0.3s ease;
+    @include desktop-sm-min {
+      gap: 16px;
+    }
+  }
 
-            &:hover {
-                text-decoration: none;
-            }
+  &__strict-top-wrapper {
+    overflow: hidden;
+  }
 
-            @include tablet-min {
-                padding: 27.5px 20px;
+  &__strict-top-menu {
+    margin-top: 16px;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
 
-                &:nth-child(4) {
-                    transform: translateY(245px) scale(0.8);
-                    z-index: 1;
-                }
-
-                &:nth-child(3) {
-                    transform: translateY(160px) scale(0.86);
-                    z-index: 2;
-                }
-
-                &:nth-child(2) {
-                    transform: translateY(80px) scale(0.93);
-                    z-index: 3;
-                }
-
-                &:nth-child(1) {
-                    z-index: 4;
-                }
-
-            }
-
-            &--dark {
-                background-color: #00171F;
-                color: #fff;
-
-                &:hover {
-                    color: #fff;
-                }
-            }
-
-            &--dark-blue {
-                background-color: var(--dark-blue);
-                color: #fff;
-
-                &:hover {
-                    color: #fff;
-                }
-            }
-
-            &--blue {
-                background-color: var(--blue-tag);
-                color: #fff;
-
-                &:hover {
-                    color: #fff;
-                }
-            }
-
-            &--cyan {
-                background-color: var(--cyan-tag);
-                color: #00171F;
-
-                &:hover {
-                    color: #00171F;
-                }
-            }
-        }
-
-        &-button-icon {
-            width: 24px;
-            height: 24px;
-            transform: rotate(-45deg);
-        }
+    @include tablet-min {
+      flex-direction: column-reverse;
     }
 
+    &-button {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 500;
+      color: #fff;
+      font-size: 18px;
+      line-height: 130%;
+      padding: 24px;
+      width: 100%;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: transform 0.3s ease;
 
-    &__strict-top-text {
-        &-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transform: translateY(30px);
+      &:hover {
+        text-decoration: none;
+      }
+
+      @include tablet-min {
+        padding: 27.5px 20px;
+
+        &:nth-child(4) {
+          transform: translateY(245px) scale(0.8);
+          z-index: 1;
         }
 
-        &-logo {
-            width: 58px;
-            margin-bottom: 24px;
-
-            @include desktop-sm-min {
-                width: 72px;
-            }
+        &:nth-child(3) {
+          transform: translateY(160px) scale(0.86);
+          z-index: 2;
         }
 
-        &-title {
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 110%;
-            text-align: center;
-            color: #fff;
-            margin-bottom: 8px;
-
-            @include desktop-sm-min {
-                font-size: 32px;
-                line-height: 100%;
-            }
+        &:nth-child(2) {
+          transform: translateY(80px) scale(0.93);
+          z-index: 3;
         }
 
-        &-subtitle {
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 400;
-            font-size: 36px;
-            line-height: 100%;
-            text-align: center;
-            color: #fff;
-
-            @include desktop-sm-min {
-                font-size: 80px;
-                line-height: 100%;
-            }
+        &:nth-child(1) {
+          z-index: 4;
         }
+      }
+
+      &--dark {
+        background-color: #00171f;
+        color: #fff;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+
+      &--dark-blue {
+        background-color: var(--dark-blue);
+        color: #fff;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+
+      &--blue {
+        background-color: var(--blue-tag);
+        color: #fff;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+
+      &--cyan {
+        background-color: var(--cyan-tag);
+        color: #00171f;
+
+        &:hover {
+          color: #00171f;
+        }
+      }
     }
 
-    &__strict-top {
-        height: 602px;
-        display: flex;
+    &-button-icon {
+      width: 24px;
+      height: 24px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__strict-top-text {
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    &-logo {
+      width: 58px;
+      margin-bottom: 24px;
+
+      @include desktop-sm-min {
+        width: 72px;
+      }
+    }
+
+    &-title {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 110%;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 8px;
+
+      @include desktop-sm-min {
+        font-size: 32px;
+        line-height: 100%;
+      }
+    }
+
+    &-subtitle {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 100%;
+      text-align: center;
+      color: #fff;
+
+      @include desktop-sm-min {
+        font-size: 80px;
+        line-height: 100%;
+      }
+    }
+  }
+
+  &__strict-top {
+    height: 602px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include desktop-sm-min {
+      height: 980px;
+    }
+
+    &-wrapper {
+      background-color: #00171f;
+      height: 100%;
+    }
+  }
+
+  &__strict-top-video {
+    height: 220px;
+    width: 45px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: none;
+
+    @include desktop-sm-min {
+      height: 600px;
+      width: 240px;
+    }
+
+    &-wrapper {
+      display: flex;
+
+      &--animated {
         justify-content: center;
         align-items: center;
+        height: 100%;
+      }
+    }
+  }
 
-        @include desktop-sm-min {
-            height: 980px;
-        }
+  &__raw-content {
+    @include tablet-min {
+      flex-direction: row;
+    }
+  }
 
-        &-wrapper {
-            background-color: #00171f;
-            height: 100%;
-        }
+  &__aside {
+    @include tablet-min {
+      position: sticky;
+      top: 20px;
+      align-self: flex-start;
+      height: fit-content;
+    }
+  }
 
+  &__aside-title {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 100%;
+    color: var(--dark-blue);
+
+    @include tablet-min {
+      font-size: 40px;
+      line-height: 110%;
     }
 
-    &__strict-top-video {
-        height: 220px;
-        width: 45px;
+    @include desktop-min {
+      font-size: 48px;
+    }
+  }
 
+  &__benefits {
+    display: flex;
+    justify-content: flex-end;
 
-        @include desktop-sm-min {
-            height: 600px;
-            width: 240px;
-        }
+    @include desktop-lg-min {
+      justify-content: start;
+    }
+  }
 
-        object-fit: cover;
-        cursor: pointer;
-        transition: none;
+  &-chips__section {
+    margin-top: 80px;
+    margin-bottom: 80px;
 
-        &-wrapper {
-            display: flex;
-
-            &--animated {
-                justify-content: center;
-                align-items: center;
-                height: 100%;
-            }
-        }
+    @include tablet-min {
+      margin-top: 120px;
+      margin-bottom: 120px;
+      display: flex;
+      justify-content: flex-end;
     }
 
-    &__raw-content {
-        @include tablet-min {
-            flex-direction: row;
-        }
+    @include desktop-min {
+      margin-top: 205px;
     }
 
-    &__aside {
-        @include tablet-min {
-            position: sticky;
-            top: 20px;
-            align-self: flex-start;
-            height: fit-content;
-        }
-
+    @include desktop-lg-min {
+      justify-content: start;
     }
-
-    &__aside-title {
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 400;
-        font-size: 36px;
-        line-height: 100%;
-        color: var(--dark-blue);
-
-        @include tablet-min {
-            font-size: 40px;
-            line-height: 110%;
-        }
-
-        @include desktop-min {
-            font-size: 48px;
-        }
-    }
-
-    &__benefits {
-        display: flex;
-        justify-content: flex-end;
-
-        @include desktop-lg-min {
-            justify-content: start;
-        }
-    }
-
-    &-chips__section {
-        margin-top: 80px;
-        margin-bottom: 80px;
-
-        @include tablet-min {
-            margin-top: 120px;
-            margin-bottom: 120px;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        @include desktop-min {
-            margin-top: 205px;
-        }
-
-        @include desktop-lg-min {
-            justify-content: start;
-        }
-    }
+  }
 }
