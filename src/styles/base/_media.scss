@@ -5,99 +5,100 @@ $tablet-lg: 1144px;
 $desktop-sm: 1240px;
 $desktop: 1440px;
 $desktop-lg: 1580px;
+$desktop-xl: 1920px;
+
+@mixin desktop-xl-min {
+  @media (min-width: #{$desktop-xl}) {
+    @content;
+  }
+}
 
 @mixin desktop-only {
-    @media (min-width: #{$desktop}) and (max-width: #{$desktop}) {
-        @content;
-    }
+  @media (min-width: #{$desktop}) and (max-width: #{$desktop}) {
+    @content;
+  }
 }
 
 @mixin mobile-min {
-    @media (min-width: #{$mobile + 1px}) {
-        @content;
-    }
+  @media (min-width: #{$mobile + 1px}) {
+    @content;
+  }
 }
 
 @mixin tablet-sm-min {
-    @media (min-width: #{$tablet-sm + 1px}) {
-        @content;
-    }
+  @media (min-width: #{$tablet-sm + 1px}) {
+    @content;
+  }
 }
 
 @mixin tablet-min {
-    @media (min-width: #{$tablet + 1px}) {
-        @content;
-    }
+  @media (min-width: #{$tablet + 1px}) {
+    @content;
+  }
 }
 
 @mixin desktop-min {
-    @media (min-width: #{$desktop + 1px}) {
-        @content;
-    }
+  @media (min-width: #{$desktop + 1px}) {
+    @content;
+  }
 }
 
-
 @mixin desktop-sm-min {
-    @media (min-width: #{$desktop-sm + 1px}) {
-        @content;
-    }
+  @media (min-width: #{$desktop-sm + 1px}) {
+    @content;
+  }
 }
 
 @mixin tablet-lg-min {
-    @media (min-width: #{$tablet-lg + 1px}) {
-        @content;
-    }
+  @media (min-width: #{$tablet-lg + 1px}) {
+    @content;
+  }
 }
-
 
 @mixin desktop-lg-min {
-    @media (min-width: #{$desktop-lg + 1px}) {
-        @content;
-    }
+  @media (min-width: #{$desktop-lg + 1px}) {
+    @content;
+  }
 }
-
 
 @mixin desktop-sm-max {
-    @media (max-width: #{$desktop-sm}) {
-        @content;
-    }
+  @media (max-width: #{$desktop-sm}) {
+    @content;
+  }
 }
-
 
 @mixin tablet-sm-max {
-    @media (max-width: #{$tablet-sm}) {
-        @content;
-    }
+  @media (max-width: #{$tablet-sm}) {
+    @content;
+  }
 }
 
-
 @mixin mobile-max {
-    @media (max-width: #{$mobile}) {
-        @content;
-    }
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
 }
 
 @mixin tablet-max {
-    @media (max-width: #{$tablet}) {
-        @content;
-    }
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
 }
 
 @mixin tablet-lg-max {
-    @media (max-width: #{$tablet-lg}) {
-        @content;
-    }
+  @media (max-width: #{$tablet-lg}) {
+    @content;
+  }
 }
 
-
 @mixin desktop-max {
-    @media (max-width: #{$desktop}) {
-        @content;
-    }
+  @media (max-width: #{$desktop}) {
+    @content;
+  }
 }
 
 @mixin desktop-lg-max {
-    @media (max-width: #{$desktop-lg}) {
-        @content;
-    }
+  @media (max-width: #{$desktop-lg}) {
+    @content;
+  }
 }
