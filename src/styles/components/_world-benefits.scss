@@ -315,7 +315,10 @@
       font-family: IBM Plex Sans Hebrew;
       font-weight: 400;
       font-size: 16px;
-      line-height: 140%;
+      line-height: 130%;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
 
       @include tablet-min {
         padding: 6px 6px 18px 6px;
@@ -323,6 +326,28 @@
 
       @include desktop-lg-min {
         padding: 8px 8px 24px 8px;
+      }
+
+      @include desktop-min {
+        -webkit-line-clamp: 5;
+
+        height: calc(1.4em * 5);
+        margin-bottom: 26px;
+      }
+
+      @include desktop-lg-max {
+        -webkit-line-clamp: 4;
+
+        height: calc(1.4em * 4);
+        margin-bottom: 24px;
+      }
+
+      @include tablet-max {
+        line-height: 1.4;
+        -webkit-line-clamp: 4;
+
+        height: calc(1.6em * 4);
+        margin-bottom: 26px;
       }
     }
 

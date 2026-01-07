@@ -61,7 +61,7 @@ html:dir(rtl) {
       transform: translateX(0);
 
       @include desktop-only {
-        transform: translateX(-160px) !important;
+        transform: translateX(-90px) !important;
       }
 
       @include desktop-lg-min {
@@ -69,7 +69,7 @@ html:dir(rtl) {
       }
 
       @include desktop-min {
-        transform: translateX(0);
+        transform: translateX(-64px);
       }
     }
   }
@@ -79,6 +79,10 @@ html:dir(rtl) {
   max-width: 100%;
   margin: 0 auto;
   margin-top: 48px;
+
+  @include tablet-max {
+    margin-top: 0;
+  }
 
   @include tablet-min {
     margin-top: 78px;
@@ -230,6 +234,18 @@ html:dir(rtl) {
         border-top: 33px solid var(--dark-blue);
         pointer-events: none;
         z-index: inherit;
+      }
+
+      @include tablet-max{
+        background-color: transparent;
+        padding-top: 36px;
+        padding-bottom: 40px;
+        position: relative;
+        margin-bottom: 32px;
+
+        &::after {
+          content: none;
+        }
       }
     }
   }
