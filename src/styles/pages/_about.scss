@@ -4,6 +4,45 @@
   &__top-wrapper {
     // min-height: 810px;
     height: 740px;
+
+    @include tablet-max {
+      position: relative;
+      height: auto;
+      padding-top: 36px;
+      padding-bottom: 40px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 740px;
+        background-color: var(--dark-blue);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 740px;
+        width: 0;
+        height: 0;
+        border-left: 50vw solid transparent;
+        border-right: 50vw solid transparent;
+        border-top: 33px solid var(--dark-blue);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      > * {
+        position: relative;
+        z-index: 1;
+      }
+    }
   }
 
   &__infograph-list-wrapper {

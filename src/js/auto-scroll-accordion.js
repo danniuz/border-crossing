@@ -6,10 +6,10 @@
  * @param {string} params.imageSelector
  */
 export function initAutoScrollAccordion(
-  accordionSelector,
-  accordionItemClass,
-  accordionOpenedClass,
-  params = {},
+    accordionSelector,
+    accordionItemClass,
+    accordionOpenedClass,
+    params = {},
 ) {
   const {
     worksMinWidth = 0,
@@ -28,16 +28,17 @@ export function initAutoScrollAccordion(
     return;
   }
 
-  const accordionItems =
-    accordionTemplate.getElementsByClassName(accordionItemClass);
+  const accordionItems = Array.from(
+      accordionTemplate.getElementsByClassName(accordionItemClass),
+  );
 
   const imageElement = imageSelector
     ? document.querySelector(imageSelector)
     : null;
 
   if (imageElement) {
-    const initialOpenedItem = Array.from(accordionItems).find((item) =>
-      item.classList.contains(accordionOpenedClass),
+    const initialOpenedItem = accordionItems.find((item) =>
+        item.classList.contains(accordionOpenedClass),
     );
     if (initialOpenedItem) {
       const imgSrc = initialOpenedItem.getAttribute('data-img-src');
@@ -89,7 +90,24 @@ export function initAutoScrollAccordion(
     }, 200);
   }
 
-  Array.from(accordionItems).forEach((item, _) => {
+  function activateItem(item) {
+    accordionItems.forEach((otherItem) => {
+      if (otherItem !== item) {
+        otherItem.classList.remove(accordionOpenedClass);
+      }
+    });
+
+    item.classList.add(accordionOpenedClass);
+
+    if (imageElement) {
+      const imgSrc = item.getAttribute('data-img-src');
+      if (imgSrc && imageElement.src !== imgSrc) {
+        updateImageWithTransition(imageElement, imgSrc);
+      }
+    }
+  }
+
+  accordionItems.forEach((item) => {
     let isInHitbox = false;
 
     ScrollTrigger.create({
@@ -102,32 +120,41 @@ export function initAutoScrollAccordion(
         const boxTop = viewportCenter - boxOffset;
         const boxBottom = viewportCenter + boxOffset;
 
-        const elementTop = rect.top;
-        const elementBottom = rect.bottom;
-        const overlaps = elementTop < boxBottom && elementBottom > boxTop;
+        const overlaps =
+            rect.top < boxBottom && rect.bottom > boxTop;
 
         if (overlaps && !isInHitbox) {
           isInHitbox = true;
-
-          Array.from(accordionItems).forEach((otherItem) => {
-            if (otherItem !== item) {
-              otherItem.classList.remove(accordionOpenedClass);
-            }
-          });
-
-          item.classList.add(accordionOpenedClass);
-
-          if (imageElement) {
-            const imgSrc = item.getAttribute('data-img-src');
-
-            if (imgSrc && imageElement.src !== imgSrc) {
-              updateImageWithTransition(imageElement, imgSrc);
-            }
-          }
+          activateItem(item);
         } else if (!overlaps && isInHitbox) {
           isInHitbox = false;
         }
       },
     });
+  });
+
+  function checkInitialState() {
+    let activated = false;
+
+    accordionItems.forEach((item) => {
+      const rect = item.getBoundingClientRect();
+      const viewportCenter = window.innerHeight / 2;
+      const boxTop = viewportCenter - boxOffset;
+      const boxBottom = viewportCenter + boxOffset;
+
+      const overlaps =
+          rect.top < boxBottom && rect.bottom > boxTop;
+
+      if (overlaps && !activated) {
+        activated = true;
+        activateItem(item);
+      }
+    });
+  }
+
+  checkInitialState();
+
+  requestAnimationFrame(() => {
+    ScrollTrigger.refresh();
   });
 }
