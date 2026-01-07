@@ -34,14 +34,14 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: -20px;
+    top: -19px;
     width: 0;
     height: 0;
     border-left: 77vw solid transparent;
     border-right: 23vw solid transparent;
     border-bottom: 20px solid transparent;
     pointer-events: none;
-    z-index: inherit;
+    z-index: 2;
 
     @include tablet-min {
       top: -23px;
@@ -60,14 +60,14 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -20px;
+    bottom: -19px;
     width: 0;
     height: 0;
     border-left: 23vw solid transparent;
     border-right: 77vw solid transparent;
     border-top: 20px solid transparent;
     pointer-events: none;
-    z-index: inherit;
+    z-index: 2;
 
     @include tablet-min {
       bottom: -33px;
@@ -93,7 +93,7 @@
     border-right: 0 solid transparent;
     border-bottom: 0 solid transparent;
     pointer-events: none;
-    z-index: inherit;
+    z-index: 2;
 
     @include tablet-min {
       bottom: -1px;
@@ -112,14 +112,14 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -20px;
+    bottom: -19px;
     width: 0;
     height: 0;
     border-left: 23vw solid transparent;
     border-right: 77vw solid transparent;
     border-top: 20px solid transparent;
     pointer-events: none;
-    z-index: inherit;
+    z-index: 2;
 
     @include tablet-min {
       bottom: -33px;
@@ -138,14 +138,14 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -20px;
+    bottom: -19px;
     width: 0;
     height: 0;
     border-left: 50vw solid transparent;
     border-right: 50vw solid transparent;
     border-top: 20px solid transparent;
     pointer-events: none;
-    z-index: inherit;
+    z-index: 2;
 
     @include tablet-min {
       bottom: -33px;

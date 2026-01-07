@@ -1,5 +1,16 @@
 @use "../base/media" as *;
 
+html[dir="ltr"] {
+  .footer {
+    &__sub {
+      &-powered-by {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
 .footer {
   background-color: var(--dark-blue);
   padding-top: 64px;
@@ -140,7 +151,6 @@
       font-weight: 400;
       font-size: 18px;
       line-height: 130%;
-      padding: 8px 0;
       color: #fff;
       cursor: pointer;
       text-decoration: none;
@@ -171,9 +181,19 @@
         margin-top: 64px;
       }
     }
+  }
 
-    &__link {
-      cursor: pointer;
+  &__social-link {
+    cursor: pointer;
+
+    &-image {
+      width: 36px;
+      height: 36px;
+
+      @include tablet-min {
+        width: 46px;
+        height: 46px;
+      }
     }
   }
 
@@ -270,6 +290,8 @@
       }
 
       &-logo {
+        width: 75px;
+
         @include tablet-min {
           width: 128px;
         }
@@ -300,12 +322,8 @@
   &__language-selector-wrapper {
     position: relative;
     grid-area: language-selector;
-    margin-left: auto;
+    margin-inline-end: auto;
     display: inline-flex;
-
-    @include tablet-min {
-      margin-left: 0;
-    }
   }
 
   &__language-selector-button {
@@ -339,62 +357,5 @@
 
   &__language-selector-text {
     display: inline-block;
-  }
-
-  &__language-dropdown {
-    position: absolute;
-    bottom: 100%;
-    right: 0;
-    margin-bottom: 8px;
-    background-color: var(--dark-blue);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    list-style: none;
-    padding: 8px 0;
-    margin: 0;
-    min-width: 120px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-8px);
-    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
-    z-index: 10;
-
-    &--opened {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    li {
-      margin: 0;
-    }
-  }
-
-  &__language-item {
-    display: block;
-    padding: 8px 16px;
-    color: #fff;
-    text-decoration: none;
-    font-family: IBM Plex Sans Hebrew;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 130%;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-
-    @include tablet-min {
-      font-size: 18px;
-    }
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      text-decoration: none;
-      color: #fff;
-    }
-
-    &--active {
-      background-color: rgba(255, 255, 255, 0.15);
-      font-weight: 600;
-    }
   }
 }

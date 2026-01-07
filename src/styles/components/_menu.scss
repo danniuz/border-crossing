@@ -32,6 +32,19 @@
     }
   }
 
+  .nav-language-dropdown {
+    position: absolute;
+    inset-inline-start: calc(100% + 16px);
+    inset-block-start: 0;
+    z-index: 999;
+    height: min-content;
+
+    &--opened {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
   &__logo-link {
     display: inline-flex;
     flex: 1;
@@ -102,6 +115,8 @@
 
   &__nav-link {
     position: relative;
+    outline: none;
+    border: none;
     width: 100%;
     display: inline-flex;
     padding: 10px 13px 10px 13px;

@@ -1,30 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html dir="rtl" lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="/vite.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
-    >
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&display=swap"
       rel="stylesheet"
-    >
+    />
 
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    >
+    />
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <title>Vite + TS</title>
   </head>
@@ -44,7 +42,7 @@
                 class="marquee__controls-action-image"
                 src="/src/assets/icons/play.svg"
                 alt="Play"
-              >
+              />
             </button>
             <button
               id="marqueeStop"
@@ -54,7 +52,7 @@
                 class="marquee__controls-action-image ltr-reverse-y"
                 src="/src/assets/icons/pause.svg"
                 alt="Pause"
-              >
+              />
             </button>
           </div>
 
@@ -75,12 +73,20 @@
         <div class="menu">
           <div class="menu__logo-list">
             <a href="#" class="menu__logo-link">
-              <img class="menu__logo-image" src="icons/logo-1.svg" alt="Logo 1">
+              <img
+                class="menu__logo-image"
+                src="icons/logo-1.svg"
+                alt="Logo 1"
+              />
               <span class="menu__logo-text">רשות מעברים יבשתיים</span>
             </a>
 
             <a href="#" class="menu__logo-link">
-              <img class="menu__logo-image" src="icons/logo-2.svg" alt="Logo 2">
+              <img
+                class="menu__logo-image"
+                src="icons/logo-2.svg"
+                alt="Logo 2"
+              />
               <span class="menu__logo-text">משרד הביטחון</span>
             </a>
           </div>
@@ -91,91 +97,91 @@
                 מידע שימושי
                 <img
                   src="icons/menu-nav-icon-arrow--cyan.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
                   alt="Arrow Left"
-                >
+                />
               </a>
             </div>
 
             <div class="menu__nav-item">
-              <a href="#" class="menu__nav-link  menu__nav-link--dark-blue-tag">
+              <a href="#" class="menu__nav-link menu__nav-link--dark-blue-tag">
                 כתבות ועידכונים
 
                 <img
                   src="icons/menu-nav-icon-arrow--cyan.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
                   alt="Arrow Left"
-                >
+                />
               </a>
             </div>
 
             <div class="menu__nav-item">
               <a
                 href="#"
-                class="menu__nav-link menu__nav-link--active  menu__nav-link--dark-blue-tag"
+                class="menu__nav-link menu__nav-link--active menu__nav-link--dark-blue-tag"
               >
                 אודות
                 <img
                   src="icons/menu-nav-icon-arrow--cyan.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
                   alt="Arrow Left"
-                >
+                />
               </a>
             </div>
 
-            <div class="menu__nav-item ">
+            <div class="menu__nav-item">
               <a
                 href="#"
-                class="menu__nav-link  menu__nav-link--blue-tag menu__nav-link--with-arrow"
+                class="menu__nav-link menu__nav-link--blue-tag menu__nav-link--with-arrow"
               >
                 צור קשר
                 <img
                   src="icons/menu-nav-icon-arrow--white.svg"
                   class="menu__nav-link-icon menu__nav-link-icon--arrow"
                   alt="Arrow Up Left"
-                >
+                />
                 <img
                   src="icons/menu-nav-icon-arrow--white.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
                   alt="Arrow Left"
-                >
+                />
               </a>
             </div>
 
             <div class="menu__nav-item">
               <a
                 href="#"
-                class="menu__nav-link  menu__nav-link--c-dark-blue menu__nav-link--cyan-tag menu__nav-link--with-arrow"
+                class="menu__nav-link menu__nav-link--c-dark-blue menu__nav-link--cyan-tag menu__nav-link--with-arrow"
               >
                 לכל המעברים
                 <img
                   src="icons/menu-nav-icon-arrow--dark-blue.svg"
                   class="menu__nav-link-icon menu__nav-link-icon--arrow"
                   alt="Arrow Up Left"
-                >
+                />
                 <img
                   src="icons/menu-nav-icon-arrow--dark-blue.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow "
+                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
                   alt="Arrow Left"
-                >
+                />
               </a>
             </div>
 
             <div class="menu__nav-item">
-              <a href="#" class="menu__nav-link  menu__nav-link--white-tag">
+              <a href="#" class="menu__nav-link menu__nav-link--white-tag">
                 חיפוש
                 <img
                   src="icons/magnify.svg"
                   class="menu__nav-link-icon"
                   alt="Magnify"
-                >
+                />
               </a>
             </div>
 
             <div class="menu__nav-item">
               <a
                 href="#"
-                class="menu__nav-link  menu__nav-link--c-white menu__nav-link--white-tag"
+                class="menu__nav-link menu__nav-link--c-white menu__nav-link--white-tag"
               >
                 איזור אישי
               </a>
@@ -185,26 +191,26 @@
               <div class="menu__nav-item">
                 <a
                   href="#"
-                  class="menu__nav-link  menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
+                  class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
                 >
                   <img
                     src="icons/accessibility.svg"
                     class="menu__nav-link-icon"
                     alt="Accessibility"
-                  >
+                  />
                 </a>
               </div>
 
               <div class="menu__nav-item">
                 <a
                   href="#"
-                  class="menu__nav-link  menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
+                  class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
                 >
                   <img
                     src="icons/lang.svg"
                     class="menu__nav-link-icon"
                     alt="Language"
-                  >
+                  />
                 </a>
               </div>
             </div>
@@ -227,12 +233,12 @@
         </div>
 
         <div class="main-content__top-wrapper">
-          <div class="main-content__top ">
+          <div class="main-content__top">
             <div class="main-content__top-header">
               <div class="main-content__top-header-subtitle">מידע שימושי</div>
               <h2 class="main-content__top-header-title">
                 מידע שימוש
-                <br class="br-none br-tablet-min">
+                <br class="br-none br-tablet-min" />
                 לפני המעבר
               </h2>
             </div>
@@ -245,12 +251,12 @@
                       <source
                         media="(min-width: 980px)"
                         srcset="/src/assets/images/hero-lady-lg.png"
-                      >
+                      />
                       <img
                         class="main-content__cover-top-img--md w-100"
                         src="/src/assets/images/hero-lady-sm.png"
                         alt=""
-                      >
+                      />
                     </picture>
 
                     <div class="info-swiper__card">
@@ -259,7 +265,7 @@
                           class="info-swiper__card-icon"
                           src="/src/assets/icons/globe-waller.svg"
                           alt="Instagram"
-                        >
+                        />
                         <h4 class="info-swiper__card-title">
                           ודא שיש ברשותך אחת מהתעודות הבאות
                         </h4>
@@ -270,27 +276,27 @@
                           </p>
                           <p>
                             תעודת זהות ישראלית
-                            <br>
+                            <br />
                           </p>
                           <p></p>
                           <p>
                             רישיון נהיגה ישראלי
-                            <br>
+                            <br />
                           </p>
                           <p></p>
                           <p>
                             חוגר / קצין (תעודה מגנטית)
-                            <br>
+                            <br />
                           </p>
                           <p></p>
                           <p>
                             תעודת שוטר / שב"ס / כבאות והצלה (לא מתנדב)
-                            <br>
+                            <br />
                           </p>
                           <p></p>
                           <p>
                             דרכון / תעודת מעבר
-                            <br>
+                            <br />
                           </p>
                           <p></p>
                           <p>תעודת זהות פלסטינאית + היתר כניסה בתוקף</p>
@@ -309,7 +315,7 @@
                               src="icons/arrow-up-left-sm.svg"
                               class="info-swiper__card-footer-link-icon"
                               alt="Arrow Up Left"
-                            >
+                            />
                           </div>
                         </a>
                       </div>
@@ -321,12 +327,12 @@
                       <source
                         media="(min-width: 980px)"
                         srcset="/src/assets/images/hero-lady-lg.png"
-                      >
+                      />
                       <img
                         class="main-content__cover-top-img--md w-100"
                         src="/src/assets/images/hero-lady-sm.png"
                         alt=""
-                      >
+                      />
                     </picture>
                   </div>
 
@@ -335,12 +341,12 @@
                       <source
                         media="(min-width: 980px)"
                         srcset="/src/assets/images/hero-lady-lg.png"
-                      >
+                      />
                       <img
                         class="main-content__cover-top-img--md w-100"
                         src="/src/assets/images/hero-lady-sm.png"
                         alt=""
-                      >
+                      />
                     </picture>
                   </div>
                 </div>
@@ -362,7 +368,7 @@
                     class="info-swiper__pagination-icon rotate-y ltr-reverse-none"
                     src="/src/assets/icons/arrow-left-pagination.svg"
                     alt="Arrow left"
-                  >
+                  />
                 </div>
                 <div
                   class="swiper-button-next info-swiper__swiper-button info-swiper__swiper-button-next"
@@ -372,7 +378,7 @@
                     class="info-swiper__pagination-icon ltr-reverse-y"
                     src="/src/assets/icons/arrow-left-pagination.svg"
                     alt="Arrow Right"
-                  >
+                  />
                 </div>
               </div>
             </div>
@@ -394,7 +400,11 @@
             </div>
 
             <div class="main-content__page mt-0">
-              <div class="main-content__section">
+              <div
+                data-scrollable-content="smooth-drive"
+                id="smooth-drive"
+                class="main-content__section"
+              >
                 <div id="smooth-drive" class="smooth-drive">
                   <div class="smooth-drive__subtitle">טיפים לעוברים</div>
                   <div class="smooth-drive__title">טיפים למעבר חלק ובטוח</div>
@@ -405,7 +415,7 @@
                         src="src/assets/icons/smooth-drive/biometric.svg"
                         class="smooth-drive__card-item-image"
                         alt=""
-                      >
+                      />
                       <div class="smooth-drive__card-item-title">
                         הכינו את היד לסריקה ביומטרית
                       </div>
@@ -419,7 +429,7 @@
                         src="src/assets/icons/smooth-drive/bag.svg"
                         class="smooth-drive__card-item-image"
                         alt=""
-                      >
+                      />
                       <div class="smooth-drive__card-item-title">
                         הביאו רק את מה שנחוץ
                       </div>
@@ -433,7 +443,7 @@
                         src="src/assets/icons/smooth-drive/time.svg"
                         class="smooth-drive__card-item-image"
                         alt=""
-                      >
+                      />
                       <div class="smooth-drive__card-item-title">
                         הגיעו בזמן שנקבע לכם
                       </div>
@@ -447,7 +457,7 @@
                         src="src/assets/icons/smooth-drive/car.svg"
                         class="smooth-drive__card-item-image"
                         alt=""
-                      >
+                      />
                       <div class="smooth-drive__card-item-title">מעבר רכב</div>
                       <div class="smooth-drive__card-item-description">
                         בהגעתך למעבר רכב, יש לבצע עצירה מלאה ולפתוח חלון
@@ -457,7 +467,11 @@
                 </div>
               </div>
 
-              <div class="main-content__section">
+              <div
+                data-scrollable-content="feature-benefits"
+                id="feature-benefits"
+                class="main-content__section"
+              >
                 <div id="general" class="feature-benefits">
                   <div class="feature-benefits__subtitle">טיפים לעוברים</div>
                   <div class="feature-benefits__title">
@@ -469,7 +483,7 @@
                       <img
                         class="feature-benefits__card-wrapper-list-heading-icon"
                         src="src/assets/icons/smooth-drive/form.svg"
-                      >
+                      />
                       <div
                         class="feature-benefits__card-wrapper-list-heading-title"
                       >
@@ -483,7 +497,7 @@
                           src="src/assets/icons/smooth-drive/passport.svg"
                           class="feature-benefits__card-item-image"
                           alt=""
-                        >
+                        />
                         <div class="feature-benefits__card-item-title">
                           חובה לשאת עמך תעודה מזהה / דרכון + תעודת מעבר לנדרשים
                           לכך- ללא תיעוד נדרש אין מעבר
@@ -531,7 +545,7 @@
                           src="src/assets/icons/smooth-drive/kids.svg"
                           class="feature-benefits__card-item-image"
                           alt=""
-                        >
+                        />
                         <div class="feature-benefits__card-item-title">
                           ילדים עד גיל 16 – חייבים להיות מלווים על ידי אחד
                           ההורים
@@ -546,7 +560,7 @@
                           src="src/assets/icons/smooth-drive/emergency.svg"
                           class="feature-benefits__card-item-image"
                           alt=""
-                        >
+                        />
                         <div class="feature-benefits__card-item-title">
                           בעת אירוע חירום יש להישמע להנחיות של עובדי הביטחון
                         </div>
@@ -556,7 +570,7 @@
                           src="src/assets/icons/smooth-drive/no-camera.svg"
                           class="feature-benefits__card-item-image"
                           alt=""
-                        >
+                        />
                         <div class="feature-benefits__card-item-title">
                           לידיעתכם חל איסור לצלם בשטחי המעבר
                         </div>
@@ -567,7 +581,7 @@
                           src="src/assets/icons/smooth-drive/stop.svg"
                           class="feature-benefits__card-item-image"
                           alt=""
-                        >
+                        />
                         <div class="feature-benefits__card-item-title">
                           חמושים? – חל איסור על התערבות באירוע ביטחוני בשטח
                           המעבר!
@@ -586,7 +600,7 @@
                       <img
                         class="feature-benefits__card-wrapper-list-heading-icon"
                         src="src/assets/icons/smooth-drive/car.svg"
-                      >
+                      />
                       <div
                         class="feature-benefits__card-wrapper-list-heading-title"
                       >
@@ -641,7 +655,7 @@
                       <img
                         class="feature-benefits__card-wrapper-list-heading-icon"
                         src="src/assets/icons/smooth-drive/trucks.svg"
-                      >
+                      />
                       <div
                         class="feature-benefits__card-wrapper-list-heading-title"
                       >
@@ -746,7 +760,11 @@
                 </div>
               </div>
 
-              <div class="main-content__section">
+              <div
+                data-scrollable-content="faq"
+                class="main-content__section"
+                id="faq"
+              >
                 <div id="faq" class="info__flashes-title">שאלות ותשובות</div>
                 <div class="info__flashes-description">
                   כל התשובות במקום אחד
@@ -756,25 +774,37 @@
                   <label
                     class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
                   >
-                    <input type="checkbox" class="content-aside__tag-checkbox">
+                    <input
+                      type="checkbox"
+                      class="content-aside__tag-checkbox"
+                    />
                     <span class="content-aside__tag-text">מעברים</span>
                   </label>
                   <label
                     class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
                   >
-                    <input type="checkbox" class="content-aside__tag-checkbox">
+                    <input
+                      type="checkbox"
+                      class="content-aside__tag-checkbox"
+                    />
                     <span class="content-aside__tag-text">מעברים</span>
                   </label>
                   <label
                     class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
                   >
-                    <input type="checkbox" class="content-aside__tag-checkbox">
+                    <input
+                      type="checkbox"
+                      class="content-aside__tag-checkbox"
+                    />
                     <span class="content-aside__tag-text">טכנולוגיה</span>
                   </label>
                   <label
                     class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
                   >
-                    <input type="checkbox" class="content-aside__tag-checkbox">
+                    <input
+                      type="checkbox"
+                      class="content-aside__tag-checkbox"
+                    />
                     <span class="content-aside__tag-text"
                       >טכנולוגיה וחדשנות</span
                     >
@@ -782,13 +812,19 @@
                   <label
                     class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
                   >
-                    <input type="checkbox" class="content-aside__tag-checkbox">
+                    <input
+                      type="checkbox"
+                      class="content-aside__tag-checkbox"
+                    />
                     <span class="content-aside__tag-text">מעברים</span>
                   </label>
                   <label
                     class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
                   >
-                    <input type="checkbox" class="content-aside__tag-checkbox">
+                    <input
+                      type="checkbox"
+                      class="content-aside__tag-checkbox"
+                    />
                     <span class="content-aside__tag-text">מעברים</span>
                   </label>
                 </div>
@@ -808,7 +844,7 @@
                           src="icons/arrow-top--blue.svg"
                           class="faq__item-toggler--icon"
                           alt="Arrow Top"
-                        >
+                        />
                       </button>
                     </div>
                     <div class="faq__item-content">
@@ -825,7 +861,7 @@
                             src="icons/arrow-up-left-sm.svg"
                             class="faq__statement-item-link-arrow-icon"
                             alt="Arrow Up Left"
-                          >
+                          />
                         </div>
                       </a>
                     </div>
@@ -843,7 +879,7 @@
                           src="icons/arrow-top--blue.svg"
                           class="faq__item-toggler--icon"
                           alt="Arrow Top"
-                        >
+                        />
                       </button>
                     </div>
                     <div class="faq__item-content">
@@ -888,21 +924,21 @@
                   class="footer__social-link-image"
                   src="/src/assets/icons/yt.svg"
                   alt="Youtube"
-                >
+                />
               </a>
               <a href="" class="footer__social-link">
                 <img
                   class="footer__social-link-image"
                   src="/src/assets/icons/inst.svg"
                   alt="Instagram"
-                >
+                />
               </a>
               <a href="" class="footer__social-link">
                 <img
                   class="footer__social-link-image"
                   src="/src/assets/icons/fb.svg"
                   alt="Facebook"
-                >
+                />
               </a>
             </div>
 
@@ -918,7 +954,7 @@
                 class="footer__powered-by-logo"
                 src="/src/assets/icons/powered-by-logo.svg"
                 alt="Powered by logo"
-              >
+              />
             </div>
           </div>
         </div>
