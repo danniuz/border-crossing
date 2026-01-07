@@ -189,9 +189,10 @@ html:dir(rtl) {
     &-wrapper {
       background-color: var(--dark-blue);
       padding-top: 36px;
-      padding-bottom: 40px;
+      padding-bottom: 0;
       position: relative;
       margin-bottom: 32px;
+      overflow: hidden;
 
       &--sticky {
         position: sticky;
@@ -200,7 +201,7 @@ html:dir(rtl) {
       }
 
       @include tablet-min {
-        padding-bottom: 20px;
+        padding-bottom: 112px;
       }
 
       &--white {
@@ -211,19 +212,48 @@ html:dir(rtl) {
         }
       }
 
-      &::after {
+      &::after,
+      &::before {
         content: "";
         position: absolute;
+        bottom: 0;
+        width: 100%;
+        margin-bottom: -500px;
+        height: 500px;
+        background-color: #fff;
+        z-index: 2;
+      }
+
+      &::after {
         left: 50%;
-        transform: translateX(-50%);
-        bottom: -32px;
-        width: 0;
-        height: 0;
-        border-left: 50vw solid transparent;
-        border-right: 50vw solid transparent;
-        border-top: 33px solid var(--dark-blue);
-        pointer-events: none;
-        z-index: inherit;
+        transform-origin: 0 0;
+        margin-inline-end: 315px;
+        transform: rotate(-4.2deg);
+
+        @include desktop-lg-max {
+          margin-inline-end: 123px;
+        }
+
+        @include tablet-max {
+          margin-inline-end: -35px;
+          transform: rotate(-9deg);
+        }
+      }
+
+      &::before {
+        right: 50%;
+        transform-origin: 100% 0;
+        margin-inline-start: -315px;
+        transform: rotate(1deg);
+
+        @include desktop-lg-max {
+          margin-inline-start: -123px;
+        }
+
+        @include tablet-max {
+          margin-inline-start: -35px;
+          transform: rotate(9deg);
+        }
       }
     }
   }
