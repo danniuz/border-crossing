@@ -10,9 +10,9 @@
     position: relative;
 
     @include tablet-min {
-        top: 20px;
+        top: 0;
         position: absolute;
-        inset-inline-end: 24px;
+        inset-inline-end: 108px;
     }
 
     @include desktop-min {

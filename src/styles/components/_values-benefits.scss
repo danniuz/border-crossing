@@ -1,10 +1,5 @@
 @use "../base/media" as *;
-
-html:dir(ltr) {
-  .value-benefits__item {
-    flex-direction: row-reverse;
-  }
-}
+@use "../base/mixins" as mixin;
 
 .value-benefits {
   &__wrapper {
@@ -164,10 +159,20 @@ html:dir(ltr) {
 
   &:nth-child(1) {
     clip-path: polygon(0% 20%, 100% 0%, 100% 100%, 0% 100%);
+
+
+    @include mixin.ltr {
+      clip-path: polygon(100% 20%, 0% 0%, 0% 100%, 100% 100%);
+    }
   }
 
   &:nth-child(3) {
     clip-path: polygon(100% 0%, 0% 0%, 0% 88%, 100% 100%);
+
+    @include mixin.ltr {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 88%, 0% 100%);
+    }
+
   }
 
   &--right {

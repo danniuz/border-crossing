@@ -55,7 +55,7 @@ html:dir(rtl) {
       transform: translateX(0);
 
       @include desktop-only {
-        transform: translateX(-160px) !important;
+        transform: translateX(-90px) !important;
       }
 
       @include desktop-lg-min {
@@ -63,7 +63,7 @@ html:dir(rtl) {
       }
 
       @include desktop-min {
-        transform: translateX(0);
+        transform: translateX(-64px);
       }
     }
   }

@@ -1,0 +1,11 @@
+@mixin ltr {
+  html:not([dir='rtl']) & {
+    @content;
+  }
+}
+
+@mixin rtl {
+  html[dir='rtl'] & {
+    @content;
+  }
+}
