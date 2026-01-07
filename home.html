@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="" lang="en">
+<html dir="ltr" lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -72,7 +72,7 @@
         </div>
       </div>
 
-      <div class="page-content with-triangle-3--bottom with-triangle--white">
+      <div class="page-content">
         <div class="menu menu--sticky">
           <div class="menu__logo-list">
             <a href="#" class="menu__logo-link">
@@ -205,8 +205,9 @@
               </div>
 
               <div class="menu__nav-item">
-                <a
+                <button
                   href="#"
+                  id="nav-language-menu-link"
                   class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
                 >
                   <img
@@ -214,7 +215,36 @@
                     class="menu__nav-link-icon"
                     alt="Language"
                   />
-                </a>
+
+                  <ul
+                    id="nav-language-dropdown"
+                    class="nav-language-dropdown language-dropdown"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        class="language-dropdown__item language-dropdown__item--active"
+                      >
+                        HE | עברית
+                      </a>
+                      <img
+                        class="link-icon"
+                        src="icons/arrow-up-left-sm.svg"
+                        alt="Arrow Up Left"
+                      />
+                    </li>
+                    <li>
+                      <a href="#" class="language-dropdown__item"
+                        >EN | English</a
+                      >
+                      <img
+                        class="link-icon"
+                        src="icons/arrow-up-left-sm.svg"
+                        alt="Arrow Up Left"
+                      />
+                    </li>
+                  </ul>
+                </button>
               </div>
             </div>
           </div>
@@ -354,100 +384,99 @@
           </div>
         </div>
 
-        <div class="main-content container section-aside-line-content relative">
+        <div
+          class="main-content main-content__default-margin-start container section-aside-line-content relative"
+        >
           <span class="section-aside-line"></span>
-          <div class="main-content__layout main-content__layout-sm">
-            <div class="safe-area">
-              <div class="safe-area__subtitle">החזון</div>
-              <div class="safe-area__title">רשת ביטחון וגשר לכלכלה</div>
+          <div class="safe-area">
+            <div class="safe-area__subtitle">החזון</div>
+            <div class="safe-area__title">רשת ביטחון וגשר לכלכלה</div>
 
-              <div class="safe-area__content">
-                <div class="safe-area__sm-image-wrapper">
-                  <picture>
-                    <source
-                      media="(min-width: 980px)"
-                      srcset="/src/assets/images/open-street.jpg"
-                    />
-                    <img
-                      class="main-content__sm-image"
-                      src="/src/assets/images/open-street.jpg"
-                      alt=""
-                    />
-                  </picture>
+            <div class="safe-area__content">
+              <div class="safe-area__sm-image-wrapper">
+                <picture>
+                  <source
+                    media="(min-width: 980px)"
+                    srcset="/src/assets/images/open-street.jpg"
+                  />
+                  <img
+                    class="main-content__sm-image"
+                    src="/src/assets/images/open-street.jpg"
+                    alt=""
+                  />
+                </picture>
+              </div>
+
+              <div class="safe-area__lg-image-wrapper">
+                <picture>
+                  <source
+                    media="(min-width: 980px)"
+                    srcset="/src/assets/images/parking-lady.png"
+                  />
+                  <img
+                    class="main-content__lg-image"
+                    src="/src/assets/images/parking-lady.png"
+                    alt=""
+                  />
+                </picture>
+              </div>
+
+              <div class="safe-area-benefits__list">
+                <div
+                  class="safe-area-benefits__item safe-area-benefits__item--right"
+                >
+                  <div class="safe-area-benefits__item-content">
+                    <div class="safe-area-benefits__item-content-title">
+                      אחריות מרחיבה
+                    </div>
+                    <div class="safe-area-benefits__item-content-text">
+                      ראייה כוללת – אחריות על הכלכלה, הביטחון, והחיים של אנשים.
+                    </div>
+                  </div>
+
+                  <img
+                    class="safe-area-benefits__item-image"
+                    src="/src/assets/value-benefits/arrow-right.svg"
+                    alt=""
+                  />
                 </div>
+                <div
+                  class="safe-area-benefits__item safe-area-benefits__item--up"
+                >
+                  <div class="safe-area-benefits__item-content">
+                    <div class="safe-area-benefits__item-content-title">
+                      שליחות ומצוינות
+                    </div>
+                    <div class="safe-area-benefits__item-content-text">
+                      מחויבות לשליחות לאומית וציבורית – תפקיד משמעותי בעל ערך
+                      למדינה ולחברה.
+                    </div>
+                  </div>
 
-                <div class="safe-area__lg-image-wrapper">
-                  <picture>
-                    <source
-                      media="(min-width: 980px)"
-                      srcset="/src/assets/images/parking-lady.png"
-                    />
-                    <img
-                      class="main-content__lg-image"
-                      src="/src/assets/images/parking-lady.png"
-                      alt=""
-                    />
-                  </picture>
+                  <img
+                    class="safe-area-benefits__item-image"
+                    src="/src/assets/value-benefits/arrow-up.svg"
+                    alt=""
+                  />
                 </div>
-
-                <div class="safe-area-benefits__list">
-                  <div
-                    class="safe-area-benefits__item safe-area-benefits__item--right"
-                  >
-                    <div class="safe-area-benefits__item-content">
-                      <div class="safe-area-benefits__item-content-title">
-                        אחריות מרחיבה
-                      </div>
-                      <div class="safe-area-benefits__item-content-text">
-                        ראייה כוללת – אחריות על הכלכלה, הביטחון, והחיים של
-                        אנשים.
-                      </div>
+                <div
+                  class="safe-area-benefits__item safe-area-benefits__item--boost-up"
+                >
+                  <div class="safe-area-benefits__item-content">
+                    <div class="safe-area-benefits__item-content-title">
+                      שיתופיות
                     </div>
-
-                    <img
-                      class="safe-area-benefits__item-image"
-                      src="/src/assets/value-benefits/arrow-right.svg"
-                      alt=""
-                    />
-                  </div>
-                  <div
-                    class="safe-area-benefits__item safe-area-benefits__item--up"
-                  >
-                    <div class="safe-area-benefits__item-content">
-                      <div class="safe-area-benefits__item-content-title">
-                        שליחות ומצוינות
-                      </div>
-                      <div class="safe-area-benefits__item-content-text">
-                        מחויבות לשליחות לאומית וציבורית – תפקיד משמעותי בעל ערך
-                        למדינה ולחברה.
-                      </div>
+                    <div class="safe-area-benefits__item-content-text">
+                      עבודה בשיתוף פעולה עם גופי ביטחון, רשויות, גורמים עסקיים
+                      וממשלות שכנות.
                     </div>
-
-                    <img
-                      class="safe-area-benefits__item-image"
-                      src="/src/assets/value-benefits/arrow-up.svg"
-                      alt=""
-                    />
                   </div>
-                  <div
-                    class="safe-area-benefits__item safe-area-benefits__item--boost-up"
-                  >
-                    <div class="safe-area-benefits__item-content">
-                      <div class="safe-area-benefits__item-content-title">
-                        שיתופיות
-                      </div>
-                      <div class="safe-area-benefits__item-content-text">
-                        עבודה בשיתוף פעולה עם גופי ביטחון, רשויות, גורמים עסקיים
-                        וממשלות שכנות.
-                      </div>
-                    </div>
 
-                    <img
-                      class="safe-area-benefits__item-image"
-                      src="/src/assets/value-benefits/boost-up.svg"
-                      alt=""
-                    />
-                  </div>
+                  <img
+                    class="safe-area-benefits__item-image"
+                    src="/src/assets/value-benefits/boost-up.svg"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
@@ -457,7 +486,9 @@
         <div
           class="wide-text__wrapper bg-dark-blue with-triangle-1--bottom with-triangle-1--top with-triangle--dark-blue"
         >
-          <div class="main-content mt-0 wide-text container">
+          <div
+            class="main-content mt-0 wide-text main-content__default-margin-start container"
+          >
             <div class="wide-text__content">
               <div class="wide-text__title">במניעת</div>
               <p></p>
@@ -1054,6 +1085,7 @@
 
         <div class="long-way-banner long-way-banner--near-footer">
           <video
+            id="long-way-banner-video"
             class="long-way-banner__clip"
             src="public/videos/lady.mp4"
             autoplay
@@ -1061,6 +1093,13 @@
             muted
             playsinline
           ></video>
+
+          <button
+            class="custom-video-stop-button"
+            id="long-way-banner-video-stop-button"
+          >
+            <img src="icons/stop-player.svg" alt="Stop" />
+          </button>
 
           <div class="long-way-banner__content">
             <div class="long-way-banner__heading">
@@ -1157,20 +1196,27 @@
                 />
               </button>
 
-              <ul class="footer__language-dropdown">
+              <ul class="language-dropdown footer__language-dropdown">
                 <li>
                   <a
                     href="#"
-                    class="footer__language-item footer__language-item--active"
+                    class="language-dropdown__item language-dropdown__item--active"
                   >
-                    עברית
+                    HE | עברית
                   </a>
+                  <img
+                    class="link-icon"
+                    src="icons/arrow-up-left-sm.svg"
+                    alt="Arrow Up Left"
+                  />
                 </li>
                 <li>
-                  <a href="#" class="footer__language-item">English</a>
-                </li>
-                <li>
-                  <a href="#" class="footer__language-item">العربية</a>
+                  <a href="#" class="language-dropdown__item">EN | English</a>
+                  <img
+                    class="link-icon"
+                    src="icons/arrow-up-left-sm.svg"
+                    alt="Arrow Up Left"
+                  />
                 </li>
               </ul>
             </div>

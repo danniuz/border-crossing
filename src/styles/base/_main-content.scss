@@ -21,6 +21,12 @@
   }
 }
 
+.main-content__default-margin-start {
+  @include desktop-only {
+    margin-inline-start: 300px !important;
+  }
+}
+
 .main-content__prefix-top {
   &--sticky {
     position: sticky;

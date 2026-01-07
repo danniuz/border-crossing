@@ -1,276 +1,275 @@
-@use '../base/media' as *;
-
+@use "../base/media" as *;
 
 .info-swiper {
-    max-width: 704px;
-    width: 100%;
-    margin-inline-end: auto;
+  max-width: 704px;
+  width: 100%;
+  margin-inline-end: auto;
 
+  @include desktop-lg-min {
+    max-width: 1008px;
+  }
+
+  @include desktop-sm-min {
+    max-width: 704px;
+    padding-top: 14px;
+  }
+
+  @include desktop-lg-min {
+    max-width: 1008px;
+    padding-top: 0px;
+  }
+
+  .swiper-slide {
     @include desktop-lg-min {
-        max-width: 1008px;
+      padding-inline-start: 128px;
+    }
+  }
+
+  &__swiper-wrapper {
+    position: relative;
+    padding: 0 16px;
+    z-index: 1;
+
+    @include tablet-min {
+      padding: initial;
     }
 
     @include desktop-sm-min {
-        max-width: 704px;
-        padding-top: 14px;
+      transform: translateY(-14px);
     }
 
     @include desktop-lg-min {
-        max-width: 1008px;
-        padding-top: 0px;
+      transform: none;
+    }
+  }
+
+  &__swiper-button-actions {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    height: 40px;
+    inset-inline-end: 0;
+    gap: 8px;
+    display: flex;
+    width: 96px;
+    justify-content: space-between;
+
+    @include desktop-sm-min {
+      visibility: visible;
+      top: calc(100% + 21px);
     }
 
-    .swiper-slide {
-        @include desktop-lg-min {
-            padding-inline-start: 128px;
-        }
+    @include desktop-lg-min {
+      top: calc(100% + 16px);
+    }
+  }
+
+  &__swiper-button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    position: static;
+    background-color: var(--dark-blue);
+    margin: 0 !important;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &__card {
+    background-color: rgba(#fff, 0.9);
+    margin-top: -40px;
+    z-index: 10;
+    position: relative;
+
+    @include desktop-sm-min {
+      margin: 0;
+      max-width: 240px;
+      margin-top: -387px;
+      margin-inline-start: 24px;
     }
 
-    &__swiper-wrapper {
-        position: relative;
-        padding: 0 16px;
-
-        @include tablet-min {
-            padding: initial;
-        }
-
-        @include desktop-sm-min {
-            transform: translateY(-14px);
-        }
-
-        @include desktop-lg-min {
-            transform: none;
-        }
+    @include desktop-lg-min {
+      margin: 0;
+      max-width: 240px;
+      margin-top: -440px;
+      margin-inline-start: -128px;
     }
 
-    &__swiper-button-actions {
-        visibility: hidden;
+    &-icon {
+      margin-bottom: 16px;
+
+      @include desktop-sm-min {
+        margin-bottom: 8px;
+      }
+    }
+
+    &-content {
+      padding: 24px 16px 0 40px;
+
+      @include desktop-sm-min {
+        padding: 48px 16px 0 16px;
+      }
+    }
+
+    &-title {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 130%;
+      color: var(--dark-blue);
+
+      @include desktop-sm-min {
+        font-size: 24px;
+        line-height: 120%;
+        margin-bottom: 16px;
+      }
+
+      @include desktop-lg-min {
+        margin-bottom: 0;
+      }
+    }
+
+    &-benefit-text {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 130%;
+      color: var(--dark-blue);
+      margin-bottom: 8px;
+
+      @include desktop-lg-min {
+        margin-bottom: 24px;
+      }
+
+      p {
+        padding-bottom: 8px;
+      }
+    }
+
+    &-benefit-list {
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+      padding: 0;
+      gap: 8px;
+    }
+
+    &-benefit-item {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 16px;
+      line-height: 140%;
+      color: var(--dark-blue);
+      padding-inline-start: 12px;
+      position: relative;
+
+      @include desktop-sm-min {
+        padding-inline-start: 0;
+      }
+
+      &::before {
+        content: "";
         position: absolute;
-        top: 0;
-        height: 40px;
-        inset-inline-end: 0;
-        gap: 8px;
-        display: flex;
-        width: 96px;
-        justify-content: space-between;
+        inset-inline-start: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 4px;
+        background-color: var(--cyan-tag);
+        border-radius: 50%;
 
         @include desktop-sm-min {
-            visibility: visible;
-            top: calc(100% + 21px);
+          content: none;
+        }
+      }
+    }
+
+    &-footer {
+      margin-top: 24px;
+      display: flex;
+      justify-content: flex-end;
+
+      @include tablet-min {
+        margin-top: 40px;
+      }
+
+      @include desktop-lg-min {
+        margin-top: 48px;
+      }
+    }
+
+    &-footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+
+      @include tablet-min {
+        gap: 16px;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &-icon {
+        width: 18px;
+        height: 18px;
+
+        &-box {
+          width: 40px;
+          height: 40px;
+          background-color: var(--cyan-tag);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
         }
 
         @include desktop-lg-min {
-            top: calc(100% + 16px);
+          transform: rotate(-135deg);
         }
+      }
+
+      &-text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: var(--dark-blue);
+      }
+    }
+  }
+
+  &__swiper-pagination-wrapper {
+    max-width: 704px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  &__swiper-pagination {
+    width: max-content !important;
+    inset-inline-start: 16px !important;
+    display: inline-flex;
+    gap: 8px;
+    bottom: -27px !important;
+    top: initial !important;
+
+    .swiper-pagination-bullet {
+      opacity: 1;
+      background-color: #fff;
+      width: 24px;
+      height: 3px;
+      border-radius: 0;
+      margin: 0 !important;
+
+      &-active {
+        background-color: var(--cyan-tag);
+      }
     }
 
-    &__swiper-button {
-        width: 40px;
-        height: 40px;
-        border: 1px solid #fff;
-        position: static;
-        background-color: var(--dark-blue);
-        margin: 0 !important;
-
-        &:after {
-            display: none;
-        }
+    @include desktop-sm-min {
+      visibility: hidden;
     }
-
-    &__card {
-        background-color: rgba(#fff, 0.9);
-        margin-top: -40px;
-        z-index: 10;
-        position: relative;
-
-        @include desktop-sm-min {
-            margin: 0;
-            max-width: 240px;
-            margin-top: -387px;
-            margin-inline-start: 24px;
-        }
-
-        @include desktop-lg-min {
-            margin: 0;
-            max-width: 240px;
-            margin-top: -440px;
-            margin-inline-start: -128px;
-        }
-
-        &-icon {
-            margin-bottom: 16px;
-
-            @include desktop-sm-min {
-                margin-bottom: 8px;
-            }
-        }
-
-        &-content {
-            padding: 24px 16px 0 40px;
-
-            @include desktop-sm-min {
-                padding: 48px 16px 0 16px;
-            }
-        }
-
-        &-title {
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 130%;
-            color: var(--dark-blue);
-
-            @include desktop-sm-min {
-                font-size: 24px;
-                line-height: 120%;
-                margin-bottom: 16px;
-            }
-
-            @include desktop-lg-min {
-                margin-bottom: 0;
-            }
-        }
-
-        &-benefit-text {
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 130%;
-            color: var(--dark-blue);
-            margin-bottom: 8px;
-
-            @include desktop-lg-min {
-                margin-bottom: 24px;
-            }
-
-            p {
-                padding-bottom: 8px;
-            }
-        }
-
-        &-benefit-list {
-            display: flex;
-            flex-direction: column;
-            list-style-type: none;
-            padding: 0;
-            gap: 8px;
-        }
-
-        &-benefit-item {
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 400;
-            font-style: Regular;
-            font-size: 16px;
-            line-height: 140%;
-            color: var(--dark-blue);
-            padding-inline-start: 12px;
-            position: relative;
-
-            @include desktop-sm-min {
-                padding-inline-start: 0;
-            }
-
-            &::before {
-                content: '';
-                position: absolute;
-                inset-inline-start: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 4px;
-                height: 4px;
-                background-color: var(--cyan-tag);
-                border-radius: 50%;
-
-                @include desktop-sm-min {
-                    content: none;
-                }
-            }
-        }
-
-        &-footer {
-            margin-top: 24px;
-            display: flex;
-            justify-content: flex-end;
-
-            @include tablet-min {
-                margin-top: 40px;
-            }
-
-            @include desktop-lg-min {
-                margin-top: 48px;
-            }
-        }
-
-        &-footer-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-
-            @include tablet-min {
-                gap: 16px;
-            }
-
-            &:hover {
-                text-decoration: underline;
-            }
-
-            &-icon {
-                width: 18px;
-                height: 18px;
-
-                &-box {
-                    width: 40px;
-                    height: 40px;
-                    background-color: var(--cyan-tag);
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-
-
-                @include desktop-lg-min {
-                    transform: rotate(-135deg);
-                }
-            }
-
-            &-text {
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 140%;
-                color: var(--dark-blue);
-            }
-        }
-    }
-
-    &__swiper-pagination-wrapper {
-        max-width: 704px;
-        position: relative;
-        margin: 0 auto;
-    }
-
-    &__swiper-pagination {
-        width: max-content !important;
-        inset-inline-start: 16px !important;
-        display: inline-flex;
-        gap: 8px;
-        bottom: -27px !important;
-        top: initial !important;
-
-        .swiper-pagination-bullet {
-            opacity: 1;
-            background-color: #fff;
-            width: 24px;
-            height: 3px;
-            border-radius: 0;
-            margin: 0 !important;
-
-            &-active {
-                background-color: var(--cyan-tag);
-            }
-        }
-
-        @include desktop-sm-min {
-            visibility: hidden;
-        }
-    }
+  }
 }

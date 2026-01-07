@@ -1,302 +1,323 @@
-@use '../base/media' as *;
+@use "../base/media" as *;
+
+html:dir(ltr) {
+  .safe-area-benefits {
+    &__item {
+      &:nth-child(1) {
+        clip-path: polygon(0% 0%, 100% 14%, 100% 100%, 0% 100%);
+      }
+
+      &:nth-child(3) {
+        clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 86%);
+      }
+    }
+  }
+}
 
 .safe-area-benefits {
-    &__wrapper {
-        position: relative;
-        background-color: var(--gray-tag);
-        padding-bottom: 56px;
+  &__wrapper {
+    position: relative;
+    background-color: var(--gray-tag);
+    padding-bottom: 56px;
 
-        @include tablet-min {
-            padding-bottom: 86px;
-        }
-
-        @include desktop-min {
-            padding-bottom: 120px;
-        }
-
-        .main-content {
-            margin-top: 24px;
-
-            @include tablet-min {
-                margin-top: 80px;
-            }
-
-            @include desktop-min {
-                margin-top: 120px;
-            }
-        }
-
-
-        &::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: -32px;
-            width: 0;
-            height: 0;
-            border-left: 50vw solid transparent;
-            border-right: 50vw solid transparent;
-            border-bottom: 33px solid var(--gray-tag);
-            pointer-events: none;
-            z-index: inherit;
-
-            @include tablet-min {
-                border-left: 40vw solid transparent;
-                border-right: 60vw solid transparent;
-            }
-        }
+    @include tablet-min {
+      padding-bottom: 86px;
     }
 
-    &__content {
-        display: flex;
-        flex-direction: column;
-
-        @include tablet-min {
-            flex-direction: row;
-            gap: 48px;
-        }
-
-        @include desktop-lg-min {
-            gap: 187px;
-        }
+    @include desktop-min {
+      padding-bottom: 120px;
     }
 
-    &__subtitle {
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 110%;
-        color: var(--dark-blue);
-        margin-bottom: 8px;
+    .main-content {
+      margin-top: 24px;
 
-        @include tablet-min {
-            font-size: 24px;
-            line-height: 120%;
-            margin-bottom: 16px;
-        }
+      @include tablet-min {
+        margin-top: 80px;
+      }
+
+      @include desktop-min {
+        margin-top: 120px;
+      }
     }
 
-    &__title {
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 400;
-        font-size: 28px;
-        line-height: 130%;
-        margin-bottom: 16px;
-        color: var(--dark-blue);
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -32px;
+      width: 0;
+      height: 0;
+      border-left: 50vw solid transparent;
+      border-right: 50vw solid transparent;
+      border-bottom: 33px solid var(--gray-tag);
+      pointer-events: none;
+      z-index: inherit;
 
-        @include tablet-min {
-            font-size: 40px;
-            line-height: 110%;
-            margin-bottom: 32px;
-        }
+      @include tablet-min {
+        border-left: 40vw solid transparent;
+        border-right: 60vw solid transparent;
+      }
+    }
+  }
 
-        @include desktop-min {
-            font-size: 48px;
-        }
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet-min {
+      flex-direction: row;
+      gap: 48px;
     }
 
-    &__description {
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 140%;
-        color: var(--dark-blue);
-        margin-bottom: 24px;
+    @include desktop-lg-min {
+      gap: 187px;
+    }
+  }
 
-        @include tablet-min {
-            font-size: 20px;
-            line-height: 130%;
-        }
+  &__subtitle {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 110%;
+    color: var(--dark-blue);
+    margin-bottom: 8px;
+
+    @include tablet-min {
+      font-size: 24px;
+      line-height: 120%;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__title {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 130%;
+    margin-bottom: 16px;
+    color: var(--dark-blue);
+
+    @include tablet-min {
+      font-size: 40px;
+      line-height: 110%;
+      margin-bottom: 32px;
     }
 
-    &__content-text-wrapper {
-        flex-shrink: 0;
-
-        @include desktop-min {
-            margin-inline-start: 40px;
-        }
+    @include desktop-min {
+      font-size: 48px;
     }
+  }
 
-    &__content-text {
-        max-width: 344px;
-        width: 100%;
+  &__description {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--dark-blue);
+    margin-bottom: 24px;
 
-        @include desktop-lg-min {
-            max-width: 457px;
-        }
+    @include tablet-min {
+      font-size: 20px;
+      line-height: 130%;
     }
+  }
+
+  &__content-text-wrapper {
+    flex-shrink: 0;
+
+    @include desktop-min {
+      margin-inline-start: 40px;
+    }
+  }
+
+  &__content-text {
+    max-width: 344px;
+    width: 100%;
+
+    @include desktop-lg-min {
+      max-width: 457px;
+    }
+  }
 }
 
 .safe-area-benefits__list {
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  width: 100%;
 
-    @include tablet-min {
-        gap: 20px;
-    }
+  @include tablet-min {
+    gap: 20px;
+  }
 
-    @include desktop-lg-min {
-        padding-top: 20px;
-    }
+  @include desktop-lg-min {
+    padding-top: 20px;
+  }
 }
 
 .safe-area-benefits__item {
-    display: flex;
-    color: #fff;
-    background-color: var(--dark-blue);
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    height: 149px;
+  display: flex;
+  color: #fff;
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  height: 149px;
 
-    @include desktop-sm-min {
-        height: 160px;
+  @include desktop-sm-min {
+    height: 160px;
+  }
+
+  &:nth-child(1) {
+    clip-path: polygon(0% 20%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  &:nth-child(3) {
+    clip-path: polygon(100% 0%, 0% 0%, 0% 85%, 100% 100%);
+  }
+
+  .safe-area-benefits__item-image {
+    position: absolute;
+  }
+
+  &--right {
+    padding: 17.7px 16.6px;
+
+    @include tablet-min {
+      padding: 16px;
     }
 
     @include desktop-lg-min {
-        height: 220px;
-    }
-
-    &:nth-child(1) {
-        clip-path: polygon(0% 20%, 100% 0%, 100% 100%, 0% 100%)
-    }
-
-    &:nth-child(3) {
-        clip-path: polygon(100% 0%, 0% 0%, 0% 88%, 100% 100%);
+      height: 215px;
     }
 
     .safe-area-benefits__item-image {
-        position: absolute;
+      width: 117px;
+      height: 110px;
+      inset-inline-end: 0;
+      bottom: 10px;
+
+      @include desktop-sm-min {
+        width: 105px;
+        height: 98px;
+      }
+
+      @include desktop-lg-min {
+        width: 170px;
+        height: 160px;
+      }
+    }
+  }
+
+  &--up {
+    padding: 17.7px 16.6px;
+
+    @include tablet-min {
+      padding: 16px;
     }
 
-    &--right {
-        padding: 17.7px 16.6px;
-
-        @include tablet-min {
-            padding: 16px;
-        }
-
-        .safe-area-benefits__item-image {
-            width: 117px;
-            height: 110px;
-            inset-inline-end: 0;
-            bottom: 10px;
-
-            @include desktop-sm-min {
-                width: 105px;
-                height: 98px;
-            }
-
-            @include desktop-lg-min {
-                width: 170px;
-                height: 160px;
-            }
-        }
+    @include desktop-lg-min {
+      height: 206px;
     }
 
-    &--up {
-        padding: 17.7px 16.6px;
+    .safe-area-benefits__item-image {
+      bottom: 19px;
+      inset-inline-end: 30px;
+      width: 70px;
+      height: 103px;
 
-        @include tablet-min {
-            padding: 16px;
-        }
+      @include desktop-sm-min {
+        bottom: 17px;
+        inset-inline-end: 27px;
+        width: 63px;
+        height: 92px;
+      }
 
-        .safe-area-benefits__item-image {
-            bottom: 19px;
-            inset-inline-end: 30px;
-            width: 70px;
-            height: 103px;
+      @include desktop-lg-min {
+        bottom: 28px;
+        inset-inline-end: 44px;
+        width: 102px;
+        height: 150px;
+      }
+    }
+  }
 
-            @include desktop-sm-min {
-                bottom: 17px;
-                inset-inline-end: 27px;
-                width: 63px;
-                height: 92px;
-            }
+  &--boost-up {
+    padding: 30.5px 16.6px;
 
-            @include desktop-lg-min {
-                bottom: 28px;
-                inset-inline-end: 44px;
-                width: 102px;
-                height: 150px;
-            }
-        }
+    @include tablet-min {
+      padding: 16px;
+      padding-bottom: 32px;
     }
 
-    &--boost-up {
-        padding: 30.5px 16.6px;
-
-        @include tablet-min {
-            padding: 16px;
-            padding-bottom: 32px;
-        }
-
-        .safe-area-benefits__item-image {
-            bottom: 16px;
-            inset-inline-end: 0;
-            width: 134px;
-            height: 106px;
-
-            @include desktop-sm-min {
-                bottom: 20px;
-                width: 120px;
-                height: 95px;
-            }
-
-            @include desktop-lg-min {
-                width: 194px;
-                height: 154px;
-            }
-        }
+    @include desktop-lg-min {
+      height: 218px;
     }
 
-    &-content {
-        margin-top: auto;
-        max-width: 190px;
+    .safe-area-benefits__item-image {
+      bottom: 16px;
+      inset-inline-end: 0;
+      width: 134px;
+      height: 106px;
 
-        @include desktop-sm-min {
-            max-width: 234px;
-        }
+      @include desktop-sm-min {
+        bottom: 20px;
+        width: 120px;
+        height: 95px;
+      }
 
-        @include desktop-lg-min {
-            max-width: 276px;
-        }
+      @include desktop-lg-min {
+        width: 194px;
+        height: 154px;
+      }
+    }
+  }
+
+  &-content {
+    margin-top: auto;
+    max-width: 190px;
+
+    @include desktop-sm-min {
+      max-width: 234px;
     }
 
-    &-content-title {
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 400;
-        font-size: 22.13px;
-        line-height: 100%;
-        margin-bottom: 11px;
+    @include desktop-lg-min {
+      max-width: 276px;
+    }
+  }
 
-        @include desktop-sm-min {
-            font-size: 24px;
-            margin-bottom: 4px;
-        }
+  &-content-title {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 22.13px;
+    line-height: 100%;
+    margin-bottom: 11px;
 
-        @include desktop-lg-min {
-            font-size: 32px;
-            margin-bottom: 16px;
-        }
+    @include desktop-sm-min {
+      font-size: 24px;
+      margin-bottom: 4px;
     }
 
-    &-content-text {
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 400;
-        font-size: 11.06px;
-        line-height: 130%;
-
-        @include desktop-sm-min {
-            font-size: 16px;
-            line-height: 130%;
-        }
+    @include desktop-lg-min {
+      font-size: 32px;
+      margin-bottom: 16px;
     }
+  }
 
-    &-image {
-        position: absolute;
+  &-content-text {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 11.06px;
+    line-height: 130%;
+
+    @include desktop-sm-min {
+      font-size: 16px;
+      line-height: 130%;
     }
+  }
+
+  &-image {
+    position: absolute;
+  }
 }

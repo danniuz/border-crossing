@@ -21,6 +21,9 @@ import { initMapPopup } from './js/map-popup.js';
 import { initVideoPopup } from './js/video-popup.js';
 import { initLanguageSelector } from './js/language-selector.js';
 import { initHomeStrictTopVideoAnimation } from './js/home-strict-top-video-animation.js';
+import { initScrollableContentToUrl } from './js/scrollable-content-to-url.js';
+import { initNavLanguageDropdown } from './js/nav-language-dropdown.js';
+import { initCustomVideoPauseControl } from './js/custom-video-pause-control.js';
 
 function loadMap() {
   const map = initMap();
@@ -89,4 +92,8 @@ initLanguageSelector(
   '.footer__language-dropdown',
 );
 
+initScrollableContentToUrl();
+
+initNavLanguageDropdown();
 initHomeStrictTopVideoAnimation();
+initCustomVideoPauseControl('#long-way-banner-video', '#long-way-banner-video-stop-button');
