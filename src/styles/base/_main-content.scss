@@ -157,13 +157,14 @@ html:dir(rtl) {
 
       &-undertitle {
         font-weight: 400;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 130%;
+        margin-top: 16px;
         color: #fff;
+        display: none;
 
         @include tablet-min {
-          margin-top: 16px;
-          font-size: 16px;
+          display: block;
         }
       }
 
@@ -195,9 +196,10 @@ html:dir(rtl) {
     &-wrapper {
       background-color: var(--dark-blue);
       padding-top: 36px;
-      padding-bottom: 40px;
+      padding-bottom: 0;
       position: relative;
-      margin-bottom: 32px;
+      margin-bottom: 2px;
+      overflow: hidden;
 
       &--sticky {
         position: sticky;
@@ -206,7 +208,7 @@ html:dir(rtl) {
       }
 
       @include tablet-min {
-        padding-bottom: 20px;
+        padding-bottom: 112px;
       }
 
       &--white {
@@ -217,19 +219,130 @@ html:dir(rtl) {
         }
       }
 
-      &::after {
+      &::after,
+      &::before {
         content: "";
         position: absolute;
+        bottom: 0;
+        width: 100%;
+        margin-bottom: -500px;
+        height: 500px;
+        background-color: #fff;
+        z-index: 2;
+
+        @include tablet-max {
+          display: none;
+        }
+      }
+
+      &::after {
         left: 50%;
-        transform: translateX(-50%);
-        bottom: -32px;
-        width: 0;
-        height: 0;
-        border-left: 50vw solid transparent;
-        border-right: 50vw solid transparent;
-        border-top: 33px solid var(--dark-blue);
-        pointer-events: none;
-        z-index: inherit;
+        transform-origin: 0 0;
+        margin-inline-end: 315px;
+        transform: rotate(-4.2deg);
+
+        @include desktop-lg-max {
+          margin-inline-end: 123px;
+        }
+
+        @include tablet-max {
+          margin-inline-end: -35px;
+          transform: rotate(-9deg);
+        }
+      }
+
+      &::before {
+        right: 50%;
+        transform-origin: 100% 0;
+        margin-inline-start: -315px;
+        transform: rotate(1deg);
+
+        @include desktop-lg-max {
+          margin-inline-start: -123px;
+        }
+
+        @include tablet-max {
+          margin-inline-start: -35px;
+          transform: rotate(9deg);
+        }
+      }
+
+      .mobile-description {
+        --angle: 9deg;
+        --offset: 100px;
+
+        position: relative;
+        overflow: hidden;
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-top: -58px;
+        z-index: 1;
+
+        @include tablet-sm-min {
+          margin-top: -80px;
+        }
+
+        @include tablet-min {
+          display: none;
+        }
+
+        
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          height: 300px;
+          width: 100%;
+          background: white;
+          z-index: 1;
+        }
+        
+        &::before {
+          transform: rotate(var(--angle)) translateX(calc(-1 * var(--offset)));
+        }
+
+        &::after {
+          transform: rotate(calc(-1 * var(--angle))) translateX(var(--offset));
+        }
+
+        .holder {
+          padding: 56px 16px 73px;
+          position: relative;
+          overflow: hidden;
+
+          @include tablet-sm-min {
+            padding-top: 80px;
+            padding-bottom: 100px;
+          }
+
+          &:before,
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #F2F4F5;
+          }
+
+          &:before {
+            transform: rotate(var(--angle)) translateX(calc(-1 * var(--offset)));
+            transform-origin: 0 0;
+          }
+
+          &:after {
+            transform: rotate(calc(-1 * var(--angle))) translateX(var(--offset));
+            transform-origin: 100% 0;
+          }
+        }
+
+        p {
+          color: rgba(0, 52, 89, 1);
+          position: relative;
+          z-index: 1;
+        }
       }
     }
   }
