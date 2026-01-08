@@ -235,18 +235,6 @@ html:dir(rtl) {
         pointer-events: none;
         z-index: inherit;
       }
-
-      @include tablet-max{
-        background-color: transparent;
-        padding-top: 36px;
-        padding-bottom: 40px;
-        position: relative;
-        margin-bottom: 32px;
-
-        &::after {
-          content: none;
-        }
-      }
     }
   }
 
