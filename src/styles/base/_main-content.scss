@@ -80,10 +80,6 @@ html:dir(rtl) {
   margin: 0 auto;
   margin-top: 48px;
 
-  @include tablet-max {
-    margin-top: 0;
-  }
-
   @include tablet-min {
     margin-top: 78px;
   }
