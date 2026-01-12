@@ -6,6 +6,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -61,4 +62,8 @@ html {
   @include tablet-max {
     max-width: 100%;
   }
+}
+
+.video-popup-toggler {
+  cursor: pointer;
 }

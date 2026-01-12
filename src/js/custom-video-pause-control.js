@@ -1,15 +1,25 @@
-export function initCustomVideoPauseControl(videoSelector, stopButtonSelector) {
-  const video = document.querySelector(videoSelector);
-  const toggleBtn = document.querySelector(stopButtonSelector); // your only button
+export function initCustomVideoPauseControl(videoSelectorWrapperSelector, videoSelector, stopButtonSelector) {
+  const videoWrappers = document.querySelectorAll(videoSelectorWrapperSelector);
+
+  if (!videoWrappers?.length) {
+    return;
+  }
+
+  videoWrappers.forEach(videoWrapper => {
+    addVideoPauseControl(videoWrapper, videoSelector, stopButtonSelector);
+  });
+}
+
+function addVideoPauseControl(videoWrapper, videoSelector, stopButtonSelector) {
+  const toggleBtn = videoWrapper.querySelector(stopButtonSelector);
+  const video = videoWrapper.querySelector(videoSelector);
 
   if (!video || !toggleBtn) return;
 
   function togglePlay() {
     if (video.paused || video.ended) {
-      console.log('play');
       video.play();
     } else {
-      console.log('pause');
       video.pause();
     }
   }
@@ -33,11 +43,13 @@ export function initCustomVideoPauseControl(videoSelector, stopButtonSelector) {
 
   // one button for both play/pause
   toggleBtn.addEventListener('click', togglePlay);
-  video.addEventListener('click', togglePlay);
+  // Removed video click listener to prevent conflict with video wrapper animation
+  // video.addEventListener('click', togglePlay);
 
   video.addEventListener('play', updateButtonState);
   video.addEventListener('pause', updateButtonState);
   video.addEventListener('ended', updateButtonState);
 
   updateButtonState();
+
 }

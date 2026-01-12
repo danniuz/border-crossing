@@ -1,8 +1,8 @@
-export function initFadeUp(selector, options = {}) {
+export function initFadeLeft(selector, options = {}) {
   const {
-    y = 50,
+    x = -50,
     duration = 0.8,
-    ease = 'ease-out',
+    ease = 'ease-in-out',
     stagger = 0,
     start = 'top 60%',
     delay = 0,
@@ -16,13 +16,13 @@ export function initFadeUp(selector, options = {}) {
 
   gsap.set(elements, {
     opacity: 0,
-    y,
+    x,
   });
 
   if (stagger > 0) {
     gsap.to(elements, {
       opacity: 1,
-      y: 0,
+      x: 0,
       duration,
       ease,
       stagger,
@@ -37,7 +37,7 @@ export function initFadeUp(selector, options = {}) {
     elements.forEach((element) => {
       gsap.to(element, {
         opacity: 1,
-        y: 0,
+        x: 0,
         duration,
         ease,
         delay,

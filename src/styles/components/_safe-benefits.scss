@@ -147,11 +147,12 @@ html:dir(ltr) {
   gap: 11px;
   width: 100%;
 
-  @include tablet-min {
-    gap: 20px;
+  @include desktop-lg-min {
+    gap: 12px;
   }
 
-  @include desktop-lg-min {
+  @include desktop-xl-min {
+    gap: 20px;
     padding-top: 20px;
   }
 }
@@ -163,11 +164,6 @@ html:dir(ltr) {
   display: flex;
   justify-content: space-between;
   position: relative;
-  height: 149px;
-
-  @include desktop-sm-min {
-    height: 160px;
-  }
 
   &:nth-child(1) {
     clip-path: polygon(0% 20%, 100% 0%, 100% 100%, 0% 100%);
@@ -183,12 +179,14 @@ html:dir(ltr) {
 
   &--right {
     padding: 17.7px 16.6px;
+    height: 160px;
 
-    @include tablet-min {
+    @include desktop-sm-min {
       padding: 16px;
+      height: 162px;
     }
 
-    @include desktop-lg-min {
+    @include desktop-xl-min {
       height: 215px;
     }
 
@@ -203,7 +201,7 @@ html:dir(ltr) {
         height: 98px;
       }
 
-      @include desktop-lg-min {
+      @include desktop-xl-min {
         width: 170px;
         height: 160px;
       }
@@ -212,12 +210,14 @@ html:dir(ltr) {
 
   &--up {
     padding: 17.7px 16.6px;
+    height: 142px;
 
-    @include tablet-min {
+    @include desktop-sm-min {
       padding: 16px;
+      height: 155px;
     }
 
-    @include desktop-lg-min {
+    @include desktop-xl-min {
       height: 206px;
     }
 
@@ -227,14 +227,14 @@ html:dir(ltr) {
       width: 70px;
       height: 103px;
 
-      @include desktop-sm-min {
+      @include desktop-lg-min {
         bottom: 17px;
         inset-inline-end: 27px;
         width: 63px;
         height: 92px;
       }
 
-      @include desktop-lg-min {
+      @include desktop-xl-min {
         bottom: 28px;
         inset-inline-end: 44px;
         width: 102px;
@@ -245,14 +245,16 @@ html:dir(ltr) {
 
   &--boost-up {
     padding: 30.5px 16.6px;
+    height: 148px;
 
-    @include tablet-min {
+    @include desktop-sm-min {
       padding: 16px;
       padding-bottom: 32px;
+      height: 162px;
     }
 
-    @include desktop-lg-min {
-      height: 218px;
+    @include desktop-xl-min {
+      height: 215px;
     }
 
     .safe-area-benefits__item-image {
@@ -267,7 +269,7 @@ html:dir(ltr) {
         height: 95px;
       }
 
-      @include desktop-lg-min {
+      @include desktop-xl-min {
         width: 194px;
         height: 154px;
       }
