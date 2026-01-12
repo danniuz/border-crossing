@@ -14,6 +14,12 @@
     }
   }
 
+  &--non-sticky {
+    @include tablet-min {
+      top: 20px;
+    }
+  }
+
   @include tablet-min {
     width: 168px;
     position: absolute;

@@ -257,6 +257,11 @@ html:dir(ltr) {
       text-align: center;
       color: #fff;
 
+      @include tablet-min {
+        font-size: 51px;
+        line-height: 110%;
+      }
+
       @include desktop-sm-min {
         font-size: 80px;
         line-height: 100%;

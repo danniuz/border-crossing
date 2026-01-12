@@ -1,52 +1,66 @@
-@use '../base/media' as *;
+@use "../base/media" as *;
+
+html:dir(ltr) {
+  .world-benefits-item--hoverable:hover {
+    .arrow-link__icon-wrapper {
+      transform: rotate(90deg);
+    }
+  }
+
+  .arrow-link {
+    &__icon {
+      transform: rotate(90deg);
+    }
+  }
+}
 
 .arrow-link {
-    background-color: #F2F4F5;
-    color: #fff;
-    display: inline-flex;
-    align-items: center;
-    border: none;
-    outline: none;
-    background-color: transparent;
+  background-color: #f2f4f5;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--dark-blue);
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
     color: var(--dark-blue);
-    gap: 8px;
-    text-decoration: none;
-    cursor: pointer;
-
-    &:hover {
-        text-decoration: underline;
-        color: var(--dark-blue);
-
-        &__icon-wrapper {
-            background-color: var(--dark-blue);
-        }
-    }
 
     &__icon-wrapper {
-        width: 40px;
-        height: 40px;
-        background-color: var(--gray-tag);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+      background-color: var(--dark-blue);
+    }
+  }
 
-        &--white {
-            background-color: #fff;
-        }
+  &__icon-wrapper {
+    width: 40px;
+    height: 40px;
+    background-color: var(--gray-tag);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-        &--lg {
-            width: 40px;
-            height: 40px;
-
-            @include desktop-lg-min {
-                width: 64px;
-                height: 64px;
-            }
-        }
+    &--white {
+      background-color: #fff;
     }
 
-    &__icon {
-        width: 20px;
-        height: 20px;
+    &--lg {
+      width: 40px;
+      height: 40px;
+
+      @include desktop-lg-min {
+        width: 64px;
+        height: 64px;
+      }
     }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
 }

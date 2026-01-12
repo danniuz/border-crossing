@@ -200,7 +200,7 @@
         </div>
 
         <div class="main-content__top-wrapper">
-          <div class="main-content__top">
+          <div id="news-swiper-header" class="main-content__top">
             <div class="main-content__top-header">
               <div class="main-content__top-header-subtitle">
                 כל המידע בנושא המעברים היבשתיים
@@ -215,7 +215,10 @@
               <div class="swiper news-swiper" id="news-swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide news-swiper__slide">
-                    <picture class="main-content__cover-top">
+                    <picture
+                      id="news-swiper-image-wrapper"
+                      class="main-content__cover-top"
+                    >
                       <source
                         media="(min-width: 980px)"
                         srcset="/src/assets/images/hero-lady-lg.png"
@@ -227,7 +230,7 @@
                       />
                     </picture>
 
-                    <div class="news-swiper__card">
+                    <div id="news-swiper-card" class="news-swiper__card">
                       <div class="news-swiper__card-content">
                         <h4 class="news-swiper__card-title">
                           המגנים על הדרך: באחריות לאומית

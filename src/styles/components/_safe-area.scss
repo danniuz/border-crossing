@@ -11,8 +11,9 @@ html:dir(ltr) {
     }
 
     &__sm-image-wrapper {
-      @include desktop-lg-min {
-        padding-top: 30px;
+      @include desktop-sm-min {
+        height: 460px;
+        padding-top: 0;
       }
     }
   }
@@ -58,6 +59,7 @@ html:dir(ltr) {
 
     @include desktop-sm-min {
       grid-template-columns: 372px 180px 425px;
+      align-items: center;
     }
 
     @include desktop-xl-min {
@@ -72,10 +74,10 @@ html:dir(ltr) {
 
     @include desktop-sm-min {
       clip-path: polygon(0% 0%, 100% 6%, 100% 96%, 0% 100%);
-      height: 520px;
+      height: 500px;
     }
 
-    @include desktop-lg-min {
+    @include desktop-xl-min {
       height: 666px;
     }
 
@@ -102,15 +104,13 @@ html:dir(ltr) {
     padding: 20px 0;
 
     @include desktop-sm-min {
-      height: 520px;
-      padding-top: 32px;
-      padding-bottom: 20px;
+      height: 450px;
+      padding: 0;
+      padding-top: 6px;
     }
 
-    @include desktop-lg-min {
-      padding-top: 41px;
-      padding-bottom: 27px;
-      height: 671px;
+    @include desktop-xl-min {
+      height: 600px;
     }
 
     picture {

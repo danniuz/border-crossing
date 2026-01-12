@@ -5,6 +5,11 @@ export function initHomeStrictTopVideoAnimation() {
     const homeStrictTopVideoWrapper = document.getElementById('home-strict-top-video-wrapper');
     const homeStrictTopTextWrapper = document.getElementById('home-strict-top-text-wrapper');
     const homeStrictTopMenuActions = document.getElementById('home-strict-top-menu-actions');
+    const videoStopButton = document.querySelector('#home-strict-top-video-stop-button');
+    
+    // if (videoStopButton) {
+    //     videoStopButton.classList.add('');
+    // }
 
     if (!homeStrictTopVideoWrapper) {
         return;
@@ -48,7 +53,12 @@ export function initHomeStrictTopVideoAnimation() {
                                 translateY: '-50px',
                                 ease: 'power2.inOut',
                             });
-
+                            gsap.to(videoStopButton, {
+                                opacity: 1,
+                                duration: 1,
+                                display: 'block',
+                                ease: 'power2.inOut',
+                            });
                         }
                     });
             }

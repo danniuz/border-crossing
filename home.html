@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="rtl" lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -268,7 +268,7 @@
         <div
           class="home__strict-top-wrapper with-triangle-1--bottom-inside with-triangle--white"
         >
-          <div class="home__strict-top">
+          <div class="home__strict-top" id="home__strict-top-wrapper">
             <div
               class="home__strict-top-text-wrapper"
               id="home-strict-top-text-wrapper"
@@ -331,6 +331,12 @@
                 playsinline
               ></video>
             </div>
+            <button
+              class="custom-video-stop-button opacity-0"
+              id="home-strict-top-video-stop-button"
+            >
+              <img src="icons/stop-player.svg" alt="Stop" />
+            </button>
           </div>
         </div>
 
@@ -393,7 +399,10 @@
             <div class="safe-area__title">רשת ביטחון וגשר לכלכלה</div>
 
             <div class="safe-area__content">
-              <div class="safe-area__sm-image-wrapper">
+              <div
+                id="safe-area-sm-image-wrapper"
+                class="safe-area__sm-image-wrapper"
+              >
                 <picture>
                   <source
                     media="(min-width: 980px)"
@@ -407,7 +416,10 @@
                 </picture>
               </div>
 
-              <div class="safe-area__lg-image-wrapper">
+              <div
+                id="safe-area-lg-image-wrapper"
+                class="safe-area__lg-image-wrapper"
+              >
                 <picture>
                   <source
                     media="(min-width: 980px)"
@@ -421,7 +433,10 @@
                 </picture>
               </div>
 
-              <div class="safe-area-benefits__list">
+              <div
+                id="safe-area-benefits-list"
+                class="safe-area-benefits__list"
+              >
                 <div
                   class="safe-area-benefits__item safe-area-benefits__item--right"
                 >
@@ -1085,7 +1100,6 @@
 
         <div class="long-way-banner long-way-banner--near-footer">
           <video
-            id="long-way-banner-video"
             class="long-way-banner__clip"
             src="public/videos/lady.mp4"
             autoplay
@@ -1094,10 +1108,7 @@
             playsinline
           ></video>
 
-          <button
-            class="custom-video-stop-button"
-            id="long-way-banner-video-stop-button"
-          >
+          <button class="custom-video-stop-button">
             <img src="icons/stop-player.svg" alt="Stop" />
           </button>
 

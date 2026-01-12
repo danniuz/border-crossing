@@ -24,6 +24,11 @@ import { initHomeStrictTopVideoAnimation } from './js/home-strict-top-video-anim
 import { initScrollableContentToUrl } from './js/scrollable-content-to-url.js';
 import { initNavLanguageDropdown } from './js/nav-language-dropdown.js';
 import { initCustomVideoPauseControl } from './js/custom-video-pause-control.js';
+import { initFadeLeft } from './js/fade-left-gsap.js';
+import { initFadeRight } from './js/fade-right-gsap.js';
+
+
+const isRtl = document.documentElement.dir === 'rtl';
 
 function loadMap() {
   const map = initMap();
@@ -87,6 +92,17 @@ initInfographListAnimation();
 initFadeUp('#about-fluid-swiper-wrapper');
 initFadeUp('.fade-up-base');
 
+
+if (isRtl) {
+  initFadeUp('#safe-area-sm-image-wrapper');
+  initFadeLeft('#safe-area-lg-image-wrapper', { delay: 0.5 });
+  initFadeRight('#safe-area-benefits-list', { delay: 0.8 });
+} else {
+  initFadeUp('#safe-area-sm-image-wrapper');
+  initFadeRight('#safe-area-lg-image-wrapper', { delay: 0.5 });
+  initFadeLeft('#safe-area-benefits-list', { delay: 0.8 });
+}
+
 initLanguageSelector(
   '.footer__language-selector-button',
   '.footer__language-dropdown',
@@ -96,4 +112,24 @@ initScrollableContentToUrl();
 
 initNavLanguageDropdown();
 initHomeStrictTopVideoAnimation();
-initCustomVideoPauseControl('#long-way-banner-video', '#long-way-banner-video-stop-button');
+
+initCustomVideoPauseControl('.long-way-banner', '.long-way-banner__clip', '.custom-video-stop-button');
+initCustomVideoPauseControl('.home__strict-top-wrapper','#home-strict-top-video-to-animate', '#home-strict-top-video-stop-button');
+
+initNewsSwiperHeaderAnimation();
+initManagerCardAnimation();
+
+
+function initManagerCardAnimation() {
+  initFadeUp('#manager-speech-header', { delay: 0.5 });
+  initFadeUp('#manager-card-swiper-wrapper', { delay: 0.8 });
+  initFadeUp('#manager-card-image-wrapper', { delay: 0.8 });
+  initFadeUp('#manager-card-under-image', { delay: 1 });
+}
+
+function initNewsSwiperHeaderAnimation() {
+  initFadeUp('#news-swiper-header', { delay: 0.5 });
+  initFadeUp('#news-swiper', { delay: 0.8 });
+  initFadeUp('#news-swiper-image-wrapper', { delay: 0.8 });
+  initFadeUp('#news-swiper-card', { delay: 1 });
+} 
