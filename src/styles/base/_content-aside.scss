@@ -14,6 +14,19 @@
     }
   }
 
+  &--sticky-mobile {
+    @include desktop-max {
+      position: sticky;
+      top: 0;
+      background: #f2f4f5;
+      margin-inline: -12px;
+      padding-inline: 12px;
+      padding-top: 24px;
+      width: calc(100% + 24px);
+      z-index: 10;
+    }
+  }
+
   @include desktop-min {
     width: 368px;
   }
@@ -75,6 +88,14 @@
 
     &--white {
       background-color: #fff;
+
+      &:has(input:checked) {
+        background-color: var(--cyan-tag);
+
+        .content-aside__tag-text {
+          color: #003459;
+        }
+      }
     }
 
     &--primary {
@@ -88,6 +109,13 @@
 
         .content-aside__tag-text {
           color: #003459;
+        }
+
+        &:hover {
+          background-color: var(--blue-tag);
+          .content-aside__tag-text {
+            color: #fff;
+          }
         }
       }
     }
