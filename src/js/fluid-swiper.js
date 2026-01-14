@@ -34,6 +34,7 @@ export function initFluidSwiper(mainSelector, options = {}) {
   const swiper = new Swiper(mainSelector, {
     direction: 'horizontal',
     loop: true,
+    speed: 600,
     slidesPerView: '1',
     spaceBetween: 8,
     loopedSlides: 2,

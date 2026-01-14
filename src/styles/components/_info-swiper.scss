@@ -29,17 +29,21 @@
     position: relative;
     padding: 0 16px;
     z-index: 1;
+  }
 
-    @include tablet-min {
-      padding: initial;
-    }
+  &__swiper-wrapper--offset {
+    transform: translateX(0);
 
-    @include desktop-sm-min {
-      transform: translateY(-14px);
+    @include desktop-only {
+      transform: translateX(-90px) !important;
     }
 
     @include desktop-lg-min {
-      transform: none;
+      transform: translateX(-70px);
+    }
+
+    @include desktop-min {
+      transform: translateX(-64px);
     }
   }
 
@@ -48,7 +52,7 @@
     position: absolute;
     top: 0;
     height: 40px;
-    inset-inline-end: 0;
+    inset-inline-end: 16px;
     gap: 8px;
     display: flex;
     width: 96px;
@@ -229,6 +233,10 @@
 
         @include desktop-lg-min {
           transform: rotate(-135deg);
+        }
+
+        @include tablet-max {
+          transform: rotate(225deg);
         }
       }
 

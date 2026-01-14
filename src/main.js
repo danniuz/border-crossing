@@ -26,7 +26,7 @@ import { initNavLanguageDropdown } from './js/nav-language-dropdown.js';
 import { initCustomVideoPauseControl } from './js/custom-video-pause-control.js';
 import { initFadeLeft } from './js/fade-left-gsap.js';
 import { initFadeRight } from './js/fade-right-gsap.js';
-
+import { initAutoScrollTop } from "./js/auto-scroll-top.js";
 
 const isRtl = document.documentElement.dir === 'rtl';
 
@@ -37,7 +37,7 @@ function loadMap() {
     return;
   }
 }
-
+initAutoScrollTop();
 initAside({ opened: false });
 loadMap();
 initMarquee({ start: true });
@@ -132,4 +132,4 @@ function initNewsSwiperHeaderAnimation() {
   initFadeUp('#news-swiper', { delay: 0.8 });
   initFadeUp('#news-swiper-image-wrapper', { delay: 0.8 });
   initFadeUp('#news-swiper-card', { delay: 1 });
-} 
+}

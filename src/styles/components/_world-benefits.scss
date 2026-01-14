@@ -42,7 +42,7 @@
         }
       }
 
-      @include tablet-lg-min {
+      @include desktop-min {
         &:nth-child(1),
         &:nth-child(5) {
           transform: translateY(-40px);
