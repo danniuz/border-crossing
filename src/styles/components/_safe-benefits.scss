@@ -4,11 +4,11 @@ html:dir(ltr) {
   .safe-area-benefits {
     &__item {
       &:nth-child(1) {
-        clip-path: polygon(0% 0%, 100% 14%, 100% 100%, 0% 100%);
+        clip-path: polygon(0% 0%, 100% 17%, 100% 100%, 0% 100%);
       }
 
       &:nth-child(3) {
-        clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 86%);
+        clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 83%);
       }
     }
   }
@@ -170,7 +170,7 @@ html:dir(ltr) {
   }
 
   &:nth-child(3) {
-    clip-path: polygon(100% 0%, 0% 0%, 0% 85%, 100% 100%);
+    clip-path: polygon(100% 0%, 0% 0%, 0% 83%, 100% 100%);
   }
 
   .safe-area-benefits__item-image {

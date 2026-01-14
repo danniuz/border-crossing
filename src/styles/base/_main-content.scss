@@ -21,6 +21,12 @@
   }
 }
 
+.main-content__contact-us-page {
+  @include desktop-lg-min {
+    margin-top: 130px !important;
+  }
+}
+
 .main-content__cover-top-img--lg {
   min-height: 210px;
 }

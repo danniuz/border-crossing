@@ -276,17 +276,18 @@ html[dir="ltr"] {
         &::after {
           content: "";
           position: absolute;
-          top: 10%;
+          top: 11px;
           inset-inline-start: 0;
-          width: 1px;
-          height: 80%;
+          width: 2px;
+          height: 19px;
           background-color: #f2f4f5;
         }
       }
 
       @include desktop-lg-min {
         font-size: 24px;
-        padding-inline-start: 48px;
+        padding-inline-start: 56px;
+        margin-inline-start: 16px;
       }
 
       &-logo {
@@ -322,7 +323,7 @@ html[dir="ltr"] {
   &__language-selector-wrapper {
     position: relative;
     grid-area: language-selector;
-    margin-inline-end: auto;
+    // margin-inline-end: auto;
     display: inline-flex;
   }
 
