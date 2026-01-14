@@ -64,10 +64,22 @@ html[dir="ltr"] {
   }
 }
 
+html[dir="ltr"] {
+  .language-dropdown__item {
+    flex-direction: row-reverse;
+    padding-inline-end: 0;
+    padding-inline-start: 32px;
+  }
+}
+
 .language-dropdown__item {
-  display: block;
-  text-align: center;
+  direction: ltr !important;
+  gap: 4px;
+  display: flex;
+  justify-content: flex-end;
+  text-align: end;
   padding: 11px 16px;
+  padding-inline-end: 32px;
   color: #003459;
   text-decoration: none;
   font-family: IBM Plex Sans Hebrew;
