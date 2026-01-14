@@ -8,10 +8,23 @@ export function initScrollableContentToUrl() {
 
     if (hash) {
       const targetSection = document.querySelector(`[data-scrollable-content="${hash}"]`);
+      
       if (targetSection) {
         setTimeout(() => {
           targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          
+          const activeLink = document.querySelector(`[href="#${hash}"]`);
+
+          if (activeLink) {
+            activeLink.classList.add('smooth-aside-link__item--active');
+          }
         }, 100);
+      }
+    } else {
+      const activeLink = document.querySelector('.smooth-aside-link__item');
+
+      if (activeLink) {
+        activeLink.classList.add('smooth-aside-link__item--active');
       }
     }
 
@@ -28,6 +41,17 @@ export function initScrollableContentToUrl() {
           
           if (window.location.hash !== `#${sectionId}`) {
             history.replaceState(null, '', `#${sectionId}`);
+            const previousActiveLink = document.querySelector('.smooth-aside-link__item--active');
+
+            if (previousActiveLink) {
+              previousActiveLink.classList.remove('smooth-aside-link__item--active');
+            }
+
+            const activeLink = document.querySelector(`[href="#${sectionId}"]`);
+
+            if (activeLink) {
+              activeLink.classList.add('smooth-aside-link__item--active');
+            }
           }
         }
       });
