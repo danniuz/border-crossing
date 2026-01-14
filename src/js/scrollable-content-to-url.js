@@ -1,73 +1,83 @@
 export function initScrollableContentToUrl() {
   document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('[data-scrollable-content]');
+    const sections = document.querySelectorAll('[data-scrollable-content]');
+    
+    if (!sections.length) return;
 
-      if (!sections.length) return;
+    const hash = window.location.hash.slice(1);
 
-      const hash = window.location.hash.slice(1);
-
-      if (hash) {
-          const activeLink = document.querySelector(`.smooth-aside-link__list a[href="#${hash}"]`);
+    if (hash) {
+      const targetSection = document.querySelector(`[data-scrollable-content="${hash}"]`);
+      
+      if (targetSection) {
+        setTimeout(() => {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          
+          const activeLink = document.querySelector(`[href="#${hash}"]`);
 
           if (activeLink) {
-              activeLink.classList.add('smooth-aside-link__item--active');
+            activeLink.classList.add('smooth-aside-link__item--active');
           }
-
-          const targetSection = document.querySelector(`[data-scrollable-content="${hash}"]`);
-
-          if (targetSection) {
-              setTimeout(() => {
-                  targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }, 100);
-          }
+        }, 100);
       }
+    } else {
+      const activeLink = document.querySelector('.smooth-aside-link__item');
 
-      const observerOptions = {
-          root: null,
-          rootMargin: '-20% 0px -60% 0px',
-          threshold: 0
-      };
+      if (activeLink) {
+        activeLink.classList.add('smooth-aside-link__item--active');
+      }
+    }
 
-      const observerCallback = (entries) => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  const sectionId = entry.target.getAttribute('data-scrollable-content');
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
 
-                  if (window.location.hash !== `#${sectionId}`) {
-                      history.replaceState(null, '', `#${sectionId}`);
-                  }
-              }
-          });
-      };
+    const observerCallback = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.getAttribute('data-scrollable-content');
+          
+          if (window.location.hash !== `#${sectionId}`) {
+            history.replaceState(null, '', `#${sectionId}`);
+            const previousActiveLink = document.querySelector('.smooth-aside-link__item--active');
 
-      const observer = new IntersectionObserver(observerCallback, observerOptions);
+            if (previousActiveLink) {
+              previousActiveLink.classList.remove('smooth-aside-link__item--active');
+            }
 
-      sections.forEach(section => {
-          observer.observe(section);
+            const activeLink = document.querySelector(`[href="#${sectionId}"]`);
+
+            if (activeLink) {
+              activeLink.classList.add('smooth-aside-link__item--active');
+            }
+          }
+        }
       });
+    };
 
-      const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-      anchorLinks.forEach(link => {
-          link.addEventListener('click', (e) => {
-              const href = link.getAttribute('href');
-              if (href && href !== '#') {
-                  const targetId = href.slice(1);
-                  const targetSection = document.querySelector(`[data-scrollable-content="${targetId}"]`);
+    sections.forEach(section => {
+      observer.observe(section);
+    });
 
-                  if (targetSection) {
-                      e.preventDefault();
-                      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                      history.pushState(null, '', href);
-
-                      anchorLinks.forEach(anchor => {
-                          anchor.classList.remove('smooth-aside-link__item--active');
-                      });
-
-                      link.classList.add('smooth-aside-link__item--active')
-                  }
-              }
-          });
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href && href !== '#') {
+          const targetId = href.slice(1);
+          const targetSection = document.querySelector(`[data-scrollable-content="${targetId}"]`);
+          
+          if (targetSection) {
+            e.preventDefault();
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.pushState(null, '', href);
+          }
+        }
       });
+    });
   });
 }
