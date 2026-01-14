@@ -161,14 +161,13 @@ html:dir(rtl) {
 
       &-undertitle {
         font-weight: 400;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 130%;
-        margin-top: 16px;
         color: #fff;
-        display: none;
 
         @include tablet-min {
-          display: block;
+          margin-top: 16px;
+          font-size: 16px;
         }
       }
 
@@ -200,10 +199,9 @@ html:dir(rtl) {
     &-wrapper {
       background-color: var(--dark-blue);
       padding-top: 36px;
-      padding-bottom: 0;
+      padding-bottom: 40px;
       position: relative;
-      margin-bottom: 2px;
-      overflow: hidden;
+      margin-bottom: 32px;
 
       &--sticky {
         position: sticky;
@@ -212,7 +210,7 @@ html:dir(rtl) {
       }
 
       @include tablet-min {
-        padding-bottom: 112px;
+        padding-bottom: 20px;
       }
 
       &--white {
@@ -223,23 +221,9 @@ html:dir(rtl) {
         }
       }
 
-      &::after,
-      &::before {
+      &::after {
         content: "";
         position: absolute;
-        bottom: 0;
-        width: 100%;
-        margin-bottom: -500px;
-        height: 500px;
-        background-color: #fff;
-        z-index: 2;
-
-        @include tablet-max {
-          display: none;
-        }
-      }
-
-      &::after {
         left: 50%;
         transform: translateX(-50%);
         bottom: -32px;
@@ -250,11 +234,6 @@ html:dir(rtl) {
         border-top: 33px solid var(--dark-blue);
         pointer-events: none;
         z-index: inherit;
-
-        @include tablet-min {
-          border-left: 65vw solid transparent;
-          border-right: 35vw solid transparent;
-        }
       }
     }
   }
