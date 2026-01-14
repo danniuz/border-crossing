@@ -47,6 +47,17 @@ html:dir(ltr) {
       }
     }
 
+    &--16 {
+      font-size: 16px;
+      line-height: 140%;
+
+      @include tablet-min {
+        font-size: 16px;
+        line-height: 130%;
+        padding: 8px 22.5px;
+      }
+    }
+
     &--18 {
       font-size: 16px;
       line-height: 140%;
