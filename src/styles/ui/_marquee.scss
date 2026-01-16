@@ -1,4 +1,5 @@
 @use '../base/media' as *;
+@use "../base/mixins" as mixin;
 
 .marquee {
     width: 100%;
@@ -31,7 +32,11 @@
         background: linear-gradient(90deg, #00171F 0%, rgba(0, 23, 31, 0) 100%);
         inset-inline-start: 0px;
 
-    }
+        @include mixin.ltr {
+          transform: translateX(-15px);
+          background: linear-gradient(270deg, #00171F 0%, rgba(0, 23, 31, 0) 100%);
+        }
+  }
 
     &-action {
         max-width: 0;

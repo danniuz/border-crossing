@@ -200,6 +200,16 @@ html:dir(rtl) {
           max-width: 384px;
         }
       }
+
+      &--extra-ms {
+        @include desktop-lg-min {
+          margin-inline-start: 80px;
+        }
+
+        @include desktop-lg-max {
+          margin-inline-start: 107px;
+        }
+      }
     }
 
     &-wrapper {
