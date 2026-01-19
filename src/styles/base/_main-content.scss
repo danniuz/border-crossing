@@ -1,4 +1,5 @@
 @use "../base/media" as *;
+@use "../base/mixins" as mixin;
 
 .main-content__cover-top {
   width: 100%;
@@ -118,6 +119,35 @@ html:dir(rtl) {
 
     @include desktop-lg-min {
       max-width: 1424px;
+    }
+  }
+
+
+  &__top--offset {
+    transform: translateX(0);
+
+    @include desktop-only {
+      transform: translateX(-90px) !important;
+
+      @include mixin.ltr {
+        transform: translateX(90px) !important;
+      }
+    }
+
+    @include desktop-lg-min {
+      transform: translateX(-70px);
+
+      @include mixin.ltr {
+        transform: translateX(70px) !important;
+      }
+    }
+
+    @include desktop-min {
+      transform: translateX(-64px);
+
+      @include mixin.ltr {
+        transform: translateX(64px) !important;
+      }
     }
   }
 

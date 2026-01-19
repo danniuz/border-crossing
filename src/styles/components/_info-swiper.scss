@@ -31,22 +31,6 @@
     z-index: 1;
   }
 
-  &__swiper-wrapper--offset {
-    transform: translateX(0);
-
-    @include desktop-only {
-      transform: translateX(-90px) !important;
-    }
-
-    @include desktop-lg-min {
-      transform: translateX(-70px);
-    }
-
-    @include desktop-min {
-      transform: translateX(-64px);
-    }
-  }
-
   &__swiper-button-actions {
     visibility: hidden;
     position: absolute;
