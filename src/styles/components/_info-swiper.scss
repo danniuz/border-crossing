@@ -60,11 +60,17 @@
 
     @include desktop-sm-min {
       visibility: visible;
-      top: calc(100% + 21px);
+      top: calc(100% - 43px);
     }
 
     @include desktop-lg-min {
       top: calc(100% + 16px);
+    }
+  }
+
+  @include desktop-sm-min {
+    &__swiper-button-actions {
+      top: calc(100% - 53px);
     }
   }
 
@@ -81,6 +87,41 @@
     }
   }
 
+  &,
+  &.swiper {
+    @include desktop-sm-min {
+      overflow: hidden !important;
+    }
+  }
+
+  &.swiper {
+    @include desktop-sm-min {
+      --card-headroom: 127px;
+      --card-overlap: 125px;
+      padding-top: calc(var(--card-headroom) + 16px);
+      margin-top: calc(var(--card-headroom) * -1);
+    }
+
+    @include desktop-lg-min {
+      --card-headroom: 125px;
+      --card-overlap: 113px;
+      padding-top: calc(var(--card-headroom) - 18px);
+      margin-top: calc(var(--card-headroom) * -1);
+    }
+  }
+
+  &__slide {
+    position: relative;
+
+    @include desktop-sm-min {
+      padding-bottom: 64px;
+    }
+
+    @include desktop-lg-min {
+      padding-bottom: 64px;
+    }
+  }
+
   &__card {
     background-color: rgba(#fff, 0.9);
     margin-top: -40px;
@@ -88,14 +129,17 @@
     position: relative;
 
     @include desktop-sm-min {
-      margin: 0;
+      position: absolute !important;
+      bottom: calc(var(--card-overlap) * -1);
+      z-index: 10;
+      margin: 0 !important;
+      transform: translateY(calc(var(--card-headroom) * -1));
+      inset-inline-start: 24px;
       max-width: 240px;
-      margin-top: -387px;
-      margin-inline-start: 24px;
     }
 
     @include desktop-lg-min {
-      margin: 0;
+      inset-inline-start: 160px;
       max-width: 240px;
       margin-top: -440px;
       margin-inline-start: -128px;
@@ -162,7 +206,6 @@
     &-benefit-item {
       font-family: IBM Plex Sans Hebrew;
       font-weight: 400;
-      font-style: Regular;
       font-size: 16px;
       line-height: 140%;
       color: var(--dark-blue);
@@ -279,5 +322,15 @@
     @include desktop-sm-min {
       visibility: hidden;
     }
+  }
+}
+
+.main-content__top-wrapper {
+  @include desktop-sm-min {
+    padding-bottom: 80px;
+  }
+
+  @include desktop-lg-min {
+    padding-bottom: 22px;
   }
 }
