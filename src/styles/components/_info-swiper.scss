@@ -64,12 +64,6 @@
     }
 
     @include desktop-lg-min {
-      top: calc(100% + 16px);
-    }
-  }
-
-  @include desktop-sm-min {
-    &__swiper-button-actions {
       top: calc(100% - 53px);
     }
   }
