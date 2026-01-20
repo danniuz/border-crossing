@@ -27,6 +27,7 @@ import { initCustomVideoPauseControl } from './js/custom-video-pause-control.js'
 import { initFadeLeft } from './js/fade-left-gsap.js';
 import { initFadeRight } from './js/fade-right-gsap.js';
 import { initAutoScrollTop } from "./js/auto-scroll-top.js";
+import { initFooterHighlightWordAnimation } from './js/footer-highlight-word-animation.js';
 
 const isRtl = document.documentElement.dir === 'rtl';
 
@@ -94,13 +95,13 @@ initFadeUp('.fade-up-base');
 
 
 if (isRtl) {
-  initFadeUp('#safe-area-sm-image-wrapper');
-  initFadeLeft('#safe-area-lg-image-wrapper', { delay: 0.5 });
-  initFadeRight('#safe-area-benefits-list', { delay: 0.8 });
+  initFadeUp('#safe-area-sm-image-wrapper', { delay: 0.8 });
+  initFadeLeft('#safe-area-lg-image-wrapper', { delay: 0 });
+  initFadeRight('#safe-area-benefits-list', { delay: 0.5 });
 } else {
-  initFadeUp('#safe-area-sm-image-wrapper');
-  initFadeRight('#safe-area-lg-image-wrapper', { delay: 0.5 });
-  initFadeLeft('#safe-area-benefits-list', { delay: 0.8 });
+  initFadeUp('#safe-area-sm-image-wrapper', { delay: 0.8 });
+  initFadeRight('#safe-area-lg-image-wrapper', { delay: 0 });
+  initFadeLeft('#safe-area-benefits-list', { delay: 0.5 });
 }
 
 initLanguageSelector(
@@ -112,13 +113,19 @@ initScrollableContentToUrl();
 
 initNavLanguageDropdown();
 initHomeStrictTopVideoAnimation();
+initFooterHighlightWordAnimation('#footer-animated-title', { delay: 2.5});
 
 initCustomVideoPauseControl('.long-way-banner', '.long-way-banner__clip', '.custom-video-stop-button');
 initCustomVideoPauseControl('.home__strict-top-wrapper','#home-strict-top-video-to-animate', '#home-strict-top-video-stop-button');
 
 initNewsSwiperHeaderAnimation();
 initManagerCardAnimation();
+initPersonalAreaAnimation();
 
+function initPersonalAreaAnimation() {
+  initFadeUp('#personal-area-header', { delay: 0.5 });
+  initFadeUp('#personal-area-swiper-wrapper', { delay: 1 });
+}
 
 function initManagerCardAnimation() {
   initFadeUp('#manager-speech-header', { delay: 0.5 });

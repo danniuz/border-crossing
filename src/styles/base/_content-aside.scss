@@ -14,11 +14,18 @@
     }
   }
 
+  &--bg-gray {
+    background: #f2f4f5;
+  }
+  
+  &--bg-white {
+    background: #fff;
+  }
+
   &--sticky-mobile {
     @include desktop-max {
       position: sticky;
       top: 0;
-      background: #f2f4f5;
       margin-inline: -12px;
       padding-inline: 12px;
       padding-top: 24px;

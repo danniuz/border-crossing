@@ -27,8 +27,6 @@ function addVideoPauseControl(videoWrapper, videoSelector, stopButtonSelector) {
   function updateButtonState() {
     if (video.paused || video.ended) {
       toggleBtn.setAttribute('aria-label', 'Play');
-      // keep same icon, or change class/text if you ever want
-      // toggleBtn.textContent = 'Play';
     } else {
       toggleBtn.setAttribute('aria-label', 'Pause');
       // toggleBtn.textContent = 'Pause';
@@ -51,5 +49,4 @@ function addVideoPauseControl(videoWrapper, videoSelector, stopButtonSelector) {
   video.addEventListener('ended', updateButtonState);
 
   updateButtonState();
-
 }
