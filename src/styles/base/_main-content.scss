@@ -1,4 +1,5 @@
 @use "../base/media" as *;
+@use "../base/mixins" as mixin;
 
 .main-content__cover-top {
   width: 100%;
@@ -121,6 +122,35 @@ html:dir(rtl) {
     }
   }
 
+
+  &__top--offset {
+    transform: translateX(0);
+
+    @include desktop-only {
+      transform: translateX(-90px) !important;
+
+      @include mixin.ltr {
+        transform: translateX(90px) !important;
+      }
+    }
+
+    @include desktop-lg-min {
+      transform: translateX(-70px);
+
+      @include mixin.ltr {
+        transform: translateX(70px) !important;
+      }
+    }
+
+    @include desktop-min {
+      transform: translateX(-64px);
+
+      @include mixin.ltr {
+        transform: translateX(64px) !important;
+      }
+    }
+  }
+
   &__top {
     display: flex;
     flex-direction: column;
@@ -198,6 +228,16 @@ html:dir(rtl) {
 
         &--mw-384px {
           max-width: 384px;
+        }
+      }
+
+      &--extra-ms {
+        @include desktop-lg-min {
+          margin-inline-start: 80px;
+        }
+
+        @include desktop-lg-max {
+          margin-inline-start: 107px;
         }
       }
     }

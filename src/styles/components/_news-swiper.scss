@@ -7,7 +7,7 @@
 
   @include tablet-min {
     margin-inline-end: 16px;
-    max-width: 760px;
+    max-width: 704px;
   }
 
   @include desktop-min {
@@ -29,22 +29,6 @@
 
   &__swiper-wrapper {
     position: relative;
-  }
-
-  &__swiper-wrapper--offset {
-    transform: translateX(0);
-
-    @include desktop-only {
-      transform: translateX(-90px) !important;
-    }
-
-    @include desktop-lg-min {
-      transform: translateX(-70px);
-    }
-
-    @include desktop-min {
-      transform: translateX(-64px);
-    }
   }
 
   &__swiper-button-actions {

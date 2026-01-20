@@ -20,6 +20,10 @@
         inset-inline-end: 124px;
     }
 
+    @include desktop-lg-min {
+        inset-inline-end: 184px;
+    }
+
     &__list {
         display: flex;
         flex-direction: column;
@@ -42,6 +46,20 @@
                 margin-top: 75px;
             }
         }
+
+        @include desktop-lg-min {
+            &:nth-child(1) {
+                margin-top: -10px;
+            }
+
+            &:nth-child(2) {
+                margin-top: -50px;
+            }
+
+            &:nth-child(3) {
+                margin-top: 56px;
+            }
+        }
     }
 
     &__item {
@@ -52,6 +70,11 @@
         @include tablet-lg-min {
             width: 180px;
             height: 450px;
+        }
+
+        @include desktop-lg-min {
+            width: 240px;
+            height: 600px;
         }
     }
 

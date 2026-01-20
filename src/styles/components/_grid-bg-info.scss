@@ -21,6 +21,10 @@
         @include desktop-min {
             padding-top: 318px;
         }
+
+        @include desktop-lg-min {
+            padding-top: 554px;
+        }
     }
 
     &__content {
