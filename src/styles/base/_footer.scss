@@ -46,6 +46,27 @@ html[dir="ltr"] {
     }
   }
 
+  &__title-highlight-word {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100%;
+    display: inline-flex;
+    padding-inline-start: 8px;
+
+    @include tablet-min {
+      font-size: 48px;
+      padding-inline-start: 16px;
+      line-height: 130%;
+      margin-bottom: 32px;
+    }
+
+    @include desktop-lg-min {
+      font-size: 56px;
+      line-height: 110%;
+    }
+  }
+
   &__title {
     font-family: IBM Plex Sans Hebrew;
     font-weight: 400;
@@ -53,18 +74,23 @@ html[dir="ltr"] {
     line-height: 100%;
     margin-bottom: 24px;
     max-width: 305px;
+    position: relative;
+    min-height: 1.2em;
+    overflow: hidden;
 
     @include tablet-min {
       font-size: 48px;
       line-height: 130%;
       margin-bottom: 32px;
       max-width: 500px;
+      min-height: 1.3em;
     }
 
     @include desktop-lg-min {
       font-size: 56px;
       line-height: 110%;
       margin-bottom: 40px;
+      min-height: 1.1em;
     }
   }
 

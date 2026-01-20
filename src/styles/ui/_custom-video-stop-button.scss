@@ -10,8 +10,28 @@
   width: 48px;
   height: 48px;
   display: none;
+  justify-content: center;
+  align-items: center;
 
   @include tablet-min {
-    display: block;
+    display: inline-flex;
+  }
+
+  &[aria-label="Play"] {
+    .play-icon {
+      display: inline-block;
+    }
+    .stop-icon {
+      display: none;
+    }
+  }
+
+  &[aria-label="Pause"] {
+    .play-icon {
+      display: none;
+    }
+    .stop-icon {
+      display: inline-block;
+    }
   }
 }

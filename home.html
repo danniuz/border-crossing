@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="en">
+<html dir="ltr" lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -341,7 +341,16 @@
               class="custom-video-stop-button opacity-0"
               id="home-strict-top-video-stop-button"
             >
-              <img src="icons/stop-player.svg" alt="Stop" />
+              <img
+                class="stop-icon"
+                src="/src/assets/icons/pause.svg"
+                alt="Stop"
+              />
+              <img
+                class="play-icon"
+                src="/src/assets/icons/play.svg"
+                alt="Play"
+              />
             </button>
           </div>
         </div>
@@ -358,7 +367,7 @@
                 לכל המעברים
                 <img
                   class="home__strict-top-menu-button-icon"
-                  src="icons/arrow-top--white.svg"
+                  src="icons/arrow-up-left-sm.svg"
                   alt="Arrow Up Left"
                 />
               </a>
@@ -368,7 +377,7 @@
                 לכל המעברים
                 <img
                   class="home__strict-top-menu-button-icon"
-                  src="icons/arrow-top--white.svg"
+                  src="icons/arrow-up-left-sm.svg"
                   alt="Arrow Up Left"
                 />
               </a>
@@ -378,7 +387,7 @@
                 לכל המעברים
                 <img
                   class="home__strict-top-menu-button-icon"
-                  src="icons/arrow-top--white.svg"
+                  src="icons/arrow-up-left-sm.svg"
                   alt="Arrow Up Left"
                 />
               </a>
@@ -388,7 +397,7 @@
                 לכל המעברים
                 <img
                   class="home__strict-top-menu-button-icon"
-                  src="icons/arrow-top--blue.svg"
+                  src="icons/arrow-up-left-sm.svg"
                   alt="Arrow Up Left"
                 />
               </a>
@@ -1115,7 +1124,16 @@
           ></video>
 
           <button class="custom-video-stop-button">
-            <img src="icons/stop-player.svg" alt="Stop" />
+            <img
+              class="stop-icon"
+              src="/src/assets/icons/pause.svg"
+              alt="Stop"
+            />
+            <img
+              class="play-icon"
+              src="/src/assets/icons/play.svg"
+              alt="Play"
+            />
           </button>
 
           <div class="long-way-banner__content">
@@ -1141,8 +1159,10 @@
             <div class="footer-main-text">
               <div class="footer__subtitle">רשות המעברים היבשתיים</div>
 
-              <div class="footer__title">
-                ברמ״ים כל צעד שלכם ברמ״ים כל צעד שלכם
+              <div id="footer-animated-title" class="footer__title">
+                This is really sunny day, lucky we are
+                <span class="footer__title-highlight-word">here</span>
+                <span class="footer__title-highlight-word">home</span>
               </div>
 
               <div>

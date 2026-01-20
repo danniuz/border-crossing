@@ -44,11 +44,11 @@
 
     @include desktop-sm-min {
       visibility: visible;
-      top: calc(100% - 43px);
+      top: 413px;
     }
 
     @include desktop-lg-min {
-      top: calc(100% - 53px);
+      top: 490px;
     }
   }
 
