@@ -161,14 +161,15 @@ html[dir="ltr"] {
     &__list {
       display: flex;
       flex-direction: column;
+      gap: 15px;
 
       @include tablet-min {
-        gap: 8px;
+        gap: 24px;
         padding-top: 40px;
       }
 
       @include desktop-lg-min {
-        gap: 16px;
+        gap: 30px;
       }
     }
 
