@@ -1,650 +1,448 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet" />
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <title>Vite + TS</title>
-  </head>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <body>
-    <script type="module" src="/src/main.js"></script>
-    <div id="wrapper" class="wrapper">
-      <div class="page-header">
-        <div class="page-header__textline">hello world</div>
-      </div>
+  <title>Vite + TS</title>
+</head>
 
-      <div class="page-content with-triangle-3--bottom with-triangle--white">
-        <div class="menu">
-          <div class="menu__logo-list">
-            <a href="#" class="menu__logo-link">
-              <img
-                class="menu__logo-image"
-                src="icons/logo-1.svg"
-                alt="Logo 1"
-              />
-              <span class="menu__logo-text">רשות מעברים יבשתיים</span>
-            </a>
-
-            <a href="#" class="menu__logo-link">
-              <img
-                class="menu__logo-image"
-                src="icons/logo-2.svg"
-                alt="Logo 2"
-              />
-              <span class="menu__logo-text">משרד הביטחון</span>
-            </a>
-          </div>
-
-          <div class="menu__nav-wrapper">
-            <div class="menu__nav-item">
-              <a href="#" class="menu__nav-link menu__nav-link--dark-blue-tag">
-                מידע שימושי
-                <img
-                  src="icons/menu-nav-icon-arrow--cyan.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
-                  alt="Arrow Left"
-                />
-              </a>
-            </div>
-
-            <div class="menu__nav-item">
-              <a href="#" class="menu__nav-link menu__nav-link--dark-blue-tag">
-                כתבות ועידכונים
-
-                <img
-                  src="icons/menu-nav-icon-arrow--cyan.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
-                  alt="Arrow Left"
-                />
-              </a>
-            </div>
-
-            <div class="menu__nav-item">
-              <a
-                href="#"
-                class="menu__nav-link menu__nav-link--active menu__nav-link--dark-blue-tag"
-              >
-                אודות
-                <img
-                  src="icons/menu-nav-icon-arrow--cyan.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
-                  alt="Arrow Left"
-                />
-              </a>
-            </div>
-
-            <div class="menu__nav-item">
-              <a
-                href="#"
-                class="menu__nav-link menu__nav-link--blue-tag menu__nav-link--with-arrow"
-              >
-                צור קשר
-                <img
-                  src="icons/menu-nav-icon-arrow--white.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--arrow ltr-reverse-y"
-                  alt="Arrow Up Left"
-                />
-                <img
-                  src="icons/menu-nav-icon-arrow--white.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
-                  alt="Arrow Left"
-                />
-              </a>
-            </div>
-
-            <div class="menu__nav-item">
-              <a
-                href="#"
-                class="menu__nav-link menu__nav-link--c-dark-blue menu__nav-link--cyan-tag menu__nav-link--with-arrow"
-              >
-                לכל המעברים
-                <img
-                  src="icons/menu-nav-icon-arrow--dark-blue.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--arrow ltr-reverse-y"
-                  alt="Arrow Up Left"
-                />
-                <img
-                  src="icons/menu-nav-icon-arrow--dark-blue.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
-                  alt="Arrow Left"
-                />
-              </a>
-            </div>
-
-            <div class="menu__nav-item">
-              <a href="#" class="menu__nav-link menu__nav-link--white-tag">
-                חיפוש
-                <img
-                  src="icons/magnify.svg"
-                  class="menu__nav-link-icon ltr-reverse-y"
-                  alt="Magnify"
-                />
-              </a>
-            </div>
-
-            <div class="menu__nav-item">
-              <a
-                href="#"
-                class="menu__nav-link menu__nav-link--c-white menu__nav-link--white-tag"
-              >
-                איזור אישי
-              </a>
-            </div>
-
-            <div class="menu__nav-row">
-              <div class="menu__nav-item">
-                <a
-                  href="#"
-                  class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
-                >
-                  <img
-                    src="icons/accessibility.svg"
-                    class="menu__nav-link-icon"
-                    alt="Accessibility"
-                  />
-                </a>
-              </div>
-
-              <div class="menu__nav-item">
-                <a
-                  href="#"
-                  class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
-                >
-                  <img
-                    src="icons/lang.svg"
-                    class="menu__nav-link-icon"
-                    alt="Language"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="breadcrumbs">
-          <a href="#" class="breadcrumbs__link">
-            <span
-              class="breadcrumbs__link-icon breadcrumbs__link-icon--home"
-            ></span>
-            <span
-              class="breadcrumbs__link-icon breadcrumbs__link-icon--arrow ltr-reverse-y"
-            ></span>
-          </a>
-
-          <a href="#" class="breadcrumbs__link">
-            <span class="breadcrumbs__link-text">כל המעברים</span>
-          </a>
-        </div>
-
-        <div class="main-content__top-wrapper">
-          <div id="news-swiper-header" class="main-content__top main-content__top--offset">
-            <div class="main-content__top-header">
-              <div class="main-content__top-header-subtitle">
-                כל המידע בנושא המעברים היבשתיים
-              </div>
-              <h2 class="main-content__top-header-title">
-                המעברים <br class="br-none br-tablet-min" />
-                מזווית אחרת
-              </h2>
-            </div>
-
-            <div class="news-swiper__swiper-wrapper news-swiper__swiper-wrapper--offset">
-              <div class="swiper news-swiper" id="news-swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide news-swiper__slide">
-                    <picture
-                      id="news-swiper-image-wrapper"
-                      class="main-content__cover-top"
-                    >
-                      <source
-                        media="(min-width: 980px)"
-                        srcset="/src/assets/images/hero-lady-lg.png"
-                      />
-                      <img
-                        class="main-content__cover-top-img--md w-100"
-                        src="/src/assets/images/hero-lady-sm.png"
-                        alt=""
-                      />
-                    </picture>
-
-                    <div id="news-swiper-card" class="news-swiper__card">
-                      <div class="news-swiper__card-content">
-                        <h4 class="news-swiper__card-title">
-                          המגנים על הדרך: באחריות לאומית
-                        </h4>
-                        <div class="news-swiper__card-text">
-                          מאחורי כל נסיעה בטוחה עומדים אנשים המחויבים לשמור על
-                          הסדר ולמנוע סכנות, מתוך אחריות לאומית.
-                        </div>
-                      </div>
-
-                      <div class="news-swiper__card-footer">
-                        <a href="#" class="news-swiper__card-footer-link">
-                          <div class="news-swiper__card-footer-link-text">
-                            להמשך קריאה
-                          </div>
-                          <img
-                            src="icons/arrow-up-left.svg"
-                            class="news-swiper__card-footer-link-icon"
-                            alt="Arrow Up Left"
-                          />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="swiper-slide news-swiper__slide">
-                    <picture class="main-content__cover-top">
-                      <source
-                        media="(min-width: 980px)"
-                        srcset="/src/assets/images/hero-lady-lg.png"
-                      />
-                      <img
-                        class="main-content__cover-top-img--md w-100"
-                        src="/src/assets/images/hero-lady-sm.png"
-                        alt=""
-                      />
-                    </picture>
-                  </div>
-
-                  <div class="swiper-slide news-swiper__slide">
-                    <picture class="main-content__cover-top">
-                      <source
-                        media="(min-width: 980px)"
-                        srcset="/src/assets/images/hero-lady-lg.png"
-                      />
-                      <img
-                        class="main-content__cover-top-img--md w-100"
-                        src="/src/assets/images/hero-lady-sm.png"
-                        alt=""
-                      />
-                    </picture>
-                  </div>
-                </div>
-              </div>
-
-              <div class="news-swiper__swiper-pagination-wrapper">
-                <div
-                  class="swiper-pagination news-swiper__swiper-pagination"
-                  id="news-swiper-swiper-pagination"
-                ></div>
-              </div>
-
-              <div class="news-swiper__swiper-button-actions">
-                <div
-                  class="swiper-button-prev news-swiper__swiper-button news-swiper__swiper-button-prev"
-                  id="news-swiper-button-prev"
-                >
-                  <img
-                    class="news-swiper__pagination-icon rotate-y ltr-reverse-none"
-                    src="/src/assets/icons/arrow-left-pagination.svg"
-                    alt="Arrow left"
-                  />
-                </div>
-                <div
-                  class="swiper-button-next news-swiper__swiper-button news-swiper__swiper-button-next"
-                  id="news-swiper-button-next"
-                >
-                  <img
-                    class="news-swiper__pagination-icon ltr-reverse-y"
-                    src="/src/assets/icons/arrow-left-pagination.svg"
-                    alt="Arrow Right"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="main-content container">
-          <div class="main-content__layout main-content__layout-sm">
-            <div class="content-aside content-aside--sticky">
-              <h2 class="content-aside__title content-aside__title--md">
-                כתבו עלינו
-              </h2>
-
-              <div class="content-aside__tag-list">
-                <label
-                  class="content-aside__tag-item content-aside__tag-item--primary"
-                >
-                  <input type="checkbox" class="content-aside__tag-checkbox" />
-                  <span class="content-aside__tag-text">מעברים</span>
-                </label>
-                <label
-                  class="content-aside__tag-item content-aside__tag-item--primary"
-                >
-                  <input type="checkbox" class="content-aside__tag-checkbox" />
-                  <span class="content-aside__tag-text">מעברים</span>
-                </label>
-                <label
-                  class="content-aside__tag-item content-aside__tag-item--primary"
-                >
-                  <input type="checkbox" class="content-aside__tag-checkbox" />
-                  <span class="content-aside__tag-text">טכנולוגיה</span>
-                </label>
-                <label
-                  class="content-aside__tag-item content-aside__tag-item--primary"
-                >
-                  <input type="checkbox" class="content-aside__tag-checkbox" />
-                  <span class="content-aside__tag-text">טכנולוגיה וחדשנות</span>
-                </label>
-                <label
-                  class="content-aside__tag-item content-aside__tag-item--primary"
-                >
-                  <input type="checkbox" class="content-aside__tag-checkbox" />
-                  <span class="content-aside__tag-text">מעברים</span>
-                </label>
-                <label
-                  class="content-aside__tag-item content-aside__tag-item--primary"
-                >
-                  <input type="checkbox" class="content-aside__tag-checkbox" />
-                  <span class="content-aside__tag-text">מעברים</span>
-                </label>
-              </div>
-
-              <div class="content-aside__clear-filter-wrapper">
-                <button class="content-aside__clear-filter">נקה סינון</button>
-              </div>
-            </div>
-
-            <div class="main-content__page">
-              <div class="news">
-                <div class="news__title">40 כתבות</div>
-
-                <div class="news-list">
-                  <a class="news-list__item news-list__item--large">
-                    <div class="news-list__item-image-wrapper">
-                      <div class="news-list__item-tag">סיפורים מהשטח</div>
-                      <img
-                        class="news-list__item-image"
-                        src="/src/assets/images/news-template.png"
-                        alt=""
-                      />
-                      <div class="news-list__item-arrow">
-                        <img
-                          src="icons/arrow-up-left.svg"
-                          class="news-list__item-arrow-icon"
-                          alt="Arrow Up Left"
-                        />
-                      </div>
-                    </div>
-                    <h4 class="news-list__item-title">
-                      הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
-                      ארז
-                    </h4>
-                    <div class="news-list__item-date">אישי | 10/01/2025</div>
-                  </a>
-                  <a class="news-list__item news-list__item--small">
-                    <div class="news-list__item-image-wrapper">
-                      <div class="news-list__item-tag">סיפורים מהשטח</div>
-                      <img
-                        class="news-list__item-image"
-                        src="/src/assets/images/news-template.png"
-                        alt=""
-                      />
-                      <div class="news-list__item-arrow">
-                        <img
-                          src="icons/arrow-up-left.svg"
-                          class="news-list__item-arrow-icon"
-                          alt="Arrow Up Left"
-                        />
-                      </div>
-                    </div>
-                    <h4 class="news-list__item-title">
-                      הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
-                      ארז
-                    </h4>
-                    <div class="news-list__item-date">10/01/2025</div>
-                  </a>
-                  <a class="news-list__item news-list__item--small">
-                    <div class="news-list__item-image-wrapper">
-                      <div class="news-list__item-tag">סיפורים מהשטח</div>
-                      <img
-                        class="news-list__item-image"
-                        src="/src/assets/images/news-template.png"
-                        alt=""
-                      />
-                      <div class="news-list__item-arrow">
-                        <img
-                          src="icons/arrow-up-left.svg"
-                          class="news-list__item-arrow-icon"
-                          alt="Arrow Up Left"
-                        />
-                      </div>
-                    </div>
-                    <h4 class="news-list__item-title">
-                      הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
-                      ארז
-                    </h4>
-                    <div class="news-list__item-date">10/01/2025</div>
-                  </a>
-                  <a class="news-list__item news-list__item--small">
-                    <div class="news-list__item-image-wrapper">
-                      <div class="news-list__item-tag">סיפורים מהשטח</div>
-                      <img
-                        class="news-list__item-image"
-                        src="/src/assets/images/news-template.png"
-                        alt=""
-                      />
-                      <div class="news-list__item-arrow">
-                        <img
-                          src="icons/arrow-up-left.svg"
-                          class="news-list__item-arrow-icon"
-                          alt="Arrow Up Left"
-                        />
-                      </div>
-                    </div>
-                    <h4 class="news-list__item-title">
-                      הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
-                      ארז
-                    </h4>
-                    <div class="news-list__item-date">10/01/2025</div>
-                  </a>
-                  <a class="news-list__item news-list__item--small">
-                    <div class="news-list__item-image-wrapper">
-                      <div class="news-list__item-tag">סיפורים מהשטח</div>
-                      <img
-                        class="news-list__item-image"
-                        src="/src/assets/images/news-template.png"
-                        alt=""
-                      />
-                      <div class="news-list__item-arrow">
-                        <img
-                          src="icons/arrow-up-left.svg"
-                          class="news-list__item-arrow-icon"
-                          alt="Arrow Up Left"
-                        />
-                      </div>
-                    </div>
-                    <h4 class="news-list__item-title">
-                      הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
-                      ארז
-                    </h4>
-                    <div class="news-list__item-date">10/01/2025</div>
-                  </a>
-                  <a class="news-list__item news-list__item--large">
-                    <div class="news-list__item-image-wrapper">
-                      <div class="news-list__item-tag">סיפורים מהשטח</div>
-                      <img
-                        class="news-list__item-image"
-                        src="/src/assets/images/news-template.png"
-                        alt=""
-                      />
-                      <div class="news-list__item-arrow">
-                        <img
-                          src="icons/arrow-up-left.svg"
-                          class="news-list__item-arrow-icon"
-                          alt="Arrow Up Left"
-                        />
-                      </div>
-                    </div>
-                    <h4 class="news-list__item-title">
-                      הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
-                      ארז
-                    </h4>
-                    <div class="news-list__item-date">10/01/2025</div>
-                  </a>
-                  <a class="news-list__item news-list__item--large">
-                    <div class="news-list__item-image-wrapper">
-                      <div class="news-list__item-tag">סיפורים מהשטח</div>
-                      <img
-                        class="news-list__item-image"
-                        src="/src/assets/images/news-template.png"
-                        alt=""
-                      />
-                      <div class="news-list__item-arrow">
-                        <img
-                          src="icons/arrow-up-left.svg"
-                          class="news-list__item-arrow-icon"
-                          alt="Arrow Up Left"
-                        />
-                      </div>
-                    </div>
-                    <h4 class="news-list__item-title">
-                      הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
-                      ארז
-                    </h4>
-                    <div class="news-list__item-date">10/01/2025</div>
-                  </a>
-                  <a class="news-list__item news-list__item--small">
-                    <div class="news-list__item-image-wrapper">
-                      <div class="news-list__item-tag">סיפורים מהשטח</div>
-                      <img
-                        class="news-list__item-image"
-                        src="/src/assets/images/news-template.png"
-                        alt=""
-                      />
-                      <div class="news-list__item-arrow">
-                        <img
-                          src="icons/arrow-up-left.svg"
-                          class="news-list__item-arrow-icon"
-                          alt="Arrow Up Left"
-                        />
-                      </div>
-                    </div>
-                    <h4 class="news-list__item-title">
-                      הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
-                      ארז
-                    </h4>
-                    <div class="news-list__item-date">10/01/2025</div>
-                  </a>
-                  <a class="news-list__item news-list__item--small">
-                    <div class="news-list__item-image-wrapper">
-                      <div class="news-list__item-tag">סיפורים מהשטח</div>
-                      <img
-                        class="news-list__item-image"
-                        src="/src/assets/images/news-template.png"
-                        alt=""
-                      />
-                      <div class="news-list__item-arrow">
-                        <img
-                          src="icons/arrow-up-left.svg"
-                          class="news-list__item-arrow-icon"
-                          alt="Arrow Up Left"
-                        />
-                      </div>
-                    </div>
-                    <h4 class="news-list__item-title">
-                      הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
-                      ארז
-                    </h4>
-                    <div class="news-list__item-date">10/01/2025</div>
-                  </a>
-                </div>
-              </div>
-
-              <button
-                class="button button__rect button__rect--18 button__rect--outline-dark-blue"
-              >
-                הצג עוד כתבות
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <footer class="footer">
-        <div class="footer__inner">
-          <div class="footer__main">
-            <div class="footer__text-wrapper">
-              <h4 class="footer__text-subtitle">רשות המעברים היבשתיים</h4>
-              <h2 class="footer__text-title">ביטחון שמוביל את הדרך</h2>
-            </div>
-            <div class="footer__nav">
-              <a href="#" class="footer__nav-link">אודות</a>
-              <a href="#" class="footer__nav-link">אודות</a>
-              <a href="#" class="footer__nav-link">אודות</a>
-              <a href="#" class="footer__nav-link">אודות</a>
-              <a href="#" class="footer__nav-link">אודות</a>
-              <a href="#" class="footer__nav-link">אודות</a>
-            </div>
-          </div>
-
-          <div class="footer__sub">
-            <div class="footer__social-wrapper">
-              <a href="" class="footer__social-link">
-                <img
-                  class="footer__social-link-image"
-                  src="/src/assets/icons/yt.svg"
-                  alt="Youtube"
-                />
-              </a>
-              <a href="" class="footer__social-link">
-                <img
-                  class="footer__social-link-image"
-                  src="/src/assets/icons/inst.svg"
-                  alt="Instagram"
-                />
-              </a>
-              <a href="" class="footer__social-link">
-                <img
-                  class="footer__social-link-image"
-                  src="/src/assets/icons/fb.svg"
-                  alt="Facebook"
-                />
-              </a>
-            </div>
-
-            <div class="footer__subnav">
-              <a href="#" class="footer__subnav-link">אודות</a>
-              <a href="#" class="footer__subnav-link">אודות</a>
-              <a href="#" class="footer__subnav-link">אודות</a>
-            </div>
-
-            <div class="footer__powered-by ltr">
-              Powered by
-              <img
-                class="footer__powered-by-logo"
-                src="/src/assets/icons/powered-by-logo.svg"
-                alt="Powered by logo"
-              />
-            </div>
-          </div>
-        </div>
-      </footer>
+<body>
+  <script type="module" src="/src/main.js"></script>
+  <div id="wrapper" class="wrapper">
+    <div class="page-header">
+      <div class="page-header__textline">hello world</div>
     </div>
-  </body>
+
+    <div class="page-content with-triangle-3--bottom with-triangle--white">
+      <div class="menu">
+        <div class="menu__logo-list">
+          <a href="#" class="menu__logo-link">
+            <img class="menu__logo-image" src="icons/logo-1.svg" alt="Logo 1" />
+            <span class="menu__logo-text">רשות מעברים יבשתיים</span>
+          </a>
+
+          <a href="#" class="menu__logo-link">
+            <img class="menu__logo-image" src="icons/logo-2.svg" alt="Logo 2" />
+            <span class="menu__logo-text">משרד הביטחון</span>
+          </a>
+        </div>
+
+        <div class="menu__nav-wrapper">
+          <div class="menu__nav-item">
+            <a href="#" class="menu__nav-link menu__nav-link--dark-blue-tag">
+              מידע שימושי
+              <img src="icons/menu-nav-icon-arrow--cyan.svg"
+                class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow" alt="Arrow Left" />
+            </a>
+          </div>
+
+          <div class="menu__nav-item">
+            <a href="#" class="menu__nav-link menu__nav-link--dark-blue-tag">
+              כתבות ועידכונים
+
+              <img src="icons/menu-nav-icon-arrow--cyan.svg"
+                class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow" alt="Arrow Left" />
+            </a>
+          </div>
+
+          <div class="menu__nav-item">
+            <a href="#" class="menu__nav-link menu__nav-link--active menu__nav-link--dark-blue-tag">
+              אודות
+              <img src="icons/menu-nav-icon-arrow--cyan.svg"
+                class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow" alt="Arrow Left" />
+            </a>
+          </div>
+
+          <div class="menu__nav-item">
+            <a href="#" class="menu__nav-link menu__nav-link--blue-tag menu__nav-link--with-arrow">
+              צור קשר
+              <img src="icons/menu-nav-icon-arrow--white.svg"
+                class="menu__nav-link-icon menu__nav-link-icon--arrow ltr-reverse-y" alt="Arrow Up Left" />
+              <img src="icons/menu-nav-icon-arrow--white.svg"
+                class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow" alt="Arrow Left" />
+            </a>
+          </div>
+
+          <div class="menu__nav-item">
+            <a href="#"
+              class="menu__nav-link menu__nav-link--c-dark-blue menu__nav-link--cyan-tag menu__nav-link--with-arrow">
+              לכל המעברים
+              <img src="icons/menu-nav-icon-arrow--dark-blue.svg"
+                class="menu__nav-link-icon menu__nav-link-icon--arrow ltr-reverse-y" alt="Arrow Up Left" />
+              <img src="icons/menu-nav-icon-arrow--dark-blue.svg"
+                class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow" alt="Arrow Left" />
+            </a>
+          </div>
+
+          <div class="menu__nav-item">
+            <a href="#" class="menu__nav-link menu__nav-link--white-tag">
+              חיפוש
+              <img src="icons/magnify.svg" class="menu__nav-link-icon ltr-reverse-y" alt="Magnify" />
+            </a>
+          </div>
+
+          <div class="menu__nav-item">
+            <a href="#" class="menu__nav-link menu__nav-link--c-white menu__nav-link--white-tag">
+              איזור אישי
+            </a>
+          </div>
+
+          <div class="menu__nav-row">
+            <div class="menu__nav-item">
+              <a href="#"
+                class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon">
+                <img src="icons/accessibility.svg" class="menu__nav-link-icon" alt="Accessibility" />
+              </a>
+            </div>
+
+            <div class="menu__nav-item">
+              <a href="#"
+                class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon">
+                <img src="icons/lang.svg" class="menu__nav-link-icon" alt="Language" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="breadcrumbs">
+        <a href="#" class="breadcrumbs__link">
+          <span class="breadcrumbs__link-icon breadcrumbs__link-icon--home"></span>
+          <span class="breadcrumbs__link-icon breadcrumbs__link-icon--arrow ltr-reverse-y"></span>
+        </a>
+
+        <a href="#" class="breadcrumbs__link">
+          <span class="breadcrumbs__link-text">כל המעברים</span>
+        </a>
+      </div>
+
+      <div class="main-content__top-wrapper">
+        <div id="news-swiper-header" class="main-content__top main-content__top--offset">
+          <div class="main-content__top-header">
+            <div class="main-content__top-header-subtitle">
+              כל המידע בנושא המעברים היבשתיים
+            </div>
+            <h2 class="main-content__top-header-title">
+              המעברים <br class="br-none br-tablet-min" />
+              מזווית אחרת
+            </h2>
+          </div>
+
+          <div class="news-swiper__swiper-wrapper news-swiper__swiper-wrapper--offset">
+            <div class="swiper news-swiper" id="news-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide news-swiper__slide">
+                  <picture id="news-swiper-image-wrapper" class="main-content__cover-top">
+                    <source media="(min-width: 980px)" srcset="/src/assets/images/hero-lady-lg.png" />
+                    <img class="main-content__cover-top-img--md w-100" src="/src/assets/images/hero-lady-sm.png"
+                      alt="" />
+                  </picture>
+
+                  <div id="news-swiper-card" class="news-swiper__card">
+                    <div class="news-swiper__card-content">
+                      <h4 class="news-swiper__card-title">
+                        המגנים על הדרך: באחריות לאומית
+                      </h4>
+                      <div class="news-swiper__card-text">
+                        מאחורי כל נסיעה בטוחה עומדים אנשים המחויבים לשמור על
+                        הסדר ולמנוע סכנות, מתוך אחריות לאומית.
+                      </div>
+                    </div>
+
+                    <div class="news-swiper__card-footer">
+                      <a href="#" class="news-swiper__card-footer-link">
+                        <div class="news-swiper__card-footer-link-text">
+                          להמשך קריאה
+                        </div>
+
+                        <div class="news-swiper__card-footer-link-icon-wrapper">
+                          <img src="icons/arrow-up-left-sm.svg" class="news-swiper__card-footer-link-icon"
+                            alt="Arrow Up Left" />
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide news-swiper__slide">
+                  <picture class="main-content__cover-top">
+                    <source media="(min-width: 980px)" srcset="/src/assets/images/hero-lady-lg.png" />
+                    <img class="main-content__cover-top-img--md w-100" src="/src/assets/images/hero-lady-sm.png"
+                      alt="" />
+                  </picture>
+                </div>
+
+                <div class="swiper-slide news-swiper__slide">
+                  <picture class="main-content__cover-top">
+                    <source media="(min-width: 980px)" srcset="/src/assets/images/hero-lady-lg.png" />
+                    <img class="main-content__cover-top-img--md w-100" src="/src/assets/images/hero-lady-sm.png"
+                      alt="" />
+                  </picture>
+                </div>
+              </div>
+            </div>
+
+            <div class="news-swiper__swiper-pagination-wrapper">
+              <div class="swiper-pagination news-swiper__swiper-pagination" id="news-swiper-swiper-pagination"></div>
+            </div>
+
+            <div class="news-swiper__swiper-button-actions">
+              <div class="swiper-button-prev news-swiper__swiper-button news-swiper__swiper-button-prev"
+                id="news-swiper-button-prev">
+                <img class="news-swiper__pagination-icon rotate-y ltr-reverse-none"
+                  src="/src/assets/icons/arrow-left-pagination.svg" alt="Arrow left" />
+              </div>
+              <div class="swiper-button-next news-swiper__swiper-button news-swiper__swiper-button-next"
+                id="news-swiper-button-next">
+                <img class="news-swiper__pagination-icon ltr-reverse-y"
+                  src="/src/assets/icons/arrow-left-pagination.svg" alt="Arrow Right" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-content container">
+        <div class="main-content__layout main-content__layout-sm">
+          <div class="content-aside content-aside--sticky">
+            <h2 class="content-aside__title content-aside__title--md">
+              כתבו עלינו
+            </h2>
+
+            <div class="content-aside__tag-list">
+              <label class="content-aside__tag-item content-aside__tag-item--primary">
+                <input type="checkbox" class="content-aside__tag-checkbox" />
+                <span class="content-aside__tag-text">מעברים</span>
+              </label>
+              <label class="content-aside__tag-item content-aside__tag-item--primary">
+                <input type="checkbox" class="content-aside__tag-checkbox" />
+                <span class="content-aside__tag-text">מעברים</span>
+              </label>
+              <label class="content-aside__tag-item content-aside__tag-item--primary">
+                <input type="checkbox" class="content-aside__tag-checkbox" />
+                <span class="content-aside__tag-text">טכנולוגיה</span>
+              </label>
+              <label class="content-aside__tag-item content-aside__tag-item--primary">
+                <input type="checkbox" class="content-aside__tag-checkbox" />
+                <span class="content-aside__tag-text">טכנולוגיה וחדשנות</span>
+              </label>
+              <label class="content-aside__tag-item content-aside__tag-item--primary">
+                <input type="checkbox" class="content-aside__tag-checkbox" />
+                <span class="content-aside__tag-text">מעברים</span>
+              </label>
+              <label class="content-aside__tag-item content-aside__tag-item--primary">
+                <input type="checkbox" class="content-aside__tag-checkbox" />
+                <span class="content-aside__tag-text">מעברים</span>
+              </label>
+            </div>
+
+            <div class="content-aside__clear-filter-wrapper">
+              <button class="content-aside__clear-filter">נקה סינון</button>
+            </div>
+          </div>
+
+          <div class="main-content__page">
+            <div class="news">
+              <div class="news__title">40 כתבות</div>
+
+              <div class="news-list">
+                <a class="news-list__item news-list__item--large">
+                  <div class="news-list__item-image-wrapper">
+                    <div class="news-list__item-tag">סיפורים מהשטח</div>
+                    <img class="news-list__item-image" src="/src/assets/images/news-template.png" alt="" />
+                    <div class="news-list__item-arrow">
+                      <img src="icons/arrow-up-left.svg" class="news-list__item-arrow-icon" alt="Arrow Up Left" />
+                    </div>
+                  </div>
+                  <h4 class="news-list__item-title">
+                    הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
+                    ארז
+                  </h4>
+                  <div class="news-list__item-date">אישי | 10/01/2025</div>
+                </a>
+                <a class="news-list__item news-list__item--small">
+                  <div class="news-list__item-image-wrapper">
+                    <div class="news-list__item-tag">סיפורים מהשטח</div>
+                    <img class="news-list__item-image" src="/src/assets/images/news-template.png" alt="" />
+                    <div class="news-list__item-arrow">
+                      <img src="icons/arrow-up-left.svg" class="news-list__item-arrow-icon" alt="Arrow Up Left" />
+                    </div>
+                  </div>
+                  <h4 class="news-list__item-title">
+                    הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
+                    ארז
+                  </h4>
+                  <div class="news-list__item-date">10/01/2025</div>
+                </a>
+                <a class="news-list__item news-list__item--small">
+                  <div class="news-list__item-image-wrapper">
+                    <div class="news-list__item-tag">סיפורים מהשטח</div>
+                    <img class="news-list__item-image" src="/src/assets/images/news-template.png" alt="" />
+                    <div class="news-list__item-arrow">
+                      <img src="icons/arrow-up-left.svg" class="news-list__item-arrow-icon" alt="Arrow Up Left" />
+                    </div>
+                  </div>
+                  <h4 class="news-list__item-title">
+                    הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
+                    ארז
+                  </h4>
+                  <div class="news-list__item-date">10/01/2025</div>
+                </a>
+                <a class="news-list__item news-list__item--small">
+                  <div class="news-list__item-image-wrapper">
+                    <div class="news-list__item-tag">סיפורים מהשטח</div>
+                    <img class="news-list__item-image" src="/src/assets/images/news-template.png" alt="" />
+                    <div class="news-list__item-arrow">
+                      <img src="icons/arrow-up-left.svg" class="news-list__item-arrow-icon" alt="Arrow Up Left" />
+                    </div>
+                  </div>
+                  <h4 class="news-list__item-title">
+                    הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
+                    ארז
+                  </h4>
+                  <div class="news-list__item-date">10/01/2025</div>
+                </a>
+                <a class="news-list__item news-list__item--small">
+                  <div class="news-list__item-image-wrapper">
+                    <div class="news-list__item-tag">סיפורים מהשטח</div>
+                    <img class="news-list__item-image" src="/src/assets/images/news-template.png" alt="" />
+                    <div class="news-list__item-arrow">
+                      <img src="icons/arrow-up-left.svg" class="news-list__item-arrow-icon" alt="Arrow Up Left" />
+                    </div>
+                  </div>
+                  <h4 class="news-list__item-title">
+                    הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
+                    ארז
+                  </h4>
+                  <div class="news-list__item-date">10/01/2025</div>
+                </a>
+                <a class="news-list__item news-list__item--large">
+                  <div class="news-list__item-image-wrapper">
+                    <div class="news-list__item-tag">סיפורים מהשטח</div>
+                    <img class="news-list__item-image" src="/src/assets/images/news-template.png" alt="" />
+                    <div class="news-list__item-arrow">
+                      <img src="icons/arrow-up-left.svg" class="news-list__item-arrow-icon" alt="Arrow Up Left" />
+                    </div>
+                  </div>
+                  <h4 class="news-list__item-title">
+                    הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
+                    ארז
+                  </h4>
+                  <div class="news-list__item-date">10/01/2025</div>
+                </a>
+                <a class="news-list__item news-list__item--large">
+                  <div class="news-list__item-image-wrapper">
+                    <div class="news-list__item-tag">סיפורים מהשטח</div>
+                    <img class="news-list__item-image" src="/src/assets/images/news-template.png" alt="" />
+                    <div class="news-list__item-arrow">
+                      <img src="icons/arrow-up-left.svg" class="news-list__item-arrow-icon" alt="Arrow Up Left" />
+                    </div>
+                  </div>
+                  <h4 class="news-list__item-title">
+                    הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
+                    ארז
+                  </h4>
+                  <div class="news-list__item-date">10/01/2025</div>
+                </a>
+                <a class="news-list__item news-list__item--small">
+                  <div class="news-list__item-image-wrapper">
+                    <div class="news-list__item-tag">סיפורים מהשטח</div>
+                    <img class="news-list__item-image" src="/src/assets/images/news-template.png" alt="" />
+                    <div class="news-list__item-arrow">
+                      <img src="icons/arrow-up-left.svg" class="news-list__item-arrow-icon" alt="Arrow Up Left" />
+                    </div>
+                  </div>
+                  <h4 class="news-list__item-title">
+                    הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
+                    ארז
+                  </h4>
+                  <div class="news-list__item-date">10/01/2025</div>
+                </a>
+                <a class="news-list__item news-list__item--small">
+                  <div class="news-list__item-image-wrapper">
+                    <div class="news-list__item-tag">סיפורים מהשטח</div>
+                    <img class="news-list__item-image" src="/src/assets/images/news-template.png" alt="" />
+                    <div class="news-list__item-arrow">
+                      <img src="icons/arrow-up-left.svg" class="news-list__item-arrow-icon" alt="Arrow Up Left" />
+                    </div>
+                  </div>
+                  <h4 class="news-list__item-title">
+                    הנחיות והגבלות הנוגעות להכנסת מטען אישי כבודה לישראל ממעבר
+                    ארז
+                  </h4>
+                  <div class="news-list__item-date">10/01/2025</div>
+                </a>
+              </div>
+            </div>
+
+            <button class="button button__rect button__rect--18 button__rect--outline-dark-blue">
+              הצג עוד כתבות
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__main">
+          <div class="footer__text-wrapper">
+            <h4 class="footer__text-subtitle">רשות המעברים היבשתיים</h4>
+            <h2 class="footer__text-title">ביטחון שמוביל את הדרך</h2>
+          </div>
+          <div class="footer__nav">
+            <a href="#" class="footer__nav-link">אודות</a>
+            <a href="#" class="footer__nav-link">אודות</a>
+            <a href="#" class="footer__nav-link">אודות</a>
+            <a href="#" class="footer__nav-link">אודות</a>
+            <a href="#" class="footer__nav-link">אודות</a>
+            <a href="#" class="footer__nav-link">אודות</a>
+          </div>
+        </div>
+
+        <div class="footer__sub">
+          <div class="footer__social-wrapper">
+            <a href="" class="footer__social-link">
+              <img class="footer__social-link-image" src="/src/assets/icons/yt.svg" alt="Youtube" />
+            </a>
+            <a href="" class="footer__social-link">
+              <img class="footer__social-link-image" src="/src/assets/icons/inst.svg" alt="Instagram" />
+            </a>
+            <a href="" class="footer__social-link">
+              <img class="footer__social-link-image" src="/src/assets/icons/fb.svg" alt="Facebook" />
+            </a>
+          </div>
+
+          <div class="footer__subnav">
+            <a href="#" class="footer__subnav-link">אודות</a>
+            <a href="#" class="footer__subnav-link">אודות</a>
+            <a href="#" class="footer__subnav-link">אודות</a>
+          </div>
+
+          <div class="footer__powered-by ltr">
+            Powered by
+            <img class="footer__powered-by-logo" src="/src/assets/icons/powered-by-logo.svg" alt="Powered by logo" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
 </html>
