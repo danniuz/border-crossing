@@ -1,257 +1,258 @@
-@use '../base/media' as *;
+@use "../base/media" as *;
 
 .main-content__section {
-    .home-chips {
-        @include tablet-min {
-            max-width: 620px;
-            width: 100%;
-        }
-
-        @include desktop-min {
-            max-width: 750px;
-        }
-
-        &__status {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            padding: 6px 11px 8px 6px;
-            background-color: #fff;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 110%;
-            transition: background-color 0.3s ease;
-            width: fit-content;
-
-            @include tablet-min {
-                font-size: 16px;
-                line-height: 110%;
-                padding: 6px 16px;
-                gap: 8px;
-            }
-
-            &-list {
-                display: flex;
-                gap: 6px;
-
-                @include tablet-min {
-                    gap: 8px;
-                }
-            }
-
-            &--bg-gray {
-                background-color: var(--gray-tag);
-            }
-        }
-
-        &__status-indicator {
-            width: 5.5px;
-            height: 5.5px;
-            border-radius: 50%;
-            background-color: var(--new-red);
-            display: inline-flex;
-            flex-shrink: 0;
-
-
-            @include tablet-min {
-                width: 10px;
-                height: 10px;
-            }
-
-            &--active {
-                background-color: var(--new-green);
-            }
-        }
-
-        &__item {
-            position: relative;
-            transition: background-color 0.3s ease;
-
-            @include tablet-min {
-                &:hover {
-                    background-color: #DCE2E6;
-
-                    .home-chips__item-image {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-
-                    .home-chips__item-link-pointer {
-                        opacity: 1;
-                    }
-                }
-            }
-
-            &:not(:first-child) {
-                padding-top: 12px;
-
-                @include tablet-min {
-                    padding-top: 0;
-                }
-            }
-
-            &:after {
-                position: absolute;
-                content: '';
-                width: calc(100% + 32px);
-                height: 1px;
-                background-color: var(--dark-blue);
-                inset-inline-start: -16px;
-                bottom: 0;
-
-                @include tablet-min {
-                    width: 100%;
-                    inset-inline-start: 0;
-                }
-            }
-
-            &-image {
-                display: none;
-                opacity: 0;
-                transform: translateX(-30px);
-                transition: opacity 0.4s ease, transform 0.5s ease;
-
-                @include tablet-min {
-                    display: block;
-                    position: absolute;
-                    inset-inline-end: 64px;
-                    top: 0;
-                    height: 100%;
-                }
-            }
-
-            &-title {
-                font-family: IBM Plex Sans Hebrew;
-                font-weight: 500;
-                font-size: 18px;
-                line-height: 130%;
-                color: var(--dark-blue);
-
-                @include tablet-min {
-                    font-size: 32px;
-                    font-weight: 400;
-                    line-height: 100%;
-                }
-            }
-
-            &-content {
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-                height: 96px;
-                padding-top: 12px;
-                padding-bottom: 8px;
-
-                @include tablet-min {
-                    padding-top: 21px;
-                    padding-bottom: 18px;
-                    padding-inline-start: 24px;
-                    height: 128px;
-                    gap: 24px;
-                }
-            }
-
-            &-action-list {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                inset-inline-end: -16px;
-                top: 12px;
-
-                @include tablet-min {
-                    inset-inline-end: 0;
-                    top: 0;
-                }
-            }
-
-            &-link-arrow {
-                @include tablet-min {
-                    opacity: 0;
-                    width: 64px;
-                    height: 64px;
-                    transition: opacity 0.4s ease;
-
-                    .arrow-link__icon {
-                        @include tablet-min {
-                            transform: rotate(-45deg);
-                            width: 29px;
-                            height: 29px;
-                        }
-                    }
-
-                    &:hover {
-                        opacity: 1;
-                        background-color: var(--cyan-tag);
-                    }
-                }
-            }
-
-            &-link-pointer {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                gap: 2px;
-                padding-top: 5px;
-                background-color: var(--cyan-tag);
-                text-decoration: none !important;
-
-                @include tablet-min {
-                    width: 64px;
-                    height: 64px;
-                    opacity: 0;
-                    transition: opacity 0.4s ease, background-color 0.3s ease;
-                    gap: 0px;
-                    padding-top: 14px;
-
-                    &:hover {
-                        background-color: var(--dark-blue);
-
-                        .home-chips__item-link-pointer-icon {
-                            filter: brightness(0) invert(1);
-                        }
-
-                        .home-chips__item-link-pointer-text {
-                            color: #fff;
-                        }
-                    }
-                }
-            }
-
-            &-link-pointer-text {
-                font-family: Heebo;
-                font-weight: 400;
-                font-size: 12px;
-                line-height: 100%;
-                color: var(--dark-blue);
-
-                @include tablet-min {
-                    font-size: 14px;
-                    line-height: 130%;
-                }
-            }
-
-            &-link-pointer-icon {
-                width: 16px;
-                height: 16px;
-
-                @include tablet-min {
-                    width: 19px;
-                    height: 19px;
-                }
-            }
-        }
-
-        &__load-more {
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 130%;
-            color: var(--dark-blue);
-            padding: 6px 16px;
-            border: none;
-            outline: none;
-            margin-top: 32px;
-        }
+  .home-chips {
+    @include tablet-min {
+      max-width: 620px;
+      width: 100%;
     }
+
+    @include desktop-min {
+      max-width: 750px;
+    }
+
+    &__status {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 11px 8px 6px;
+      background-color: #fff;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 110%;
+      transition: background-color 0.3s ease;
+      width: fit-content;
+
+      @include tablet-min {
+        font-size: 16px;
+        line-height: 110%;
+        padding: 6px 16px;
+        gap: 8px;
+      }
+
+      &-list {
+        display: flex;
+        gap: 6px;
+
+        @include tablet-min {
+          gap: 8px;
+        }
+      }
+
+      &--bg-gray {
+        background-color: var(--gray-tag);
+      }
+    }
+
+    &__status-indicator {
+      width: 5.5px;
+      height: 5.5px;
+      border-radius: 50%;
+      background-color: var(--new-red);
+      display: inline-flex;
+      flex-shrink: 0;
+
+      @include tablet-min {
+        width: 10px;
+        height: 10px;
+      }
+
+      &--active {
+        background-color: var(--new-green);
+      }
+    }
+
+    &__item {
+      position: relative;
+      transition: background-color 0.3s ease;
+
+      @include tablet-min {
+        &:hover {
+          background-color: #dce2e6;
+
+          .home-chips__item-image {
+            opacity: 1;
+            transform: translateX(0);
+          }
+
+          .home-chips__item-link-pointer {
+            opacity: 1;
+          }
+        }
+      }
+
+      &:not(:first-child) {
+        padding-top: 12px;
+
+        @include tablet-min {
+          padding-top: 0;
+        }
+      }
+
+      &:after {
+        position: absolute;
+        content: "";
+        width: calc(100% + 32px);
+        height: 1px;
+        background-color: var(--dark-blue);
+        inset-inline-start: -16px;
+        bottom: 0;
+
+        @include tablet-min {
+          width: 100%;
+          inset-inline-start: 0;
+        }
+      }
+
+      &-image {
+        display: none;
+        opacity: 0;
+        transform: translateX(-30px);
+        transition: opacity 0.4s ease, transform 0.5s ease;
+
+        @include tablet-min {
+          display: block;
+          position: absolute;
+          inset-inline-end: 64px;
+          top: 0;
+          height: 100%;
+        }
+      }
+
+      &-title {
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 130%;
+        color: var(--dark-blue);
+
+        @include tablet-min {
+          font-size: 32px;
+          font-weight: 400;
+          line-height: 100%;
+        }
+      }
+
+      &-content {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        height: 96px;
+        padding-top: 12px;
+        padding-bottom: 8px;
+
+        @include tablet-min {
+          padding-top: 21px;
+          padding-bottom: 18px;
+          padding-inline-start: 24px;
+          height: 128px;
+          gap: 24px;
+        }
+      }
+
+      &-action-list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        inset-inline-end: -16px;
+        top: 12px;
+
+        @include tablet-min {
+          inset-inline-end: 0;
+          top: 0;
+        }
+      }
+
+      &-link-arrow {
+        @include tablet-min {
+          width: 64px;
+          height: 64px;
+          transition: opacity 0.4s ease;
+
+          .arrow-link__icon {
+            @include tablet-min {
+              width: 31px;
+              height: 31px;
+            }
+          }
+
+          &:hover {
+            opacity: 1;
+            background-color: var(--cyan-tag);
+
+            .arrow-link__icon {
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+
+      &-link-pointer {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2px;
+        padding-top: 5px;
+        background-color: var(--cyan-tag);
+        text-decoration: none !important;
+
+        @include tablet-min {
+          width: 64px;
+          height: 64px;
+          opacity: 0;
+          transition: opacity 0.4s ease, background-color 0.3s ease;
+          gap: 0px;
+          padding-top: 14px;
+
+          &:hover {
+            background-color: var(--dark-blue);
+
+            .home-chips__item-link-pointer-icon {
+              filter: brightness(0) invert(1);
+            }
+
+            .home-chips__item-link-pointer-text {
+              color: #fff;
+            }
+          }
+        }
+      }
+
+      &-link-pointer-text {
+        font-family: Heebo;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 100%;
+        color: var(--dark-blue);
+
+        @include tablet-min {
+          font-size: 14px;
+          line-height: 130%;
+        }
+      }
+
+      &-link-pointer-icon {
+        width: 16px;
+        height: 16px;
+
+        @include tablet-min {
+          width: 19px;
+          height: 19px;
+        }
+      }
+    }
+
+    &__load-more {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 130%;
+      color: var(--dark-blue);
+      padding: 6px 16px;
+      border: none;
+      outline: none;
+      margin-top: 32px;
+    }
+  }
 }

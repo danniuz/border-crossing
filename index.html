@@ -66,30 +66,59 @@
 
       <div class="page-content">
         <div class="menu menu--non-sticky">
-          <div class="menu__logo-list">
-            <a href="#" class="menu__logo-link">
-              <img
-                class="menu__logo-image"
-                src="icons/logo-1.svg"
-                alt="Logo 1"
-              />
-              <span class="menu__logo-text">רשות מעברים יבשתיים</span>
-            </a>
+			<div class="menu__logo-list">
+				<div class="menu__logo-list-wrapper">
+                  <a href="#" class="menu__logo-link menu__logo-link--mobile">
+                    <img
+                        class="menu__burger"
+                        src="icons/menu.svg"
+                        alt="menu"
+                    />
+                  </a>
 
-            <a href="#" class="menu__logo-link">
-              <img
-                class="menu__logo-image"
-                src="icons/logo-2.svg"
-                alt="Logo 2"
-              />
-              <span class="menu__logo-text">משרד הביטחון</span>
-            </a>
-          </div>
+					<a href="#" class="menu__logo-link">
+						<img
+							class="menu__logo-image"
+							src="icons/logo-1.svg"
+							alt="Logo 1"
+						/>
+						<span class="menu__logo-text">רשות מעברים יבשתיים</span>
+					</a>
+
+					<a href="#" class="menu__logo-link">
+						<img
+							class="menu__logo-image"
+							src="icons/logo-2.svg"
+							alt="Logo 2"
+						/>
+						<span class="menu__logo-text">משרד הביטחון</span>
+					</a>
+				</div>
+
+				<a href="#" class="menu__logo-link menu__logo-link--mobile">
+					<img
+						src="icons/accessibility-white.svg"
+						alt="Logo 3"
+					/>
+				</a>
+			</div>
 
           <div class="menu__nav-wrapper">
+
+            <div class="menu__nav-item">
+              <a href="#" class="menu__nav-link menu__nav-link--close">
+                <img
+                    src="icons/close-white.svg"
+                    class="menu__nav-link-icon"
+                    alt="Arrow Left"
+                />
+              </a>
+            </div>
+
             <div class="menu__nav-item">
               <a href="#" class="menu__nav-link menu__nav-link--dark-blue-tag">
-                מידע שימושי
+                <span class="menu__nav-link-text">מידע שימושי</span>
+
                 <img
                   src="icons/menu-nav-icon-arrow--cyan.svg"
                   class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
@@ -100,7 +129,7 @@
 
             <div class="menu__nav-item">
               <a href="#" class="menu__nav-link menu__nav-link--dark-blue-tag">
-                כתבות ועידכונים
+                <span class="menu__nav-link-text">כתבות ועידכונים</span>
 
                 <img
                   src="icons/menu-nav-icon-arrow--cyan.svg"
@@ -115,7 +144,8 @@
                 href="#"
                 class="menu__nav-link menu__nav-link--active menu__nav-link--dark-blue-tag"
               >
-                אודות
+                <span class="menu__nav-link-text">אודות</span>
+
                 <img
                   src="icons/menu-nav-icon-arrow--cyan.svg"
                   class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
@@ -129,7 +159,8 @@
                 href="#"
                 class="menu__nav-link menu__nav-link--blue-tag menu__nav-link--with-arrow"
               >
-                צור קשר
+                <span class="menu__nav-link-text">צור קשר</span>
+
                 <img
                   src="icons/menu-nav-icon-arrow--white.svg"
                   class="menu__nav-link-icon menu__nav-link-icon--arrow ltr-reverse-y"
@@ -148,7 +179,8 @@
                 href="#"
                 class="menu__nav-link menu__nav-link--c-dark-blue menu__nav-link--cyan-tag menu__nav-link--with-arrow"
               >
-                לכל המעברים
+                <span class="menu__nav-link-text">לכל המעברים</span>
+
                 <img
                   src="icons/menu-nav-icon-arrow--dark-blue.svg"
                   class="menu__nav-link-icon menu__nav-link-icon--arrow ltr-reverse-y"
@@ -164,7 +196,8 @@
 
             <div class="menu__nav-item">
               <a href="#" class="menu__nav-link menu__nav-link--white-tag">
-                חיפוש
+                <span class="menu__nav-link-text">חיפוש</span>
+
                 <img
                   src="icons/magnify.svg"
                   class="menu__nav-link-icon ltr-reverse-y"
@@ -178,7 +211,7 @@
                 href="#"
                 class="menu__nav-link menu__nav-link--c-white menu__nav-link--white-tag"
               >
-                איזור אישי
+                <span class="menu__nav-link-text">איזור אישי</span>
               </a>
             </div>
 
@@ -186,8 +219,10 @@
               <div class="menu__nav-item">
                 <a
                   href="#"
-                  class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
+                  class="menu__nav-link menu__nav-link--white-tag menu__nav-link--with-icon"
                 >
+                  <span class="menu__nav-link-text">נגישות</span>
+
                   <img
                     src="icons/accessibility.svg"
                     class="menu__nav-link-icon"
@@ -199,8 +234,10 @@
               <div class="menu__nav-item">
                 <a
                   href="#"
-                  class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
+                  class="menu__nav-link menu__nav-link--white-tag menu__nav-link--with-icon"
                 >
+                  <span class="menu__nav-link-text">שפות</span>
+
                   <img
                     src="icons/lang.svg"
                     class="menu__nav-link-icon"

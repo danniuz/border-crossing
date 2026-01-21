@@ -8,6 +8,11 @@
   height: 60px;
   z-index: 99;
 
+
+  @include tablet-max {
+    z-index: 1001;
+  }
+
   &--sticky {
     @include tablet-min {
       position: sticky !important;
@@ -18,6 +23,13 @@
   &--non-sticky {
     @include tablet-min {
       top: 20px;
+    }
+
+    @include tablet-max {
+      top: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
     }
   }
 
@@ -67,6 +79,16 @@
       flex-direction: column;
       align-items: flex-start;
     }
+
+    @include tablet-max {
+      flex: unset;
+    }
+
+    &--mobile {
+      @include tablet-min {
+        display: none;
+      }
+    }
   }
 
   &__logo-image {
@@ -103,11 +125,53 @@
     @include tablet-min {
       display: flex;
     }
+
+    @include tablet-max {
+      position: fixed;
+      top: -8px;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      gap: 0;
+      transform: translateX(-110%);
+      transition: transform .3s ease;
+      z-index: 1000;
+
+
+      &.is-open{
+        transform: translateX(0);
+      }
+    }
   }
 
   &__nav-row {
     display: flex;
     gap: 8px;
+
+    @include tablet-min {
+      .menu__nav-link {
+        justify-content: center !important;
+      }
+
+      .menu__nav-link-text {
+        display: none;
+      }
+    }
+
+    @include tablet-max {
+      gap: 0;
+
+      .menu__nav-item {
+        &:not(:last-child) {
+          border-inline-end: 2px solid var(--white);
+        }
+      }
+
+      .menu__nav-link {
+        justify-content: space-between;
+      }
+    }
   }
 
   &__nav-item {
@@ -117,6 +181,43 @@
   &__logo-list,
   &__nav-link {
     box-shadow: 0px 9px 23px -10px rgba(0, 0, 0, 0.67);
+
+    @include tablet-max {
+      box-shadow: none;
+    }
+  }
+
+  &__logo-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo-list-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+
+  --nav-line-color: transparent;
+  --border-height: 2px;
+
+  .menu__nav-link--white-tag {
+    --nav-line-color: var(--white);
+  }
+
+  .menu__nav-link--blue-tag, .menu__nav-link--dark-blue-tag  {
+    --nav-line-color: var(--white-60);
+  }
+
+  .menu__nav-link--cyan-tag {
+    --nav-line-color: var(--light-cyan);
+  }
+
+  .menu__nav-link--dark-blue-tag.menu__nav-link--active {
+    --nav-line-color: var(--cyan-tag);
+    --border-height: 3px;
   }
 
   &__nav-link {
@@ -134,6 +235,12 @@
     align-items: center;
     transition: padding-inline-start 0.2s ease-in-out;
 
+
+    @include tablet-max {
+      height: 64px;
+      box-sizing: border-box;
+    }
+
     &:before {
       content: "";
       position: absolute;
@@ -146,21 +253,41 @@
     }
 
     &:after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: 0;
-      inset-inline-start: 0;
-      opacity: 0;
-      background-color: var(--cyan-tag);
-      transition: opacity 0.2s ease-in-out;
+      @include tablet-min {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        inset-inline-start: 0;
+        opacity: 0;
+        background-color: var(--cyan-tag);
+        transition: opacity 0.2s ease-in-out;
+      }
+
+      @include tablet-max {
+          content: "";
+          position: absolute;
+          inset-inline-start: 0;
+          bottom: 0;
+          width: 100%;
+          height: var(--border-height);
+          background-color: var(--nav-line-color);
+          opacity: 1;
+          transition: background-color .2s ease, opacity .2s ease;
+      }
     }
 
     &:not(.menu__nav-link--active) {
       .menu__nav-link-icon--active {
         display: none;
       }
+    }
+
+    @include tablet-max {
+      transition: none;
+      padding-inline-start: 20px;
+      padding-inline-end: 20px;
     }
 
     &--active {
@@ -200,12 +327,15 @@
     &:not(.menu__nav-link--with-icon):not(.menu__nav-link--active):not(
         .menu__nav-link--white-tag
       ) {
-      &:hover {
-        padding-inline-start: 30px;
 
-        &:before {
-          opacity: 1;
-          inset-inline-start: 18px;
+      @include tablet-min {
+        &:hover {
+          padding-inline-start: 30px;
+
+          &:before {
+            opacity: 1;
+            inset-inline-start: 18px;
+          }
         }
       }
     }
@@ -261,6 +391,18 @@
         &::before {
           background-color: var(--cyan-tag);
         }
+      }
+    }
+
+    &--close {
+      position: relative;
+      z-index: 10;
+      background-color: var(--dark-blue);
+      color: #fff;
+      box-shadow: 0px 4px 4px 0px #00000029;
+
+      @include tablet-min {
+        display: none;
       }
     }
 

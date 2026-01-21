@@ -206,7 +206,6 @@ html:dir(ltr) {
     &-button-icon {
       width: 24px;
       height: 24px;
-      transform: rotate(-45deg);
     }
   }
 
@@ -244,6 +243,11 @@ html:dir(ltr) {
       margin-bottom: 8px;
 
       @include desktop-sm-min {
+        font-size: 24px;
+        line-height: 120%;
+      }
+
+      @include desktop-lg-min {
         font-size: 32px;
         line-height: 100%;
       }
@@ -257,12 +261,12 @@ html:dir(ltr) {
       text-align: center;
       color: #fff;
 
-      @include tablet-min {
+      @include desktop-sm-min {
         font-size: 51px;
         line-height: 110%;
       }
 
-      @include desktop-sm-min {
+      @include desktop-lg-min {
         font-size: 80px;
         line-height: 100%;
       }

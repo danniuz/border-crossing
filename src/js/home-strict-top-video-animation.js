@@ -17,7 +17,15 @@ export function initHomeStrictTopVideoAnimation() {
 
     let isAnimating = false;
 
-    homeStrictTopVideoWrapper.addEventListener('click', () => {
+    //race click or 2.5sec delay
+    Promise.race([
+        new Promise(resolve => {
+            homeStrictTopVideoWrapper.addEventListener('click', () => {
+                resolve();
+            });
+        }),
+        new Promise(resolve => setTimeout(resolve, 2500)),
+    ]).then(() => {
         if (isAnimating) {
             return;
         }
