@@ -28,6 +28,7 @@ import { initFadeLeft } from './js/fade-left-gsap.js';
 import { initFadeRight } from './js/fade-right-gsap.js';
 import { initAutoScrollTop } from "./js/auto-scroll-top.js";
 import { initFooterHighlightWordAnimation } from './js/footer-highlight-word-animation.js';
+import { initMenu } from "./js/init-menu.js";
 
 const isRtl = document.documentElement.dir === 'rtl';
 
@@ -39,7 +40,8 @@ function loadMap() {
   }
 }
 initAutoScrollTop();
-initAside({ opened: false });
+initAside({ opened: true });
+initMenu();
 loadMap();
 initMarquee({ start: true });
 initAccordion('#flashes-faq', 'faq__item', 'faq__item--opened', {

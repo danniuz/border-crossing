@@ -47,6 +47,10 @@
     inset-inline-start: 200px;
   }
 
+  @include tablet-max {
+    display: none;
+  }
+
   &__link {
     display: flex;
     align-items: center;
