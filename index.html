@@ -264,614 +264,638 @@
           </a>
         </div>
 
-        <div id="aside-wrapper" class="aside__wrapper">
-          <div class="aside">
-            <div class="aside__content">
-              <div class="aside__header">
-                <h1 class="aside__header-title">כל המעברים</h1>
+        <div class="aside-controls-wrapper">
+          <div id="aside-wrapper" class="aside__wrapper">
+            <div class="aside">
+              <div class="aside__content">
+                <div class="aside__header">
+                  <div class="aside__header-wrapper">
+                    <h1 class="aside__header-title">כל המעברים</h1>
 
-                <div class="side-filter__wrapper">
-                  <div class="aside-filter__title">סינון סוג פעילות</div>
+                    <button class="aside__toggle-filters">
+                      <span>סינון</span>
 
-                  <div class="aside-filter">
-                    <div class="aside-filter__filter-list">
-                      <div class="aside-filter__nav-list">
-                        <div class="aside-filter__nav-item">
-                          <input
-                            type="radio"
-                            id="filter-pedestrians"
-                            name="filter-type"
-                            value="pedestrians"
-                            class="aside-filter__nav-item-input"
-                            checked
-                          />
-                          <label
-                            for="filter-pedestrians"
-                            class="aside-filter__nav-item-label"
-                          >
-                            הולכי רגל
-                          </label>
+                      <img
+                          class="aside__toggle-filters-icon"
+                          src="/src/assets/icons/chevron-down-blue.svg"
+                          alt="Dropdown"
+                      />
+                    </button>
+                  </div>
+
+                  <div class="aside-filter__wrapper">
+                    <div class="aside-filter__title">סינון סוג פעילות</div>
+
+                    <div class="aside-filter">
+                      <div class="aside-filter__filter-list">
+                        <div class="aside-filter__nav-list">
+                          <div class="aside-filter__nav-item">
+                            <input
+                                type="radio"
+                                id="filter-pedestrians"
+                                name="filter-type"
+                                value="pedestrians"
+                                class="aside-filter__nav-item-input"
+                                checked
+                            />
+                            <label
+                                for="filter-pedestrians"
+                                class="aside-filter__nav-item-label"
+                            >
+                              הולכי רגל
+                            </label>
+                          </div>
+
+                          <div class="aside-filter__nav-item">
+                            <input
+                                type="radio"
+                                id="filter-vehicles"
+                                name="filter-type"
+                                value="vehicles"
+                                class="aside-filter__nav-item-input"
+                            />
+                            <label
+                                for="filter-vehicles"
+                                class="aside-filter__nav-item-label"
+                            >
+                              כלי רכב
+                            </label>
+                          </div>
+
+                          <div class="aside-filter__nav-item">
+                            <input
+                                type="radio"
+                                id="filter-goods"
+                                name="filter-type"
+                                value="goods"
+                                class="aside-filter__nav-item-input"
+                            />
+                            <label
+                                for="filter-goods"
+                                class="aside-filter__nav-item-label"
+                            >
+                              סחורות
+                            </label>
+                          </div>
                         </div>
 
-                        <div class="aside-filter__nav-item">
-                          <input
-                            type="radio"
-                            id="filter-vehicles"
-                            name="filter-type"
-                            value="vehicles"
-                            class="aside-filter__nav-item-input"
-                          />
-                          <label
-                            for="filter-vehicles"
-                            class="aside-filter__nav-item-label"
-                          >
-                            כלי רכב
-                          </label>
-                        </div>
+                        <a class="aside-filter__link">נקה סינון</a>
 
-                        <div class="aside-filter__nav-item">
-                          <input
-                            type="radio"
-                            id="filter-goods"
-                            name="filter-type"
-                            value="goods"
-                            class="aside-filter__nav-item-input"
-                          />
-                          <label
-                            for="filter-goods"
-                            class="aside-filter__nav-item-label"
-                          >
-                            סחורות
-                          </label>
+                        <div class="aside-filter__radio-wrapper">
+                          <div class="form-check form-switch form-switch--lg">
+                            <input
+                                class="form-check-input form-check-input--green"
+                                type="checkbox"
+                                id="flexSwitchCheckDefault"
+                            />
+                            <label
+                                class="form-check-label form-check-label--white"
+                                for="flexSwitchCheckDefault"
+                            >
+                              פתוח עכשיו
+                            </label>
+                          </div>
                         </div>
                       </div>
 
-                      <a class="aside-filter__link">נקה סינון</a>
+                      <div class="aside-filter__counter">16 מעברים</div>
+                    </div>
+                  </div>
+                </div>
 
-                      <div class="aside-filter__radio-wrapper">
-                        <div class="form-check form-switch form-switch--lg">
-                          <input
-                            class="form-check-input form-check-input--green"
-                            type="checkbox"
-                            id="flexSwitchCheckDefault"
-                          />
-                          <label
-                            class="form-check-label form-check-label--white"
-                            for="flexSwitchCheckDefault"
-                          >
-                            פתוח עכשיו
-                          </label>
+                <div
+                    id="aside-feature-list"
+                    class="aside__feature-list scrollbar-primary"
+                >
+                  <!-- Feature 1: מעבר אליהו -->
+                  <div
+                      class="popup popup--aside-feature-item"
+                      data-feature-index="0"
+                  >
+                    <div class="popup__content">
+                      <p class="popup__region text-xs">יהודה ושומרון</p>
+                      <h2 class="popup__title">מעבר אליהו</h2>
+                      <p class="popup__address text-s">
+                        <img
+                            src="icons/location.svg"
+                            class="popup__address-icon"
+                            alt="Location"
+                        />
+                        המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום,
+                        צפונית לג'נין
+                      </p>
+                      <p class="popup__contact text-s">
+                        <img
+                            src="icons/call.svg"
+                            class="popup__contact-icon"
+                            alt="Phone"
+                        />
+                        04-6582147
+                      </p>
+                      <div class="popup__status-list">
+                        <div class="popup__status">
+                          <span class="popup__status-indicator"></span>
+                          הולכי רגל
+                        </div>
+                        <div class="popup__status">
+                        <span
+                            class="popup__status-indicator popup__status-indicator--active"
+                        ></span>
+                          כלי רכב
+                        </div>
+                        <div class="popup__status">
+                        <span
+                            class="popup__status-indicator popup__status-indicator--active"
+                        ></span>
+                          סחורות
                         </div>
                       </div>
+                      <button class="popup__button place-popup-toggler">
+                        <img
+                            src="icons/arrow-up-left-sm.svg"
+                            class="popup__button-icon"
+                            alt="Arrow Up Left"
+                        />
+                      </button>
                     </div>
-
-                    <div class="aside-filter__counter">16 מעברים</div>
+                    <img
+                        class="popup__image"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
+                        alt="מעבר אליהו"
+                    />
                   </div>
-                </div>
-              </div>
 
-              <div
-                id="aside-feature-list"
-                class="aside__feature-list scrollbar-primary"
-              >
-                <!-- Feature 1: מעבר אליהו -->
-                <div
-                  class="popup popup--aside-feature-item"
-                  data-feature-index="0"
-                >
-                  <div class="popup__content">
-                    <p class="popup__region text-xs">יהודה ושומרון</p>
-                    <h2 class="popup__title">מעבר אליהו</h2>
-                    <p class="popup__address text-s">
-                      <img
-                        src="icons/location.svg"
-                        class="popup__address-icon"
-                        alt="Location"
-                      />
-                      המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום,
-                      צפונית לג'נין
-                    </p>
-                    <p class="popup__contact text-s">
-                      <img
-                        src="icons/call.svg"
-                        class="popup__contact-icon"
-                        alt="Phone"
-                      />
-                      04-6582147
-                    </p>
-                    <div class="popup__status-list">
-                      <div class="popup__status">
-                        <span class="popup__status-indicator"></span>
-                        הולכי רגל
-                      </div>
-                      <div class="popup__status">
+                  <!-- Feature 2: מעבר גלבוע -->
+                  <div
+                      class="popup popup--aside-feature-item"
+                      data-feature-index="1"
+                  >
+                    <div class="popup__content">
+                      <p class="popup__region text-xs">יהודה ושומרון</p>
+                      <h2 class="popup__title">מעבר גלבוע</h2>
+                      <p class="popup__address text-s">
+                        <img
+                            src="icons/location.svg"
+                            class="popup__address-icon"
+                            alt="Location"
+                        />
+                        המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום,
+                        צפונית לג'נין
+                      </p>
+                      <p class="popup__contact text-s">
+                        <img
+                            src="icons/call.svg"
+                            class="popup__contact-icon"
+                            alt="Phone"
+                        />
+                        04-6582147
+                      </p>
+                      <div class="popup__status-list">
+                        <div class="popup__status">
                         <span
-                          class="popup__status-indicator popup__status-indicator--active"
+                            class="popup__status-indicator popup__status-indicator--active"
                         ></span>
-                        כלי רכב
-                      </div>
-                      <div class="popup__status">
+                          הולכי רגל
+                        </div>
+                        <div class="popup__status">
                         <span
-                          class="popup__status-indicator popup__status-indicator--active"
+                            class="popup__status-indicator popup__status-indicator--active"
                         ></span>
-                        סחורות
+                          כלי רכב
+                        </div>
+                        <div class="popup__status">
+                          <span class="popup__status-indicator"></span>
+                          סחורות
+                        </div>
                       </div>
+                      <button class="popup__button map-popup-toggler">
+                        <img
+                            src="icons/arrow-up-left-sm.svg"
+                            class="popup__button-icon"
+                            alt="Arrow Up Left"
+                        />
+                      </button>
                     </div>
-                    <button class="popup__button place-popup-toggler">
-                      <img
-                        src="icons/arrow-up-left-sm.svg"
-                        class="popup__button-icon"
-                        alt="Arrow Up Left"
-                      />
-                    </button>
+                    <img
+                        class="popup__image"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
+                        alt="מעבר גלבוע"
+                    />
                   </div>
-                  <img
-                    class="popup__image"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
-                    alt="מעבר אליהו"
-                  />
-                </div>
 
-                <!-- Feature 2: מעבר גלבוע -->
-                <div
-                  class="popup popup--aside-feature-item"
-                  data-feature-index="1"
-                >
-                  <div class="popup__content">
-                    <p class="popup__region text-xs">יהודה ושומרון</p>
-                    <h2 class="popup__title">מעבר גלבוע</h2>
-                    <p class="popup__address text-s">
-                      <img
-                        src="icons/location.svg"
-                        class="popup__address-icon"
-                        alt="Location"
-                      />
-                      המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום,
-                      צפונית לג'נין
-                    </p>
-                    <p class="popup__contact text-s">
-                      <img
-                        src="icons/call.svg"
-                        class="popup__contact-icon"
-                        alt="Phone"
-                      />
-                      04-6582147
-                    </p>
-                    <div class="popup__status-list">
-                      <div class="popup__status">
+                  <!-- Feature 2: מעבר גלבוע -->
+                  <div
+                      class="popup popup--aside-feature-item"
+                      data-feature-index="1"
+                  >
+                    <div class="popup__content">
+                      <p class="popup__region text-xs">יהודה ושומרון</p>
+                      <h2 class="popup__title">מעבר גלבוע</h2>
+                      <p class="popup__address text-s">
+                        <img
+                            src="icons/location.svg"
+                            class="popup__address-icon"
+                            alt="Location"
+                        />
+                        המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום,
+                        צפונית לג'נין
+                      </p>
+                      <p class="popup__contact text-s">
+                        <img
+                            src="icons/call.svg"
+                            class="popup__contact-icon"
+                            alt="Phone"
+                        />
+                        04-6582147
+                      </p>
+                      <div class="popup__status-list">
+                        <div class="popup__status">
                         <span
-                          class="popup__status-indicator popup__status-indicator--active"
+                            class="popup__status-indicator popup__status-indicator--active"
                         ></span>
-                        הולכי רגל
-                      </div>
-                      <div class="popup__status">
+                          הולכי רגל
+                        </div>
+                        <div class="popup__status">
                         <span
-                          class="popup__status-indicator popup__status-indicator--active"
+                            class="popup__status-indicator popup__status-indicator--active"
                         ></span>
-                        כלי רכב
+                          כלי רכב
+                        </div>
+                        <div class="popup__status">
+                          <span class="popup__status-indicator"></span>
+                          סחורות
+                        </div>
                       </div>
-                      <div class="popup__status">
-                        <span class="popup__status-indicator"></span>
-                        סחורות
-                      </div>
+                      <button class="popup__button map-popup-toggler">
+                        <img
+                            src="icons/arrow-up-left-sm.svg"
+                            class="popup__button-icon"
+                            alt="Arrow Up Left"
+                        />
+                      </button>
                     </div>
-                    <button class="popup__button map-popup-toggler">
-                      <img
-                        src="icons/arrow-up-left-sm.svg"
-                        class="popup__button-icon"
-                        alt="Arrow Up Left"
-                      />
-                    </button>
+                    <img
+                        class="popup__image"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
+                        alt="מעבר גלבוע"
+                    />
                   </div>
-                  <img
-                    class="popup__image"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
-                    alt="מעבר גלבוע"
-                  />
-                </div>
 
-                <!-- Feature 2: מעבר גלבוע -->
-                <div
-                  class="popup popup--aside-feature-item"
-                  data-feature-index="1"
-                >
-                  <div class="popup__content">
-                    <p class="popup__region text-xs">יהודה ושומרון</p>
-                    <h2 class="popup__title">מעבר גלבוע</h2>
-                    <p class="popup__address text-s">
-                      <img
-                        src="icons/location.svg"
-                        class="popup__address-icon"
-                        alt="Location"
-                      />
-                      המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום,
-                      צפונית לג'נין
-                    </p>
-                    <p class="popup__contact text-s">
-                      <img
-                        src="icons/call.svg"
-                        class="popup__contact-icon"
-                        alt="Phone"
-                      />
-                      04-6582147
-                    </p>
-                    <div class="popup__status-list">
-                      <div class="popup__status">
+                  <!-- Feature 2: מעבר גלבוע -->
+                  <div
+                      class="popup popup--aside-feature-item"
+                      data-feature-index="1"
+                  >
+                    <div class="popup__content">
+                      <p class="popup__region text-xs">יהודה ושומרון</p>
+                      <h2 class="popup__title">מעבר גלבוע</h2>
+                      <p class="popup__address text-s">
+                        <img
+                            src="icons/location.svg"
+                            class="popup__address-icon"
+                            alt="Location"
+                        />
+                        המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום,
+                        צפונית לג'נין
+                      </p>
+                      <p class="popup__contact text-s">
+                        <img
+                            src="icons/call.svg"
+                            class="popup__contact-icon"
+                            alt="Phone"
+                        />
+                        04-6582147
+                      </p>
+                      <div class="popup__status-list">
+                        <div class="popup__status">
                         <span
-                          class="popup__status-indicator popup__status-indicator--active"
+                            class="popup__status-indicator popup__status-indicator--active"
                         ></span>
-                        הולכי רגל
-                      </div>
-                      <div class="popup__status">
+                          הולכי רגל
+                        </div>
+                        <div class="popup__status">
                         <span
-                          class="popup__status-indicator popup__status-indicator--active"
+                            class="popup__status-indicator popup__status-indicator--active"
                         ></span>
-                        כלי רכב
+                          כלי רכב
+                        </div>
+                        <div class="popup__status">
+                          <span class="popup__status-indicator"></span>
+                          סחורות
+                        </div>
                       </div>
-                      <div class="popup__status">
-                        <span class="popup__status-indicator"></span>
-                        סחורות
-                      </div>
+                      <button class="popup__button map-popup-toggler">
+                        <img
+                            src="icons/arrow-up-left-sm.svg"
+                            class="popup__button-icon"
+                            alt="Arrow Up Left"
+                        />
+                      </button>
                     </div>
-                    <button class="popup__button map-popup-toggler">
-                      <img
-                        src="icons/arrow-up-left-sm.svg"
-                        class="popup__button-icon"
-                        alt="Arrow Up Left"
-                      />
-                    </button>
+                    <img
+                        class="popup__image"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
+                        alt="מעבר גלבוע"
+                    />
                   </div>
-                  <img
-                    class="popup__image"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
-                    alt="מעבר גלבוע"
-                  />
-                </div>
 
-                <!-- Feature 2: מעבר גלבוע -->
-                <div
-                  class="popup popup--aside-feature-item"
-                  data-feature-index="1"
-                >
-                  <div class="popup__content">
-                    <p class="popup__region text-xs">יהודה ושומרון</p>
-                    <h2 class="popup__title">מעבר גלבוע</h2>
-                    <p class="popup__address text-s">
-                      <img
-                        src="icons/location.svg"
-                        class="popup__address-icon"
-                        alt="Location"
-                      />
-                      המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום,
-                      צפונית לג'נין
-                    </p>
-                    <p class="popup__contact text-s">
-                      <img
-                        src="icons/call.svg"
-                        class="popup__contact-icon"
-                        alt="Phone"
-                      />
-                      04-6582147
-                    </p>
-                    <div class="popup__status-list">
-                      <div class="popup__status">
+                  <!-- Feature 2: מעבר גלבוע -->
+                  <div
+                      class="popup popup--aside-feature-item"
+                      data-feature-index="1"
+                  >
+                    <div class="popup__content">
+                      <p class="popup__region text-xs">יהודה ושומרון</p>
+                      <h2 class="popup__title">מעבר גלבוע</h2>
+                      <p class="popup__address text-s">
+                        <img
+                            src="icons/location.svg"
+                            class="popup__address-icon"
+                            alt="Location"
+                        />
+                        המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום,
+                        צפונית לג'נין
+                      </p>
+                      <p class="popup__contact text-s">
+                        <img
+                            src="icons/call.svg"
+                            class="popup__contact-icon"
+                            alt="Phone"
+                        />
+                        04-6582147
+                      </p>
+                      <div class="popup__status-list">
+                        <div class="popup__status">
                         <span
-                          class="popup__status-indicator popup__status-indicator--active"
+                            class="popup__status-indicator popup__status-indicator--active"
                         ></span>
-                        הולכי רגל
-                      </div>
-                      <div class="popup__status">
+                          הולכי רגל
+                        </div>
+                        <div class="popup__status">
                         <span
-                          class="popup__status-indicator popup__status-indicator--active"
+                            class="popup__status-indicator popup__status-indicator--active"
                         ></span>
-                        כלי רכב
+                          כלי רכב
+                        </div>
+                        <div class="popup__status">
+                          <span class="popup__status-indicator"></span>
+                          סחורות
+                        </div>
                       </div>
-                      <div class="popup__status">
-                        <span class="popup__status-indicator"></span>
-                        סחורות
-                      </div>
+                      <button class="popup__button map-popup-toggler">
+                        <img
+                            src="icons/arrow-up-left-sm.svg"
+                            class="popup__button-icon"
+                            alt="Arrow Up Left"
+                        />
+                      </button>
                     </div>
-                    <button class="popup__button map-popup-toggler">
-                      <img
-                        src="icons/arrow-up-left-sm.svg"
-                        class="popup__button-icon"
-                        alt="Arrow Up Left"
-                      />
-                    </button>
+                    <img
+                        class="popup__image"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
+                        alt="מעבר גלבוע"
+                    />
                   </div>
-                  <img
-                    class="popup__image"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
-                    alt="מעבר גלבוע"
-                  />
-                </div>
 
-                <!-- Feature 2: מעבר גלבוע -->
-                <div
-                  class="popup popup--aside-feature-item"
-                  data-feature-index="1"
-                >
-                  <div class="popup__content">
-                    <p class="popup__region text-xs">יהודה ושומרון</p>
-                    <h2 class="popup__title">מעבר גלבוע</h2>
-                    <p class="popup__address text-s">
-                      <img
-                        src="icons/location.svg"
-                        class="popup__address-icon"
-                        alt="Location"
-                      />
-                      המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום,
-                      צפונית לג'נין
-                    </p>
-                    <p class="popup__contact text-s">
-                      <img
-                        src="icons/call.svg"
-                        class="popup__contact-icon"
-                        alt="Phone"
-                      />
-                      04-6582147
-                    </p>
-                    <div class="popup__status-list">
-                      <div class="popup__status">
+                  <!-- Feature 2: מעבר גלבוע -->
+                  <div
+                      class="popup popup--aside-feature-item"
+                      data-feature-index="1"
+                  >
+                    <div class="popup__content">
+                      <p class="popup__region text-xs">יהודה ושומרון</p>
+                      <h2 class="popup__title">מעבר גלבוע</h2>
+                      <p class="popup__address text-s">
+                        <img
+                            src="icons/location.svg"
+                            class="popup__address-icon"
+                            alt="Location"
+                        />
+                        המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום,
+                        צפונית לג'נין
+                      </p>
+                      <p class="popup__contact text-s">
+                        <img
+                            src="icons/call.svg"
+                            class="popup__contact-icon"
+                            alt="Phone"
+                        />
+                        04-6582147
+                      </p>
+                      <div class="popup__status-list">
+                        <div class="popup__status">
                         <span
-                          class="popup__status-indicator popup__status-indicator--active"
+                            class="popup__status-indicator popup__status-indicator--active"
                         ></span>
-                        הולכי רגל
-                      </div>
-                      <div class="popup__status">
+                          הולכי רגל
+                        </div>
+                        <div class="popup__status">
                         <span
-                          class="popup__status-indicator popup__status-indicator--active"
+                            class="popup__status-indicator popup__status-indicator--active"
                         ></span>
-                        כלי רכב
+                          כלי רכב
+                        </div>
+                        <div class="popup__status">
+                          <span class="popup__status-indicator"></span>
+                          סחורות
+                        </div>
                       </div>
-                      <div class="popup__status">
-                        <span class="popup__status-indicator"></span>
-                        סחורות
-                      </div>
+                      <button class="popup__button map-popup-toggler">
+                        <img
+                            src="icons/arrow-up-left-sm.svg"
+                            class="popup__button-icon"
+                            alt="Arrow Up Left"
+                        />
+                      </button>
                     </div>
-                    <button class="popup__button map-popup-toggler">
-                      <img
-                        src="icons/arrow-up-left-sm.svg"
-                        class="popup__button-icon"
-                        alt="Arrow Up Left"
-                      />
-                    </button>
+                    <img
+                        class="popup__image"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
+                        alt="מעבר גלבוע"
+                    />
                   </div>
-                  <img
-                    class="popup__image"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
-                    alt="מעבר גלבוע"
-                  />
-                </div>
 
-                <!-- Feature 2: מעבר גלבוע -->
-                <div
-                  class="popup popup--aside-feature-item"
-                  data-feature-index="1"
-                >
-                  <div class="popup__content">
-                    <p class="popup__region text-xs">יהודה ושומרון</p>
-                    <h2 class="popup__title">מעבר גלבוע</h2>
-                    <p class="popup__address text-s">
-                      <img
-                        src="icons/location.svg"
-                        class="popup__address-icon"
-                        alt="Location"
-                      />
-                      המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום,
-                      צפונית לג'נין
-                    </p>
-                    <p class="popup__contact text-s">
-                      <img
-                        src="icons/call.svg"
-                        class="popup__contact-icon"
-                        alt="Phone"
-                      />
-                      04-6582147
-                    </p>
-                    <div class="popup__status-list">
-                      <div class="popup__status">
+                  <!-- Feature 2: מעבר גלבוע -->
+                  <div
+                      class="popup popup--aside-feature-item"
+                      data-feature-index="1"
+                  >
+                    <div class="popup__content">
+                      <p class="popup__region text-xs">יהודה ושומרון</p>
+                      <h2 class="popup__title">מעבר גלבוע</h2>
+                      <p class="popup__address text-s">
+                        <img
+                            src="icons/location.svg"
+                            class="popup__address-icon"
+                            alt="Location"
+                        />
+                        המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום,
+                        צפונית לג'נין
+                      </p>
+                      <p class="popup__contact text-s">
+                        <img
+                            src="icons/call.svg"
+                            class="popup__contact-icon"
+                            alt="Phone"
+                        />
+                        04-6582147
+                      </p>
+                      <div class="popup__status-list">
+                        <div class="popup__status">
                         <span
-                          class="popup__status-indicator popup__status-indicator--active"
+                            class="popup__status-indicator popup__status-indicator--active"
                         ></span>
-                        הולכי רגל
-                      </div>
-                      <div class="popup__status">
+                          הולכי רגל
+                        </div>
+                        <div class="popup__status">
                         <span
-                          class="popup__status-indicator popup__status-indicator--active"
+                            class="popup__status-indicator popup__status-indicator--active"
                         ></span>
-                        כלי רכב
+                          כלי רכב
+                        </div>
+                        <div class="popup__status">
+                          <span class="popup__status-indicator"></span>
+                          סחורות
+                        </div>
                       </div>
-                      <div class="popup__status">
-                        <span class="popup__status-indicator"></span>
-                        סחורות
-                      </div>
+                      <button class="popup__button map-popup-toggler">
+                        <img
+                            src="icons/arrow-up-left-sm.svg"
+                            class="popup__button-icon"
+                            alt="Arrow Up Left"
+                        />
+                      </button>
                     </div>
-                    <button class="popup__button map-popup-toggler">
-                      <img
-                        src="icons/arrow-up-left-sm.svg"
-                        class="popup__button-icon"
-                        alt="Arrow Up Left"
-                      />
-                    </button>
+                    <img
+                        class="popup__image"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
+                        alt="מעבר גלבוע"
+                    />
                   </div>
-                  <img
-                    class="popup__image"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
-                    alt="מעבר גלבוע"
-                  />
-                </div>
 
-                <!-- Feature 2: מעבר גלבוע -->
-                <div
-                  class="popup popup--aside-feature-item"
-                  data-feature-index="1"
-                >
-                  <div class="popup__content">
-                    <p class="popup__region text-xs">יהודה ושומרון</p>
-                    <h2 class="popup__title">מעבר גלבוע</h2>
-                    <p class="popup__address text-s">
-                      <img
-                        src="icons/location.svg"
-                        class="popup__address-icon"
-                        alt="Location"
-                      />
-                      המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום,
-                      צפונית לג'נין
-                    </p>
-                    <p class="popup__contact text-s">
-                      <img
-                        src="icons/call.svg"
-                        class="popup__contact-icon"
-                        alt="Phone"
-                      />
-                      04-6582147
-                    </p>
-                    <div class="popup__status-list">
-                      <div class="popup__status">
+                  <!-- Feature 2: מעבר גלבוע -->
+                  <div
+                      class="popup popup--aside-feature-item"
+                      data-feature-index="1"
+                  >
+                    <div class="popup__content">
+                      <p class="popup__region text-xs">יהודה ושומרון</p>
+                      <h2 class="popup__title">מעבר גלבוע</h2>
+                      <p class="popup__address text-s">
+                        <img
+                            src="icons/location.svg"
+                            class="popup__address-icon"
+                            alt="Location"
+                        />
+                        המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום,
+                        צפונית לג'נין
+                      </p>
+                      <p class="popup__contact text-s">
+                        <img
+                            src="icons/call.svg"
+                            class="popup__contact-icon"
+                            alt="Phone"
+                        />
+                        04-6582147
+                      </p>
+                      <div class="popup__status-list">
+                        <div class="popup__status">
                         <span
-                          class="popup__status-indicator popup__status-indicator--active"
+                            class="popup__status-indicator popup__status-indicator--active"
                         ></span>
-                        הולכי רגל
-                      </div>
-                      <div class="popup__status">
+                          הולכי רגל
+                        </div>
+                        <div class="popup__status">
                         <span
-                          class="popup__status-indicator popup__status-indicator--active"
+                            class="popup__status-indicator popup__status-indicator--active"
                         ></span>
-                        כלי רכב
+                          כלי רכב
+                        </div>
+                        <div class="popup__status">
+                          <span class="popup__status-indicator"></span>
+                          סחורות
+                        </div>
                       </div>
-                      <div class="popup__status">
-                        <span class="popup__status-indicator"></span>
-                        סחורות
-                      </div>
+                      <button class="popup__button map-popup-toggler">
+                        <img
+                            src="icons/arrow-up-left-sm.svg"
+                            class="popup__button-icon"
+                            alt="Arrow Up Left"
+                        />
+                      </button>
                     </div>
-                    <button class="popup__button map-popup-toggler">
-                      <img
-                        src="icons/arrow-up-left-sm.svg"
-                        class="popup__button-icon"
-                        alt="Arrow Up Left"
-                      />
-                    </button>
+                    <img
+                        class="popup__image"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
+                        alt="מעבר גלבוע"
+                    />
                   </div>
-                  <img
-                    class="popup__image"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
-                    alt="מעבר גלבוע"
-                  />
-                </div>
-
-                <!-- Feature 2: מעבר גלבוע -->
-                <div
-                  class="popup popup--aside-feature-item"
-                  data-feature-index="1"
-                >
-                  <div class="popup__content">
-                    <p class="popup__region text-xs">יהודה ושומרון</p>
-                    <h2 class="popup__title">מעבר גלבוע</h2>
-                    <p class="popup__address text-s">
-                      <img
-                        src="icons/location.svg"
-                        class="popup__address-icon"
-                        alt="Location"
-                      />
-                      המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון דרום,
-                      צפונית לג'נין
-                    </p>
-                    <p class="popup__contact text-s">
-                      <img
-                        src="icons/call.svg"
-                        class="popup__contact-icon"
-                        alt="Phone"
-                      />
-                      04-6582147
-                    </p>
-                    <div class="popup__status-list">
-                      <div class="popup__status">
-                        <span
-                          class="popup__status-indicator popup__status-indicator--active"
-                        ></span>
-                        הולכי רגל
-                      </div>
-                      <div class="popup__status">
-                        <span
-                          class="popup__status-indicator popup__status-indicator--active"
-                        ></span>
-                        כלי רכב
-                      </div>
-                      <div class="popup__status">
-                        <span class="popup__status-indicator"></span>
-                        סחורות
-                      </div>
-                    </div>
-                    <button class="popup__button map-popup-toggler">
-                      <img
-                        src="icons/arrow-up-left-sm.svg"
-                        class="popup__button-icon"
-                        alt="Arrow Up Left"
-                      />
-                    </button>
-                  </div>
-                  <img
-                    class="popup__image"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
-                    alt="מעבר גלבוע"
-                  />
                 </div>
               </div>
             </div>
+
+            <button
+                id="aside-toggler-opened"
+                class="aside-toggler-button aside-toggler-button--shown"
+            >
+              <div class="aside-toggler-button__content hide-tablet-max">
+              <span class="aside-toggler__icon-wrapper">
+                <img
+                    src="icons/arrow-left-strict.svg"
+                    class="aside-toggler__icon"
+                    alt="Arrow Right"
+                />
+              </span>
+              </div>
+            </button>
+
+            <button
+                id="aside-toggler-closed"
+                class="aside-toggler-button aside-toggler-button--closed"
+            >
+              <div
+                  class="aside-toggler-button__content aside-toggler-button__content--rotate-90 hide-tablet-max"
+              >
+                <span class="aside-toggler__text">הצג רשימה</span>
+                <span
+                    class="aside-toggler__icon-wrapper"
+                    style="transform: rotate(90deg)"
+                >
+                <img
+                    src="icons/arrow-left-strict.svg"
+                    class="aside-toggler__icon"
+                    alt="Arrow Left"
+                />
+              </span>
+              </div>
+            </button>
           </div>
 
           <button
-            id="aside-toggler-opened"
-            class="aside-toggler-button aside-toggler-button--shown"
+              id="aside-toggler-opened-mobile"
+              class="aside-toggler-button aside-toggler-button--shown"
           >
-            <div class="aside-toggler-button__content hide-tablet-max">
-              <span class="aside-toggler__icon-wrapper">
-                <img
-                  src="icons/arrow-left-strict.svg"
-                  class="aside-toggler__icon"
-                  alt="Arrow Right"
-                />
-              </span>
-            </div>
-
             <div class="aside-toggler-button__content hide-tablet-min">
               <span class="aside-toggler__icon-wrapper">
                 <img
-                  src="icons/map.svg"
-                  class="aside-toggler__icon"
-                  alt="Map"
+                    src="icons/map.svg"
+                    class="aside-toggler__icon"
+                    alt="Map"
                 />
               </span>
             </div>
           </button>
 
           <button
-            id="aside-toggler-closed"
-            class="aside-toggler-button aside-toggler-button--closed"
+              id="aside-toggler-closed-mobile"
+              class="aside-toggler-button aside-toggler-button--closed"
           >
-            <div
-              class="aside-toggler-button__content aside-toggler-button__content--rotate-90 hide-tablet-max"
-            >
-              <span class="aside-toggler__text">הצג רשימה</span>
-              <span
-                class="aside-toggler__icon-wrapper"
-                style="transform: rotate(90deg)"
-              >
-                <img
-                  src="icons/arrow-left-strict.svg"
-                  class="aside-toggler__icon"
-                  alt="Arrow Left"
-                />
-              </span>
-            </div>
-
             <div class="aside-toggler-button__content hide-tablet-min">
               <span class="aside-toggler__icon-wrapper">
                 <img
-                  src="icons/list.svg"
-                  class="aside-toggler__icon"
-                  alt="List"
+                    src="icons/list.svg"
+                    class="aside-toggler__icon"
+                    alt="List"
                 />
               </span>
             </div>
