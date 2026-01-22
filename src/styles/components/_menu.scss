@@ -8,6 +8,8 @@
   height: 60px;
   z-index: 99;
 
+  --nav-line-color: transparent;
+  --border-height: 2px;
 
   @include tablet-max {
     z-index: 1002;
@@ -139,7 +141,7 @@
       z-index: 1000;
 
 
-      &.is-open{
+      &.is-open {
         transform: translateX(0);
       }
     }
@@ -199,15 +201,12 @@
     gap: 14px;
   }
 
-
-  --nav-line-color: transparent;
-  --border-height: 2px;
-
   .menu__nav-link--white-tag {
     --nav-line-color: var(--white);
   }
 
-  .menu__nav-link--blue-tag, .menu__nav-link--dark-blue-tag  {
+  .menu__nav-link--blue-tag,
+  .menu__nav-link--dark-blue-tag {
     --nav-line-color: var(--white-60);
   }
 
@@ -266,15 +265,15 @@
       }
 
       @include tablet-max {
-          content: "";
-          position: absolute;
-          inset-inline-start: 0;
-          bottom: 0;
-          width: 100%;
-          height: var(--border-height);
-          background-color: var(--nav-line-color);
-          opacity: 1;
-          transition: background-color .2s ease, opacity .2s ease;
+        content: "";
+        position: absolute;
+        inset-inline-start: 0;
+        bottom: 0;
+        width: 100%;
+        height: var(--border-height);
+        background-color: var(--nav-line-color);
+        opacity: 1;
+        transition: background-color .2s ease, opacity .2s ease;
       }
     }
 
@@ -324,9 +323,7 @@
       }
     }
 
-    &:not(.menu__nav-link--with-icon):not(.menu__nav-link--active):not(
-        .menu__nav-link--white-tag
-      ) {
+    &:not(.menu__nav-link--with-icon):not(.menu__nav-link--active):not(.menu__nav-link--white-tag) {
 
       @include tablet-min {
         &:hover {

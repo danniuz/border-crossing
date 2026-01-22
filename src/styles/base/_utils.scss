@@ -60,6 +60,10 @@ html:dir(ltr) {
   transform: rotateY(180deg);
 }
 
+.rotate-x {
+  transform: rotateX(180deg);
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
