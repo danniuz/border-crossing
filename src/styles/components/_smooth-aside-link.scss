@@ -123,5 +123,21 @@
                 transform: translateY(-50%);
             }
         }
+
+
+        &--active {
+            &::after {
+                @include tablet-sm-min {
+                    background-color: var(--cyan-tag);
+                }
+            }
+
+            &:before {
+                @include tablet-sm-min {
+                    background-color: var(--cyan-tag);
+                }
+            }
+        }
     }
+
 }

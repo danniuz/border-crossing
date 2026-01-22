@@ -62,6 +62,30 @@
     }
   }
 
+  &__tag-list-title {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 110%;
+    color: var(--dark-blue);
+
+    margin-top: 22px;
+    margin-bottom: 8px;
+
+    @include desktop-max {
+      margin-top: 34px;
+    }
+
+    @include tablet-max {
+      margin-top: 26px;
+    }
+
+    & + .content-aside__tag-list {
+      margin-top: 0;
+    }
+  }
+
+
   &__tag-item {
     display: flex;
     align-items: center;

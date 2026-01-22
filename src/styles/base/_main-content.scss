@@ -239,6 +239,10 @@ html:dir(rtl) {
         @include desktop-lg-max {
           margin-inline-start: 107px;
         }
+
+        @include tablet-max {
+          margin-inline-start: 16px;
+        }
       }
     }
 
