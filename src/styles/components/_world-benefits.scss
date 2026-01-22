@@ -148,8 +148,13 @@
 
     @include tablet-min {
       margin-bottom: 6px;
-      max-width: 420px;
+      max-width: 492px;
     }
+
+    @include desktop-min {
+      max-width: 536px;
+    }
+
 
     @include desktop-lg-min {
       margin-bottom: 40px;
