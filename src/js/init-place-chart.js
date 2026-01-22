@@ -1,10 +1,13 @@
 // Original data structure
+
+const isMobile = window.innerWidth <= 767;
+
 const originalData = {
-  labels: ['2022', '2023', '2024'],
+  labels: ['אפריל', 'מרץ', 'פברואר', 'ינואר'],
   categories: [
     {
       label: 'Trucks',
-      data: [1222, 570, 2500],
+      data: [1222, 570, 2500, 10065],
       backgroundColor: '#007EA7',
       borderWidth: 0,
       iconPath: new URL(
@@ -14,7 +17,7 @@ const originalData = {
     },
     {
       label: 'Cars',
-      data: [5107, 3965, 10065],
+      data: [5107, 3965, 10065, 6800],
       backgroundColor: '#FFFFFF',
       borderWidth: 0,
       iconPath: new URL(
@@ -24,7 +27,7 @@ const originalData = {
     },
     {
       label: 'People',
-      data: [10924, 13638, 6800],
+      data: [10924, 13638, 6800, 2500],
       backgroundColor: '#5CD6FF',
       borderWidth: 0,
       iconPath: new URL(
@@ -105,6 +108,9 @@ export function initPlaceChart() {
   let loadedIcons = 0;
   const totalIcons = Object.keys(iconImagesMap).length;
 
+  // Track which specific segment is clicked (only relevant for mobile)
+  let clickedSegment = null; // { datasetIndex, dataIndex }
+
   const checkAllIconsLoaded = () => {
     loadedIcons++;
     if (loadedIcons === totalIcons && chartInstance) {
@@ -127,20 +133,52 @@ export function initPlaceChart() {
         if (!meta) return;
 
         meta.data.forEach((barElement, barIndex) => {
+          // On desktop, always show icons
+          if (!isMobile) {
+            const categoryInfo = dataset.categoryInfo[barIndex];
+            if (!categoryInfo) return;
+
+            const icon = iconImagesMap[categoryInfo.iconPath];
+            if (!icon || !icon.complete) return;
+
+            // Position near the end of the bar segment
+            const pos = barElement.tooltipPosition();
+            const iconSize = 30;
+
+            ctx.drawImage(
+              icon,
+              pos.x + iconSize + 6,
+              pos.y - iconSize * 1.4,
+              iconSize,
+              iconSize,
+            );
+            return;
+          }
+
+          // On mobile, only show icon for clicked segment
+          if (
+            !clickedSegment ||
+            clickedSegment.datasetIndex !== datasetIndex ||
+            clickedSegment.dataIndex !== barIndex
+          ) {
+            return;
+          }
+
           const categoryInfo = dataset.categoryInfo[barIndex];
           if (!categoryInfo) return;
 
           const icon = iconImagesMap[categoryInfo.iconPath];
           if (!icon || !icon.complete) return;
 
-          // Position near the end of the bar segment
+          // Position icon inside/near the label on mobile
           const pos = barElement.tooltipPosition();
-          const iconSize = 20; // px
+          const iconSize = 24;
 
+          // Draw icon to the left of the label text
           ctx.drawImage(
             icon,
-            pos.x + 47,
-            pos.y - iconSize * 1.6, // Position above the text
+            pos.x - iconSize - 8,
+            pos.y - iconSize / 2,
             iconSize,
             iconSize,
           );
@@ -170,11 +208,34 @@ export function initPlaceChart() {
           enabled: false,
         },
         datalabels: {
-          display: true,
-          color: '#FFFFFF',
+          display: (context) => {
+            // On desktop, always show labels
+            if (!isMobile) return true;
+
+            // On mobile, only show label for clicked specific segment
+            if (!clickedSegment) return false;
+            return (
+              context.datasetIndex === clickedSegment.datasetIndex &&
+              context.dataIndex === clickedSegment.dataIndex
+            );
+          },
+          color: (context) => {
+            return isMobile ? '#000000' : '#FFFFFF';
+          },
+          backgroundColor: (context) => {
+            if (!isMobile) return null;
+            return 'rgba(242, 244, 245, 0.95)'; // Gray background for mobile
+          },
+          borderRadius: 8,
+          padding: {
+            top: 8,
+            bottom: 8,
+            left: 12,
+            right: 12,
+          },
           font: {
-            size: 14,
-            weight: 'bold',
+            size: 16,
+            weight: 500,
           },
           formatter: (value) => {
             return `${value.toLocaleString()}`;
@@ -197,7 +258,9 @@ export function initPlaceChart() {
             color: '#FFFFFF',
             font: {
               size: 24,
+              weight: 500,
             },
+            padding: 16,
           },
           border: {
             display: false,
@@ -213,11 +276,11 @@ export function initPlaceChart() {
             stepSize: 5000,
             color: '#FFFFFF',
             font: {
-              size: 14,
+              size: 18,
+              weight: 500,
             },
             padding: 0,
             align: 'end',
-
             crossAlign: 'far',
             callback: (value) => {
               // Hide the 0 label but keep the space
@@ -228,8 +291,8 @@ export function initPlaceChart() {
           grid: {
             color: (context) => {
               // Hide the grid line at 0
-              if (context.tick.value === 0) return 'transparent';
-              return 'rgba(255, 255, 255, 0.2)';
+              // if (context.tick.value === 0) return 'transparent';
+              return '#F2F4F5';
             },
             lineWidth: 1,
             drawBorder: false,
@@ -252,8 +315,38 @@ export function initPlaceChart() {
         },
       },
       interaction: {
-        intersect: false,
-        mode: 'index',
+        intersect: true,
+        mode: 'point',
+      },
+      onClick: (event, activeElements) => {
+        if (!isMobile) return; // Only handle clicks on mobile
+
+        if (activeElements && activeElements.length > 0) {
+          const element = activeElements[0];
+          const clickedDatasetIndex = element.datasetIndex;
+          const clickedDataIndex = element.index;
+
+          // Toggle: if clicking the same segment, hide label; otherwise show clicked segment's label
+          if (
+            clickedSegment &&
+            clickedSegment.datasetIndex === clickedDatasetIndex &&
+            clickedSegment.dataIndex === clickedDataIndex
+          ) {
+            clickedSegment = null;
+          } else {
+            clickedSegment = {
+              datasetIndex: clickedDatasetIndex,
+              dataIndex: clickedDataIndex,
+            };
+          }
+
+          // Update the chart to reflect the change
+          chartInstance.update();
+        } else {
+          // Clicked outside bars, hide all labels
+          clickedSegment = null;
+          chartInstance.update();
+        }
       },
     },
     plugins: [iconLabelsPlugin],

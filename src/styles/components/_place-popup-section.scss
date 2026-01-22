@@ -10,20 +10,20 @@
         gap: 16px;
     }
 
-    @include desktop-min {
+    @include desktop-sm-min {
         justify-content: space-between;
         flex-direction: row;
-        gap: 40px;
+        gap: 90px;
     }
 
     &-graph {
         background-color: var(--dark-blue);
-        padding-top: 16px;
+        padding-top: 24px;
         padding-bottom: 0 !important;
         display: flex;
         flex-direction: column;
 
-        @include desktop-min {
+        @include desktop-sm-min {
             padding-top: 40px;
         }
 
@@ -40,13 +40,20 @@
     &-graph__title {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        gap: 0;
+
+        @include desktop-sm-min {
+            gap: 64px;
+        }
     }
 
     &__title {
         width: 100%;
-        max-width: 240px;
         flex-shrink: 0;
+
+        @include desktop-sm-min {
+            max-width: 166px;
+        }
 
         &-text {
             font-family: IBM Plex Sans Hebrew;
@@ -78,7 +85,7 @@
             flex-direction: row;
         }
 
-        @include desktop-min {
+        @include desktop-sm-min {
             max-width: 752px;
         }
     }

@@ -1,8 +1,12 @@
 @use '../base/media' as *;
 
 html:dir(ltr) {
-    .graph__mobile-tag-button {
+    .graph__toggle-filters {
         background-position: right 12px center;
+    }
+
+    .graph-footer__action-button {
+        transform: rotate(180deg);
     }
 }
 
@@ -11,36 +15,80 @@ html:dir(ltr) {
     display: flex;
     position: relative;
     justify-content: space-between;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    height: 64px;
+    padding: 16px;
+    padding-bottom: 16px !important;
 
     @include tablet-min {
-        flex-direction: row;
+        height: 73px;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
     }
 
     &__action-list {
         background-color: var(--gray-tag);
         display: inline-flex;
-        position: absolute;
-        top: 0;
         inset-inline-end: 0;
+        padding: 8px 16px;
+        justify-content: space-between;
+
+        .flat-pagination {
+            align-items: center;
+            display: inline-flex;
+
+            @include desktop-sm-min {
+                display: none;
+            }
+
+            .swiper-pagination-bullet {
+                cursor: pointer;
+            }
+        }
+
+        @include desktop-sm-min {
+            position: absolute;
+            padding: 0;
+            bottom: 73px;
+        }
     }
 
     &__action-button {
-        width: 64px;
-        height: 64px;
+        width: 32px;
+        height: 32px;
         cursor: pointer;
         border: none;
         outline: none;
-        background-color: var(--gray-tag);
+        background-color: var(--cyan-tag);
         display: inline-flex;
         align-items: center;
         justify-content: center;
         transition: background-color 0.3s ease;
 
-        &:hover {
+
+        @include desktop-sm-max {
+            background-color: transparent;
+
+            &:disabled {
+                opacity: 0.5;
+            }
+        }
+
+        @include desktop-sm-min {
+            width: 64px;
+            height: 64px;
             background-color: var(--cyan-tag);
+
+            &:disabled {
+                background-color: #496E87;
+            }
+        }
+
+        // &:hover {
+        //     background-color: var(--cyan-tag);
+        // }
+
+        img {
+            width: 32px;
+            height: 32px;
         }
     }
 
@@ -56,11 +104,14 @@ html:dir(ltr) {
         text-align: right;
         color: var(--dark-blue);
         width: 100%;
-        margin-left: 80px;
         display: inline-flex;
         align-items: center;
         height: 100%;
     }
+}
+
+.graph-dd-filter {
+    max-width: 166px;
 }
 
 .graph {
@@ -68,37 +119,52 @@ html:dir(ltr) {
         display: flex;
         flex-direction: column;
         gap: 24px;
-        display: none;
 
-        @include desktop-min {
+        margin-top: 16px;
+
+        @include desktop-sm-max {
+            max-height: 0;
+            overflow: hidden;
+
+            &.active {
+                max-height: 500px;
+                overflow: visible;
+            }
+        }
+
+        @include desktop-sm-min {
+            max-height: auto;
+            margin-top: 0;
             display: flex;
             margin-bottom: 80px;
             margin-top: 0;
         }
     }
 
-    &__mobile-tag-button {
-        display: inline-block;
+    &__toggle-filters {
+        display: inline-flex;
+        gap: 8px;
         position: absolute;
         top: 0;
         inset-inline-end: 16px;
+        padding-inline-end: 8px;
+        padding-inline-start: 16px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        align-items: center;
         font-family: IBM Plex Sans Hebrew;
         font-weight: 500;
         font-size: 16px;
         line-height: 130%;
         color: var(--dark-blue);
-        padding: 8px 16px;
-        padding-inline-end: 32px;
         background-color: #ECEEF0;
         outline: none;
-        background-image: url("data:image/svg+xml;utf8,<svg width='14' height='8' viewBox='0 0 14 8' xmlns='http://www.w3.org/2000/svg'><path d='M1.06129 6.71777L6.71815 1.06092L12.375 6.71777' stroke='%23003459' stroke-width='1.5' stroke-linecap='square' fill='none'/></svg>");
-
         background-repeat: no-repeat;
         background-position: left 12px center;
         background-size: 14px 8px;
         appearance: none;
 
-        @include desktop-min {
+        @include desktop-sm-min {
             display: none;
         }
     }
@@ -149,7 +215,11 @@ html:dir(ltr) {
 
 .graph__content {
     flex-direction: column;
-    gap: 60px;
+    gap: 8px;
+
+    @include desktop-sm-min {
+        gap: 60px;
+    }
 }
 
 .graph__legend-list {

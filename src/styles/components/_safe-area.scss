@@ -21,6 +21,7 @@ html:dir(ltr) {
 
 .safe-area {
   width: 100%;
+  overflow: hidden;
 
   &__subtitle {
     font-family: IBM Plex Sans Hebrew;

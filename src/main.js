@@ -26,9 +26,10 @@ import { initNavLanguageDropdown } from './js/nav-language-dropdown.js';
 import { initCustomVideoPauseControl } from './js/custom-video-pause-control.js';
 import { initFadeLeft } from './js/fade-left-gsap.js';
 import { initFadeRight } from './js/fade-right-gsap.js';
-import { initAutoScrollTop } from "./js/auto-scroll-top.js";
+import { initAutoScrollTop } from './js/auto-scroll-top.js';
 import { initFooterHighlightWordAnimation } from './js/footer-highlight-word-animation.js';
-import { initMenu } from "./js/init-menu.js";
+import { initMenu } from './js/init-menu.js';
+import { initAsideTogglerAccordion } from './js/aside-toggler.js';
 
 const isRtl = document.documentElement.dir === 'rtl';
 
@@ -95,7 +96,6 @@ initInfographListAnimation();
 initFadeUp('#about-fluid-swiper-wrapper');
 initFadeUp('.fade-up-base');
 
-
 if (isRtl) {
   initFadeUp('#safe-area-sm-image-wrapper', { delay: 0.8 });
   initFadeLeft('#safe-area-lg-image-wrapper', { delay: 0 });
@@ -115,10 +115,18 @@ initScrollableContentToUrl();
 
 initNavLanguageDropdown();
 initHomeStrictTopVideoAnimation();
-initFooterHighlightWordAnimation('#footer-animated-title', { delay: 2.5});
+initFooterHighlightWordAnimation('#footer-animated-title', { delay: 2.5 });
 
-initCustomVideoPauseControl('.long-way-banner', '.long-way-banner__clip', '.custom-video-stop-button');
-initCustomVideoPauseControl('.home__strict-top-wrapper','#home-strict-top-video-to-animate', '#home-strict-top-video-stop-button');
+initCustomVideoPauseControl(
+  '.long-way-banner',
+  '.long-way-banner__clip',
+  '.custom-video-stop-button',
+);
+initCustomVideoPauseControl(
+  '.home__strict-top-wrapper',
+  '#home-strict-top-video-to-animate',
+  '#home-strict-top-video-stop-button',
+);
 
 initNewsSwiperHeaderAnimation();
 initManagerCardAnimation();

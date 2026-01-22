@@ -148,19 +148,15 @@
                 pointer-events: none;
 
                 transition: max-height 0.3s ease-in-out,
-                opacity 0.3s ease-in-out,
-                transform 0.3s ease-in-out;
-            }
-        }
-    }
+                    opacity 0.3s ease-in-out,
+                    transform 0.3s ease-in-out;
 
-    &__header:has(.aside__toggle-filters--active) {
-        @include tablet-max {
-            .aside-filter__wrapper {
-                max-height: 320px;
-                opacity: 1;
-                transform: translateY(0);
-                pointer-events: auto;
+                &.active {
+                    max-height: 320px;
+                    opacity: 1;
+                    transform: translateY(0);
+                    pointer-events: auto;
+                }
             }
         }
     }
@@ -246,13 +242,13 @@
     }
 
 
-    @include tablet-max{
-      position: fixed !important;
-      bottom: 16px !important;
-      inset-inline-end: 16px !important;
-      z-index: 1001 !important;
-      opacity: 1 !important;
-      transform: none !important;
+    @include tablet-max {
+        position: fixed !important;
+        bottom: 16px !important;
+        inset-inline-end: 16px !important;
+        z-index: 1001 !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
 
     &:not(.aside-toggler-button--shown) {
@@ -292,9 +288,9 @@
 }
 
 .aside-toggler-button:not(.aside-toggler-button--shown) {
-  @include tablet-max {
-    display: none;
-  }
+    @include tablet-max {
+        display: none;
+    }
 }
 
 .aside-toggler {
@@ -366,9 +362,8 @@ html:dir(ltr) {
 }
 
 #aside-wrapper:not(.aside__wrapper--opened) {
-  @include tablet-max {
-    transform: translateY(100%) !important;
-    visibility: visible;
-  }
+    @include tablet-max {
+        transform: translateY(100%) !important;
+        visibility: visible;
+    }
 }
-
