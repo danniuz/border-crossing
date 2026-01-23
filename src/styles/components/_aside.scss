@@ -17,20 +17,41 @@
         position: initial;
     }
 
+    @include tablet-max {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
     &__content {
         height: 100%;
+
+        @include tablet-max {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
     }
 
     &__feature-list {
         display: flex;
         flex-direction: column;
         gap: 8px;
-        height: calc(100% - 293px);
         overflow-y: auto;
 
         @include tablet-min {
             gap: 16px;
             height: calc(100% - 244px);
+        }
+
+        @include tablet-max {
+            flex: 1 1 auto;
+            min-height: 0;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+
+            height: auto !important;
         }
     }
 
@@ -47,6 +68,24 @@
             max-width: initial;
             position: absolute;
             transform: translateX(-100%);
+        }
+
+        @include tablet-max {
+            --top-ofset: 100px;
+            //
+            //margin-top: 58px;
+            position: fixed;
+            inset: auto 0 0 0;
+            width: 100%;
+            max-width: 100%;
+            background: #fff;
+            z-index: 1000;
+            overflow: hidden;
+            transform: translateY(100%);
+            transition: transform 0.38s cubic-bezier(0.32, 0.72, 0, 1);
+
+            top: var(--top-ofset) !important;
+            height: calc(100dvh - var(--top-ofset)) !important;
         }
 
         &:not(.aside__wrapper--opened) {
@@ -67,7 +106,19 @@
                 transform: translateX(0);
                 opacity: 1;
             }
+
+            @include tablet-max {
+                transform: translateY(38%);
+            }
         }
+
+        &--full {
+            @include tablet-max {
+                transform: translateY(0);
+                border-radius: 0;
+            }
+        }
+
 
         &--ready {
             transition: transform 0.3s ease-in-out;
@@ -83,6 +134,31 @@
             padding-right: 16px;
             padding-bottom: 24px;
         }
+
+        @include tablet-max {
+            flex: 0 0 auto;
+        }
+
+        .aside-filter__wrapper {
+            @include tablet-max {
+                overflow: hidden;
+                max-height: 0;
+                opacity: 0;
+                transform: translateY(-8px);
+                pointer-events: none;
+
+                transition: max-height 0.3s ease-in-out,
+                    opacity 0.3s ease-in-out,
+                    transform 0.3s ease-in-out;
+
+                &.active {
+                    max-height: 320px;
+                    opacity: 1;
+                    transform: translateY(0);
+                    pointer-events: auto;
+                }
+            }
+        }
     }
 
     &__header-title {
@@ -95,6 +171,43 @@
             font-weight: 400;
             font-size: 60px;
 
+        }
+    }
+
+    &__header-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+
+.aside__toggle-filters {
+    border: none;
+    outline: none;
+    margin: 0;
+    cursor: pointer;
+    background-color: var(--white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: var(--dark-blue);
+    padding: 8px 18px 8px 8px;
+
+
+    @include tablet-min {
+        display: none;
+    }
+
+    &--active {
+        .aside__toggle-filters-icon {
+            transform: rotate(180deg);
         }
     }
 }
@@ -126,6 +239,16 @@
         width: 64px;
         height: 64px;
         display: flex;
+    }
+
+
+    @include tablet-max {
+        position: fixed !important;
+        bottom: 16px !important;
+        inset-inline-end: 16px !important;
+        z-index: 1001 !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
 
     &:not(.aside-toggler-button--shown) {
@@ -161,6 +284,12 @@
         &--rotate-90 {
             rotate: -90deg;
         }
+    }
+}
+
+.aside-toggler-button:not(.aside-toggler-button--shown) {
+    @include tablet-max {
+        display: none;
     }
 }
 
@@ -229,5 +358,12 @@ html:dir(ltr) {
         .aside-toggler__icon {
             transform: rotate(180deg);
         }
+    }
+}
+
+#aside-wrapper:not(.aside__wrapper--opened) {
+    @include tablet-max {
+        transform: translateY(100%) !important;
+        visibility: visible;
     }
 }

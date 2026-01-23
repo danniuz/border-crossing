@@ -1,4 +1,6 @@
 import { initPlaceChart } from './init-place-chart.js';
+import { initDropdowns } from './dropdown-outline.js';
+import { initAsideTogglerAccordion } from './aside-toggler.js';
 
 export function initPlacePopup() {
   const PlacePopupTogglers = document.querySelectorAll('.place-popup-toggler');
@@ -6,6 +8,14 @@ export function initPlacePopup() {
   if (!PlacePopupTogglers?.length) {
     return;
   }
+
+  // setTimeout(() => {
+  //   fetch('place-popup.html')
+  //     .then((response) => response.text())
+  //     .then((html) => {
+  //       showPopup(html);
+  //     });
+  // });
 
   PlacePopupTogglers.forEach((toggler) => {
     toggler.addEventListener('click', () => {
@@ -34,6 +44,12 @@ function showPopup(html) {
   document.body.appendChild(placePopupWrapper);
 
   initPlaceChart();
+  initDropdowns();
+
+  initAsideTogglerAccordion(
+    '.graph__toggle-filters',
+    '.graph__tag-list-wrapper',
+  );
 
   // Trigger the slide-in animation after a small delay to ensure the element is rendered
   requestAnimationFrame(() => {
