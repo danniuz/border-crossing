@@ -150,3 +150,8 @@ function initNewsSwiperHeaderAnimation() {
   initFadeUp('#news-swiper-image-wrapper', { delay: 0.8 });
   initFadeUp('#news-swiper-card', { delay: 1 });
 }
+
+initAsideTogglerAccordion(
+    '.content-aside__toggle-filters',
+    '.content-aside__tag-list-wrapper'
+);
