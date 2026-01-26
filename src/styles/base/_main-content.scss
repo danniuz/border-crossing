@@ -253,6 +253,39 @@ html:dir(rtl) {
       position: relative;
       margin-bottom: 32px;
 
+      &--gray-mobile {
+        .main-content__top-header-underimage-title {
+          display: block;
+          margin: 24px 16px;
+          margin-bottom: 8px;
+        }
+
+        @include tablet-min {
+          .main-content__top-header-underimage-title {
+            display: none;
+          }
+        }
+
+        @include tablet-max {
+          background-color: var(--gray-tag);
+
+          .main-content__top-header-subtitle,
+          .main-content__top-header-title,
+          .main-content__top-header-undertitle,
+          .main-content__top-header-underimage-title {
+            color: var(--dark-blue);
+          }
+
+          .main-content__top-header-undertitle {
+            display: none;
+          }
+
+          &:after {
+            border-top-color: var(--gray-tag) !important;
+          }
+        }
+      }
+
       &--sticky {
         position: sticky;
         top: 0;
