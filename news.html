@@ -218,43 +218,57 @@
       <div class="main-content container">
         <div class="main-content__layout main-content__layout-sm">
           <div class="content-aside content-aside--sticky content-aside--sticky-mobile content-aside--bg-white pb-2">
-            <h2 class="content-aside__title content-aside__title--md">
-              כתבו עלינו
-            </h2>
+            <div class="content-aside__title-wrapper">
+              <h2 class="content-aside__title content-aside__title--md">
+                כתבו עלינו
+              </h2>
 
-            <div class="content-aside__tag-list-title">
-              סינון לפי
+              <button class="content-aside__toggle-filters">
+                <span>סינון</span>
+
+                <img
+                    class="content-aside__toggle-filters-icon"
+                    src="/src/assets/icons/chevron-down-blue.svg"
+                    alt="Dropdown"
+                />
+              </button>
             </div>
 
-            <div class="content-aside__tag-list">
-              <label class="content-aside__tag-item content-aside__tag-item--primary">
-                <input type="checkbox" class="content-aside__tag-checkbox" />
-                <span class="content-aside__tag-text">מעברים</span>
-              </label>
-              <label class="content-aside__tag-item content-aside__tag-item--primary">
-                <input type="checkbox" class="content-aside__tag-checkbox" />
-                <span class="content-aside__tag-text">מעברים</span>
-              </label>
-              <label class="content-aside__tag-item content-aside__tag-item--primary">
-                <input type="checkbox" class="content-aside__tag-checkbox" />
-                <span class="content-aside__tag-text">טכנולוגיה</span>
-              </label>
-              <label class="content-aside__tag-item content-aside__tag-item--primary">
-                <input type="checkbox" class="content-aside__tag-checkbox" />
-                <span class="content-aside__tag-text">טכנולוגיה וחדשנות</span>
-              </label>
-              <label class="content-aside__tag-item content-aside__tag-item--primary">
-                <input type="checkbox" class="content-aside__tag-checkbox" />
-                <span class="content-aside__tag-text">מעברים</span>
-              </label>
-              <label class="content-aside__tag-item content-aside__tag-item--primary">
-                <input type="checkbox" class="content-aside__tag-checkbox" />
-                <span class="content-aside__tag-text">מעברים</span>
-              </label>
-            </div>
+            <div class="content-aside__tag-list-wrapper">
+              <div class="content-aside__tag-list-title">
+                סינון לפי
+              </div>
 
-            <div class="content-aside__clear-filter-wrapper">
-              <button class="content-aside__clear-filter">נקה סינון</button>
+              <div class="content-aside__tag-list">
+                <label class="content-aside__tag-item content-aside__tag-item--primary">
+                  <input type="checkbox" class="content-aside__tag-checkbox" />
+                  <span class="content-aside__tag-text">מעברים</span>
+                </label>
+                <label class="content-aside__tag-item content-aside__tag-item--primary">
+                  <input type="checkbox" class="content-aside__tag-checkbox" />
+                  <span class="content-aside__tag-text">מעברים</span>
+                </label>
+                <label class="content-aside__tag-item content-aside__tag-item--primary">
+                  <input type="checkbox" class="content-aside__tag-checkbox" />
+                  <span class="content-aside__tag-text">טכנולוגיה</span>
+                </label>
+                <label class="content-aside__tag-item content-aside__tag-item--primary">
+                  <input type="checkbox" class="content-aside__tag-checkbox" />
+                  <span class="content-aside__tag-text">טכנולוגיה וחדשנות</span>
+                </label>
+                <label class="content-aside__tag-item content-aside__tag-item--primary">
+                  <input type="checkbox" class="content-aside__tag-checkbox" />
+                  <span class="content-aside__tag-text">מעברים</span>
+                </label>
+                <label class="content-aside__tag-item content-aside__tag-item--primary">
+                  <input type="checkbox" class="content-aside__tag-checkbox" />
+                  <span class="content-aside__tag-text">מעברים</span>
+                </label>
+              </div>
+
+              <div class="content-aside__clear-filter-wrapper">
+                <button class="content-aside__clear-filter">נקה סינון</button>
+              </div>
             </div>
           </div>
 

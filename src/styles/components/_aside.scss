@@ -141,15 +141,17 @@
 
         .aside-filter__wrapper {
             @include tablet-max {
-                overflow: hidden;
                 max-height: 0;
-                opacity: 0;
-                transform: translateY(-8px);
+                overflow: hidden;
                 pointer-events: none;
 
-                transition: max-height 0.3s ease-in-out,
-                    opacity 0.3s ease-in-out,
-                    transform 0.3s ease-in-out;
+                opacity: 0;
+                transform: translateY(-8px);
+
+                transition:
+                        max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                        opacity 0.2s ease,
+                        transform 0.2s ease;
 
                 &.active {
                     max-height: 320px;
@@ -203,12 +205,6 @@
 
     @include tablet-min {
         display: none;
-    }
-
-    &--active {
-        .aside__toggle-filters-icon {
-            transform: rotate(180deg);
-        }
     }
 }
 
