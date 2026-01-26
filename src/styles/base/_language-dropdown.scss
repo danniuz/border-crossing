@@ -23,6 +23,12 @@ html[dir="ltr"] {
   transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
   z-index: 10;
 
+  @include tablet-max {
+    width: 100%;
+    inset-block-start: unset !important;
+    box-shadow: 0px 4px 16px 0px #00000029;
+  }
+
   &--opened {
     opacity: 1;
     visibility: visible;
@@ -38,6 +44,12 @@ html[dir="ltr"] {
     transform: rotate(-45deg);
     opacity: 0;
     transition: opacity 0.2s ease;
+
+    @include tablet-max {
+      top: 17px;
+      width: 16px;
+      height: 16px;
+    }
   }
 
   li {
@@ -59,6 +71,11 @@ html[dir="ltr"] {
         width: 100%;
         height: 1px;
         background-color: var(--dark-blue);
+
+        @include tablet-max {
+          height: 2px;
+          background-color: var(--gray-tag);
+        }
       }
     }
   }
@@ -76,6 +93,7 @@ html[dir="ltr"] {
   direction: ltr !important;
   gap: 4px;
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   text-align: end;
   padding: 11px 16px;
@@ -88,6 +106,11 @@ html[dir="ltr"] {
   line-height: 130%;
   cursor: pointer;
   transition: background-color 0.2s ease;
+
+  @include tablet-max {
+    background: var(--white);
+    height: 51px;
+  }
 
   &:hover {
     color: var(--dark-blue);
