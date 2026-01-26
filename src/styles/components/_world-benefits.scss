@@ -331,6 +331,11 @@
       font-size: 20px;
       line-height: 110%;
 
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+
       @include tablet-min {
         font-size: 18px;
         line-height: 130%;
