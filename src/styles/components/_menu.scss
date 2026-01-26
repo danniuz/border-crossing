@@ -60,6 +60,10 @@
     z-index: 999;
     height: min-content;
 
+    @include tablet-max {
+      inset-inline-start: -1px;
+    }
+
     &--opened {
       visibility: visible;
       opacity: 1;
