@@ -14,7 +14,7 @@ $desktop-xl: 1920px;
 }
 
 @mixin desktop-only {
-  @media (min-width: #{$desktop}) and (max-width: #{$desktop}) {
+  @media (min-width: #{$desktop - 1px}) and (max-width: #{$desktop + 1px}) {
     @content;
   }
 }

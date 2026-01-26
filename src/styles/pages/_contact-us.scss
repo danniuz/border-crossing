@@ -29,6 +29,10 @@ html:dir(ltr) {
     @include desktop-lg-min {
       width: 330px;
     }
+
+    @include desktop-lg-max {
+      position: relative !important;
+    }
   }
 
   &__aside-title {
@@ -68,10 +72,10 @@ html:dir(ltr) {
   }
 
   &__card-col {
-      display: flex;
-      flex-direction: column;
-      gap: 24px !important;
-      min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px !important;
+    min-width: 0;
   }
 
   &__aside-card {

@@ -14,6 +14,10 @@ const originalData = {
         '../assets/icons/chart-truck.svg',
         import.meta.url,
       ).toString(),
+      iconPathMobile: new URL(
+        '../assets/icons/chart-truck--mobile.svg',
+        import.meta.url,
+      ).toString(),
     },
     {
       label: 'Cars',
@@ -24,6 +28,10 @@ const originalData = {
         '../assets/icons/chart-car.svg',
         import.meta.url,
       ).toString(),
+      iconPathMobile: new URL(
+        '../assets/icons/chart-car--mobile.svg',
+        import.meta.url,
+      ).toString(),
     },
     {
       label: 'People',
@@ -32,6 +40,10 @@ const originalData = {
       borderWidth: 0,
       iconPath: new URL(
         '../assets/icons/chart-man.svg',
+        import.meta.url,
+      ).toString(),
+      iconPathMobile: new URL(
+        '../assets/icons/chart-man--mobile.svg',
         import.meta.url,
       ).toString(),
     },
@@ -64,6 +76,7 @@ function transformDataForSortedBars(originalData) {
       value: cat.data[barIndex],
       backgroundColor: cat.backgroundColor,
       iconPath: cat.iconPath,
+      iconPathMobile: cat.iconPathMobile,
       label: cat.label,
     }));
 
@@ -78,6 +91,7 @@ function transformDataForSortedBars(originalData) {
       positionDatasets[posIndex].categoryInfo[barIndex] = {
         categoryIndex: item.categoryIndex,
         iconPath: item.iconPath,
+        iconPathMobile: item.iconPathMobile,
         label: item.label,
       };
     });
@@ -96,12 +110,18 @@ export function initPlaceChart() {
 
   Chart.register(ChartDataLabels);
 
-  // Load all unique icons
+  // Load all unique icons (both desktop and mobile)
   const iconImagesMap = {};
   originalData.categories.forEach((cat) => {
+    // Load desktop icon
     const img = new Image();
     img.src = cat.iconPath;
     iconImagesMap[cat.iconPath] = img;
+
+    // Load mobile icon
+    const imgMobile = new Image();
+    imgMobile.src = cat.iconPathMobile;
+    iconImagesMap[cat.iconPathMobile] = imgMobile;
   });
 
   let chartInstance = null;
@@ -167,17 +187,17 @@ export function initPlaceChart() {
           const categoryInfo = dataset.categoryInfo[barIndex];
           if (!categoryInfo) return;
 
-          const icon = iconImagesMap[categoryInfo.iconPath];
+          const icon = iconImagesMap[categoryInfo.iconPathMobile];
           if (!icon || !icon.complete) return;
 
           // Position icon inside/near the label on mobile
           const pos = barElement.tooltipPosition();
-          const iconSize = 24;
+          const iconSize = 16;
 
-          // Draw icon to the left of the label text
+          // Draw icon to the right of the label text
           ctx.drawImage(
             icon,
-            pos.x - iconSize - 8,
+            pos.x + iconSize + 44,
             pos.y - iconSize / 2,
             iconSize,
             iconSize,
@@ -220,22 +240,23 @@ export function initPlaceChart() {
             );
           },
           color: (context) => {
-            return isMobile ? '#000000' : '#FFFFFF';
+            return isMobile ? '#003459' : '#FFFFFF';
           },
           backgroundColor: (context) => {
             if (!isMobile) return null;
-            return 'rgba(242, 244, 245, 0.95)'; // Gray background for mobile
+            const color = context.dataset.backgroundColor[context.dataIndex];
+            return color;
           },
-          borderRadius: 8,
+          borderRadius: 0,
           padding: {
-            top: 8,
-            bottom: 8,
-            left: 12,
-            right: 12,
+            top: 4,
+            bottom: 4,
+            left: 4,
+            right: 24,
           },
           font: {
-            size: 16,
-            weight: 500,
+            size: 14,
+            weight: 400,
           },
           formatter: (value) => {
             return `${value.toLocaleString()}`;
