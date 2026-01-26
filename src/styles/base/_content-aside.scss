@@ -25,7 +25,7 @@
   &--sticky-mobile {
     @include desktop-max {
       position: sticky;
-      top: 0;
+      top: -1px;
       margin-inline: -12px;
       padding-inline: 12px;
       padding-top: 24px;
