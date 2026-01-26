@@ -232,18 +232,54 @@
               </div>
 
               <div class="menu__nav-item">
-                <a
-                  href="#"
-                  class="menu__nav-link menu__nav-link--white-tag menu__nav-link--with-icon"
+                <button
+                    href="#"
+                    id="nav-language-menu-link"
+                    class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
                 >
                   <span class="menu__nav-link-text">שפות</span>
 
                   <img
-                    src="icons/lang.svg"
-                    class="menu__nav-link-icon"
-                    alt="Language"
+                      src="icons/lang.svg"
+                      class="menu__nav-link-icon"
+                      alt="Language"
                   />
-                </a>
+
+                  <ul
+                      id="nav-language-dropdown"
+                      class="nav-language-dropdown language-dropdown"
+                  >
+                    <li>
+                      <a
+                          href="#"
+                          class="language-dropdown__item language-dropdown__item--active"
+                      >
+                        <span class="language-dropdown__item-sub">HE</span>
+                        <span class="language-dropdown__item-separator">|</span>
+                        <span class="language-dropdown__item-text">עברית</span>
+                      </a>
+                      <img
+                          class="link-icon"
+                          src="icons/arrow-up-left-sm.svg"
+                          alt="Arrow Up Left"
+                      />
+                    </li>
+                    <li>
+                      <a href="#" class="language-dropdown__item">
+                        <span class="language-dropdown__item-sub">EN</span>
+                        <span class="language-dropdown__item-separator">|</span>
+                        <span class="language-dropdown__item-text"
+                        >English</span
+                        >
+                      </a>
+                      <img
+                          class="link-icon"
+                          src="icons/arrow-up-left-sm.svg"
+                          alt="Arrow Up Left"
+                      />
+                    </li>
+                  </ul>
+                </button>
               </div>
             </div>
           </div>
