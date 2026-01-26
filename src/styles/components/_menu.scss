@@ -135,14 +135,26 @@
       height: 100vh;
       width: 100vw;
       display: flex;
+      flex-direction: column;
       gap: 0;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
       transform: translateX(-110%);
       transition: transform .3s ease;
       z-index: 1000;
 
-
       &.is-open {
         transform: translateX(0);
+
+        .menu__nav-item {
+          @include tablet-max {
+            &:first-child {
+              position: sticky;
+              top: 0;
+              z-index: 5;
+            }
+          }
+        }
       }
     }
   }
@@ -400,6 +412,10 @@
 
       @include tablet-min {
         display: none;
+      }
+
+      @include tablet-max {
+        background-color: var(--dark-blue);
       }
     }
 
