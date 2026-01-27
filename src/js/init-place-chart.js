@@ -244,7 +244,8 @@ export function initPlaceChart() {
           },
           backgroundColor: (context) => {
             if (!isMobile) return null;
-            const color = context.dataset.backgroundColor[context.dataIndex];
+            // const color = context.dataset.backgroundColor[context.dataIndex];
+            const color = '#F3F4F5';
             return color;
           },
           borderRadius: 0,

@@ -163,6 +163,8 @@ html:dir(ltr) {
         background-position: left 12px center;
         background-size: 14px 8px;
         appearance: none;
+        outline: none;
+        border: none;
 
         @include desktop-sm-min {
             display: none;
