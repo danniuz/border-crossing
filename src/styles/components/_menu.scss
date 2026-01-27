@@ -2,6 +2,7 @@
 @use "../base/mixins" as mixin;
 
 .menu {
+  position: relative;
   width: 100%;
   inset-inline-start: 16px;
   top: 68px;
@@ -123,6 +124,7 @@
   }
 
   &__nav-wrapper {
+    position: relative;
     display: none;
     margin-top: 8px;
     flex-direction: column;

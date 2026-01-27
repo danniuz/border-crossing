@@ -70,7 +70,7 @@
           </a>
         </div>
 
-        <div class="menu__nav-wrapper">
+        <div class="menu__nav-wrapper" hidden>
 
           <div class="menu__nav-item">
             <a href="#" class="menu__nav-link menu__nav-link--close">
@@ -129,11 +129,14 @@
           </div>
 
           <div class="menu__nav-item">
-            <a href="#" class="menu__nav-link menu__nav-link--white-tag">
+            <button
+                id="nav-search-menu-link"
+                class="menu__nav-link menu__nav-link--white-tag"
+            >
               <span class="menu__nav-link-text">חיפוש</span>
 
               <img src="icons/magnify.svg" class="menu__nav-link-icon ltr-reverse-y" alt="Magnify" />
-            </a>
+            </button>
           </div>
 
           <div class="menu__nav-item">
@@ -152,11 +155,109 @@
             </div>
 
             <div class="menu__nav-item">
-              <a href="#" class="menu__nav-link menu__nav-link--white-tag menu__nav-link--with-icon">
+              <button
+                  href="#"
+                  id="nav-language-menu-link"
+                  class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
+              >
                 <span class="menu__nav-link-text">שפות</span>
 
-                <img src="icons/lang.svg" class="menu__nav-link-icon" alt="Language" />
-              </a>
+                <img
+                    src="icons/lang.svg"
+                    class="menu__nav-link-icon"
+                    alt="Language"
+                />
+
+                <ul
+                    id="nav-language-dropdown"
+                    class="nav-language-dropdown language-dropdown"
+                >
+                  <li>
+                    <a
+                        href="#"
+                        class="language-dropdown__item language-dropdown__item--active"
+                    >
+                      <span class="language-dropdown__item-sub">HE</span>
+                      <span class="language-dropdown__item-separator">|</span>
+                      <span class="language-dropdown__item-text">עברית</span>
+                    </a>
+                    <img
+                        class="link-icon"
+                        src="icons/arrow-up-left-sm.svg"
+                        alt="Arrow Up Left"
+                    />
+                  </li>
+                  <li>
+                    <a href="#" class="language-dropdown__item">
+                      <span class="language-dropdown__item-sub">EN</span>
+                      <span class="language-dropdown__item-separator">|</span>
+                      <span class="language-dropdown__item-text"
+                      >English</span
+                      >
+                    </a>
+                    <img
+                        class="link-icon"
+                        src="icons/arrow-up-left-sm.svg"
+                        alt="Arrow Up Left"
+                    />
+                  </li>
+                </ul>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="nav-search-menu" class="search-menu" hidden>
+          <div class="search-menu__search-wrapper">
+            <div class="search-menu__search-bar">
+              <button class="search-menu__close">
+                <img src="icons/arrow-left-strict.svg" class="search-menu__arrow-icon search-menu__arrow-icon--rotate" alt="">
+              </button>
+
+              <input type="text"  placeholder="חיפוש" class="search-menu__input">
+            </div>
+
+            <img src="icons/magnify.svg" alt="">
+          </div>
+          <div class="search-menu__result-wrapper">
+            <ul class="search-menu__result-list">
+              <li class="search-menu__result-item">
+                <div class="search-menu__result-text-wrapper">
+                  <span class="search-menu__result-text search-menu__result-text--bold">יתר</span>
+                  <span class="search-menu__result-text">מעבר מ</span>
+                </div>
+
+                <img src="icons/arrow-left-strict.svg" class="search-menu__arrow-icon" alt="">
+              </li>
+
+              <li class="search-menu__result-item">
+                <div class="search-menu__result-text-wrapper">
+                  <span class="search-menu__result-text search-menu__result-text--bold">יתר</span>
+                  <span class="search-menu__result-text">מעבר מ</span>
+                </div>
+
+                <img src="icons/arrow-left-strict.svg" class="search-menu__arrow-icon" alt="">
+              </li>
+
+              <li class="search-menu__result-item">
+                <div class="search-menu__result-text-wrapper">
+                  <span class="search-menu__result-text search-menu__result-text--bold">יתר</span>
+                  <span class="search-menu__result-text">מעבר מ</span>
+                </div>
+
+                <img src="icons/arrow-left-strict.svg" class="search-menu__arrow-icon" alt="">
+              </li>
+            </ul>
+          </div>
+
+          <div class="search-menu__filters-wrapper">
+            <div class="search-menu__filters-title">מידע שימושי</div>
+
+            <div class="search-menu__filters-list">
+              <button class="search-menu__filter-item">טיפים לעוברים</button>
+              <button class="search-menu__filter-item">שאלות ותשובות</button>
+              <button class="search-menu__filter-item">כללי התנהגות</button>
+              <button class="search-menu__filter-item">פניות הציבור</button>
             </div>
           </div>
         </div>
