@@ -1,0 +1,59 @@
+.fullscreen-loader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 23, 31, 0.4);
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 9999;
+
+    &.is-active {
+        display: flex;
+        pointer-events: all;
+    }
+}
+
+.loader {
+    --dot-size: 60px;
+    --dot-gap: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--dot-gap);
+    height: 140px;
+}
+
+.loader--small {
+    --dot-size: 24px;
+    --dot-gap: 16px;
+
+    height: 56px;
+}
+
+.dot {
+    width: var(--dot-size);
+    height: var(--dot-size);
+    border-radius: 50%;
+    background: var(--cyan);
+    animation: dot-wave 1.32s infinite;
+    will-change: transform;
+}
+
+.d1 { animation-delay: 0s; }
+.d2 { animation-delay: 0.066s; }
+.d3 { animation-delay: 0.132s; }
+
+@keyframes dot-wave {
+    0% { transform: translateY(0); }
+    19% { transform: translateY(calc(var(--dot-size) * -1)); }
+    44% { transform: translateY(calc(var(--dot-size) * 0.6667)); }
+    62% { transform: translateY(calc(var(--dot-size) * -0.1667)); }
+    77% { transform: translateY(calc(var(--dot-size) * 0.1)); }
+    90% { transform: translateY(0); }
+    100% { transform: translateY(0); }
+}

@@ -47,6 +47,11 @@
         justify-content: center;
         flex: 1;
         flex-shrink: 0;
+
+        img {
+            height: 31px;
+            width: 31px;
+        }
     }
 
     &__error-text {
