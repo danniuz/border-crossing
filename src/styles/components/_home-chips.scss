@@ -75,6 +75,7 @@
             transform: translateX(0);
           }
 
+          .home-chips__item-link-arrow,
           .home-chips__item-link-pointer {
             opacity: 1;
           }
@@ -168,6 +169,7 @@
           width: 64px;
           height: 64px;
           transition: opacity 0.4s ease;
+          opacity: 0;
 
           .arrow-link__icon {
             @include tablet-min {
@@ -177,7 +179,6 @@
           }
 
           &:hover {
-            opacity: 1;
             background-color: var(--cyan-tag);
 
             .arrow-link__icon {
