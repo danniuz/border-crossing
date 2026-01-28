@@ -2,8 +2,8 @@
 
 .aside-filter {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     margin-top: 16px;
 
     @include tablet-min {
@@ -33,6 +33,21 @@
         display: none;
 
         @include tablet-min {
+            display: block;
+        }
+    }
+
+    &__filter-list-title {
+        display: none;
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 110%;
+        color: var(--white);
+        margin-top: 7px;
+        margin-bottom: 7px;
+
+        @include tablet-max {
             display: block;
         }
     }
