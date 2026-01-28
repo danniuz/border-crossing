@@ -5,14 +5,42 @@ export function initMenu() {
 
 	if (!nav || !burger) return;
 
+	const OPEN_CLASS = "is-open";
+
+	const openNav = () => {
+		nav.removeAttribute("hidden");
+
+		requestAnimationFrame(() => {
+			nav.classList.add(OPEN_CLASS);
+		});
+	};
+
+	const closeNav = () => {
+		nav.classList.remove(OPEN_CLASS);
+
+		const onEnd = (e) => {
+			if (e.target !== nav) return;
+			nav.setAttribute("hidden", "");
+			nav.removeEventListener("transitionend", onEnd);
+		};
+
+		nav.addEventListener("transitionend", onEnd);
+	};
+
+	const toggleNav = () => {
+		const isOpen = !nav.hasAttribute("hidden") && nav.classList.contains(OPEN_CLASS);
+		if (isOpen) closeNav();
+		else openNav();
+	};
+
 	const burgerLink = burger.closest("a");
-	burgerLink?.addEventListener("click", (e) => {
+	burgerLink && burgerLink.addEventListener("click", (e) => {
 		e.preventDefault();
-		nav.classList.toggle("is-open");
+		toggleNav();
 	});
 
-	closeBtn?.addEventListener("click", (e) => {
+	closeBtn && closeBtn.addEventListener("click", (e) => {
 		e.preventDefault();
-		nav.classList.remove("is-open");
+		closeNav();
 	});
 }

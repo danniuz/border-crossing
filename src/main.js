@@ -31,6 +31,7 @@ import { initFooterHighlightWordAnimation } from './js/footer-highlight-word-ani
 import { initMenu } from './js/init-menu.js';
 import { initAsideTogglerAccordion } from './js/aside-toggler.js';
 import { initFullscreenLoader, showFullscreenLoader, hideFullscreenLoader } from './js/loader.js';
+import { initNavSearchMenu } from "./js/init-nav-search-menu.js";
 
 const isRtl = document.documentElement.dir === 'rtl';
 
@@ -161,3 +162,4 @@ initFullscreenLoader();
 // showFullscreenLoader();
 // hideFullscreenLoader();
 
+initNavSearchMenu();
