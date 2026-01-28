@@ -4,15 +4,19 @@
 .menu {
   position: relative;
   width: 100%;
-  inset-inline-start: 16px;
   top: 68px;
   height: 60px;
-  z-index: 99;
+  z-index: 9999;
 
   --nav-line-color: transparent;
   --border-height: 2px;
 
+  @include tablet-min {
+    inset-inline-start: 16px;
+  }
+
   @include tablet-max {
+    top: 0;
     z-index: 1002;
   }
 

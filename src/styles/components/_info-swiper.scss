@@ -252,11 +252,7 @@
           justify-content: center;
         }
 
-        @include desktop-lg-min {
-          transform: rotate(-135deg);
-        }
-
-        @include tablet-max {
+        @include desktop-sm-max {
           transform: rotate(225deg);
         }
       }
