@@ -252,9 +252,13 @@
     align-items: center;
     transition: padding-inline-start 0.2s ease-in-out;
 
+    &.active {
+      font-weight: 600;
+    }
 
     @include tablet-max {
       height: 64px;
+      font-size: 18px;
       box-sizing: border-box;
     }
 
