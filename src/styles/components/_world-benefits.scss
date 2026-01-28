@@ -1,4 +1,5 @@
 @use "../base/media" as *;
+@use "../base/mixins" as mixin;
 
 .world-benefits {
   &__wrapper {
@@ -149,10 +150,18 @@
     @include tablet-min {
       margin-bottom: 6px;
       max-width: 492px;
+
+      @include mixin.ltr {
+        max-width: 510px;
+      }
     }
 
     @include desktop-min {
       max-width: 536px;
+
+      @include mixin.ltr {
+        max-width: 610px;
+      }
     }
 
 
