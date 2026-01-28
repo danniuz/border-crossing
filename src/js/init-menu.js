@@ -20,7 +20,6 @@ export function initMenu() {
 
 		const onEnd = (e) => {
 			if (e.target !== nav) return;
-			nav.setAttribute("hidden", "");
 			nav.removeEventListener("transitionend", onEnd);
 		};
 
@@ -28,7 +27,7 @@ export function initMenu() {
 	};
 
 	const toggleNav = () => {
-		const isOpen = !nav.hasAttribute("hidden") && nav.classList.contains(OPEN_CLASS);
+		const isOpen = nav.classList.contains(OPEN_CLASS);
 		if (isOpen) closeNav();
 		else openNav();
 	};
