@@ -54,6 +54,7 @@ html[dir="ltr"] {
     line-height: 100%;
     display: inline-flex;
     padding-inline-start: 8px;
+    white-space: nowrap;
 
     @include tablet-min {
       font-size: 48px;
@@ -138,7 +139,7 @@ html[dir="ltr"] {
       margin-inline-start: 100px;
     }
 
-    @include desktop-sm-min {
+    @include desktop-lg-min {
       margin-inline-start: 308px;
     }
 

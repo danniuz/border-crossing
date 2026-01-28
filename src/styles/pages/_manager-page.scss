@@ -1,0 +1,28 @@
+@use "../base/media" as *;
+
+.manager-page-content {
+  .main-content__page {
+    margin-inline-end: 0;
+
+    @include desktop-only {
+      margin-inline-end: 90px;
+    }
+
+    @include desktop-lg-min {
+      margin-inline-end: 70px;
+    }
+
+    @include desktop-min {
+      margin-inline-end: 64px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 130%;
+
+      @include desktop-min {
+        font-size: 20px;
+      }
+    }
+  }
+}
