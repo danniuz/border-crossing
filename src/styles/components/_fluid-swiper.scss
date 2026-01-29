@@ -61,7 +61,7 @@ html:dir(rtl) {
         font-size: 14px;
         line-height: 110%;
         text-align: start;
-        margin-top: 8px;
+        margin-top: 2px;
         color: var(--dark-blue);
         padding-inline-start: 6px;
 
@@ -106,6 +106,10 @@ html:dir(rtl) {
         position: relative;
         overflow: visible;
         padding-bottom: 48px !important;
+
+        @include tablet-sm-max {
+            padding-bottom: 5px !important;
+        }
     }
 
     &__slide-content {

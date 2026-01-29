@@ -6,7 +6,6 @@
   margin-inline-end: auto;
 
   @include tablet-min {
-    margin-inline-end: 16px;
     max-width: 704px;
   }
 
@@ -28,9 +27,15 @@
 
   &__swiper-wrapper {
     position: relative;
+
+
+    @include desktop-sm-min {
+      padding: 0 16px;
+    }
   }
 
   &__swiper-button-actions {
+    visibility: hidden;
     position: absolute !important;
     height: 40px;
     inset-inline-start: 0;
@@ -44,13 +49,21 @@
     top: 0;
     inset-inline-end: 16px;
 
-    @include tablet-min {
+    @include desktop-sm-min {
       visibility: visible;
-      top: 394px;
+      top: 408px;
     }
 
     @include desktop-min {
-      top: 482px;
+      top: 456px;
+    }
+
+    @include desktop-lg-max {
+      top: 498px;
+    }
+
+    @include desktop-max {
+      top: 405px;
     }
 
     .swiper-button-next,
@@ -71,6 +84,41 @@
     }
   }
 
+  &,
+  &.swiper {
+    @include desktop-sm-min {
+      overflow: hidden !important;
+    }
+  }
+
+  &.swiper {
+    @include desktop-sm-min {
+      --card-headroom: 127px;
+      --card-overlap: 125px;
+      padding-top: calc(var(--card-headroom) + 16px);
+      margin-top: calc(var(--card-headroom) * -1);
+    }
+
+    @include desktop-lg-min {
+      --card-headroom: 125px;
+      --card-overlap: 113px;
+      padding-top: calc(var(--card-headroom) - 26px);
+      margin-top: calc(var(--card-headroom) * -1);
+    }
+  }
+
+  &__slide {
+    position: relative;
+
+    @include desktop-sm-min {
+      padding-bottom: 64px;
+    }
+
+    @include desktop-lg-min {
+      padding-bottom: 64px;
+    }
+  }
+
   &__card {
     background-color: rgba(#fff, 0.9);
     margin: 0 16px;
@@ -78,12 +126,22 @@
     z-index: 10;
     position: relative;
 
-    @include tablet-min {
-      margin: 0;
+    @include desktop-sm-min {
+      position: absolute !important;
+      bottom: 8px;
+      z-index: 10;
+      margin: 0 !important;
+      transform: translateY(calc(var(--card-headroom) * -1));
+      inset-inline-start: 24px;
       max-width: 240px;
-      margin-top: -250px;
-      margin-inline-start: 32px;
     }
+
+    @include desktop-lg-min {
+      max-width: 240px;
+      margin-top: -440px;
+      margin-inline-start: -128px;
+    }
+
 
     &-content {
       padding: 24px 16px 0 16px;

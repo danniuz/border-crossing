@@ -58,6 +58,10 @@
 
 .about-text-swiper-wrapper {
   padding-bottom: 76px;
+
+  @include tablet-sm-max {
+    padding-bottom: 23px;
+  }
 }
 
 .about-text-swiper {

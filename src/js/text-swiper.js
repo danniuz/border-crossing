@@ -49,6 +49,11 @@ export function initTextSwiper(mainSelector, itemClass, options = {}) {
       clickable: true,
     },
 
+    navigation: {
+      nextEl: '.text-swiper-next',
+      prevEl: '.text-swiper-prev',
+    },
+
     on: {
       init: function () {
         if (imageElement) {

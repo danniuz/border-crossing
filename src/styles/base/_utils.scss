@@ -16,6 +16,20 @@
   }
 }
 
+// Hide on tablet sm minimum (720px+)
+.hide-tablet-sm-min {
+  @include tablet-sm-min {
+    display: none !important;
+  }
+}
+
+// Hide on tablet sm maximum (below 720px)
+.hide-tablet-sm-max {
+  @include tablet-max {
+    display: none !important;
+  }
+}
+
 // Hide on tablet minimum (980px+)
 .hide-tablet-min {
   @include tablet-min {
@@ -104,6 +118,14 @@ html:dir(ltr) {
 
 .mt-40 {
   margin-top: 40px;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
+.mt-15 {
+  margin-top: 15px;
 }
 
 .mb-0 {

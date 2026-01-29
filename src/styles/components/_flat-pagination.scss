@@ -3,9 +3,10 @@
 .flat-pagination {
   width: max-content !important;
   inset-inline-start: 0 !important;
-  display: inline-flex;
   gap: 8px;
   top: initial !important;
+
+
 
   .swiper-pagination-bullet {
     opacity: 1;
@@ -21,9 +22,10 @@
   }
 
   &-wrapper {
-    max-width: 704px;
     position: relative;
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     inset-inline-start: 0;
 
     .bt-40 {
@@ -37,5 +39,48 @@
     .bt-34 {
       bottom: -34px !important;
     }
+
+    .swiper-pagination {
+      position: static;
+      width: auto;
+      margin: 0;
+    }
   }
+
+  &__action-button {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: var(--cyan-tag);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+
+
+    @include desktop-sm-max {
+      background-color: transparent;
+
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+
+    @include desktop-sm-min {
+      width: 64px;
+      height: 64px;
+      background-color: var(--cyan-tag);
+
+      &:disabled {
+        background-color: #496E87;
+      }
+    }
+
+    img {
+      width: 25px;
+    }
+  }
+
 }

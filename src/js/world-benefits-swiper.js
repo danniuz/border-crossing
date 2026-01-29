@@ -22,5 +22,10 @@ export function initWorldBenefitsSwiper(mainSelector, options = {}) {
       el: paginationSelector,
       clickable: true,
     },
+
+    navigation: {
+      nextEl: '#world-benefits-swiper-button-next',
+      prevEl: '#world-benefits-swiper-button-prev',
+    },
   });
 }
