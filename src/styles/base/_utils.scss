@@ -25,7 +25,7 @@
 
 // Hide on tablet sm maximum (below 720px)
 .hide-tablet-sm-max {
-  @include tablet-max {
+  @include tablet-sm-max {
     display: none !important;
   }
 }
@@ -40,6 +40,20 @@
 // Hide on tablet maximum (below 980px)
 .hide-tablet-max {
   @include tablet-max {
+    display: none !important;
+  }
+}
+
+// Hide on desktop minimum (1240px+)
+.hide-desktop-sm-min {
+  @include desktop-sm-min {
+    display: none !important;
+  }
+}
+
+// Hide on desktop maximum (below 1240px)
+.hide-desktop-sm-max {
+  @include desktop-sm-max {
     display: none !important;
   }
 }
