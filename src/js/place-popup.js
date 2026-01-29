@@ -9,13 +9,13 @@ export function initPlacePopup() {
     return;
   }
 
-  setTimeout(() => {
-    fetch('place-popup.html')
-      .then((response) => response.text())
-      .then((html) => {
-        showPopup(html);
-      });
-  });
+  // setTimeout(() => {
+  //   fetch('place-popup.html')
+  //     .then((response) => response.text())
+  //     .then((html) => {
+  //       showPopup(html);
+  //     });
+  // });
 
   PlacePopupTogglers.forEach((toggler) => {
     toggler.addEventListener('click', () => {
