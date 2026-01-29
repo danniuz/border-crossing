@@ -78,7 +78,7 @@ html[dir="ltr"] {
     max-width: 305px;
     position: relative;
     min-height: 1.2em;
-    overflow: hidden;
+    overflow: visible;
 
     @include tablet-min {
       font-size: 48px;
