@@ -342,6 +342,14 @@ html:dir(rtl) {
       align-items: stretch;
     }
 
+    &-md {
+      gap: 32px;
+
+      @include tablet-min {
+        gap: 56px;
+      }
+    }
+
     &-sm {
       gap: 24px;
 

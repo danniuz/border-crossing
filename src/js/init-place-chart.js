@@ -2,6 +2,8 @@
 
 const isMobile = window.innerWidth <= 767;
 
+const STEP_SIZE = 5000;
+
 const originalData = {
   labels: ['אפריל', 'מרץ', 'פברואר', 'ינואר'],
   categories: [
@@ -101,6 +103,22 @@ function transformDataForSortedBars(originalData) {
     labels,
     datasets: positionDatasets,
   };
+}
+
+function getMaxYBarHeight(data, stepSize) {
+  const { labels, categories } = data;
+  let maxTotal = 0;
+
+  for (let i = 0; i < labels.length; i++) {
+    const total = categories.reduce((sum, category) => {
+      return sum + category.data[i];
+    }, 0);
+    maxTotal = Math.max(maxTotal, total);
+  }
+
+  const total = (Math.floor(maxTotal / stepSize) + 2) * stepSize;
+
+  return total;
 }
 
 const data = transformDataForSortedBars(originalData);
@@ -231,10 +249,15 @@ export function initPlaceChart() {
           const iconSize = 16;
 
           try {
-            // Draw icon to the right of the label text
+            const isLastBar = barIndex === chart.data.labels.length - 1;
+            const iconX = isLastBar
+              ? pos.x + iconSize - 6
+              : pos.x + iconSize + 44;
+
+            // Draw icon to the right of the label text (or left for last bar)
             ctx.drawImage(
               icon,
-              pos.x + iconSize + 44,
+              iconX,
               pos.y - iconSize / 2,
               iconSize,
               iconSize,
@@ -309,7 +332,13 @@ export function initPlaceChart() {
           anchor: 'end',
           align: 'left',
           textAlign: 'left',
-          offset: -70,
+          offset: (context) => {
+            // On mobile, for the last (rightmost) bar, adjust offset for right alignment
+            if (isMobile && context.dataIndex === data.labels.length - 1) {
+              return -20;
+            }
+            return -70;
+          },
         },
       },
       scales: {
@@ -334,12 +363,12 @@ export function initPlaceChart() {
         },
         y: {
           beginAtZero: true,
-          max: 25000,
+          max: getMaxYBarHeight(originalData, STEP_SIZE) || 20000,
           min: 0,
           stacked: true,
           grace: 0,
           ticks: {
-            stepSize: 5000,
+            STEP_SIZE,
             color: '#FFFFFF',
             font: {
               size: 18,
