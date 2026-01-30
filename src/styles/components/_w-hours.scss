@@ -149,21 +149,13 @@
     &__status {
         display: flex;
         align-items: center;
-        gap: 4px;
-        padding: 6px 10px 6px 7px;
+        padding: 5.5px 12px;
         background-color: #fff;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 110%;
         transition: background-color 0.3s ease;
         width: fit-content;
 
         @include tablet-min {
-            padding: 6px 8px;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 130%;
-            gap: 8px;
+            padding: 7px 16px;;
         }
 
         &--bg-gray {
@@ -172,20 +164,19 @@
     }
 
     &__status-indicator {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background-color: var(--new-red);
-        display: inline-flex;
-        flex-shrink: 0;
+        font-family: IBM Plex Sans Hebrew;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 120%;
 
-        @include tablet-min {
-            width: 10px;
-            height: 10px;
+        @include tablet-sm-max {
+            line-height: 130%;
         }
 
+        color: var(--red-dark);
+
         &--active {
-            background-color: var(--new-green);
+            color: var(--green-dark);
         }
     }
 }

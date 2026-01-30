@@ -66,20 +66,42 @@ export class FeatureItemComponent {
         statusList.className = 'popup__status-list';
 
         const statuses = [
-            { key: 'pedestrians', label: 'הולכי רגל' },
-            { key: 'vehicles', label: 'כלי רכב' },
-            { key: 'merchandise', label: 'סחורות' }
+            {
+                key: 'pedestrians',
+                label: 'פתוח',
+                icon: 'icons/man.svg'
+            },
+            {
+                key: 'vehicles',
+                label: 'סגור',
+                icon: 'icons/car.svg'
+            },
+            {
+                key: 'merchandise',
+                label: 'סגור',
+                icon: 'icons/truck.svg'
+            }
         ];
 
-        statuses.forEach(({ key, label }) => {
+        statuses.forEach(({ key, label, icon }) => {
             const status = document.createElement('div');
             status.className = 'popup__status';
 
-            const indicator = document.createElement('span');
-            indicator.className = `popup__status-indicator ${this.feature.properties.statuses[key] ? 'popup__status-indicator--active' : ''}`;
+            if (this.feature.properties.statuses[key]) {
+                status.classList.add('popup__status--active');
+            }
 
-            status.appendChild(indicator);
-            status.appendChild(document.createTextNode(label));
+            const img = document.createElement('img');
+            img.src = icon;
+            img.className = 'popup__status-icon';
+            img.alt = '';
+
+            const text = document.createElement('span');
+            text.className = 'popup__status-label';
+            text.textContent = label;
+
+            status.appendChild(img);
+            status.appendChild(text);
             statusList.appendChild(status);
         });
 

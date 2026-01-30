@@ -69,6 +69,10 @@
         display: flex;
         flex-direction: row;
         gap: 16px;
+
+        @include tablet-sm-max {
+            gap: 8px;
+        }
     }
 
     &__nav-item {
@@ -85,17 +89,41 @@
     }
 
     &__nav-item-label {
-        font-size: 16px;
-        line-height: 130%;
-        color: var(--dark-blue);
-        padding: 7px 16.5px;
+        padding-block: 6px;
+        padding-inline-start: 6px;
+        padding-inline-end: 14px;
         cursor: pointer;
         border: none;
         outline: none;
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
         background-color: #F2F4F5;
         margin: 0;
         transition: background-color 0.2s ease;
+
+        @include tablet-sm-max {
+            padding-inline-end: 10px;
+        }
+
+        &-icon {
+            width: 28px;
+            height: 28px;
+        }
+
+        &-text {
+            font-family: IBM Plex Sans Hebrew;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 130%;
+            letter-spacing: 0%;
+            color: var(--dark-blue);
+
+            @include tablet-sm-max {
+                font-size: 16px;
+            }
+        }
     }
 
     &__radio-wrapper {

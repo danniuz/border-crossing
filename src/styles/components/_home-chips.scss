@@ -14,20 +14,19 @@
     &__status {
       display: flex;
       align-items: center;
-      gap: 4px;
-      padding: 6px 11px 8px 6px;
+      gap: 5px;
+      padding-block: 6px;
+      padding-inline-start: 4px;
+      padding-inline-end: 10px;
       background-color: #fff;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 110%;
       transition: background-color 0.3s ease;
       width: fit-content;
 
       @include tablet-min {
-        font-size: 16px;
-        line-height: 110%;
-        padding: 6px 16px;
         gap: 8px;
+        padding-block: 5px;
+        padding-inline-start: 4px;
+        padding-inline-end: 10px;
       }
 
       &-list {
@@ -45,20 +44,28 @@
     }
 
     &__status-indicator {
-      width: 5.5px;
-      height: 5.5px;
-      border-radius: 50%;
-      background-color: var(--new-red);
-      display: inline-flex;
-      flex-shrink: 0;
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 120%;
+      color: var(--red-dark);
 
-      @include tablet-min {
-        width: 10px;
-        height: 10px;
+      @include tablet-sm-max {
+        line-height: 130%;
       }
 
       &--active {
-        background-color: var(--new-green);
+        color: var(--green-dark);
+      }
+    }
+
+    &__status-icon {
+      width: 28px;
+      height: 28px;
+
+      @include tablet-sm-max {
+        width: 20px;
+        height: 20px;
       }
     }
 

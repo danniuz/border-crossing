@@ -68,17 +68,17 @@ function createMapboxPopup(feature, map) {
                     ${feature.properties.phoneNumber}
                 </p>
                 <div class="popup__status-list">
-                    <div class="popup__status">
-                        <span class="popup__status-indicator ${feature.properties.statuses.pedestrians ? 'popup__status-indicator--active' : ''}"></span>
-                        הולכי רגל
+                    <div class="popup__status ${feature.properties.statuses.pedestrians ? 'popup__status--active' : ''}">
+                        <img src="icons/man.svg" class="popup__status-icon" alt="">
+                        <span class="popup__status-label">פתוח</span>
                     </div>
-                    <div class="popup__status">
-                        <span class="popup__status-indicator ${feature.properties.statuses.vehicles ? 'popup__status-indicator--active' : ''}"></span>
-                        כלי רכב
+                    <div class="popup__status ${feature.properties.statuses.pedestrians ? 'popup__status--active' : ''}">
+                        <img src="icons/car.svg" class="popup__status-icon" alt="">
+                        <span class="popup__status-label">סגור</span>
                     </div>
-                    <div class="popup__status">
-                        <span class="popup__status-indicator ${feature.properties.statuses.merchandise ? 'popup__status-indicator--active' : ''}"></span>
-                        סחורות
+                    <div class="popup__status ${feature.properties.statuses.pedestrians ? 'popup__status--active' : ''}">
+                        <img src="icons/truck.svg" class="popup__status-icon" alt="">
+                        <span class="popup__status-label">סגור</span>
                     </div>
                 </div>
                 <button class="popup__button">
