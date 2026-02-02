@@ -129,10 +129,7 @@
           </div>
 
           <div class="menu__nav-item">
-            <button
-                id="nav-search-menu-link"
-                class="menu__nav-link menu__nav-link--white-tag"
-            >
+            <button id="nav-search-menu-link" class="menu__nav-link menu__nav-link--white-tag">
               <span class="menu__nav-link-text">חיפוש</span>
 
               <img src="icons/magnify.svg" class="menu__nav-link-icon ltr-reverse-y" alt="Magnify" />
@@ -155,51 +152,28 @@
             </div>
 
             <div class="menu__nav-item">
-              <button
-                  href="#"
-                  id="nav-language-menu-link"
-                  class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
-              >
+              <button href="#" id="nav-language-menu-link"
+                class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon">
                 <span class="menu__nav-link-text">שפות</span>
 
-                <img
-                    src="icons/lang.svg"
-                    class="menu__nav-link-icon"
-                    alt="Language"
-                />
+                <img src="icons/lang.svg" class="menu__nav-link-icon" alt="Language" />
 
-                <ul
-                    id="nav-language-dropdown"
-                    class="nav-language-dropdown language-dropdown"
-                >
+                <ul id="nav-language-dropdown" class="nav-language-dropdown language-dropdown">
                   <li>
-                    <a
-                        href="#"
-                        class="language-dropdown__item language-dropdown__item--active"
-                    >
+                    <a href="#" class="language-dropdown__item language-dropdown__item--active">
                       <span class="language-dropdown__item-sub">HE</span>
                       <span class="language-dropdown__item-separator">|</span>
                       <span class="language-dropdown__item-text">עברית</span>
                     </a>
-                    <img
-                        class="link-icon"
-                        src="icons/arrow-up-left-sm.svg"
-                        alt="Arrow Up Left"
-                    />
+                    <img class="link-icon" src="icons/arrow-up-left-sm.svg" alt="Arrow Up Left" />
                   </li>
                   <li>
                     <a href="#" class="language-dropdown__item">
                       <span class="language-dropdown__item-sub">EN</span>
                       <span class="language-dropdown__item-separator">|</span>
-                      <span class="language-dropdown__item-text"
-                      >English</span
-                      >
+                      <span class="language-dropdown__item-text">English</span>
                     </a>
-                    <img
-                        class="link-icon"
-                        src="icons/arrow-up-left-sm.svg"
-                        alt="Arrow Up Left"
-                    />
+                    <img class="link-icon" src="icons/arrow-up-left-sm.svg" alt="Arrow Up Left" />
                   </li>
                 </ul>
               </button>
@@ -211,10 +185,11 @@
           <div class="search-menu__search-wrapper">
             <div class="search-menu__search-bar">
               <button class="search-menu__close">
-                <img src="icons/arrow-left-strict.svg" class="search-menu__arrow-icon search-menu__arrow-icon--rotate" alt="">
+                <img src="icons/arrow-left-strict.svg" class="search-menu__arrow-icon search-menu__arrow-icon--rotate"
+                  alt="">
               </button>
 
-              <input type="text"  placeholder="חיפוש" class="search-menu__input">
+              <input type="text" placeholder="חיפוש" class="search-menu__input">
             </div>
 
             <img src="icons/magnify.svg" alt="">
@@ -349,7 +324,7 @@
 
               <div id="aside-feature-list" class="aside__feature-list scrollbar-primary">
                 <!-- Feature 1: מעבר אליהו -->
-                <div class="popup popup--aside-feature-item" data-feature-index="0">
+                <a class="popup popup--aside-feature-item place-popup-toggler" data-feature-index="0">
                   <div class="popup__content">
                     <p class="popup__region text-xs">יהודה ושומרון</p>
                     <h2 class="popup__title">מעבר אליהו</h2>
@@ -376,14 +351,14 @@
                         <span class="popup__status-label">סגור</span>
                       </div>
                     </div>
-                    <button class="popup__button place-popup-toggler ltr-reverse-y">
+                    <button class="popup__button ltr-reverse-y">
                       <img src="icons/arrow-up-left-sm.svg" class="popup__button-icon" alt="Arrow Up Left" />
                     </button>
                   </div>
                   <img class="popup__image"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMUwYxiaYtYWqE-5kQLypuZw8BgWMtkU6Q0I4Gw6pOLmWx4QFr9qmJ5YKTTw9JM-o1ZJ4&usqp=CAU"
                     alt="מעבר אליהו" />
-                </div>
+                </a>
 
                 <!-- Feature 2: מעבר גלבוע -->
                 <div class="popup popup--aside-feature-item" data-feature-index="1">
@@ -413,7 +388,7 @@
                         <span class="popup__status-label">סגור</span>
                       </div>
                     </div>
-                    <button class="popup__button map-popup-toggler ltr-reverse-y">EEEEEE
+                    <button class="popup__button map-popup-toggler ltr-reverse-y">
                       <img src="icons/arrow-up-left-sm.svg" class="popup__button-icon" alt="Arrow Up Left" />
                     </button>
                   </div>

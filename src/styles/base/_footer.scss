@@ -47,20 +47,33 @@ html[dir="ltr"] {
     }
   }
 
+  &__title-highlight-word-shadow {
+    color: transparent;
+  }
+
+  &__title-highlight-word-wrapper {
+    position: relative;
+  }
+
+  &__title-highlight-word {
+    left: 0;
+  }
+
+  &__title-highlight-word-shadow,
   &__title-highlight-word {
     font-family: IBM Plex Sans Hebrew;
     font-weight: 400;
     font-size: 32px;
     line-height: 100%;
     display: inline-flex;
-    padding-inline-start: 8px;
+    // padding-inline-start: 8px;
     white-space: nowrap;
 
     @include tablet-min {
       font-size: 48px;
-      padding-inline-start: 16px;
+      // padding-inline-start: 16px;
       line-height: 130%;
-      margin-bottom: 32px;
+      // margin-bottom: 32px;
     }
 
     @include desktop-lg-min {

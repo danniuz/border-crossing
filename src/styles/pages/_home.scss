@@ -5,6 +5,15 @@
   align-items: center;
 }
 
+.home__page-content {
+  &::after {
+    @include tablet-min {
+      display: none !important;
+    }
+
+  }
+}
+
 html:dir(ltr) {
   .home__strict-top-video {
     &:nth-child(1) {
