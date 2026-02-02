@@ -1,14 +1,10 @@
 export function initFooterHighlightWordAnimation(selector, options = {}) {
   const step = 18;
 
-  const {
-    duration = 0.6,
-    ease = 'power2.inOut',
-    delay = 2.5,
-  } = options;
+  const { duration = 0.6, ease = 'power2.inOut', delay = 2.5 } = options;
 
   const parent = document.querySelector(selector);
-  
+
   if (!parent) {
     return;
   }
@@ -18,6 +14,20 @@ export function initFooterHighlightWordAnimation(selector, options = {}) {
   if (words.length === 0) {
     return;
   }
+
+  const shadowWordEl = parent.querySelector(
+    '#footer-animated-title-shadow-word',
+  );
+
+  if (!shadowWordEl) {
+    return;
+  }
+
+  const longestWord = [...words].reduce((curr, wordEl) => {
+    return wordEl.textContent.length > curr.length ? wordEl.textContent : curr;
+  }, '');
+
+  shadowWordEl.textContent = longestWord;
 
   // Set initial positions - all hidden below except first
   gsap.set(words, {
@@ -43,18 +53,26 @@ export function initFooterHighlightWordAnimation(selector, options = {}) {
     const tl = gsap.timeline();
 
     // Reset next word to bottom position FIRST (instant, at the start)
-    tl.set(nextWord, {
-      y: step,
-      opacity: 0,
-    }, 0);
+    tl.set(
+      nextWord,
+      {
+        y: step,
+        opacity: 0,
+      },
+      0,
+    );
 
     // Animate current word up and out (from center to top)
-    tl.to(currentWord, {
-      opacity: 0,
-      y: -step,
-      duration,
-      ease,
-    }, 0);
+    tl.to(
+      currentWord,
+      {
+        opacity: 0,
+        y: -step,
+        duration,
+        ease,
+      },
+      0,
+    );
 
     // Animate next word in from bottom to center (starts slightly before current word finishes)
     tl.to(
@@ -73,7 +91,7 @@ export function initFooterHighlightWordAnimation(selector, options = {}) {
 
   // Start the cycling animation immediately
   const interval = setInterval(animateWords, delay * 1000);
-  
+
   // Store interval on element for cleanup if needed
   parent._animationInterval = interval;
 }

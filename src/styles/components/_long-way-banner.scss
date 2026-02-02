@@ -7,15 +7,6 @@
     display: flex;
     z-index: 1;
 
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: #00000066;
-        z-index: 1;
-        pointer-events: none;
-    }
-
     @include tablet-min {
         padding-top: 0;
         padding-bottom: 0;
@@ -29,6 +20,21 @@
             margin-bottom: -205px;
         }
 
+    }
+
+    &__clip-wrapper {
+        width: 100%;
+        display: flex;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: #00000066;
+            z-index: 1;
+            pointer-events: none;
+        }
     }
 
     &__clip {

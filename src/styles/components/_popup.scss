@@ -171,7 +171,7 @@
             font-size: 16px;
             line-height: 120%;
             letter-spacing: 0%;
-            color:  var(--red-dark);
+            color: var(--red-dark);
 
             @include tablet-sm-max {
                 line-height: 130%;
@@ -242,6 +242,8 @@
     }
 
     &--aside-feature-item {
+        text-decoration: none;
+        color: #003459 !important;
         height: 120px;
         min-height: 120px;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
