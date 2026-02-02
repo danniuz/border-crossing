@@ -218,6 +218,12 @@
   flex-direction: column;
   width: 224px;
 
+  background: linear-gradient(180.4deg, rgba(0, 0, 0, 0) 46.07%, rgba(0, 0, 0, 0.7) 71.84%);
+
+  @include tablet-max {
+    background: linear-gradient(180.4deg, rgba(0, 0, 0, 0) 66.81%, rgba(0, 0, 0, 0.6) 74.03%);
+  }
+
   @include tablet-min {
     width: 180px;
   }
