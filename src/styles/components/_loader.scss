@@ -28,12 +28,21 @@
     height: 140px;
 }
 
-.loader--small {
+.loader--sm {
     --dot-size: 24px;
     --dot-gap: 16px;
 
     height: 56px;
 }
+
+.loader--xs {
+    --dot-size: 6px;
+    --dot-gap: 5.5px;
+
+    height: 38px;
+    width: 38px;
+}
+
 
 .dot {
     width: var(--dot-size);
@@ -42,6 +51,10 @@
     background: var(--cyan);
     animation: dot-wave 1.32s infinite;
     will-change: transform;
+
+    &--purple {
+        background: var(--purple);
+    }
 }
 
 .d1 { animation-delay: 0s; }
