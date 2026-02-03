@@ -155,7 +155,7 @@
 
       &.is-open {
         transform: translateX(0);
-        background: rgba(0, 23, 31, 0.4);
+        background: var(--overlay);
 
         .menu__nav-item {
           @include tablet-max {
