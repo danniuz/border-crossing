@@ -59,7 +59,7 @@
     &__close {
         position: absolute;
         top: 0;
-        left: 0;
+        inset-inline-end: 0;
         background: none;
         border: none;
         cursor: pointer;

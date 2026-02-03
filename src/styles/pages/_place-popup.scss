@@ -19,6 +19,7 @@ html:dir(ltr) {
 .place-popup {
     position: relative;
     z-index: 96;
+
     &__banner-image {
         width: 100%;
         height: 227px;
@@ -36,7 +37,7 @@ html:dir(ltr) {
         top: 110px;
         position: fixed;
         background-color: #fff;
-        z-index: 9999;
+        z-index: 1999;
         height: calc(100% - 106px);
         width: 100%;
         transform: translateX(-100%);
@@ -67,6 +68,7 @@ html:dir(ltr) {
     }
 
     &__close {
+        z-index: 1;
         position: absolute;
         top: 0;
         left: 0;

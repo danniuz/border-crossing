@@ -30,8 +30,12 @@ import { initAutoScrollTop } from './js/auto-scroll-top.js';
 import { initFooterHighlightWordAnimation } from './js/footer-highlight-word-animation.js';
 import { initMenu } from './js/init-menu.js';
 import { initAsideTogglerAccordion } from './js/aside-toggler.js';
-import { initFullscreenLoader, showFullscreenLoader, hideFullscreenLoader } from './js/loader.js';
-import { initNavSearchMenu } from "./js/init-nav-search-menu.js";
+import {
+  initFullscreenLoader,
+  showFullscreenLoader,
+  hideFullscreenLoader,
+} from './js/loader.js';
+import { initNavSearchMenu } from './js/init-nav-search-menu.js';
 
 const isRtl = document.documentElement.dir === 'rtl';
 
@@ -154,8 +158,8 @@ function initNewsSwiperHeaderAnimation() {
 }
 
 initAsideTogglerAccordion(
-    '.content-aside__toggle-filters',
-    '.content-aside__tag-list-wrapper'
+  '.content-aside__toggle-filters',
+  '.content-aside__tag-list-wrapper',
 );
 
 initFullscreenLoader();

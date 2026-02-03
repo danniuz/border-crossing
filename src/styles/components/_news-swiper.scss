@@ -84,12 +84,12 @@
     }
   }
 
-  &,
-  &.swiper {
-    @include desktop-sm-min {
-      overflow: hidden !important;
-    }
-  }
+  // &,
+  // &.swiper {
+  //   @include desktop-sm-min {
+  //     overflow: hidden !important;
+  //   }
+  // }
 
   &.swiper {
     @include desktop-sm-min {

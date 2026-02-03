@@ -60,7 +60,7 @@
       </div>
     </div>
 
-    <div class="page-content">
+    <div class="page-content home__page-content with-triangle-3--bottom with-triangle--white">
       <div class="menu menu--sticky">
         <div class="menu__logo-list">
           <a href="#" class="menu__logo-link">
@@ -416,7 +416,7 @@
                       </div>
 
                       <div class="home-chips__status home-chips__status--bg-gray">
-                        <img src="icons/car.svg" class="home-chips__status-icon"  alt="">
+                        <img src="icons/car.svg" class="home-chips__status-icon" alt="">
                         <span class="home-chips__status-indicator">סגור</span>
                       </div>
 
@@ -453,7 +453,7 @@
                       </div>
 
                       <div class="home-chips__status home-chips__status--bg-gray">
-                        <img src="icons/car.svg" class="home-chips__status-icon"  alt="">
+                        <img src="icons/car.svg" class="home-chips__status-icon" alt="">
                         <span class="home-chips__status-indicator">סגור</span>
                       </div>
 
@@ -490,7 +490,7 @@
                       </div>
 
                       <div class="home-chips__status home-chips__status--bg-gray">
-                        <img src="icons/car.svg" class="home-chips__status-icon"  alt="">
+                        <img src="icons/car.svg" class="home-chips__status-icon" alt="">
                         <span class="home-chips__status-indicator">סגור</span>
                       </div>
 
@@ -527,7 +527,7 @@
                       </div>
 
                       <div class="home-chips__status home-chips__status--bg-gray">
-                        <img src="icons/car.svg" class="home-chips__status-icon"  alt="">
+                        <img src="icons/car.svg" class="home-chips__status-icon" alt="">
                         <span class="home-chips__status-indicator">סגור</span>
                       </div>
 
@@ -719,7 +719,9 @@
       </div>
 
       <div class="long-way-banner long-way-banner--near-footer">
-        <video class="long-way-banner__clip" src="public/videos/lady.mp4" autoplay loop muted playsinline></video>
+        <div class="long-way-banner__clip-wrapper">
+          <video class="long-way-banner__clip" src="public/videos/lady.mp4" autoplay loop muted playsinline></video>
+        </div>
 
         <button class="custom-video-stop-button">
           <img class="stop-icon" src="/src/assets/icons/pause.svg" alt="Stop" />
@@ -751,8 +753,14 @@
 
             <div id="footer-animated-title" class="footer__title">
               This is really sunny day, lucky we are
-              <span class="footer__title-highlight-word">her er re e</span>
-              <span class="footer__title-highlight-word">home er re e</span>
+              <span class="footer__title-highlight-word-wrapper">
+                <span class="footer__title-highlight-word-shadow-wrapper">
+                  <span class="footer__title-highlight-word-shadow" id="footer-animated-title-shadow-word"></span>
+                </span>
+
+                <span class="footer__title-highlight-word">here</span>
+                <span class="footer__title-highlight-word">home er re e</span>
+              </span>
             </div>
 
             <div>
