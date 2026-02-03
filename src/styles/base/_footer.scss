@@ -97,7 +97,7 @@ html[dir="ltr"] {
       font-size: 48px;
       line-height: 130%;
       margin-bottom: 32px;
-      max-width: 500px;
+      max-width: 540px;
       min-height: 1.3em;
     }
 
@@ -157,7 +157,7 @@ html[dir="ltr"] {
     }
 
     @include desktop-lg-min {
-      gap: 160px;
+      gap: 120px;
     }
   }
 
@@ -170,13 +170,14 @@ html[dir="ltr"] {
     }
 
     @include desktop-lg-min {
-      gap: 160px;
+      gap: 120px;
     }
 
     &__list {
       display: flex;
       flex-direction: column;
       gap: 15px;
+      min-width: 220px;
 
       @include tablet-min {
         gap: 24px;

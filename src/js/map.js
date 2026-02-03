@@ -55,7 +55,7 @@ function createMapboxPopup(feature, map) {
   });
 
   const popupHTML = `
-        <div class="popup">
+        <a class="popup popup--map-feature-item">
             <div class="popup__content">
                 <p class="popup__region text-xs">${feature.properties.area}</p>
                 <h2 class="popup__title">${feature.properties.title}</h2>
@@ -86,7 +86,7 @@ function createMapboxPopup(feature, map) {
                 </button>
             </div>
             <img class="popup__image" src="${feature.properties.lobbyImage}" alt="${feature.properties.title}">
-        </div>
+        </a>
     `;
 
   const tooltipPopup = new mapboxgl.Popup({

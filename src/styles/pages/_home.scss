@@ -210,7 +210,13 @@ html:dir(ltr) {
         color: #00171f;
 
         &:hover {
-          color: #00171f;
+          color: #fff !important;
+        }
+      }
+
+      &--c-white {
+        &:hover {
+          color: #00171f !important;
         }
       }
 

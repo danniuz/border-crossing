@@ -53,17 +53,17 @@ html:dir(ltr) {
         }
 
         @include tablet-min {
-            top: 53px;
+            top: 110px;
         }
 
         @include tablet-min {
             max-width: 1240px;
-            height: calc(100% - 53px);
+            height: calc(100% - 110px);
         }
 
         @include desktop-lg-min {
             max-width: 1352px;
-            height: calc(100% - 53px);
+            height: calc(100% - 110px);
         }
     }
 
@@ -76,17 +76,23 @@ html:dir(ltr) {
         border: none;
         cursor: pointer;
         background-color: #fff;
-        width: 64px;
-        height: 64px;
-        display: none;
+        width: 40px;
+        height: 40px;
 
         img {
-            width: 24px;
-            height: 24px;
+            width: 14px;
+            height: 14px;
+
+            @include desktop-sm-min {
+                width: 24px;
+                height: 24px;
+            }
         }
 
         @include desktop-sm-min {
-            display: block;
+            width: 64px;
+            height: 64px;
+            top: 0;
         }
     }
 
