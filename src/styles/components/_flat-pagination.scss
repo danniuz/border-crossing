@@ -1,4 +1,5 @@
 @use "../base/media" as *;
+@use "../base/mixins" as mixin;
 
 .flat-pagination {
   width: max-content !important;
@@ -58,6 +59,10 @@
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s ease;
+
+    @include mixin.ltr {
+      transform: rotateY(180deg);
+    }
 
 
     @include desktop-sm-max {

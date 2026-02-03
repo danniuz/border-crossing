@@ -274,7 +274,7 @@ html[dir="ltr"] {
 
       @media (max-width: 400px) {
         @include mixin.ltr {
-          gap: 5px;
+          gap: 0;
         }
       }
 

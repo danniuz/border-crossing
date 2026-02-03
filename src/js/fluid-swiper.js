@@ -19,9 +19,10 @@ export function initFluidSwiper(mainSelector, options = {}) {
 
   const slides = slideWrapper.querySelectorAll('.swiper-slide');
   const slideCount = slides.length;
+  const shouldLoop = window.innerWidth > 992;
 
   // Clone slides until we have at least 6
-  if (slideCount < 6) {
+  if (shouldLoop && slideCount < 6) {
     const originalSlides = Array.from(slides);
     const clonesToAdd = 6 - slideCount;
 
@@ -33,7 +34,7 @@ export function initFluidSwiper(mainSelector, options = {}) {
 
   const swiper = new Swiper(mainSelector, {
     direction: 'horizontal',
-    loop: true,
+    loop: shouldLoop,
     speed: 600,
     slidesPerView: '1',
     spaceBetween: 8,
@@ -61,7 +62,7 @@ export function initFluidSwiper(mainSelector, options = {}) {
 
     breakpoints: {
       991: {
-        loop: true,
+        loop: shouldLoop,
         slidesPerView: 'auto',
         centeredSlides: true,
         spaceBetween: 30,
