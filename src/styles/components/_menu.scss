@@ -11,28 +11,28 @@
   --nav-line-color: transparent;
   --border-height: 2px;
 
-  @include tablet-min {
+  @include mobile-menu-res-min {
     inset-inline-start: 16px;
   }
 
-  @include tablet-max {
+  @include mobile-menu-res-max {
     top: 0;
     z-index: 8888;
   }
 
   &--sticky {
-    @include tablet-min {
+    @include mobile-menu-res-min {
       position: sticky !important;
       height: 0 !important;
     }
   }
 
   &--non-sticky {
-    @include tablet-min {
+    @include mobile-menu-res-min {
       top: 20px;
     }
 
-    @include tablet-max {
+    @include mobile-menu-res-max {
       top: 0;
       left: 0;
       right: 0;
@@ -40,7 +40,7 @@
     }
   }
 
-  @include tablet-min {
+  @include mobile-menu-res-min {
     width: 168px;
     position: absolute;
     height: min-content;
@@ -53,7 +53,7 @@
     background-color: var(--dark-blue);
     height: 100%;
 
-    @include tablet-min {
+    @include mobile-menu-res-min {
       height: initial;
     }
   }
@@ -65,7 +65,7 @@
     z-index: 999;
     height: min-content;
 
-    @include tablet-max {
+    @include mobile-menu-res-max {
       inset-inline-start: -1px;
     }
 
@@ -86,17 +86,17 @@
     align-items: center;
     gap: 8px;
 
-    @include tablet-min {
+    @include mobile-menu-res-min {
       flex-direction: column;
       align-items: flex-start;
     }
 
-    @include tablet-max {
+    @include mobile-menu-res-max {
       flex: unset;
     }
 
     &--mobile {
-      @include tablet-min {
+      @include mobile-menu-res-min {
         display: none;
       }
     }
@@ -105,7 +105,7 @@
   &__logo-image {
     width: 28px;
 
-    @include tablet-min {
+    @include mobile-menu-res-min {
       height: 56px;
       width: auto;
     }
@@ -118,7 +118,7 @@
     color: #fff;
     max-width: 65px;
 
-    @include tablet-min {
+    @include mobile-menu-res-min {
       max-width: auto;
       font-size: 8px;
       line-height: 10px;
@@ -134,11 +134,11 @@
     flex-direction: column;
     gap: 8px;
 
-    @include tablet-min {
+    @include mobile-menu-res-min {
       display: flex;
     }
 
-    @include tablet-max {
+    @include mobile-menu-res-max {
       position: fixed;
       top: -8px;
       left: 0;
@@ -157,7 +157,7 @@
         transform: translateX(0);
 
         .menu__nav-item {
-          @include tablet-max {
+          @include mobile-menu-res-max {
             &:first-child {
               position: sticky;
               top: 0;
@@ -173,7 +173,7 @@
     display: flex;
     gap: 8px;
 
-    @include tablet-min {
+    @include mobile-menu-res-min {
       .menu__nav-link {
         justify-content: center !important;
       }
@@ -183,7 +183,7 @@
       }
     }
 
-    @include tablet-max {
+    @include mobile-menu-res-max {
       gap: 0;
 
       .menu__nav-item {
@@ -206,7 +206,7 @@
   &__nav-link {
     box-shadow: 0px 9px 23px -10px rgba(0, 0, 0, 0.67);
 
-    @include tablet-max {
+    @include mobile-menu-res-max {
       box-shadow: none;
     }
   }
@@ -260,7 +260,7 @@
       font-weight: 600;
     }
 
-    @include tablet-max {
+    @include mobile-menu-res-max {
       height: 64px;
       font-size: 18px;
       box-sizing: border-box;
@@ -278,7 +278,7 @@
     }
 
     &:after {
-      @include tablet-min {
+      @include mobile-menu-res-min {
         content: "";
         position: absolute;
         width: 100%;
@@ -290,7 +290,7 @@
         transition: opacity 0.2s ease-in-out;
       }
 
-      @include tablet-max {
+      @include mobile-menu-res-max {
         content: "";
         position: absolute;
         inset-inline-start: 0;
@@ -309,7 +309,7 @@
       }
     }
 
-    @include tablet-max {
+    @include mobile-menu-res-max {
       transition: none;
       padding-inline-start: 20px;
       padding-inline-end: 20px;
@@ -351,7 +351,7 @@
 
     &:not(.menu__nav-link--with-icon):not(.menu__nav-link--active):not(.menu__nav-link--white-tag) {
 
-      @include tablet-min {
+      @include mobile-menu-res-min {
         &:hover {
           padding-inline-start: 30px;
 
@@ -424,11 +424,11 @@
       color: #fff;
       box-shadow: 0px 4px 4px 0px #00000029;
 
-      @include tablet-min {
+      @include mobile-menu-res-min {
         display: none;
       }
 
-      @include tablet-max {
+      @include mobile-menu-res-max {
         background-color: var(--dark-blue);
       }
     }

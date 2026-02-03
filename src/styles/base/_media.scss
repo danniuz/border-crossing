@@ -7,6 +7,8 @@ $desktop: 1440px;
 $desktop-lg: 1580px;
 $desktop-xl: 1920px;
 
+$mobile-menu-res: 1240px;
+
 @mixin desktop-xl-min {
   @media (min-width: #{$desktop-xl}) {
     @content;
@@ -49,6 +51,12 @@ $desktop-xl: 1920px;
   }
 }
 
+@mixin mobile-menu-res-min {
+  @media (min-width: #{$desktop-sm + 1px}) {
+    @content;
+  }
+}
+
 @mixin tablet-lg-min {
   @media (min-width: #{$tablet-lg + 1px}) {
     @content;
@@ -62,6 +70,12 @@ $desktop-xl: 1920px;
 }
 
 @mixin desktop-sm-max {
+  @media (max-width: #{$desktop-sm}) {
+    @content;
+  }
+}
+
+@mixin mobile-menu-res-max {
   @media (max-width: #{$desktop-sm}) {
     @content;
   }

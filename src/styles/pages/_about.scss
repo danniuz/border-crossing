@@ -3,7 +3,7 @@
 .about {
   &__top-wrapper {
     // min-height: 810px;
-    height: 740px;
+    height: 780px;
 
     @include tablet-max {
       position: relative;
@@ -19,7 +19,7 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 740px;
+        height: 768px;
         background-color: var(--dark-blue);
         z-index: 0;
         pointer-events: none;
@@ -30,7 +30,7 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        top: 740px;
+        top: 768px;
         width: 0;
         height: 0;
         border-left: 50vw solid transparent;
@@ -40,7 +40,7 @@
         pointer-events: none;
       }
 
-      > * {
+      >* {
         position: relative;
         z-index: 1;
       }

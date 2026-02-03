@@ -12,6 +12,12 @@
     }
 }
 
+.popup--map-feature-item {
+    display: block;
+    text-decoration: none;
+    color: #003459 !important;
+}
+
 .mapboxgl-popup-content {
     padding: 0;
 }

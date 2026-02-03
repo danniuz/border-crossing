@@ -3,6 +3,12 @@
 .video-popup {
     height: 100%;
 
+    &__video {
+        width: 100%;
+        max-height: 608px;
+        height: 100%;
+    }
+
     &__wrapper {
         inset-inline-end: 0;
         position: fixed;
