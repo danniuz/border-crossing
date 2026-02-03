@@ -6,9 +6,19 @@ export function initMenu() {
 	if (!nav || !burger) return;
 
 	const OPEN_CLASS = "is-open";
+	const SCROLL_LOCK_CLASS = "is-scroll-locked";
+
+	const lockScroll = () => {
+		document.body.classList.add(SCROLL_LOCK_CLASS);
+	};
+
+	const unlockScroll = () => {
+		document.body.classList.remove(SCROLL_LOCK_CLASS);
+	};
 
 	const openNav = () => {
 		nav.removeAttribute("hidden");
+		lockScroll();
 
 		requestAnimationFrame(() => {
 			nav.classList.add(OPEN_CLASS);
@@ -21,6 +31,7 @@ export function initMenu() {
 		const onEnd = (e) => {
 			if (e.target !== nav) return;
 			nav.removeEventListener("transitionend", onEnd);
+			unlockScroll();
 		};
 
 		nav.addEventListener("transitionend", onEnd);

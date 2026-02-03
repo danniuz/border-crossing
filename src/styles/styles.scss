@@ -9,6 +9,11 @@ html {
   overflow-x: hidden;
 }
 
+body.is-scroll-locked {
+  overflow: hidden;
+  touch-action: none;
+}
+
 .wrapper {
   transition: opacity 0.6s ease-in-out;
   display: flex;

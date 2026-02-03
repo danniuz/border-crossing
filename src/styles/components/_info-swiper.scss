@@ -251,10 +251,6 @@
           align-items: center;
           justify-content: center;
         }
-
-        @include desktop-sm-max {
-          transform: rotate(225deg);
-        }
       }
 
       &-text {
