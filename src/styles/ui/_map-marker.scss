@@ -55,6 +55,7 @@
     &--selected {
         width: 18px;
         height: 18px;
+        background-color: var(--cyan);
 
         &:before {
             content: '';
@@ -64,7 +65,7 @@
             width: 31px;
             height: 31px;
             background-color: transparent;
-            border: 1px solid var(--cyan);
+            border: 1px solid white;
             transform: translate(-50%, -50%);
             border-radius: 50%;
         }

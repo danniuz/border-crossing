@@ -152,7 +152,7 @@ html[dir="ltr"] {
       margin-inline-start: 100px;
     }
 
-    @include desktop-lg-min {
+    @include desktop-sm-min {
       margin-inline-start: 308px;
     }
 
@@ -177,11 +177,12 @@ html[dir="ltr"] {
       display: flex;
       flex-direction: column;
       gap: 15px;
-      min-width: 220px;
+      min-width: min-content;
 
       @include tablet-min {
         gap: 24px;
         padding-top: 40px;
+        min-width: 220px;
       }
 
       @include desktop-lg-min {
