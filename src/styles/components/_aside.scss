@@ -65,7 +65,7 @@
         max-width: 0;
 
         @include tablet-min {
-            z-index: 99000;
+            z-index: 800;
             max-width: initial;
             position: absolute;
             transform: translateX(-100%);
