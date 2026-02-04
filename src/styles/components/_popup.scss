@@ -1,4 +1,5 @@
 @use '../base/media' as *;
+@use "../base/mixins" as mixin;
 
 .mapboxgl-popup {
     width: 343px;
@@ -168,6 +169,10 @@
             @include tablet-sm-max {
                 width: 20px;
                 height: 20px;
+            }
+
+            @include mixin.ltr {
+                transform: rotateY(180deg);
             }
         }
 
