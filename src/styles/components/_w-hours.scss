@@ -18,6 +18,11 @@
             padding-inline-start: 16px;
             padding-inline-end: 16px;
         }
+
+        &-icon {
+            // height: 64px;
+            // margin-bottom: 8px;
+        }
     }
 
     &__header {
@@ -33,6 +38,7 @@
         width: 100%;
         display: none;
         align-items: center;
+        margin-bottom: 8px;
 
         @include tablet-sm-min {
             display: inline-flex;
@@ -162,7 +168,8 @@
         width: fit-content;
 
         @include tablet-min {
-            padding: 7px 16px;;
+            padding: 7px 16px;
+            ;
         }
 
         &--bg-gray {
