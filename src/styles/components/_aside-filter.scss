@@ -1,4 +1,5 @@
 @use '../base/media' as *;
+@use "../base/mixins" as mixin;
 
 .aside-filter {
     display: flex;
@@ -110,6 +111,10 @@
         &-icon {
             width: 28px;
             height: 28px;
+
+            @include mixin.ltr {
+                transform: rotateY(180deg);
+            }
         }
 
         &-text {

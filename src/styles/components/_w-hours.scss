@@ -1,4 +1,5 @@
 @use '../base/media' as *;
+@use "../base/mixins" as mixin;
 
 .w-hours {
     &__item {
@@ -35,6 +36,12 @@
 
         @include tablet-sm-min {
             display: inline-flex;
+        }
+    }
+
+    &__item-icon {
+        @include mixin.ltr {
+            transform: rotateY(180deg);
         }
     }
 

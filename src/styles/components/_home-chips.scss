@@ -1,4 +1,5 @@
 @use "../base/media" as *;
+@use "../base/mixins" as mixin;
 
 .main-content__section {
   .home-chips {
@@ -62,6 +63,10 @@
     &__status-icon {
       width: 28px;
       height: 28px;
+
+      @include mixin.ltr {
+        transform: rotateY(180deg);
+      }
 
       @include tablet-sm-max {
         width: 20px;
