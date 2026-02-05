@@ -44,11 +44,11 @@
 
     @include desktop-sm-min {
       visibility: visible;
-      top: 413px;
+      top: 435px;
     }
 
     @include desktop-lg-min {
-      top: 456px;
+      top: 480px;
     }
   }
 
@@ -65,26 +65,15 @@
     }
   }
 
-  // &,
-  // &.swiper {
-  //   @include desktop-sm-min {
-  //     overflow: hidden !important;
-  //   }
-  // }
-
   &.swiper {
     @include desktop-sm-min {
-      --card-headroom: 127px;
-      --card-overlap: 125px;
-      padding-top: calc(var(--card-headroom) + 16px);
-      margin-top: calc(var(--card-headroom) * -1);
+      padding-top: 120px;
+      margin-top: -80px;
     }
 
     @include desktop-lg-min {
-      --card-headroom: 125px;
-      --card-overlap: 113px;
-      padding-top: calc(var(--card-headroom) - 18px);
-      margin-top: calc(var(--card-headroom) * -1);
+      padding-top: 100px;
+      margin-top: -100px;
     }
   }
 
@@ -108,11 +97,11 @@
 
     @include desktop-sm-min {
       position: absolute !important;
-      bottom: calc(var(--card-overlap) * -1);
+      bottom: 0 !important;
       z-index: 10;
       margin: 0 !important;
-      transform: translateY(calc(var(--card-headroom) * -1));
-      inset-inline-start: 24px;
+      transform: none !important;
+      inset-inline-start: 24px !important;
       max-width: 240px;
     }
 
