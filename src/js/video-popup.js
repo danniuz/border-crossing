@@ -10,7 +10,6 @@ const unlockScroll = () => {
 
 export function initVideoPopup(open = false) {
   const PlacePopupTogglers = document.querySelectorAll('.video-popup-toggler');
-
   if (!PlacePopupTogglers?.length) {
     return;
   }
