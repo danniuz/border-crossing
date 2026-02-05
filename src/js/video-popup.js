@@ -1,3 +1,13 @@
+const SCROLL_LOCK_CLASS = 'is-scroll-locked';
+
+const lockScroll = () => {
+  document.body.classList.add(SCROLL_LOCK_CLASS);
+};
+
+const unlockScroll = () => {
+  document.body.classList.remove(SCROLL_LOCK_CLASS);
+};
+
 export function initVideoPopup(open = false) {
   const PlacePopupTogglers = document.querySelectorAll('.video-popup-toggler');
 
@@ -38,6 +48,8 @@ function showPopup(html) {
 
   document.body.appendChild(placePopupWrapper);
 
+  lockScroll();
+
   requestAnimationFrame(() => {
     placePopupWrapper.classList.add('video-popup__wrapper--open');
   });
@@ -45,7 +57,7 @@ function showPopup(html) {
   const closeButtons = [placePopupWrapper.querySelector('.video-popup__close')];
 
   closeButtons.forEach((button) => {
-    button.addEventListener('click', () => {
+    button?.addEventListener('click', () => {
       closePopup(placePopupWrapper);
     });
   });
@@ -56,10 +68,16 @@ function closePopup(popupElement) {
   popupElement.classList.remove('video-popup__wrapper--open');
   popupElement.classList.add('video-popup__wrapper--closing');
 
-  // Remove the element after animation completes
-  setTimeout(() => {
+  const onEnd = (e) => {
+    if (e.target !== popupElement) return;
+    popupElement.removeEventListener('transitionend', onEnd);
+
+    unlockScroll();
+
     if (popupElement.parentNode) {
       popupElement.remove();
     }
-  }, 300); // Match the CSS transition duration
+  };
+
+  popupElement.addEventListener('transitionend', onEnd);
 }
