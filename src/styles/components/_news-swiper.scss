@@ -5,6 +5,7 @@
   width: 100%;
   margin-inline-end: auto;
 
+
   @include tablet-min {
     max-width: 704px;
   }
@@ -39,7 +40,6 @@
     position: absolute !important;
     height: 40px;
     inset-inline-start: 0;
-    visibility: hidden;
     margin-inline-start: auto;
     gap: 8px;
     position: relative;
@@ -55,7 +55,7 @@
     }
 
     @include desktop-min {
-      top: 456px;
+      top: 480px;
     }
 
     @include desktop-lg-max {
@@ -84,26 +84,15 @@
     }
   }
 
-  // &,
-  // &.swiper {
-  //   @include desktop-sm-min {
-  //     overflow: hidden !important;
-  //   }
-  // }
-
   &.swiper {
     @include desktop-sm-min {
-      --card-headroom: 127px;
-      --card-overlap: 125px;
-      padding-top: calc(var(--card-headroom) + 16px);
-      margin-top: calc(var(--card-headroom) * -1);
+      padding-top: 120px;
+      margin-top: -80px;
     }
 
     @include desktop-lg-min {
-      --card-headroom: 125px;
-      --card-overlap: 113px;
-      padding-top: calc(var(--card-headroom) - 26px);
-      margin-top: calc(var(--card-headroom) * -1);
+      padding-top: 100px;
+      margin-top: -100px;
     }
   }
 
@@ -128,20 +117,17 @@
 
     @include desktop-sm-min {
       position: absolute !important;
-      bottom: 8px;
-      z-index: 10;
+      bottom: 8px !important;
+      inset-inline-start: 24px !important;
+      max-width: 240px !important;
+      transform: none !important;
       margin: 0 !important;
-      transform: translateY(calc(var(--card-headroom) * -1));
-      inset-inline-start: 24px;
-      max-width: 240px;
     }
 
     @include desktop-lg-min {
-      max-width: 240px;
-      margin-top: -440px;
-      margin-inline-start: -128px;
+      inset-inline-start: 32px !important;
+      max-width: 280px !important;
     }
-
 
     &-content {
       padding: 24px 16px 0 16px;
@@ -257,3 +243,4 @@
     }
   }
 }
+
