@@ -1,6 +1,7 @@
 import { initPlaceChart } from './init-place-chart.js';
 import { initDropdowns } from './dropdown-outline.js';
 import { initAsideTogglerAccordion } from './aside-toggler.js';
+import { initVideoPopup } from './video-popup.js';
 
 export function initPlacePopup() {
   const PlacePopupTogglers = document.querySelectorAll('.place-popup-toggler');
@@ -45,6 +46,7 @@ function showPopup(html) {
 
   initPlaceChart();
   initDropdowns();
+  initVideoPopup();
 
   initAsideTogglerAccordion(
     '.graph__toggle-filters',
