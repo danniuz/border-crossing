@@ -33,6 +33,10 @@ html:dir(ltr) {
     @include desktop-lg-max {
       position: relative !important;
     }
+
+    @include tablet-max {
+      width: 100%;
+    }
   }
 
   &__aside-title {
@@ -68,6 +72,10 @@ html:dir(ltr) {
       grid-template-columns: 330px 1fr;
       gap: 24px;
       align-items: start;
+    }
+
+    @include tablet-min {
+      //grid-template-columns: 330px 1fr;
     }
   }
 
