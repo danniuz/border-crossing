@@ -405,8 +405,10 @@ export function initPlaceChart() {
       },
       datasets: {
         bar: {
-          barThickness: 16,
-          maxBarThickness: 16,
+          barThickness: isMobile ? 'flex' : 16,
+          maxBarThickness: isMobile ? 16 : 16,
+          barPercentage: isMobile ? 0.8 : 1.0,
+          categoryPercentage: isMobile ? 0.9 : 1.0,
         },
       },
       interaction: {

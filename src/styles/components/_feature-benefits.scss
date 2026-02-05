@@ -46,6 +46,9 @@
             }
 
             &-icon {
+                width: 48px;
+                height: 48px;
+
                 @include tablet-min {
                     width: 60px;
                     height: 60px;
@@ -58,6 +61,11 @@
                 font-size: 20px;
                 line-height: 110%;
                 color: var(--dark-blue);
+
+                @include tablet-min {
+                    font-size: 24px;
+                    line-height: 120%;
+                }
             }
         }
 
@@ -160,7 +168,7 @@
 
 
                 &>p,
-                & > p * ,
+                &>p *,
                 &-title {
                     font-family: IBM Plex Sans Hebrew;
                     font-weight: 500;

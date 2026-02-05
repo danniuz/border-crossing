@@ -257,3 +257,19 @@ html:dir(ltr) {
         background-color: var(--cyan-tag);
     }
 }
+
+.graph__chart {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    height: 400px;
+
+    @include desktop-sm-min {
+        height: 600px;
+    }
+
+    canvas {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+}

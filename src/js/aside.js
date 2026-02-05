@@ -19,7 +19,7 @@ export function initAside({ opened }) {
     },
   };
 
-  const featureList = document.getElementById('aside-feature-list');
+  const featureList = document.getElementById('aside-feature-list-wrapper');
 
   if (
     !ui.desktop.open ||
