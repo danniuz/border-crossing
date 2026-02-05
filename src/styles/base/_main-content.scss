@@ -31,8 +31,15 @@
   object-fit: cover;
   height: 210px;
 
+
   @include tablet-min {
     height: 320px;
+  }
+
+  &--mobile {
+    @media (max-width: 576px) {
+      height: auto;
+    }
   }
 
   &-img {
@@ -46,6 +53,7 @@
     }
   }
 }
+
 
 .main-content__contact-us-page {
   @include desktop-lg-min {
