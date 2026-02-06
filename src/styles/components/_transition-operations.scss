@@ -1,4 +1,5 @@
 @use '../base/media' as *;
+@use "../base/mixins" as mixin;
 
 .transition-operations {
     &__grid {
@@ -115,6 +116,19 @@
 
         &:hover {
             color: var(--dark-blue);
+            font-weight: 500;
+
+            .transition-operations__grid-item-footer-link-icon-wrapper {
+                background-color: var(--cyan);
+            }
+
+            .transition-operations__grid-item-footer-link-icon {
+                transform: rotate(-45deg);
+
+                @include mixin.ltr {
+                    transform: rotate(135deg);
+                }
+            }
         }
     }
 
