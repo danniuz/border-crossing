@@ -55,17 +55,19 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
+        // height: calc(100% - 249px);
 
         @include tablet-min {
             gap: 16px;
-            height: calc(100% - 244px);
+            height: calc(100% - 249px);
+            overflow-y: auto;
+            padding-bottom: 400px;
         }
 
         @include tablet-max {
             flex: 1 1 auto;
             min-height: 0;
             -webkit-overflow-scrolling: touch;
-
             height: auto !important;
         }
     }
@@ -88,20 +90,17 @@
 
         @include tablet-max {
             --top-ofset: 100px;
-            //
-            //margin-top: 58px;
             position: fixed;
             inset: auto 0 0 0;
             width: 100%;
             max-width: 100%;
             background: #fff;
             z-index: 1000;
-            overflow: hidden;
             transform: translateY(100%);
             transition: transform 0.38s cubic-bezier(0.32, 0.72, 0, 1);
-
             top: var(--top-ofset) !important;
-            height: calc(100dvh - var(--top-ofset)) !important;
+            height: calc(100% - 100px);
+            transform: translateY(38%);
         }
 
         &:not(.aside__wrapper--opened) {
@@ -118,13 +117,15 @@
         }
 
         &--opened {
+            transition: transform 0.3s ease-in-out;
+
             @include tablet-min {
                 transform: translateX(0);
                 opacity: 1;
             }
 
             @include tablet-max {
-                transform: translateY(38%);
+                // transform: translateY(38%);
             }
         }
 
@@ -132,12 +133,8 @@
             @include tablet-max {
                 transform: translateY(0);
                 border-radius: 0;
+                z-index: 999999;
             }
-        }
-
-
-        &--ready {
-            transition: transform 0.3s ease-in-out;
         }
     }
 
@@ -258,7 +255,7 @@
         position: fixed !important;
         bottom: 16px !important;
         inset-inline-end: 16px !important;
-        z-index: 1001 !important;
+        z-index: 999999 !important;
         opacity: 1 !important;
         transform: none !important;
     }
@@ -302,6 +299,23 @@
 .aside-toggler-button:not(.aside-toggler-button--shown) {
     @include tablet-max {
         display: none;
+    }
+}
+
+
+html:dir(ltr) {
+    .aside-toggler-button--closed {
+        .aside-toggler__icon-wrapper {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+html:dir(rtl) {
+    .aside-toggler-button--closed {
+        .aside-toggler__icon-wrapper {
+            transform: rotate(-90deg);
+        }
     }
 }
 
