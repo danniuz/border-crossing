@@ -1,4 +1,5 @@
 @use "../base/media" as *;
+@use "../base/mixins" as mixin;
 
 .search-menu {
   position: absolute;
@@ -66,7 +67,7 @@
     width: 16px;
     height: 16px;
 
-    &--rotate {
+    @include mixin.ltr {
       transform: rotate(180deg);
     }
   }
@@ -89,7 +90,7 @@
     }
   }
 
-  &__result-wrapper {
+  &__result-wrapper, &__no-result-wrapper{
     padding-block: 4px 6px;
     padding-inline-start: 48px;
     padding-inline-end: 16px;
@@ -139,6 +140,7 @@
     gap: 10px;
     padding: 10.5px 0;
     cursor: pointer;
+    color: var(--dark-blue);
   }
 
   &__result-text {
@@ -196,6 +198,14 @@
     background: transparent;
     padding: 7px 23px;
     width: max-content;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--dark-blue);
+
+    &:hover {
+      color: var(--dark-blue);
+    }
+
 
     @include tablet-max {
       padding: 7px 15px;
