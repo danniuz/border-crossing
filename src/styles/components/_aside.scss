@@ -45,6 +45,10 @@
                 background: #5CD7FF;
             }
         }
+
+        @include tablet-min {
+            overflow-y: auto;
+        }
     }
 
     &__feature-list {
