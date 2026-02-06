@@ -69,7 +69,7 @@ html:dir(ltr) {
 
     &__close {
         z-index: 1;
-        position: absolute;
+        position: sticky;
         top: 0;
         left: 0;
         background: none;
@@ -78,6 +78,7 @@ html:dir(ltr) {
         background-color: #fff;
         width: 40px;
         height: 40px;
+        transform: translateY(0);
 
         img {
             width: 14px;
@@ -97,6 +98,12 @@ html:dir(ltr) {
     }
 
     &__top-shadow {
+        margin-top: -40px;
+
+        @include desktop-sm-min {
+            margin-top: -64px;
+        }
+
         @include desktop-min {
             &::after {
                 content: none;
@@ -206,14 +213,19 @@ html:dir(ltr) {
         text-decoration: none;
         align-items: center;
 
-        &:hover {
-            color: var(--dark-blue);
-        }
-
         img {
             width: 24px;
             height: 24px;
             padding: 4px;
+        }
+
+        &:hover {
+            color: var(--white);
+            background: var(--dark-blue);
+
+            img {
+                filter: brightness(0) invert(1);
+            }
         }
 
         @include tablet-min {

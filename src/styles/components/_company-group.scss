@@ -101,8 +101,13 @@
         text-decoration: none;
 
         &:hover {
-            color: var(--dark-blue);
+            color: var(--white);
+            background: var(--dark-blue);
             text-decoration: none;
+
+            img {
+                filter: brightness(0) invert(1);
+            }
         }
 
         @include tablet-sm-min {
