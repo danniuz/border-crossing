@@ -29,7 +29,7 @@ export function initAside({ opened }) {
   )
     return;
 
-  const isMobile = () => window.innerWidth <= 767;
+  const isMobile = () => window.innerWidth <= 980;
 
   let hasExpanded = false;
 

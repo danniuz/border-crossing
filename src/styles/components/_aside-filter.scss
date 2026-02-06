@@ -6,8 +6,11 @@
     align-items: flex-start;
     flex-direction: column;
     margin-top: 16px;
+    justify-content: space-between;
 
     @include tablet-min {
+        flex-direction: row;
+        align-items: flex-end;
         margin-top: 0;
     }
 
