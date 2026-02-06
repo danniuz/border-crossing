@@ -33,10 +33,11 @@
 
   &__swiper-button-actions {
     visibility: hidden;
-    position: absolute;
-    top: 0;
+    position: absolute !important;
+    top: auto !important;
+    bottom: 8px !important;
     height: 40px;
-    inset-inline-end: 16px;
+    inset-inline-end: 16px !important;
     gap: 8px;
     display: flex;
     width: 96px;
@@ -97,19 +98,18 @@
 
     @include desktop-sm-min {
       position: absolute !important;
-      bottom: 0 !important;
-      z-index: 10;
+      bottom: 8px !important;
       margin: 0 !important;
       transform: none !important;
       inset-inline-start: 24px !important;
-      max-width: 240px;
+      max-width: 240px !important;
     }
 
     @include desktop-lg-min {
-      inset-inline-start: 160px;
-      max-width: 240px;
-      margin-top: -440px;
-      margin-inline-start: -128px;
+      inset-inline-start: 160px !important;
+      max-width: 240px !important;
+      bottom: 8px !important;
+      margin: 0 !important;
     }
 
     &-icon {
