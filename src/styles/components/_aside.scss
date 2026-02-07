@@ -62,6 +62,18 @@
             height: calc(100% - 249px);
             overflow-y: auto;
             padding-bottom: 400px;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: #475A5F;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: #5CD7FF;
+            }
         }
 
         @include tablet-max {
@@ -133,7 +145,7 @@
             @include tablet-max {
                 transform: translateY(0);
                 border-radius: 0;
-                z-index: 999999;
+                z-index: 1049;
             }
         }
     }
@@ -255,7 +267,7 @@
         position: fixed !important;
         bottom: 16px !important;
         inset-inline-end: 16px !important;
-        z-index: 999999 !important;
+        z-index: 1050 !important;
         opacity: 1 !important;
         transform: none !important;
     }
