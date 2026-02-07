@@ -2,14 +2,12 @@
 
 const isMobile = window.innerWidth <= 767;
 
-const STEP_SIZE = 5000;
-
 const originalData = {
   labels: ['אפריל', 'מרץ', 'פברואר', 'ינואר'],
   categories: [
     {
       label: 'Trucks',
-      data: [1222, 570, 2500, 10065],
+      data: [122, 570, 250, 1065],
       backgroundColor: '#007EA7',
       borderWidth: 0,
       iconPath: new URL(
@@ -23,7 +21,7 @@ const originalData = {
     },
     {
       label: 'Cars',
-      data: [5107, 3965, 10065, 6800],
+      data: [507, 365, 105, 680],
       backgroundColor: '#FFFFFF',
       borderWidth: 0,
       iconPath: new URL(
@@ -37,7 +35,7 @@ const originalData = {
     },
     {
       label: 'People',
-      data: [10924, 13638, 6800, 2500],
+      data: [124, 138, 60, 250],
       backgroundColor: '#5CD6FF',
       borderWidth: 0,
       iconPath: new URL(
@@ -105,23 +103,43 @@ function transformDataForSortedBars(originalData) {
   };
 }
 
-function getMaxYBarHeight(data, stepSize) {
+function calculateYAxisConfig(data) {
   const { labels, categories } = data;
-  let maxTotal = 0;
+  let maxBarHeight = 0;
 
+  // Find the maximum stacked bar height
   for (let i = 0; i < labels.length; i++) {
     const total = categories.reduce((sum, category) => {
       return sum + category.data[i];
     }, 0);
-    maxTotal = Math.max(maxTotal, total);
+    maxBarHeight = Math.max(maxBarHeight, total);
   }
 
-  const total = (Math.floor(maxTotal / stepSize) + 2) * stepSize;
+  // Add 20% to maxBarHeight
+  const targetMax = maxBarHeight * 1.2;
 
-  return total;
+  // Determine rounding divisor based on target value
+  let divisor;
+  if (targetMax <= 10000) {
+    divisor = 1000;
+  } else {
+    divisor = 5000;
+  }
+
+  // Round up to nearest divisor
+  const maxY = Math.ceil(targetMax / divisor) * divisor;
+
+  // Calculate step size for 4 lines (5 ticks total including 0)
+  const stepSize = maxY / 4;
+
+  return {
+    maxY,
+    stepSize,
+  };
 }
 
 const data = transformDataForSortedBars(originalData);
+const yAxisConfig = calculateYAxisConfig(originalData);
 
 export function initPlaceChart() {
   const ctx = document.getElementById('myChart');
@@ -171,6 +189,54 @@ export function initPlaceChart() {
       checkAllIconsLoaded(); // Still increment to prevent blocking
     };
   });
+
+  const customYAxisLabelsPlugin = {
+    id: 'customYAxisLabelsPlugin',
+    afterFit(scale) {
+      // Force Y-axis width to 0 on mobile to start from left edge
+      if (isMobile && scale.id === 'y') {
+        scale.width = 0;
+        scale.paddingLeft = 0;
+        scale.paddingRight = 0;
+      }
+    },
+    afterLayout(chart) {
+      // Force chart area to start from left edge on mobile
+      if (isMobile) {
+        chart.chartArea.left = 0;
+      }
+    },
+    afterDraw(chart) {
+      // Only apply on mobile
+      if (!isMobile) return;
+
+      const { ctx, scales } = chart;
+      const yScale = scales.y;
+      const xScale = scales.x;
+
+      if (!yScale || !xScale) return;
+
+      ctx.save();
+
+      // Draw custom labels above the grid lines starting from left edge
+      yScale.ticks.forEach((tick, index) => {
+        if (tick.value === 0) return; // Skip the 0 label as in the original config
+
+        const y = yScale.getPixelForValue(tick.value);
+
+        // Draw the label above the grid line, starting from the very left
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = '400 14px IBM Plex Sans Hebrew';
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'bottom';
+
+        const labelText = tick.value.toLocaleString();
+        ctx.fillText(labelText, 0, y - 4); // Start from x=0 (left edge)
+      });
+
+      ctx.restore();
+    },
+  };
 
   const iconLabelsPlugin = {
     id: 'iconLabelsPlugin',
@@ -285,6 +351,7 @@ export function initPlaceChart() {
       layout: {
         padding: {
           bottom: 0,
+          left: isMobile ? 0 : undefined,
         },
       },
       plugins: {
@@ -363,12 +430,13 @@ export function initPlaceChart() {
         },
         y: {
           beginAtZero: true,
-          max: getMaxYBarHeight(originalData, STEP_SIZE) || 20000,
+          max: yAxisConfig.maxY,
           min: 0,
           stacked: true,
           grace: 0,
+          position: isMobile ? 'left' : 'left',
           ticks: {
-            STEP_SIZE,
+            stepSize: yAxisConfig.stepSize,
             color: '#FFFFFF',
             font: {
               size: 18,
@@ -377,11 +445,16 @@ export function initPlaceChart() {
             padding: 0,
             align: 'end',
             crossAlign: 'far',
+            display: !isMobile, // Hide default Y-axis labels on mobile
             callback: (value) => {
               // Hide the 0 label but keep the space
               if (value === 0) return '';
               return value.toLocaleString();
             },
+            ...(isMobile && {
+              // On mobile, return empty string to take up no space
+              callback: () => '',
+            }),
           },
           grid: {
             color: (context) => {
@@ -392,6 +465,7 @@ export function initPlaceChart() {
             lineWidth: 1,
             drawBorder: false,
             offset: false,
+            drawTicks: !isMobile, // Hide tick marks on mobile
           },
           border: {
             display: false,
@@ -446,7 +520,7 @@ export function initPlaceChart() {
         }
       },
     },
-    plugins: [iconLabelsPlugin],
+    plugins: [customYAxisLabelsPlugin, iconLabelsPlugin],
   });
   // Keep instance to redraw after icon load
   chartInstance = Chart.getChart(ctx);

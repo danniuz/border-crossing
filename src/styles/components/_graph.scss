@@ -25,7 +25,7 @@ html:dir(ltr) {
     }
 
     &__action-list {
-        background-color: var(--gray-tag);
+        background-color: var(--color-blue);
         display: inline-flex;
         inset-inline-end: 0;
         padding: 8px 16px;
@@ -93,7 +93,13 @@ html:dir(ltr) {
     }
 
     &__content {
-        padding-inline-end: 120px;
+        padding-inline-end: 0;
+
+
+        @include tablet-min {
+            padding-inline-end: 120px;
+        }
+
     }
 
     &__title {
