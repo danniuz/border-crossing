@@ -1,37 +1,72 @@
 @use "../base/media" as *;
 
-.custom-video-stop-button {
-  background: var(--dark-blue);
+.video-controls {
   position: absolute;
-  bottom: 40px;
-  border: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+  bottom: 16px;
   inset-inline-start: 16px;
+
+  &--bottom-sm {
+    bottom: 16px;
+  }
+
+  &--bottom-lg {
+    bottom: 40px;
+  }
+
+  &--left {
+    inset-inline-start: unset;
+    inset-inline-end: 16px;
+  }
+}
+
+.custom-video-stop-button,
+.custom-video-mute-button {
+  background: var(--dark-blue);
+  border: none;
   outline: none;
   width: 48px;
   height: 48px;
   display: none;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
 
   @include tablet-min {
     display: inline-flex;
   }
 
+  .play-icon,
+  .stop-icon{
+    height: 20px !important;
+  }
+
+  .mute-icon,
+  .unmute-icon {
+    height: 22px !important;
+  }
+
   &[aria-label="Play"] {
-    .play-icon {
-      display: inline-block;
-    }
-    .stop-icon {
-      display: none;
-    }
+    .play-icon  { display: block; }
+    .stop-icon  { display: none; }
   }
 
   &[aria-label="Pause"] {
-    .play-icon {
-      display: none;
-    }
-    .stop-icon {
-      display: inline-block;
-    }
+    .play-icon  { display: none; }
+    .stop-icon  { display: block; }
+  }
+
+  &[aria-label="Mute"] {
+    .mute-icon   { display: block; }
+    .unmute-icon { display: none; }
+  }
+
+  &[aria-label="Unmute"] {
+    .mute-icon   { display: none; }
+    .unmute-icon { display: block; }
   }
 }
