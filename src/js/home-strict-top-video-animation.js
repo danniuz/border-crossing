@@ -64,7 +64,7 @@ export function initHomeStrictTopVideoAnimation() {
                             gsap.to(videoStopButton, {
                                 opacity: 1,
                                 duration: 1,
-                                display: 'block',
+                                display: 'flex',
                                 ease: 'power2.inOut',
                             });
                         }

@@ -93,7 +93,7 @@ html:dir(rtl) {
         }
     }
 
-    .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-duplicate-active) .custom-video-stop-button {
+    .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-duplicate-active) .video-controls {
         display: none !important;
     }
 

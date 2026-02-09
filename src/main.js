@@ -139,6 +139,7 @@ initCustomVideoPauseControlSwiper(
     '#about-fluid-swiper-wrapper',
     '.fluid-swiper__slide-clip',
     '.custom-video-stop-button',
+    '.custom-video-mute-button',
 );
 
 initNewsSwiperHeaderAnimation();

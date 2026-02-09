@@ -1,72 +1,18 @@
-// // custom-video-pause-control-swiper.js
-//
-// export function initCustomVideoPauseControlSwiper(wrapperSelector, videoSelector, buttonSelector) {
-//   const wrapper = document.querySelector(wrapperSelector);
-//   if (!wrapper) return;
-//
-//   let swiperInstance = null;
-//
-//   // Пытаемся найти swiper-инстанс
-//   const swiperEl = wrapper.querySelector('.swiper');
-//   if (swiperEl?.swiper) {
-//     swiperInstance = swiperEl.swiper;
-//   }
-//
-//   function attachControlsToActiveSlide() {
-//     const activeSlide = wrapper.querySelector('.swiper-slide-active');
-//     if (!activeSlide) return;
-//
-//     const video = activeSlide.querySelector(videoSelector);
-//     const btn   = activeSlide.querySelector(buttonSelector);
-//
-//     if (!video || !btn) return;
-//
-//     // снимаем старые слушатели (защита от дублирования)
-//     btn.removeEventListener('click', togglePlay);
-//     video.removeEventListener('play',  updateState);
-//     video.removeEventListener('pause', updateState);
-//     video.removeEventListener('ended', updateState);
-//
-//     function togglePlay() {
-//       if (video.paused || video.ended) {
-//         video.play().catch(() => {});
-//       } else {
-//         video.pause();
-//       }
-//     }
-//
-//     function updateState() {
-//       btn.setAttribute('aria-label', video.paused || video.ended ? 'Play' : 'Pause');
-//     }
-//
-//     btn.addEventListener('click', togglePlay);
-//     video.addEventListener('play',  updateState);
-//     video.addEventListener('pause', updateState);
-//     video.addEventListener('ended', updateState);
-//
-//     // сразу синхронизируем
-//     updateState();
-//   }
-//
-//   // Первый запуск
-//   setTimeout(attachControlsToActiveSlide, 100);
-//
-//   // Подписываемся на смену слайда
-//   if (swiperInstance) {
-//     swiperInstance.on('slideChangeTransitionEnd', attachControlsToActiveSlide);
-//     swiperInstance.on('slideChange', attachControlsToActiveSlide); // на всякий случай
-//   }
-// }
-
-export function initCustomVideoPauseControlSwiper(wrapperSelector, videoSelector, buttonSelector) {
+export function initCustomVideoPauseControlSwiper(
+    wrapperSelector,
+    videoSelector,
+    playPauseButtonSelector,
+    muteButtonSelector //optional
+) {
   const wrapper = document.querySelector(wrapperSelector);
   if (!wrapper) return;
 
   const swiperEl = wrapper.querySelector('.swiper');
   const swiper = swiperEl?.swiper;
 
-  function attachToButton(btn, video) {
-    if (btn.dataset.pauseControlAttached === 'true') return;
+  function attachControls(playBtn, muteBtn, video) {
+    if (playBtn.dataset.pauseControlAttached === 'true') return;
+    if (muteBtn && muteBtn.dataset.muteControlAttached === 'true') return;
 
     const togglePlay = () => {
       if (video.paused || video.ended) {
@@ -76,74 +22,86 @@ export function initCustomVideoPauseControlSwiper(wrapperSelector, videoSelector
       }
     };
 
-    const updateAria = () => {
+    const updatePlayState = () => {
       const isPaused = video.paused || video.ended;
-      btn.setAttribute('aria-label', isPaused ? 'Play' : 'Pause');
+      playBtn.setAttribute('aria-label', isPaused ? 'Play' : 'Pause');
 
-      const playIcon  = btn.querySelector('.play-icon');
-      const stopIcon  = btn.querySelector('.stop-icon');
+      const playIcon  = playBtn.querySelector('.play-icon');
+      const stopIcon  = playBtn.querySelector('.stop-icon');
       if (playIcon && stopIcon) {
         playIcon.style.display  = isPaused ? '' : 'none';
         stopIcon.style.display  = isPaused ? 'none' : '';
       }
     };
 
-    btn.removeEventListener('click', togglePlay);
-    video.removeEventListener('play',  updateAria);
-    video.removeEventListener('pause', updateAria);
-    video.removeEventListener('ended', updateAria);
+    let toggleMute = null;
+    let updateMuteState = null;
 
-    btn.addEventListener('click', togglePlay);
-    video.addEventListener('play',  updateAria);
-    video.addEventListener('pause', updateAria);
-    video.addEventListener('ended', updateAria);
+    if (muteBtn) {
+      toggleMute = () => {
+        video.muted = !video.muted;
+        updateMuteState();
+      };
 
-    btn.dataset.pauseControlAttached = 'true';
+      updateMuteState = () => {
+        if (!muteBtn) return;
 
-    updateAria();
+        const isMuted = video.muted;
+        muteBtn.setAttribute('aria-label', isMuted ? 'Unmute' : 'Mute');
+      };
+    }
+
+    playBtn.removeEventListener('click', togglePlay);
+    video.removeEventListener('play', updatePlayState);
+    video.removeEventListener('pause', updatePlayState);
+    video.removeEventListener('ended', updatePlayState);
+
+    if (muteBtn) {
+      muteBtn.removeEventListener('click', toggleMute);
+      video.removeEventListener('volumechange', updateMuteState);
+    }
+
+    playBtn.addEventListener('click', togglePlay);
+    video.addEventListener('play', updatePlayState);
+    video.addEventListener('pause', updatePlayState);
+    video.addEventListener('ended', updatePlayState);
+
+    if (muteBtn) {
+      muteBtn.addEventListener('click', toggleMute);
+      video.addEventListener('volumechange', updateMuteState);
+      updateMuteState();
+    }
+
+    playBtn.dataset.pauseControlAttached = 'true';
+    if (muteBtn) muteBtn.dataset.muteControlAttached = 'true';
+
+    updatePlayState();
   }
 
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach(mutation => {
-      if (mutation.addedNodes.length) {
-        mutation.addedNodes.forEach(node => {
-          if (node.nodeType !== 1) return;
-          const btn = node.matches(buttonSelector) ? node : node.querySelector(buttonSelector);
-          const video = node.matches(videoSelector) ? node : node.querySelector(videoSelector);
-          if (btn && video) {
-            attachToButton(btn, video);
-          }
-        });
-      }
-    });
-  });
+  const tryAttachInActiveSlide = () => {
+    const activeSlide = wrapper.querySelector('.swiper-slide-active, .swiper-slide-duplicate-active');
+    if (!activeSlide) return;
 
-  observer.observe(wrapper, {
-    childList: true,
-    subtree: true
-  });
+    const video = activeSlide.querySelector(videoSelector);
+    if (!video) return;
 
-  setTimeout(() => {
-    const btn   = wrapper.querySelector(buttonSelector);
-    const video = wrapper.querySelector(videoSelector);
-    if (btn && video) {
-      attachToButton(btn, video);
+    const playBtn = activeSlide.querySelector(playPauseButtonSelector);
+    const muteBtn = muteButtonSelector ? activeSlide.querySelector(muteButtonSelector) : null;
+
+    if (playBtn) {
+      attachControls(playBtn, muteBtn, video);
     }
-  }, 100);
+  };
+
+  const observer = new MutationObserver(tryAttachInActiveSlide);
+  observer.observe(wrapper, { childList: true, subtree: true });
+
+  setTimeout(tryAttachInActiveSlide, 80);
 
   if (swiper) {
-    const debouncedAttach = debounce(() => {
-      const activeSlide = wrapper.querySelector('.swiper-slide-active, .swiper-slide-duplicate-active');
-      if (!activeSlide) return;
-      const btn   = activeSlide.querySelector(buttonSelector);
-      const video = activeSlide.querySelector(videoSelector);
-      if (btn && video) {
-        attachToButton(btn, video);
-      }
-    }, 80);
-
-    swiper.on('slideChangeTransitionEnd', debouncedAttach);
-    swiper.on('init', debouncedAttach);
+    const debounced = debounce(tryAttachInActiveSlide, 60);
+    swiper.on('slideChangeTransitionEnd', debounced);
+    swiper.on('init', () => setTimeout(debounced, 120));
   }
 
   function debounce(fn, delay) {
