@@ -134,10 +134,20 @@
         margin: 0 auto;
         padding-inline-start: 20px !important;
         padding-inline-end: 24px !important;
+        transition: all 0.3s ease;
 
         @include tablet-min {
             padding-inline-start: 32px !important;
             padding-inline-end: 16px !important;
+        }
+
+        &:hover {
+            color: #fff !important;
+            background-color: var(--dark-blue);
+
+            img {
+                filter: brightness(0) invert(1);
+            }
         }
     }
 }
