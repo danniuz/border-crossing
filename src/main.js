@@ -36,6 +36,7 @@ import {
   hideFullscreenLoader,
 } from './js/loader.js';
 import { initNavSearchMenu } from './js/init-nav-search-menu.js';
+import { initCustomVideoPauseControlSwiper } from "./js/custom-video-pause-control-swiper.js";
 
 const isRtl = document.documentElement.dir === 'rtl';
 
@@ -132,6 +133,12 @@ initCustomVideoPauseControl(
   '.home__strict-top-wrapper',
   '#home-strict-top-video-to-animate',
   '#home-strict-top-video-stop-button',
+);
+
+initCustomVideoPauseControlSwiper(
+    '#about-fluid-swiper-wrapper',
+    '.fluid-swiper__slide-clip',
+    '.custom-video-stop-button',
 );
 
 initNewsSwiperHeaderAnimation();

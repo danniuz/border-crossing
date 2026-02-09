@@ -93,6 +93,10 @@ html:dir(rtl) {
         }
     }
 
+    .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-duplicate-active) .custom-video-stop-button {
+        display: none !important;
+    }
+
     .swiper-slide-active {
 
         @include tablet-min {

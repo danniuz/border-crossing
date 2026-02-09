@@ -13,9 +13,21 @@
   justify-content: center;
   align-items: center;
 
+
+  &--left {
+    inset-inline-end: 16px;
+    inset-inline-start: unset;
+    bottom: 16px;
+  }
+
   @include tablet-min {
     display: inline-flex;
   }
+
+  .play-icon, .stop-icon{
+    height: 20px !important;
+  }
+
 
   &[aria-label="Play"] {
     .play-icon {
