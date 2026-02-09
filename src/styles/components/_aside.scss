@@ -59,9 +59,9 @@
 
         @include tablet-min {
             gap: 16px;
-            height: calc(100% - 249px);
-            overflow-y: auto;
+            // height: calc(100% - 249px);
             padding-bottom: 400px;
+            // overflow-y: auto;
 
             &::-webkit-scrollbar {
                 width: 4px;
@@ -314,11 +314,12 @@
     }
 }
 
-
 html:dir(ltr) {
     .aside-toggler-button--closed {
         .aside-toggler__icon-wrapper {
-            transform: rotate(90deg);
+            @include tablet-min {
+                transform: rotate(90deg);
+            }
         }
     }
 }
@@ -326,7 +327,9 @@ html:dir(ltr) {
 html:dir(rtl) {
     .aside-toggler-button--closed {
         .aside-toggler__icon-wrapper {
-            transform: rotate(-90deg);
+            @include tablet-min {
+                transform: rotate(-90deg);
+            }
         }
     }
 }

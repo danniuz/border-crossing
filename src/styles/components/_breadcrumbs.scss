@@ -6,7 +6,11 @@
   top: 77px;
   inset-inline-start: 16px;
   gap: 8px;
-  z-index: 1951;
+  z-index: 151;
+
+  @include tablet-max {
+    z-index: 999;
+  }
 
   .breadcrumbs__link-icon {
     width: 16px;

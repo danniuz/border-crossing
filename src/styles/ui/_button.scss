@@ -117,3 +117,15 @@ html:dir(ltr) {
     }
   }
 }
+
+.button__link-45-arrow--hover-dark-blue {
+  &:hover {
+    color: #fff !important;
+    background-color: var(--dark-blue);
+    transition: all 0.3s ease;
+
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+}

@@ -14,6 +14,10 @@ html:dir(ltr) {
             transform: translateX(100%);
         }
     }
+
+    .place-popup__close {
+        // margin-right: ;
+    }
 }
 
 .place-popup {
@@ -71,7 +75,7 @@ html:dir(ltr) {
         z-index: 1;
         position: sticky;
         top: 0;
-        left: 0;
+        margin-inline-start: calc(100% - 40px);
         background: none;
         border: none;
         cursor: pointer;
@@ -91,6 +95,7 @@ html:dir(ltr) {
         }
 
         @include desktop-sm-min {
+            margin-inline-start: calc(100% - 64px);
             width: 64px;
             height: 64px;
             top: 0;

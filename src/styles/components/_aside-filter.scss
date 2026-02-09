@@ -83,6 +83,7 @@
         display: flex;
         align-items: center;
 
+        &-label:hover,
         .aside-filter__nav-item-input:checked+.aside-filter__nav-item-label {
             background-color: var(--cyan);
         }
