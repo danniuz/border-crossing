@@ -59,16 +59,17 @@
       width: 16px;
       height: 16px;
 
-      transform: rotate(180deg);
+      // transform: rotate(180deg);
     }
   }
 
   &__arrow-icon {
     width: 16px;
     height: 16px;
+    transform: rotate(-180deg);
 
     @include mixin.ltr {
-      transform: rotate(180deg);
+      transform: none;
     }
   }
 
@@ -90,7 +91,8 @@
     }
   }
 
-  &__result-wrapper, &__no-result-wrapper{
+  &__result-wrapper,
+  &__no-result-wrapper {
     padding-block: 4px 6px;
     padding-inline-start: 48px;
     padding-inline-end: 16px;
@@ -105,10 +107,10 @@
     visibility: hidden;
 
     transition:
-            max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-            opacity 0.2s ease,
-            transform 0.2s ease,
-            visibility 0s linear 0.35s;
+      max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0s linear 0.35s;
 
     &.active {
       border-bottom: 2px solid var(--gray-tag);
@@ -120,10 +122,10 @@
       visibility: visible;
 
       transition:
-              max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.2s ease,
-              transform 0.2s ease,
-              visibility 0s linear 0s;
+        max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0s linear 0s;
     }
   }
 
@@ -204,6 +206,7 @@
 
     &:hover {
       color: var(--dark-blue);
+      text-decoration: none !important;
     }
 
 

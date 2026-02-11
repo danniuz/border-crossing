@@ -65,6 +65,12 @@ function showPopup(html) {
       closePopup(placePopupWrapper);
     });
   }
+
+  const crossingBreadcrumbs = document.getElementById('crossing-breadcrumbs');
+
+  if (crossingBreadcrumbs) {
+    crossingBreadcrumbs.classList.add('d-none');
+  }
 }
 
 function closePopup(popupElement) {
@@ -76,6 +82,13 @@ function closePopup(popupElement) {
   setTimeout(() => {
     if (popupElement.parentNode) {
       popupElement.remove();
+      const crossingBreadcrumbs = document.getElementById(
+        'crossing-breadcrumbs',
+      );
+
+      if (crossingBreadcrumbs) {
+        crossingBreadcrumbs.classList.remove('d-none');
+      }
     }
   }, 300); // Match the CSS transition duration
 }

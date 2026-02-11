@@ -4,6 +4,12 @@ html:dir(ltr) {
   .contact-us__aside-link-image {
     transform: rotateY(180deg);
   }
+
+  .contact-us__aside-link:hover {
+    .contact-us__aside-link-image {
+      transform: rotate(135deg);
+    }
+  }
 }
 
 .contact-us {
@@ -132,6 +138,10 @@ html:dir(ltr) {
     &:hover {
       .contact-us__aside-link-image-wrapper {
         background-color: var(--cyan-tag);
+
+        .contact-us__aside-link-image {
+          transform: rotate(-45deg);
+        }
       }
     }
 

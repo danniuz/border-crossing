@@ -62,6 +62,11 @@
     justify-content: center;
     transition: background-color 0.3s ease;
 
+    &--disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
     @include mixin.ltr {
       transform: rotateY(180deg);
     }

@@ -1,5 +1,19 @@
 @use '../base/media' as *;
 
+html[dir="ltr"] {
+    .faq__item-link-list-item {
+        &:hover {
+            .faq__item-link-list-item-icon {
+                transform: rotate(135deg);
+            }
+        }
+
+        &-icon {
+            transform: rotate(90deg);
+        }
+    }
+}
+
 .faq {
     &__list {
         display: flex;
@@ -22,14 +36,27 @@
         text-decoration: none;
         margin-top: 16px;
 
+        &:hover {
+            color: var(--dark-blue);
+
+            .faq__item-link-list-item-icon {
+                transform: rotate(-45deg);
+            }
+        }
+
         &:not(:last-child) {
             border-bottom: 2px solid var(--dark-blue);
         }
 
-        &-icon {
+        &-icon-wrapper {
             width: 40px;
             height: 40px;
             background-color: var(--cyan-tag);
+            display: inline-flex;
+            justify-content: center;
+        }
+
+        &-icon {
             padding: 12px;
         }
     }

@@ -45,6 +45,12 @@ html:dir(ltr) {
       @include tablet-min {
         border-width: 2px;
       }
+
+      &:hover {
+        color: #fff !important;
+        background-color: var(--dark-blue);
+        transition: all 0.3s ease;
+      }
     }
 
     &--16 {
@@ -115,6 +121,14 @@ html:dir(ltr) {
         line-height: 140%;
       }
     }
+  }
+}
+
+.button__rect--hover-dark-blue {
+  &:hover {
+    color: #fff !important;
+    background-color: var(--dark-blue);
+    transition: all 0.3s ease;
   }
 }
 
