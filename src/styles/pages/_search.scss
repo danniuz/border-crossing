@@ -11,6 +11,16 @@
     }
   }
 
+  &__input-close {
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
   .load-more-btn {
     @include tablet-min {
       font-size: 16px !important;
@@ -126,14 +136,25 @@
   &__results-item-icon {
     width: 20px;
     height: 20px;
+  }
+
+  &__results-item-button {
     position: absolute;
-    bottom: 18px;
-    inset-inline-end: 10px;
+    bottom: 8px;
+    inset-inline-end: 0;
+    border: none;
+    background: none;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 
     @include tablet-min {
+      inset-inline-end: 16px;
       bottom: 50%;
       transform: translateY(50%);
-      inset-inline-end: 26px;
     }
   }
 }

@@ -1,62 +1,79 @@
 export function initNavSearchMenu() {
-	const link = document.getElementById('nav-search-menu-link');
-	const menu = document.getElementById('nav-search-menu');
-	const closeBtn = menu ? menu.querySelector('.search-menu__close') : null;
+  const link = document.getElementById('nav-search-menu-link');
+  const menu = document.getElementById('nav-search-menu');
+  const closeBtn = menu ? menu.querySelector('.search-menu__close') : null;
 
-	if (!link || !menu) return;
+  if (!link || !menu) return;
 
-	const OPEN_CLASS = 'search-menu--opened';
+  const OPEN_CLASS = 'search-menu--opened';
+  let backdrop = null;
 
-	const open = () => {
-		menu.removeAttribute('hidden');
+  const open = () => {
+    menu.removeAttribute('hidden');
 
-		requestAnimationFrame(() => {
-			menu.classList.add(OPEN_CLASS);
-			const input = menu.querySelector('.search-menu__input');
-			if (input) input.focus();
-		});
-	};
+    // Create and insert backdrop
+    backdrop = document.createElement('div');
+    backdrop.className = 'backdrop';
+    document.body.appendChild(backdrop);
 
-	const close = () => {
-		menu.classList.remove(OPEN_CLASS);
+    // Add click handler to backdrop
+    backdrop.addEventListener('click', close);
 
-		const onEnd = (e) => {
-			if (e.target !== menu) return;
-			menu.setAttribute('hidden', '');
-			menu.removeEventListener('transitionend', onEnd);
-		};
+    requestAnimationFrame(() => {
+      menu.classList.add(OPEN_CLASS);
+      const input = menu.querySelector('.search-menu__input');
+      if (input) input.focus();
+    });
+  };
 
-		menu.addEventListener('transitionend', onEnd);
-	};
+  const close = () => {
+    menu.classList.remove(OPEN_CLASS);
 
-	const toggle = () => {
-		const isOpen = !menu.hasAttribute('hidden') && menu.classList.contains(OPEN_CLASS);
-		if (isOpen) close();
-		else open();
-	};
+    // Remove backdrop
+    if (backdrop && backdrop.parentNode) {
+      backdrop.removeEventListener('click', close);
+      backdrop.parentNode.removeChild(backdrop);
+      backdrop = null;
+    }
 
-	link.addEventListener('click', (e) => {
-		e.preventDefault();
-		e.stopPropagation();
-		toggle();
-	});
+    const onEnd = (e) => {
+      if (e.target !== menu) return;
+      menu.setAttribute('hidden', '');
+      menu.removeEventListener('transitionend', onEnd);
+    };
 
-	if (closeBtn) {
-		closeBtn.addEventListener('click', (e) => {
-			e.preventDefault();
-			e.stopPropagation();
-			close();
-		});
-	}
+    menu.addEventListener('transitionend', onEnd);
+  };
 
-	document.addEventListener('click', (e) => {
-		const target = e.target;
-		if (!link.contains(target) && !menu.contains(target)) {
-			if (!menu.hasAttribute('hidden')) close();
-		}
-	});
+  const toggle = () => {
+    const isOpen =
+      !menu.hasAttribute('hidden') && menu.classList.contains(OPEN_CLASS);
+    if (isOpen) close();
+    else open();
+  };
 
-	document.addEventListener('keydown', (e) => {
-		if (e.key === 'Escape' && !menu.hasAttribute('hidden')) close();
-	});
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggle();
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      close();
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    const target = e.target;
+    if (!link.contains(target) && !menu.contains(target)) {
+      if (!menu.hasAttribute('hidden')) close();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !menu.hasAttribute('hidden')) close();
+  });
 }

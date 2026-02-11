@@ -1,305 +1,200 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Vite + TS</title>
-  </head>
 
-  <body>
-    <script type="module" src="/src/main.js"></script>
-    <div id="wrapper" class="wrapper">
-      <div class="page-header">
-        <div class="marquee">
-          <div class="marquee__controls">
-            <a class="marquee__link hide-tablet-max" href="">לכל ההודעות</a>
-            <button
-              id="marqueeStart"
-              class="button button__rect marquee__controls-action"
-            >
-              <img
-                class="marquee__controls-action-image"
-                src="/src/assets/icons/play.svg"
-                alt="Play"
-              />
-            </button>
-            <button
-              id="marqueeStop"
-              class="button button__rect marquee__controls-action"
-            >
-              <img
-                class="marquee__controls-action-image ltr-reverse-y"
-                src="/src/assets/icons/pause.svg"
-                alt="Pause"
-              />
-            </button>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <title>Vite + TS</title>
+</head>
+
+<body>
+  <script type="module" src="/src/main.js"></script>
+  <div id="wrapper" class="wrapper">
+    <div class="page-header">
+      <div class="marquee">
+        <div class="marquee__controls">
+          <a class="marquee__link hide-tablet-max" href="">לכל ההודעות</a>
+          <button id="marqueeStart" class="button button__rect marquee__controls-action">
+            <img class="marquee__controls-action-image" src="/src/assets/icons/play.svg" alt="Play" />
+          </button>
+          <button id="marqueeStop" class="button button__rect marquee__controls-action">
+            <img class="marquee__controls-action-image ltr-reverse-y" src="/src/assets/icons/pause.svg" alt="Pause" />
+          </button>
+        </div>
+
+        <ul class="marquee__text-list" id="marquee-text">
+          <li class="marquee__text-item">Lorem ipsum dolor sit amet.</li>
+          <li class="marquee__text-item">Lorem, ipsum.</li>
+          <li class="marquee__text-item">Lorem ipsum dolor sit amet.</li>
+          <li class="marquee__text-item">Lorem, ipsum.</li>
+          <li class="marquee__text-item">Lorem ipsum dolor sit.</li>
+          <li class="marquee__text-item">hello world</li>
+          <li class="marquee__text-item">another big text line</li>
+          <li class="marquee__text-item">just for test</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-content bg-gray">
+      <div class="menu">
+        <div class="menu__logo-list">
+          <a href="#" class="menu__logo-link">
+            <img class="menu__logo-image" src="icons/logo-1.svg" alt="Logo 1" />
+            <span class="menu__logo-text">רשות מעברים יבשתיים</span>
+          </a>
+
+          <a href="#" class="menu__logo-link">
+            <img class="menu__logo-image" src="icons/logo-2.svg" alt="Logo 2" />
+            <span class="menu__logo-text">משרד הביטחון</span>
+          </a>
+        </div>
+
+        <div class="menu__nav-wrapper">
+          <div class="menu__nav-item">
+            <a href="#" class="menu__nav-link menu__nav-link--dark-blue-tag">
+              מידע שימושי
+              <img src="icons/menu-nav-icon-arrow--cyan.svg"
+                class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow" alt="Arrow Left" />
+            </a>
           </div>
 
-          <ul class="marquee__text-list" id="marquee-text">
-            <li class="marquee__text-item">Lorem ipsum dolor sit amet.</li>
-            <li class="marquee__text-item">Lorem, ipsum.</li>
-            <li class="marquee__text-item">Lorem ipsum dolor sit amet.</li>
-            <li class="marquee__text-item">Lorem, ipsum.</li>
-            <li class="marquee__text-item">Lorem ipsum dolor sit.</li>
-            <li class="marquee__text-item">hello world</li>
-            <li class="marquee__text-item">another big text line</li>
-            <li class="marquee__text-item">just for test</li>
-          </ul>
+          <div class="menu__nav-item">
+            <a href="#" class="menu__nav-link menu__nav-link--dark-blue-tag">
+              כתבות ועידכונים
+
+              <img src="icons/menu-nav-icon-arrow--cyan.svg"
+                class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow" alt="Arrow Left" />
+            </a>
+          </div>
+
+          <div class="menu__nav-item">
+            <a href="#" class="menu__nav-link menu__nav-link--active menu__nav-link--dark-blue-tag">
+              אודות
+              <img src="icons/menu-nav-icon-arrow--cyan.svg"
+                class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow" alt="Arrow Left" />
+            </a>
+          </div>
+
+          <div class="menu__nav-item">
+            <a href="#" class="menu__nav-link menu__nav-link--blue-tag menu__nav-link--with-arrow">
+              צור קשר
+              <img src="icons/menu-nav-icon-arrow--white.svg"
+                class="menu__nav-link-icon menu__nav-link-icon--arrow ltr-reverse-y" alt="Arrow Up Left" />
+              <img src="icons/menu-nav-icon-arrow--white.svg"
+                class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow" alt="Arrow Left" />
+            </a>
+          </div>
+
+          <div class="menu__nav-item">
+            <a href="#"
+              class="menu__nav-link menu__nav-link--c-dark-blue menu__nav-link--cyan-tag menu__nav-link--with-arrow">
+              לכל המעברים
+              <img src="icons/menu-nav-icon-arrow--dark-blue.svg"
+                class="menu__nav-link-icon menu__nav-link-icon--arrow ltr-reverse-y" alt="Arrow Up Left" />
+              <img src="icons/menu-nav-icon-arrow--dark-blue.svg"
+                class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow" alt="Arrow Left" />
+            </a>
+          </div>
+
+          <div class="menu__nav-item">
+            <a href="#" class="menu__nav-link menu__nav-link--white-tag">
+              חיפוש
+              <img src="icons/magnify.svg" class="menu__nav-link-icon ltr-reverse-y" alt="Magnify" />
+            </a>
+          </div>
+
+          <div class="menu__nav-item">
+            <a href="#" class="menu__nav-link menu__nav-link--c-white menu__nav-link--white-tag">
+              איזור אישי
+            </a>
+          </div>
+
+          <div class="menu__nav-row">
+            <div class="menu__nav-item">
+              <a href="#"
+                class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon">
+                <img src="icons/accessibility.svg" class="menu__nav-link-icon" alt="Accessibility" />
+              </a>
+            </div>
+
+            <div class="menu__nav-item">
+              <a href="#"
+                class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon">
+                <img src="icons/lang.svg" class="menu__nav-link-icon" alt="Language" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="page-content bg-gray">
-        <div class="menu">
-          <div class="menu__logo-list">
-            <a href="#" class="menu__logo-link">
-              <img
-                class="menu__logo-image"
-                src="icons/logo-1.svg"
-                alt="Logo 1"
-              />
-              <span class="menu__logo-text">רשות מעברים יבשתיים</span>
-            </a>
+      <div class="breadcrumbs">
+        <a href="#" class="breadcrumbs__link">
+          <span class="breadcrumbs__link-icon breadcrumbs__link-icon--home"></span>
+          <span class="breadcrumbs__link-icon breadcrumbs__link-icon--arrow ltr-reverse-y"></span>
+        </a>
 
-            <a href="#" class="menu__logo-link">
-              <img
-                class="menu__logo-image"
-                src="icons/logo-2.svg"
-                alt="Logo 2"
-              />
-              <span class="menu__logo-text">משרד הביטחון</span>
-            </a>
-          </div>
+        <a href="#" class="breadcrumbs__link">
+          <span class="breadcrumbs__link-text">כל המעברים</span>
+        </a>
+      </div>
 
-          <div class="menu__nav-wrapper">
-            <div class="menu__nav-item">
-              <a href="#" class="menu__nav-link menu__nav-link--dark-blue-tag">
-                מידע שימושי
-                <img
-                  src="icons/menu-nav-icon-arrow--cyan.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
-                  alt="Arrow Left"
-                />
-              </a>
-            </div>
+      <div class="main-content__cover-top-wrapper-shadow">
+        <img class="main-content__cover-top main-content__cover-top--mobile" src="/src/assets/images/cars-header.png"
+          alt="" />
+      </div>
 
-            <div class="menu__nav-item">
-              <a href="#" class="menu__nav-link menu__nav-link--dark-blue-tag">
-                כתבות ועידכונים
+      <div class="main-content container">
+        <div class="main-content__layout contact-us__layout">
+          <div class="content-aside contact-us__content-aside content-aside--sticky">
+            <h2 class="content-aside__title content-aside__title--lg contact-us__aside-title">
+              צריכים עזרה?
+            </h2>
 
-                <img
-                  src="icons/menu-nav-icon-arrow--cyan.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
-                  alt="Arrow Left"
-                />
-              </a>
-            </div>
-
-            <div class="menu__nav-item">
-              <a
-                href="#"
-                class="menu__nav-link menu__nav-link--active menu__nav-link--dark-blue-tag"
-              >
-                אודות
-                <img
-                  src="icons/menu-nav-icon-arrow--cyan.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
-                  alt="Arrow Left"
-                />
-              </a>
-            </div>
-
-            <div class="menu__nav-item">
-              <a
-                href="#"
-                class="menu__nav-link menu__nav-link--blue-tag menu__nav-link--with-arrow"
-              >
-                צור קשר
-                <img
-                  src="icons/menu-nav-icon-arrow--white.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--arrow ltr-reverse-y"
-                  alt="Arrow Up Left"
-                />
-                <img
-                  src="icons/menu-nav-icon-arrow--white.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
-                  alt="Arrow Left"
-                />
-              </a>
-            </div>
-
-            <div class="menu__nav-item">
-              <a
-                href="#"
-                class="menu__nav-link menu__nav-link--c-dark-blue menu__nav-link--cyan-tag menu__nav-link--with-arrow"
-              >
-                לכל המעברים
-                <img
-                  src="icons/menu-nav-icon-arrow--dark-blue.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--arrow ltr-reverse-y"
-                  alt="Arrow Up Left"
-                />
-                <img
-                  src="icons/menu-nav-icon-arrow--dark-blue.svg"
-                  class="menu__nav-link-icon menu__nav-link-icon--active menu__nav-link-icon--arrow"
-                  alt="Arrow Left"
-                />
-              </a>
-            </div>
-
-            <div class="menu__nav-item">
-              <a href="#" class="menu__nav-link menu__nav-link--white-tag">
-                חיפוש
-                <img
-                  src="icons/magnify.svg"
-                  class="menu__nav-link-icon ltr-reverse-y"
-                  alt="Magnify"
-                />
-              </a>
-            </div>
-
-            <div class="menu__nav-item">
-              <a
-                href="#"
-                class="menu__nav-link menu__nav-link--c-white menu__nav-link--white-tag"
-              >
-                איזור אישי
-              </a>
-            </div>
-
-            <div class="menu__nav-row">
-              <div class="menu__nav-item">
-                <a
-                  href="#"
-                  class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
-                >
-                  <img
-                    src="icons/accessibility.svg"
-                    class="menu__nav-link-icon"
-                    alt="Accessibility"
-                  />
-                </a>
-              </div>
-
-              <div class="menu__nav-item">
-                <a
-                  href="#"
-                  class="menu__nav-link menu__nav-link--center menu__nav-link--white-tag menu__nav-link--with-icon"
-                >
-                  <img
-                    src="icons/lang.svg"
-                    class="menu__nav-link-icon"
-                    alt="Language"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="breadcrumbs">
-          <a href="#" class="breadcrumbs__link">
-            <span
-              class="breadcrumbs__link-icon breadcrumbs__link-icon--home"
-            ></span>
-            <span
-              class="breadcrumbs__link-icon breadcrumbs__link-icon--arrow ltr-reverse-y"
-            ></span>
-          </a>
-
-          <a href="#" class="breadcrumbs__link">
-            <span class="breadcrumbs__link-text">כל המעברים</span>
-          </a>
-        </div>
-
-        <div class="main-content__cover-top-wrapper-shadow">
-          <img
-            class="main-content__cover-top main-content__cover-top--mobile"
-            src="/src/assets/images/cars-header.png"
-            alt=""
-          />
-        </div>
-
-        <div class="main-content container">
-          <div class="main-content__layout contact-us__layout">
-            <div
-              class="content-aside contact-us__content-aside content-aside--sticky"
-            >
-              <h2
-                class="content-aside__title content-aside__title--lg contact-us__aside-title"
-              >
-                צריכים עזרה?
-              </h2>
-
-              <div class="contact-us__card-list">
-                <div class="contact-us__card-col contact-us__card-col--left">
-                  <div
-                  class="contact-us__aside-card contact-us__aside-card--330px"
-                >
+            <div class="contact-us__card-list">
+              <div class="contact-us__card-col contact-us__card-col--left">
+                <div class="contact-us__aside-card contact-us__aside-card--330px">
                   <div class="contact-us__aside-card--content pb-0">
-                    <div
-                      class="contact-us__aside-card-title contact-us__aside-card-title--mb-sm"
-                    >
+                    <div class="contact-us__aside-card-title contact-us__aside-card-title--mb-sm">
                       פניות הציבור
                     </div>
 
-                    <div
-                      class="contact-us__aside-card-text contact-us__aside-card-text--lg"
-                    >
+                    <div class="contact-us__aside-card-text contact-us__aside-card-text--lg">
                       04-6582​900​​
                     </div>
 
-                    <a
-                      class="button__link-45-arrow button__link-45-arrow--lg contact-us__aside-button"
-                      href="/"
-                    >
+                    <a class="button__link-45-arrow button__link-45-arrow--lg contact-us__aside-button button__link-45-arrow--hover-dark-blue"
+                      href="/">
                       לפנייה בכתב
-                      <img
-                        src="/icons/arrow-up-left-sm.svg"
-                        alt="Arrow Up Left"
-                      />
+                      <img src="/icons/arrow-up-left-sm.svg" alt="Arrow Up Left" />
                     </a>
                   </div>
 
                   <a class="contact-us__aside-link" href="/">
                     <div class="contact-us__aside-link-text">לפנייה בכתב</div>
                     <div class="contact-us__aside-link-image-wrapper">
-                      <img
-                        src="/icons/arrow-up-left-sm.svg"
-                        class="contact-us__aside-link-image"
-                        alt="Arrow Up Left"
-                      />
+                      <img src="/icons/arrow-up-left-sm.svg" class="contact-us__aside-link-image" alt="Arrow Up Left" />
                     </div>
                   </a>
                 </div>
-                </div>
+              </div>
 
-                <div class="contact-us__card-col contact-us__card-col--right">
-                  <div
-                  class="contact-us__aside-card contact-us__aside-card--full"
-                >
+              <div class="contact-us__card-col contact-us__card-col--right">
+                <div class="contact-us__aside-card contact-us__aside-card--full">
                   <div class="contact-us__aside-card--content pb-0">
-                    <div
-                      class="contact-us__aside-card-title contact-us__aside-card-title--mb-sm"
-                    >
+                    <div class="contact-us__aside-card-title contact-us__aside-card-title--mb-sm">
                       בואו לעבוד במעברי רמי"ם
                     </div>
 
                     <div
-                      class="contact-us__aside-card-text contact-us__aside-card-text--mdcontact-us__aside-card-text--variant-1"
-                    >
+                      class="contact-us__aside-card-text contact-us__aside-card-text--mdcontact-us__aside-card-text--variant-1">
                       ליצירת קשר כמאבטחים/בודקים במעברי רמי"ם
                     </div>
 
@@ -308,22 +203,12 @@
                         <p><strong>חברת טי אנד אם</strong></p>
                         <p>073-3531834 |&nbsp;073-3531834</p>
                         <p>
-                          <a
-                            target=""
-                            data-router-slot="disabled"
-                            href="mailto:bilha.gold@tmprotection.co.il"
-                            type="external"
-                            >bilha.gold@tmprotection.co.il</a
-                          >
+                          <a target="" data-router-slot="disabled" href="mailto:bilha.gold@tmprotection.co.il"
+                            type="external">bilha.gold@tmprotection.co.il</a>
                         </p>
                         <p>
-                          <a
-                            target=""
-                            data-router-slot="disabled"
-                            href="mailto:Ofir.gal@tmprotection.co.il"
-                            type="external"
-                            >Ofir.gal@tmprotection.co.il</a
-                          >
+                          <a target="" data-router-slot="disabled" href="mailto:Ofir.gal@tmprotection.co.il"
+                            type="external">Ofir.gal@tmprotection.co.il</a>
                         </p>
                       </div>
                       <div class="t-row">
@@ -331,525 +216,367 @@
                         <p>073-3531834</p>
                         <p>מייל לשליחת קורות חיים</p>
                         <p>
-                          <a
-                            target=""
-                            data-router-slot="disabled"
-                            href="mailto:maavarim.sheleg@gmail.com"
-                            type="external"
-                            >maavarim.sheleg@gmail.com</a
-                          >
+                          <a target="" data-router-slot="disabled" href="mailto:maavarim.sheleg@gmail.com"
+                            type="external">maavarim.sheleg@gmail.com</a>
                         </p>
                       </div>
                     </div>
 
-                    <a
-                      class="button__link-45-arrow button__link-45-arrow--lg contact-us__aside-button"
-                      href="/"
-                    >
+                    <a class="button__link-45-arrow button__link-45-arrow--lg contact-us__aside-button button__link-45-arrow--hover-dark-blue"
+                      href="/">
                       למשרות הפנויות
-                      <img
-                        src="/icons/arrow-up-left-sm.svg"
-                        alt="Arrow Up Left"
-                      />
+                      <img src="/icons/arrow-up-left-sm.svg" alt="Arrow Up Left" />
                     </a>
                   </div>
 
                   <a class="contact-us__aside-link" href="/">
                     <div class="contact-us__aside-link-text">לפנייה בכתב</div>
                     <div class="contact-us__aside-link-image-wrapper">
-                      <img
-                        src="/icons/arrow-up-left-sm.svg"
-                        class="contact-us__aside-link-image"
-                        alt="Arrow Up Left"
-                      />
+                      <img src="/icons/arrow-up-left-sm.svg" class="contact-us__aside-link-image" alt="Arrow Up Left" />
                     </div>
                   </a>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="main-content__page main-content__contact-us-page">
+            <div class="main-content__section">
+              <div class="contact-list__wrapper">
+                <div class="contact-list__list">
+                  <div class="contact-list__item">
+                    <div class="contact-list__item-title">פניות הציבור</div>
+                    <div class="contact-list__item-value">04-6582900</div>
+                  </div>
+                  <div class="contact-list__item">
+                    <div class="contact-list__item-title">פניות הציבור</div>
+                    <div class="contact-list__item-value">04-6582900</div>
+                  </div>
+                  <div class="contact-list__item">
+                    <div class="contact-list__item-title">פניות הציבור</div>
+                    <div class="contact-list__item-value">04-6582900</div>
+                  </div>
+                </div>
+                <div class="contact-list__list">
+                  <div class="contact-list__item">
+                    <div class="contact-list__item-title">פניות הציבור</div>
+                    <div class="contact-list__item-value">04-6582900</div>
+                  </div>
+                  <div class="contact-list__item">
+                    <div class="contact-list__item-title">פניות הציבור</div>
+                    <div class="contact-list__item-value">04-6582900</div>
+                  </div>
+                  <div class="contact-list__item">
+                    <div class="contact-list__item-title">פניות הציבור</div>
+                    <div class="contact-list__item-value">04-6582900</div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="main-content__page main-content__contact-us-page">
-              <div class="main-content__section">
-                <div class="contact-list__wrapper">
-                  <div class="contact-list__list">
-                    <div class="contact-list__item">
-                      <div class="contact-list__item-title">פניות הציבור</div>
-                      <div class="contact-list__item-value">04-6582900</div>
+            <div class="main-content__section">
+              <h2 class="passangers__title">מעברים</h2>
+
+              <div class="content-aside__tag-list passangers__tag-list">
+                <label class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white">
+                  <input type="checkbox" class="content-aside__tag-checkbox" />
+                  <span class="content-aside__tag-text">מעברים</span>
+                </label>
+                <label class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white">
+                  <input type="checkbox" class="content-aside__tag-checkbox" />
+                  <span class="content-aside__tag-text">מעברים</span>
+                </label>
+                <label class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white">
+                  <input type="checkbox" class="content-aside__tag-checkbox" />
+                  <span class="content-aside__tag-text">טכנולוגיה</span>
+                </label>
+                <label class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white">
+                  <input type="checkbox" class="content-aside__tag-checkbox" />
+                  <span class="content-aside__tag-text">טכנולוגיה וחדשנות</span>
+                </label>
+                <label class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white">
+                  <input type="checkbox" class="content-aside__tag-checkbox" />
+                  <span class="content-aside__tag-text">מעברים</span>
+                </label>
+                <label class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white">
+                  <input type="checkbox" class="content-aside__tag-checkbox" />
+                  <span class="content-aside__tag-text">מעברים</span>
+                </label>
+              </div>
+
+              <div class="passangers__list">
+                <div class="passangers__item">
+                  <div class="passangers__item-header-sm">יהודה ושומרון</div>
+                  <div class="passangers__item-header-lg">יהודה ושומרון</div>
+
+                  <div class="passangers__text-row">
+                    <div class="passangers__text-row-icon-wrapper">
+                      <img src="icons/location.svg" class="passangers__text-row-icon" alt="Location" />
                     </div>
-                    <div class="contact-list__item">
-                      <div class="contact-list__item-title">פניות הציבור</div>
-                      <div class="contact-list__item-value">04-6582900</div>
-                    </div>
-                    <div class="contact-list__item">
-                      <div class="contact-list__item-title">פניות הציבור</div>
-                      <div class="contact-list__item-value">04-6582900</div>
+                    <div class="passangers__text-row-text--sm">
+                      המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון
+                      דרום, צפונית לג'נין
                     </div>
                   </div>
-                  <div class="contact-list__list">
-                    <div class="contact-list__item">
-                      <div class="contact-list__item-title">פניות הציבור</div>
-                      <div class="contact-list__item-value">04-6582900</div>
+
+                  <div class="passangers__text-row mb-0">
+                    <div class="passangers__text-row-icon-wrapper">
+                      <img src="icons/call.svg" class="passangers__text-row-icon" alt="Phone" />
                     </div>
-                    <div class="contact-list__item">
-                      <div class="contact-list__item-title">פניות הציבור</div>
-                      <div class="contact-list__item-value">04-6582900</div>
-                    </div>
-                    <div class="contact-list__item">
-                      <div class="contact-list__item-title">פניות הציבור</div>
-                      <div class="contact-list__item-value">04-6582900</div>
+                    <div class="passangers__text-row-text--lg">
+                      04-6582147
                     </div>
                   </div>
+
+                  <a class="passangers__rect-item-link">
+                    <img src="icons/arrow-up-left-sm.svg" class="passangers__rect-item-link-icon" alt="Arrow Up Left" />
+                  </a>
+                </div>
+                <div class="passangers__item">
+                  <div class="passangers__item-header-sm">יהודה ושומרון</div>
+                  <div class="passangers__item-header-lg">יהודה ושומרון</div>
+
+                  <div class="passangers__text-row">
+                    <div class="passangers__text-row-icon-wrapper">
+                      <img src="icons/location.svg" class="passangers__text-row-icon" alt="Location" />
+                    </div>
+                    <div class="passangers__text-row-text--sm">
+                      המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון
+                      דרום, צפונית לג'נין
+                    </div>
+                  </div>
+
+                  <div class="passangers__text-row mb-0">
+                    <div class="passangers__text-row-icon-wrapper">
+                      <img src="icons/call.svg" class="passangers__text-row-icon" alt="Phone" />
+                    </div>
+                    <div class="passangers__text-row-text--lg">
+                      04-6582147
+                    </div>
+                  </div>
+
+                  <a class="passangers__rect-item-link">
+                    <img src="icons/arrow-up-left-sm.svg" class="passangers__rect-item-link-icon" alt="Arrow Up Left" />
+                  </a>
+                </div>
+                <div class="passangers__item">
+                  <div class="passangers__item-header-sm">יהודה ושומרון</div>
+                  <div class="passangers__item-header-lg">יהודה ושומרון</div>
+
+                  <div class="passangers__text-row">
+                    <div class="passangers__text-row-icon-wrapper">
+                      <img src="icons/location.svg" class="passangers__text-row-icon" alt="Location" />
+                    </div>
+                    <div class="passangers__text-row-text--sm">
+                      המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון
+                      דרום, צפונית לג'נין
+                    </div>
+                  </div>
+
+                  <div class="passangers__text-row mb-0">
+                    <div class="passangers__text-row-icon-wrapper">
+                      <img src="icons/call.svg" class="passangers__text-row-icon" alt="Phone" />
+                    </div>
+                    <div class="passangers__text-row-text--lg">
+                      04-6582147
+                    </div>
+                  </div>
+
+                  <a class="passangers__rect-item-link">
+                    <img src="icons/arrow-up-left-sm.svg" class="passangers__rect-item-link-icon" alt="Arrow Up Left" />
+                  </a>
+                </div>
+                <div class="passangers__item">
+                  <div class="passangers__item-header-sm">יהודה ושומרון</div>
+                  <div class="passangers__item-header-lg">יהודה ושומרון</div>
+
+                  <div class="passangers__text-row">
+                    <div class="passangers__text-row-icon-wrapper">
+                      <img src="icons/location.svg" class="passangers__text-row-icon" alt="Location" />
+                    </div>
+                    <div class="passangers__text-row-text--sm">
+                      המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון
+                      דרום, צפונית לג'נין
+                    </div>
+                  </div>
+
+                  <div class="passangers__text-row mb-0">
+                    <div class="passangers__text-row-icon-wrapper">
+                      <img src="icons/call.svg" class="passangers__text-row-icon" alt="Phone" />
+                    </div>
+                    <div class="passangers__text-row-text--lg">
+                      04-6582147
+                    </div>
+                  </div>
+
+                  <a class="passangers__rect-item-link">
+                    <img src="icons/arrow-up-left-sm.svg" class="passangers__rect-item-link-icon" alt="Arrow Up Left" />
+                  </a>
+                </div>
+                <div class="passangers__item">
+                  <div class="passangers__item-header-sm">יהודה ושומרון</div>
+                  <div class="passangers__item-header-lg">יהודה ושומרון</div>
+
+                  <div class="passangers__text-row">
+                    <div class="passangers__text-row-icon-wrapper">
+                      <img src="icons/location.svg" class="passangers__text-row-icon" alt="Location" />
+                    </div>
+                    <div class="passangers__text-row-text--sm">
+                      המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון
+                      דרום, צפונית לג'נין
+                    </div>
+                  </div>
+
+                  <div class="passangers__text-row mb-0">
+                    <div class="passangers__text-row-icon-wrapper">
+                      <img src="icons/call.svg" class="passangers__text-row-icon" alt="Phone" />
+                    </div>
+                    <div class="passangers__text-row-text--lg">
+                      04-6582147
+                    </div>
+                  </div>
+
+                  <a class="passangers__rect-item-link">
+                    <img src="icons/arrow-up-left-sm.svg" class="passangers__rect-item-link-icon" alt="Arrow Up Left" />
+                  </a>
+                </div>
+                <div class="passangers__item">
+                  <div class="passangers__item-header-sm">יהודה ושומרון</div>
+                  <div class="passangers__item-header-lg">יהודה ושומרון</div>
+
+                  <div class="passangers__text-row">
+                    <div class="passangers__text-row-icon-wrapper">
+                      <img src="icons/location.svg" class="passangers__text-row-icon" alt="Location" />
+                    </div>
+                    <div class="passangers__text-row-text--sm">
+                      המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון
+                      דרום, צפונית לג'נין
+                    </div>
+                  </div>
+
+                  <div class="passangers__text-row mb-0">
+                    <div class="passangers__text-row-icon-wrapper">
+                      <img src="icons/call.svg" class="passangers__text-row-icon" alt="Phone" />
+                    </div>
+                    <div class="passangers__text-row-text--lg">
+                      04-6582147
+                    </div>
+                  </div>
+
+                  <a class="passangers__rect-item-link">
+                    <img src="icons/arrow-up-left-sm.svg" class="passangers__rect-item-link-icon" alt="Arrow Up Left" />
+                  </a>
+                </div>
+                <div class="passangers__item">
+                  <div class="passangers__item-header-sm">יהודה ושומרון</div>
+                  <div class="passangers__item-header-lg">יהודה ושומרון</div>
+
+                  <div class="passangers__text-row">
+                    <div class="passangers__text-row-icon-wrapper">
+                      <img src="icons/location.svg" class="passangers__text-row-icon" alt="Location" />
+                    </div>
+                    <div class="passangers__text-row-text--sm">
+                      המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון
+                      דרום, צפונית לג'נין
+                    </div>
+                  </div>
+
+                  <div class="passangers__text-row mb-0">
+                    <div class="passangers__text-row-icon-wrapper">
+                      <img src="icons/call.svg" class="passangers__text-row-icon" alt="Phone" />
+                    </div>
+                    <div class="passangers__text-row-text--lg">
+                      04-6582147
+                    </div>
+                  </div>
+
+                  <a class="passangers__rect-item-link">
+                    <img src="icons/arrow-up-left-sm.svg" class="passangers__rect-item-link-icon" alt="Arrow Up Left" />
+                  </a>
+                </div>
+                <div class="passangers__item">
+                  <div class="passangers__item-header-sm">יהודה ושומרון</div>
+                  <div class="passangers__item-header-lg">יהודה ושומרון</div>
+
+                  <div class="passangers__text-row">
+                    <div class="passangers__text-row-icon-wrapper">
+                      <img src="icons/location.svg" class="passangers__text-row-icon" alt="Location" />
+                    </div>
+                    <div class="passangers__text-row-text--sm">
+                      המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון
+                      דרום, צפונית לג'נין
+                    </div>
+                  </div>
+
+                  <div class="passangers__text-row mb-0">
+                    <div class="passangers__text-row-icon-wrapper">
+                      <img src="icons/call.svg" class="passangers__text-row-icon" alt="Phone" />
+                    </div>
+                    <div class="passangers__text-row-text--lg">
+                      04-6582147
+                    </div>
+                  </div>
+
+                  <a class="passangers__rect-item-link">
+                    <img src="icons/arrow-up-left-sm.svg" class="passangers__rect-item-link-icon" alt="Arrow Up Left" />
+                  </a>
                 </div>
               </div>
 
-              <div class="main-content__section">
-                <h2 class="passangers__title">מעברים</h2>
-
-                <div class="content-aside__tag-list passangers__tag-list">
-                  <label
-                    class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
-                  >
-                    <input
-                      type="checkbox"
-                      class="content-aside__tag-checkbox"
-                    />
-                    <span class="content-aside__tag-text">מעברים</span>
-                  </label>
-                  <label
-                    class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
-                  >
-                    <input
-                      type="checkbox"
-                      class="content-aside__tag-checkbox"
-                    />
-                    <span class="content-aside__tag-text">מעברים</span>
-                  </label>
-                  <label
-                    class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
-                  >
-                    <input
-                      type="checkbox"
-                      class="content-aside__tag-checkbox"
-                    />
-                    <span class="content-aside__tag-text">טכנולוגיה</span>
-                  </label>
-                  <label
-                    class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
-                  >
-                    <input
-                      type="checkbox"
-                      class="content-aside__tag-checkbox"
-                    />
-                    <span class="content-aside__tag-text"
-                      >טכנולוגיה וחדשנות</span
-                    >
-                  </label>
-                  <label
-                    class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
-                  >
-                    <input
-                      type="checkbox"
-                      class="content-aside__tag-checkbox"
-                    />
-                    <span class="content-aside__tag-text">מעברים</span>
-                  </label>
-                  <label
-                    class="content-aside__tag-item content-aside__tag-item--lg content-aside__tag-item--white"
-                  >
-                    <input
-                      type="checkbox"
-                      class="content-aside__tag-checkbox"
-                    />
-                    <span class="content-aside__tag-text">מעברים</span>
-                  </label>
-                </div>
-
-                <div class="passangers__list">
-                  <div class="passangers__item">
-                    <div class="passangers__item-header-sm">יהודה ושומרון</div>
-                    <div class="passangers__item-header-lg">יהודה ושומרון</div>
-
-                    <div class="passangers__text-row">
-                      <div class="passangers__text-row-icon-wrapper">
-                        <img
-                          src="icons/location.svg"
-                          class="passangers__text-row-icon"
-                          alt="Location"
-                        />
-                      </div>
-                      <div class="passangers__text-row-text--sm">
-                        המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון
-                        דרום, צפונית לג'נין
-                      </div>
-                    </div>
-
-                    <div class="passangers__text-row mb-0">
-                      <div class="passangers__text-row-icon-wrapper">
-                        <img
-                          src="icons/call.svg"
-                          class="passangers__text-row-icon"
-                          alt="Phone"
-                        />
-                      </div>
-                      <div class="passangers__text-row-text--lg">
-                        04-6582147
-                      </div>
-                    </div>
-
-                    <a class="passangers__rect-item-link">
-                      <img
-                        src="icons/arrow-up-left-sm.svg"
-                        class="passangers__rect-item-link-icon"
-                        alt="Arrow Up Left"
-                      />
-                    </a>
-                  </div>
-                  <div class="passangers__item">
-                    <div class="passangers__item-header-sm">יהודה ושומרון</div>
-                    <div class="passangers__item-header-lg">יהודה ושומרון</div>
-
-                    <div class="passangers__text-row">
-                      <div class="passangers__text-row-icon-wrapper">
-                        <img
-                          src="icons/location.svg"
-                          class="passangers__text-row-icon"
-                          alt="Location"
-                        />
-                      </div>
-                      <div class="passangers__text-row-text--sm">
-                        המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון
-                        דרום, צפונית לג'נין
-                      </div>
-                    </div>
-
-                    <div class="passangers__text-row mb-0">
-                      <div class="passangers__text-row-icon-wrapper">
-                        <img
-                          src="icons/call.svg"
-                          class="passangers__text-row-icon"
-                          alt="Phone"
-                        />
-                      </div>
-                      <div class="passangers__text-row-text--lg">
-                        04-6582147
-                      </div>
-                    </div>
-
-                    <a class="passangers__rect-item-link">
-                      <img
-                        src="icons/arrow-up-left-sm.svg"
-                        class="passangers__rect-item-link-icon"
-                        alt="Arrow Up Left"
-                      />
-                    </a>
-                  </div>
-                  <div class="passangers__item">
-                    <div class="passangers__item-header-sm">יהודה ושומרון</div>
-                    <div class="passangers__item-header-lg">יהודה ושומרון</div>
-
-                    <div class="passangers__text-row">
-                      <div class="passangers__text-row-icon-wrapper">
-                        <img
-                          src="icons/location.svg"
-                          class="passangers__text-row-icon"
-                          alt="Location"
-                        />
-                      </div>
-                      <div class="passangers__text-row-text--sm">
-                        המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון
-                        דרום, צפונית לג'נין
-                      </div>
-                    </div>
-
-                    <div class="passangers__text-row mb-0">
-                      <div class="passangers__text-row-icon-wrapper">
-                        <img
-                          src="icons/call.svg"
-                          class="passangers__text-row-icon"
-                          alt="Phone"
-                        />
-                      </div>
-                      <div class="passangers__text-row-text--lg">
-                        04-6582147
-                      </div>
-                    </div>
-
-                    <a class="passangers__rect-item-link">
-                      <img
-                        src="icons/arrow-up-left-sm.svg"
-                        class="passangers__rect-item-link-icon"
-                        alt="Arrow Up Left"
-                      />
-                    </a>
-                  </div>
-                  <div class="passangers__item">
-                    <div class="passangers__item-header-sm">יהודה ושומרון</div>
-                    <div class="passangers__item-header-lg">יהודה ושומרון</div>
-
-                    <div class="passangers__text-row">
-                      <div class="passangers__text-row-icon-wrapper">
-                        <img
-                          src="icons/location.svg"
-                          class="passangers__text-row-icon"
-                          alt="Location"
-                        />
-                      </div>
-                      <div class="passangers__text-row-text--sm">
-                        המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון
-                        דרום, צפונית לג'נין
-                      </div>
-                    </div>
-
-                    <div class="passangers__text-row mb-0">
-                      <div class="passangers__text-row-icon-wrapper">
-                        <img
-                          src="icons/call.svg"
-                          class="passangers__text-row-icon"
-                          alt="Phone"
-                        />
-                      </div>
-                      <div class="passangers__text-row-text--lg">
-                        04-6582147
-                      </div>
-                    </div>
-
-                    <a class="passangers__rect-item-link">
-                      <img
-                        src="icons/arrow-up-left-sm.svg"
-                        class="passangers__rect-item-link-icon"
-                        alt="Arrow Up Left"
-                      />
-                    </a>
-                  </div>
-                  <div class="passangers__item">
-                    <div class="passangers__item-header-sm">יהודה ושומרון</div>
-                    <div class="passangers__item-header-lg">יהודה ושומרון</div>
-
-                    <div class="passangers__text-row">
-                      <div class="passangers__text-row-icon-wrapper">
-                        <img
-                          src="icons/location.svg"
-                          class="passangers__text-row-icon"
-                          alt="Location"
-                        />
-                      </div>
-                      <div class="passangers__text-row-text--sm">
-                        המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון
-                        דרום, צפונית לג'נין
-                      </div>
-                    </div>
-
-                    <div class="passangers__text-row mb-0">
-                      <div class="passangers__text-row-icon-wrapper">
-                        <img
-                          src="icons/call.svg"
-                          class="passangers__text-row-icon"
-                          alt="Phone"
-                        />
-                      </div>
-                      <div class="passangers__text-row-text--lg">
-                        04-6582147
-                      </div>
-                    </div>
-
-                    <a class="passangers__rect-item-link">
-                      <img
-                        src="icons/arrow-up-left-sm.svg"
-                        class="passangers__rect-item-link-icon"
-                        alt="Arrow Up Left"
-                      />
-                    </a>
-                  </div>
-                  <div class="passangers__item">
-                    <div class="passangers__item-header-sm">יהודה ושומרון</div>
-                    <div class="passangers__item-header-lg">יהודה ושומרון</div>
-
-                    <div class="passangers__text-row">
-                      <div class="passangers__text-row-icon-wrapper">
-                        <img
-                          src="icons/location.svg"
-                          class="passangers__text-row-icon"
-                          alt="Location"
-                        />
-                      </div>
-                      <div class="passangers__text-row-text--sm">
-                        המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון
-                        דרום, צפונית לג'נין
-                      </div>
-                    </div>
-
-                    <div class="passangers__text-row mb-0">
-                      <div class="passangers__text-row-icon-wrapper">
-                        <img
-                          src="icons/call.svg"
-                          class="passangers__text-row-icon"
-                          alt="Phone"
-                        />
-                      </div>
-                      <div class="passangers__text-row-text--lg">
-                        04-6582147
-                      </div>
-                    </div>
-
-                    <a class="passangers__rect-item-link">
-                      <img
-                        src="icons/arrow-up-left-sm.svg"
-                        class="passangers__rect-item-link-icon"
-                        alt="Arrow Up Left"
-                      />
-                    </a>
-                  </div>
-                  <div class="passangers__item">
-                    <div class="passangers__item-header-sm">יהודה ושומרון</div>
-                    <div class="passangers__item-header-lg">יהודה ושומרון</div>
-
-                    <div class="passangers__text-row">
-                      <div class="passangers__text-row-icon-wrapper">
-                        <img
-                          src="icons/location.svg"
-                          class="passangers__text-row-icon"
-                          alt="Location"
-                        />
-                      </div>
-                      <div class="passangers__text-row-text--sm">
-                        המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון
-                        דרום, צפונית לג'נין
-                      </div>
-                    </div>
-
-                    <div class="passangers__text-row mb-0">
-                      <div class="passangers__text-row-icon-wrapper">
-                        <img
-                          src="icons/call.svg"
-                          class="passangers__text-row-icon"
-                          alt="Phone"
-                        />
-                      </div>
-                      <div class="passangers__text-row-text--lg">
-                        04-6582147
-                      </div>
-                    </div>
-
-                    <a class="passangers__rect-item-link">
-                      <img
-                        src="icons/arrow-up-left-sm.svg"
-                        class="passangers__rect-item-link-icon"
-                        alt="Arrow Up Left"
-                      />
-                    </a>
-                  </div>
-                  <div class="passangers__item">
-                    <div class="passangers__item-header-sm">יהודה ושומרון</div>
-                    <div class="passangers__item-header-lg">יהודה ושומרון</div>
-
-                    <div class="passangers__text-row">
-                      <div class="passangers__text-row-icon-wrapper">
-                        <img
-                          src="icons/location.svg"
-                          class="passangers__text-row-icon"
-                          alt="Location"
-                        />
-                      </div>
-                      <div class="passangers__text-row-text--sm">
-                        המעבר נמצא על כביש 60. בצומת יזרעאל יש להמשיך לכיוון
-                        דרום, צפונית לג'נין
-                      </div>
-                    </div>
-
-                    <div class="passangers__text-row mb-0">
-                      <div class="passangers__text-row-icon-wrapper">
-                        <img
-                          src="icons/call.svg"
-                          class="passangers__text-row-icon"
-                          alt="Phone"
-                        />
-                      </div>
-                      <div class="passangers__text-row-text--lg">
-                        04-6582147
-                      </div>
-                    </div>
-
-                    <a class="passangers__rect-item-link">
-                      <img
-                        src="icons/arrow-up-left-sm.svg"
-                        class="passangers__rect-item-link-icon"
-                        alt="Arrow Up Left"
-                      />
-                    </a>
-                  </div>
-                </div>
-
-                <button
-                  class="button button__rect button__rect--18 button__rect--outline-dark-blue"
-                >
-                  הצג עוד מבזקים
-                </button>
-              </div>
+              <button
+                class="button button__rect button__rect--18 button__rect--outline-dark-blue button__rect--hover-dark-blue">
+                הצג עוד מבזקים
+              </button>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <footer class="footer footer--gray-bg">
-        <div class="footer__inner">
-          <div class="footer__main">
-            <div class="footer__text-wrapper">
-              <h4 class="footer__text-subtitle">רשות המעברים היבשתיים</h4>
-              <h2 class="footer__text-title">ביטחון שמוביל את הדרך</h2>
-            </div>
-            <div class="footer__nav">
-              <a href="#" class="footer__nav-link">אודות</a>
-              <a href="#" class="footer__nav-link">אודות</a>
-              <a href="#" class="footer__nav-link">אודות</a>
-              <a href="#" class="footer__nav-link">אודות</a>
-              <a href="#" class="footer__nav-link">אודות</a>
-              <a href="#" class="footer__nav-link">אודות</a>
-            </div>
+    <footer class="footer footer--gray-bg">
+      <div class="footer__inner">
+        <div class="footer__main">
+          <div class="footer__text-wrapper">
+            <h4 class="footer__text-subtitle">רשות המעברים היבשתיים</h4>
+            <h2 class="footer__text-title">ביטחון שמוביל את הדרך</h2>
           </div>
-
-          <div class="footer__sub">
-            <div class="footer__social-wrapper">
-              <a href="" class="footer__social-link">
-                <img
-                  class="footer__social-link-image"
-                  src="/src/assets/icons/yt.svg"
-                  alt="Youtube"
-                />
-              </a>
-              <a href="" class="footer__social-link">
-                <img
-                  class="footer__social-link-image"
-                  src="/src/assets/icons/inst.svg"
-                  alt="Instagram"
-                />
-              </a>
-              <a href="" class="footer__social-link">
-                <img
-                  class="footer__social-link-image"
-                  src="/src/assets/icons/fb.svg"
-                  alt="Facebook"
-                />
-              </a>
-            </div>
-
-            <div class="footer__subnav">
-              <a href="#" class="footer__subnav-link">אודות</a>
-              <a href="#" class="footer__subnav-link">אודות</a>
-              <a href="#" class="footer__subnav-link">אודות</a>
-            </div>
-
-            <div class="footer__powered-by ltr">
-              Powered by
-              <img
-                class="footer__powered-by-logo"
-                src="/src/assets/icons/powered-by-logo.svg"
-                alt="Powered by logo"
-              />
-            </div>
+          <div class="footer__nav">
+            <a href="#" class="footer__nav-link">אודות</a>
+            <a href="#" class="footer__nav-link">אודות</a>
+            <a href="#" class="footer__nav-link">אודות</a>
+            <a href="#" class="footer__nav-link">אודות</a>
+            <a href="#" class="footer__nav-link">אודות</a>
+            <a href="#" class="footer__nav-link">אודות</a>
           </div>
         </div>
-      </footer>
-    </div>
-  </body>
+
+        <div class="footer__sub">
+          <div class="footer__social-wrapper">
+            <a href="" class="footer__social-link">
+              <img class="footer__social-link-image" src="/src/assets/icons/yt.svg" alt="Youtube" />
+            </a>
+            <a href="" class="footer__social-link">
+              <img class="footer__social-link-image" src="/src/assets/icons/inst.svg" alt="Instagram" />
+            </a>
+            <a href="" class="footer__social-link">
+              <img class="footer__social-link-image" src="/src/assets/icons/fb.svg" alt="Facebook" />
+            </a>
+          </div>
+
+          <div class="footer__subnav">
+            <a href="#" class="footer__subnav-link">אודות</a>
+            <a href="#" class="footer__subnav-link">אודות</a>
+            <a href="#" class="footer__subnav-link">אודות</a>
+          </div>
+
+          <div class="footer__powered-by ltr">
+            Powered by
+            <img class="footer__powered-by-logo" src="/src/assets/icons/powered-by-logo.svg" alt="Powered by logo" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
 </html>

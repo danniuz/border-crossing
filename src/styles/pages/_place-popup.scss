@@ -23,6 +23,24 @@ html:dir(ltr) {
 .place-popup {
     position: relative;
 
+    .place-popup__header+.place-popup-section .place-popup-section__title {
+        margin-bottom: 0;
+
+        @include tablet-sm-min {
+            margin-bottom: 24px;
+        }
+    }
+
+    .breadcrumbs {
+        inset-inline-start: 16px !important;
+        top: 15px;
+
+        @include tablet-min {
+            top: 17px;
+            inset-inline-start: 0 !important;
+        }
+    }
+
     &__banner-image {
         width: 100%;
         height: 227px;
