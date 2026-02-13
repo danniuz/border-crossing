@@ -115,8 +115,8 @@ function calculateYAxisConfig(data) {
   // Round up to nearest divisor
   const maxY = Math.ceil(targetMax / divisor) * divisor;
 
-  // Calculate step size for 4 lines (5 ticks total including 0)
-  const stepSize = maxY / 4;
+  // Calculate step size: 4 lines on mobile (4 ticks including 0), 5 lines on desktop (5 ticks including 0)
+  const stepSize = isMobile ? maxY / 3 : maxY / 4;
 
   return {
     maxY,
@@ -172,23 +172,18 @@ export function initPlaceChart() {
   const customYAxisLabelsPlugin = {
     id: 'customYAxisLabelsPlugin',
     afterFit(scale) {
-      // Force Y-axis width to 0 on mobile to start from left edge
-      if (isMobile && scale.id === 'y') {
+      // Force Y-axis width to 0 on both mobile and desktop to start from left edge
+      if (scale.id === 'y') {
         scale.width = 0;
         scale.paddingLeft = 0;
         scale.paddingRight = 0;
       }
     },
     afterLayout(chart) {
-      // Force chart area to start from left edge on mobile
-      if (isMobile) {
-        chart.chartArea.left = 0;
-      }
+      // Force chart area to start from left edge on both mobile and desktop
+      chart.chartArea.left = 0;
     },
     afterDraw(chart) {
-      // Only apply on mobile
-      if (!isMobile) return;
-
       const { ctx, scales } = chart;
       const yScale = scales.y;
       const xScale = scales.x;
@@ -203,14 +198,16 @@ export function initPlaceChart() {
 
         const y = yScale.getPixelForValue(tick.value);
 
-        // Draw the label above the grid line, starting from the very left
+        // Draw the label above the grid line with 10px gap
         ctx.fillStyle = '#FFFFFF';
-        ctx.font = '400 14px IBM Plex Sans Hebrew';
+        ctx.font = isMobile
+          ? '400 14px IBM Plex Sans Hebrew'
+          : '500 18px IBM Plex Sans Hebrew';
         ctx.textAlign = 'left';
         ctx.textBaseline = 'bottom';
 
         const labelText = tick.value.toLocaleString();
-        ctx.fillText(labelText, 0, y - 4); // Start from x=0 (left edge)
+        ctx.fillText(labelText, 0, y - 10); // 10px gap above the line
       });
 
       ctx.restore();
@@ -315,8 +312,9 @@ export function initPlaceChart() {
       maintainAspectRatio: false,
       layout: {
         padding: {
+          top: 30, // Space for Y-axis labels above grid lines
           bottom: 0,
-          left: isMobile ? 0 : undefined,
+          left: isMobile ? 50 : 60, // Space between Y-axis labels and first bar
         },
       },
       plugins: {
@@ -399,7 +397,7 @@ export function initPlaceChart() {
           min: 0,
           stacked: true,
           grace: 0,
-          position: isMobile ? 'left' : 'left',
+          position: 'left',
           ticks: {
             stepSize: yAxisConfig.stepSize,
             color: '#FFFFFF',
@@ -410,16 +408,8 @@ export function initPlaceChart() {
             padding: 0,
             align: 'end',
             crossAlign: 'far',
-            display: !isMobile, // Hide default Y-axis labels on mobile
-            callback: (value) => {
-              // Hide the 0 label but keep the space
-              if (value === 0) return '';
-              return value.toLocaleString();
-            },
-            ...(isMobile && {
-              // On mobile, return empty string to take up no space
-              callback: () => '',
-            }),
+            display: false, // Hide default Y-axis labels on both mobile and desktop (using custom plugin)
+            callback: () => '', // Return empty string to take up no space
           },
           grid: {
             color: (context) => {
@@ -430,7 +420,7 @@ export function initPlaceChart() {
             lineWidth: 1,
             drawBorder: false,
             offset: false,
-            drawTicks: !isMobile, // Hide tick marks on mobile
+            drawTicks: false, // Hide tick marks on both mobile and desktop
           },
           border: {
             display: false,

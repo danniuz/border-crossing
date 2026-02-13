@@ -268,10 +268,10 @@ html:dir(ltr) {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
-    height: 400px;
+    height: 380px;
 
     @include desktop-sm-min {
-        height: 600px;
+        height: 485px;
     }
 
     canvas {
