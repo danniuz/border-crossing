@@ -114,6 +114,10 @@
     z-index: 10;
     position: relative;
 
+    @include desktop-sm-max {
+      margin-top: -75px;
+    }
+
     @include desktop-sm-min {
       position: absolute !important;
       bottom: 8px !important;

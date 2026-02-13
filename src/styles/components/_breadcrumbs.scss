@@ -33,10 +33,12 @@
   &--dark-blue {
     .breadcrumbs__link-icon {
       &--home {
-        background-image: url("/public/icons/home-dark-blue.svg");
+        filter: brightness(0) saturate(100%) invert(12%) sepia(86%) saturate(1350%) hue-rotate(173deg) brightness(99%) contrast(104%);
+        background-image: url("/public/icons/home-white.svg");
       }
 
       &--arrow {
+        filter: brightness(0) saturate(100%) invert(12%) sepia(86%) saturate(1350%) hue-rotate(173deg) brightness(99%) contrast(104%);
         background-image: url("/public/icons/arrow-left-breadcrumb-dark-blue.svg");
       }
     }

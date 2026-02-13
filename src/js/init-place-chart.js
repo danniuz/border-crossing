@@ -11,10 +11,6 @@ const originalData = {
       backgroundColor: '#007EA7',
       borderWidth: 0,
       iconPath: new URL(
-        '../assets/icons/chart-truck.svg',
-        import.meta.url,
-      ).toString(),
-      iconPathMobile: new URL(
         '../assets/icons/chart-truck--mobile.svg',
         import.meta.url,
       ).toString(),
@@ -25,10 +21,6 @@ const originalData = {
       backgroundColor: '#FFFFFF',
       borderWidth: 0,
       iconPath: new URL(
-        '../assets/icons/chart-car.svg',
-        import.meta.url,
-      ).toString(),
-      iconPathMobile: new URL(
         '../assets/icons/chart-car--mobile.svg',
         import.meta.url,
       ).toString(),
@@ -39,10 +31,6 @@ const originalData = {
       backgroundColor: '#5CD6FF',
       borderWidth: 0,
       iconPath: new URL(
-        '../assets/icons/chart-man.svg',
-        import.meta.url,
-      ).toString(),
-      iconPathMobile: new URL(
         '../assets/icons/chart-man--mobile.svg',
         import.meta.url,
       ).toString(),
@@ -76,7 +64,6 @@ function transformDataForSortedBars(originalData) {
       value: cat.data[barIndex],
       backgroundColor: cat.backgroundColor,
       iconPath: cat.iconPath,
-      iconPathMobile: cat.iconPathMobile,
       label: cat.label,
     }));
 
@@ -91,7 +78,6 @@ function transformDataForSortedBars(originalData) {
       positionDatasets[posIndex].categoryInfo[barIndex] = {
         categoryIndex: item.categoryIndex,
         iconPath: item.iconPath,
-        iconPathMobile: item.iconPathMobile,
         label: item.label,
       };
     });
@@ -146,20 +132,13 @@ export function initPlaceChart() {
 
   Chart.register(ChartDataLabels);
 
-  // Load all unique icons (both desktop and mobile)
+  // Load all unique icons
   const iconImagesMap = {};
   originalData.categories.forEach((cat) => {
-    // Load desktop icon
     const img = new Image();
     img.crossOrigin = 'anonymous'; // Enable CORS if needed
     img.src = cat.iconPath;
     iconImagesMap[cat.iconPath] = img;
-
-    // Load mobile icon
-    const imgMobile = new Image();
-    imgMobile.crossOrigin = 'anonymous'; // Enable CORS if needed
-    imgMobile.src = cat.iconPathMobile;
-    iconImagesMap[cat.iconPathMobile] = imgMobile;
   });
 
   let chartInstance = null;
@@ -249,27 +228,29 @@ export function initPlaceChart() {
         if (!meta) return;
 
         meta.data.forEach((barElement, barIndex) => {
+          const categoryInfo = dataset.categoryInfo[barIndex];
+          if (!categoryInfo) return;
+
+          const icon = iconImagesMap[categoryInfo.iconPath];
+          // Check if icon is loaded and valid
+          if (
+            !icon ||
+            !icon.complete ||
+            icon.naturalWidth === 0 ||
+            icon.naturalHeight === 0
+          ) {
+            return;
+          }
+
           // On desktop, always show icons
           if (!isMobile) {
-            const categoryInfo = dataset.categoryInfo[barIndex];
-            if (!categoryInfo) return;
-
-            const icon = iconImagesMap[categoryInfo.iconPath];
-            // Check if icon is loaded and valid
-            if (
-              !icon ||
-              !icon.complete ||
-              icon.naturalWidth === 0 ||
-              icon.naturalHeight === 0
-            ) {
-              return;
-            }
-
             // Position near the end of the bar segment
             const pos = barElement.tooltipPosition();
             const iconSize = 30;
 
             try {
+              // Apply filter to make icon white on desktop
+              ctx.filter = 'brightness(0) invert(1)';
               ctx.drawImage(
                 icon,
                 pos.x + iconSize + 6,
@@ -277,6 +258,8 @@ export function initPlaceChart() {
                 iconSize,
                 iconSize,
               );
+              // Reset filter
+              ctx.filter = 'none';
             } catch (error) {
               console.error(
                 'Failed to draw icon:',
@@ -296,20 +279,6 @@ export function initPlaceChart() {
             return;
           }
 
-          const categoryInfo = dataset.categoryInfo[barIndex];
-          if (!categoryInfo) return;
-
-          const icon = iconImagesMap[categoryInfo.iconPathMobile];
-          // Check if icon is loaded and valid
-          if (
-            !icon ||
-            !icon.complete ||
-            icon.naturalWidth === 0 ||
-            icon.naturalHeight === 0
-          ) {
-            return;
-          }
-
           // Position icon inside/near the label on mobile
           const pos = barElement.tooltipPosition();
           const iconSize = 16;
@@ -320,7 +289,7 @@ export function initPlaceChart() {
               ? pos.x + iconSize - 6
               : pos.x + iconSize + 44;
 
-            // Draw icon to the right of the label text (or left for last bar)
+            // Draw icon without filter on mobile (keep original color)
             ctx.drawImage(
               icon,
               iconX,
@@ -329,11 +298,7 @@ export function initPlaceChart() {
               iconSize,
             );
           } catch (error) {
-            console.error(
-              'Failed to draw mobile icon:',
-              categoryInfo.iconPathMobile,
-              error,
-            );
+            console.error('Failed to draw icon:', categoryInfo.iconPath, error);
           }
         });
       });
