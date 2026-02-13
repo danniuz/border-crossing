@@ -3,14 +3,31 @@
 html[dir="ltr"] {
   .swiper-video-clip-item {
     clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 90%);
+  }
 
+  .swiper-image-clip-item {
+    clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 90%);
   }
 }
 
 .swiper-video-clip-item {
   clip-path: polygon(100% 0%, 0% 0%, 0% 90%, 100% 100%);
-
 }
+
+.swiper-image-clip-item {
+  clip-path: polygon(100% 0%, 0% 0%, 0% 90%, 100% 100%);
+}
+
+.swiper-image-clip-item.mobile-clip-item-triangle {
+  @include tablet-max {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%, 0% 0%);
+  }
+
+  @include mobile-lg-max {
+    height: 210px;
+  }
+}
+
 
 .info-swiper {
   max-width: 704px;
@@ -54,6 +71,11 @@ html[dir="ltr"] {
     display: flex;
     width: 96px;
     justify-content: space-between;
+
+    @include desktop-sm-max {
+      max-height: 0;
+      margin: 0 !important;
+    }
 
     @include desktop-sm-min {
       visibility: visible;
@@ -122,6 +144,10 @@ html[dir="ltr"] {
     background-color: rgba(#fff, 0.9);
     z-index: 10;
     position: relative;
+
+    @include desktop-sm-max {
+      margin-top: -75px;
+    }
 
     @include desktop-sm-min {
       position: absolute !important;

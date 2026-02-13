@@ -1,8 +1,8 @@
 export function initCustomVideoPauseControlSwiper(
-    wrapperSelector,
-    videoSelector,
-    playPauseButtonSelector,
-    muteButtonSelector //optional
+  wrapperSelector,
+  videoSelector,
+  playPauseButtonSelector,
+  muteButtonSelector, //optional
 ) {
   const wrapper = document.querySelector(wrapperSelector);
   if (!wrapper) return;
@@ -26,11 +26,11 @@ export function initCustomVideoPauseControlSwiper(
       const isPaused = video.paused || video.ended;
       playBtn.setAttribute('aria-label', isPaused ? 'Play' : 'Pause');
 
-      const playIcon  = playBtn.querySelector('.play-icon');
-      const stopIcon  = playBtn.querySelector('.stop-icon');
+      const playIcon = playBtn.querySelector('.play-icon');
+      const stopIcon = playBtn.querySelector('.stop-icon');
       if (playIcon && stopIcon) {
-        playIcon.style.display  = isPaused ? '' : 'none';
-        stopIcon.style.display  = isPaused ? 'none' : '';
+        playIcon.style.display = isPaused ? '' : 'none';
+        stopIcon.style.display = isPaused ? 'none' : '';
       }
     };
 
@@ -47,7 +47,7 @@ export function initCustomVideoPauseControlSwiper(
         if (!muteBtn) return;
 
         const isMuted = video.muted;
-        muteBtn.setAttribute('aria-label', isMuted ? 'Unmute' : 'Mute');
+        muteBtn.setAttribute('aria-label', isMuted ? 'Mute' : 'Unmute');
       };
     }
 
@@ -79,14 +79,18 @@ export function initCustomVideoPauseControlSwiper(
   }
 
   const tryAttachInActiveSlide = () => {
-    const activeSlide = wrapper.querySelector('.swiper-slide-active, .swiper-slide-duplicate-active');
+    const activeSlide = wrapper.querySelector(
+      '.swiper-slide-active, .swiper-slide-duplicate-active',
+    );
     if (!activeSlide) return;
 
     const video = activeSlide.querySelector(videoSelector);
     if (!video) return;
 
     const playBtn = activeSlide.querySelector(playPauseButtonSelector);
-    const muteBtn = muteButtonSelector ? activeSlide.querySelector(muteButtonSelector) : null;
+    const muteBtn = muteButtonSelector
+      ? activeSlide.querySelector(muteButtonSelector)
+      : null;
 
     if (playBtn) {
       attachControls(playBtn, muteBtn, video);

@@ -10,6 +10,10 @@ html[dir="ltr"] {
       }
     }
   }
+
+  .footer__title-highlight-word {
+    left: 0;
+  }
 }
 
 .footer {
@@ -56,7 +60,7 @@ html[dir="ltr"] {
   }
 
   &__title-highlight-word {
-    left: 0;
+    right: 0;
   }
 
   &__title-highlight-word-shadow,
@@ -68,6 +72,7 @@ html[dir="ltr"] {
     display: inline-flex;
     // padding-inline-start: 8px;
     white-space: nowrap;
+
 
     @include tablet-min {
       font-size: 48px;

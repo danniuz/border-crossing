@@ -28,20 +28,21 @@
   background: var(--dark-blue);
   border: none;
   outline: none;
-  width: 48px;
-  height: 48px;
-  display: none;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: background 0.2s ease;
 
   @include tablet-min {
-    display: inline-flex;
+    width: 48px;
+    height: 48px;
   }
 
   .play-icon,
-  .stop-icon{
+  .stop-icon {
     height: 20px !important;
   }
 
@@ -51,22 +52,42 @@
   }
 
   &[aria-label="Play"] {
-    .play-icon  { display: block; }
-    .stop-icon  { display: none; }
+    .play-icon {
+      display: block;
+    }
+
+    .stop-icon {
+      display: none;
+    }
   }
 
   &[aria-label="Pause"] {
-    .play-icon  { display: none; }
-    .stop-icon  { display: block; }
+    .play-icon {
+      display: none;
+    }
+
+    .stop-icon {
+      display: block;
+    }
   }
 
   &[aria-label="Mute"] {
-    .mute-icon   { display: block; }
-    .unmute-icon { display: none; }
+    .mute-icon {
+      display: block;
+    }
+
+    .unmute-icon {
+      display: none;
+    }
   }
 
   &[aria-label="Unmute"] {
-    .mute-icon   { display: none; }
-    .unmute-icon { display: block; }
+    .mute-icon {
+      display: none;
+    }
+
+    .unmute-icon {
+      display: block;
+    }
   }
 }
