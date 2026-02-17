@@ -21,7 +21,7 @@ export function initMarquee(params = { start: true }) {
   let req = null;
 
   let oneSetWidth = 0; // width of 1 copy
-  let x = 0;           // translateX, always kept in [-oneSetWidth, 0)
+  let x = 0; // translateX, always kept in [-oneSetWidth, 0)
 
   // Build exactly 2 copies (original + clones) once
   if (!marqueeText.dataset.marqueeInited) {

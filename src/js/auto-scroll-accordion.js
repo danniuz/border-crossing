@@ -6,10 +6,10 @@
  * @param {string} params.imageSelector
  */
 export function initAutoScrollAccordion(
-    accordionSelector,
-    accordionItemClass,
-    accordionOpenedClass,
-    params = {},
+  accordionSelector,
+  accordionItemClass,
+  accordionOpenedClass,
+  params = {}
 ) {
   const {
     worksMinWidth = 0,
@@ -29,15 +29,15 @@ export function initAutoScrollAccordion(
   }
 
   const accordionItems =
-      accordionTemplate.getElementsByClassName(accordionItemClass);
+    accordionTemplate.getElementsByClassName(accordionItemClass);
 
   const imageElement = imageSelector
-      ? document.querySelector(imageSelector)
-      : null;
+    ? document.querySelector(imageSelector)
+    : null;
 
   if (imageElement) {
     const initialOpenedItem = Array.from(accordionItems).find((item) =>
-        item.classList.contains(accordionOpenedClass),
+      item.classList.contains(accordionOpenedClass)
     );
     if (initialOpenedItem) {
       const imgSrc = initialOpenedItem.getAttribute('data-img-src');

@@ -2,7 +2,7 @@ export function initCustomVideoPauseControlSwiper(
   wrapperSelector,
   videoSelector,
   playPauseButtonSelector,
-  muteButtonSelector, //optional
+  muteButtonSelector //optional
 ) {
   const wrapper = document.querySelector(wrapperSelector);
   if (!wrapper) return;
@@ -80,7 +80,7 @@ export function initCustomVideoPauseControlSwiper(
 
   const tryAttachInActiveSlide = () => {
     const activeSlide = wrapper.querySelector(
-      '.swiper-slide-active, .swiper-slide-duplicate-active',
+      '.swiper-slide-active, .swiper-slide-duplicate-active'
     );
     if (!activeSlide) return;
 

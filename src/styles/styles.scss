@@ -1,8 +1,8 @@
-@use "./base/base";
-@use "./components/components";
-@use "./ui/ui";
-@use "./pages/pages";
-@use "./base/media" as *;
+@use './base/base';
+@use './components/components';
+@use './ui/ui';
+@use './pages/pages';
+@use './base/media' as *;
 
 html {
   scroll-behavior: smooth;

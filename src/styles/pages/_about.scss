@@ -1,4 +1,4 @@
-@use "../base/media" as *;
+@use '../base/media' as *;
 
 .about {
   &__top-wrapper {
@@ -14,7 +14,7 @@
       background-color: transparent;
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -26,7 +26,7 @@
       }
 
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -40,7 +40,7 @@
         pointer-events: none;
       }
 
-      >* {
+      > * {
         position: relative;
         z-index: 1;
       }

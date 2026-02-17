@@ -1,128 +1,128 @@
 // Map Marker Component Styles
 .map-marker {
-    cursor: pointer;
+  cursor: pointer;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  transition:
+    background-color 0.3s ease-in-out,
+    width 0.3s ease-in-out,
+    height 0.3s ease-in-out;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 31px;
+    height: 31px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
-    transition: background-color 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+    transition: border 0.3s ease-in-out;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 41px;
+    height: 41px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: border 0.3s ease-in-out;
+  }
+
+  &:hover {
+    background-color: var(--cyan);
+    width: 18px;
+    height: 18px;
 
     &:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 31px;
-        height: 31px;
-        background-color: transparent;
-        border: 1px solid transparent;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        transition: border 0.3s ease-in-out;
+      border: 1px solid var(--cyan);
     }
 
     &:after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 41px;
-        height: 41px;
-        background-color: transparent;
-        border: 1px solid transparent;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        transition: border 0.3s ease-in-out;
+      border: 1px solid var(--cyan);
+    }
+  }
+
+  &--selected {
+    width: 18px;
+    height: 18px;
+    background-color: var(--cyan);
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 31px;
+      height: 31px;
+      background-color: transparent;
+      border: 2px solid white;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      animation: pulse-ring-inner 2s ease-in-out infinite;
     }
 
-    &:hover {
-        background-color: var(--cyan);
-        width: 18px;
-        height: 18px;
-
-        &:before {
-            border: 1px solid var(--cyan);
-        }
-
-        &:after {
-            border: 1px solid var(--cyan);
-        }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 41px;
+      height: 41px;
+      background-color: transparent;
+      border: 2px solid var(--cyan);
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      animation: pulse-ring-outer 2s ease-in-out infinite;
     }
-
-    &--selected {
-        width: 18px;
-        height: 18px;
-        background-color: var(--cyan);
-
-        &:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 31px;
-            height: 31px;
-            background-color: transparent;
-            border: 2px solid white;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            animation: pulse-ring-inner 2s ease-in-out infinite;
-        }
-
-        &:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 41px;
-            height: 41px;
-            background-color: transparent;
-            border: 2px solid var(--cyan);
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            animation: pulse-ring-outer 2s ease-in-out infinite;
-        }
-    }
+  }
 }
 
 @keyframes pulse-ring-inner {
+  0% {
+    border-color: white;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
 
-    0% {
-        border-color: white;
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.8);
-    }
+  50% {
+    border-color: var(--cyan);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 
-    50% {
-        border-color: var(--cyan);
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
-
-    100% {
-        border-color: white;
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1.2);
-    }
+  100% {
+    border-color: white;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
 }
 
 @keyframes pulse-ring-outer {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
 
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.8);
-    }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 
-    50% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1.2);
-    }
-
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
 }

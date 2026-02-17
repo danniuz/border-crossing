@@ -39,7 +39,9 @@ export function initLanguageSelector(buttonSelector, dropdownSelector) {
       buttonText.textContent = selectedLanguage;
     }
 
-    const activeItem = dropdown.querySelector('.language-dropdown__item--active');
+    const activeItem = dropdown.querySelector(
+      '.language-dropdown__item--active'
+    );
     if (activeItem) {
       activeItem.classList.remove('language-dropdown__item--active');
     }

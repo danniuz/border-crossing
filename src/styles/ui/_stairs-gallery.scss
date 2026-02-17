@@ -1,86 +1,85 @@
 @use '../base/media' as *;
 
 .stairs-gallery {
-    display: flex;
-    gap: 16px;
-    padding: 0 16px;
-    top: 0;
-    z-index: 999;
-    justify-content: center;
-    position: relative;
+  display: flex;
+  gap: 16px;
+  padding: 0 16px;
+  top: 0;
+  z-index: 999;
+  justify-content: center;
+  position: relative;
 
-    @include tablet-min {
-        top: 0;
-        position: absolute;
-        inset-inline-end: 108px;
+  @include tablet-min {
+    top: 0;
+    position: absolute;
+    inset-inline-end: 108px;
+  }
+
+  @include desktop-min {
+    top: 0;
+    inset-inline-end: 124px;
+  }
+
+  @include desktop-lg-min {
+    inset-inline-end: 184px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &:nth-child(1) {
+      margin-top: 71px;
     }
 
-    @include desktop-min {
-        top: 0;
-        inset-inline-end: 124px;
+    &:nth-child(3) {
+      margin-top: 138px;
+    }
+
+    @include tablet-min {
+      &:nth-child(1) {
+        margin-top: 24px;
+      }
+
+      &:nth-child(3) {
+        margin-top: 75px;
+      }
     }
 
     @include desktop-lg-min {
-        inset-inline-end: 184px;
+      &:nth-child(1) {
+        margin-top: -10px;
+      }
+
+      &:nth-child(2) {
+        margin-top: -50px;
+      }
+
+      &:nth-child(3) {
+        margin-top: 56px;
+      }
+    }
+  }
+
+  &__item {
+    width: 104px;
+    height: 260px;
+
+    @include tablet-lg-min {
+      width: 180px;
+      height: 450px;
     }
 
-    &__list {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-
-        &:nth-child(1) {
-            margin-top: 71px;
-        }
-
-        &:nth-child(3) {
-            margin-top: 138px;
-        }
-
-        @include tablet-min {
-            &:nth-child(1) {
-                margin-top: 24px;
-            }
-
-            &:nth-child(3) {
-                margin-top: 75px;
-            }
-        }
-
-        @include desktop-lg-min {
-            &:nth-child(1) {
-                margin-top: -10px;
-            }
-
-            &:nth-child(2) {
-                margin-top: -50px;
-            }
-
-            &:nth-child(3) {
-                margin-top: 56px;
-            }
-        }
+    @include desktop-lg-min {
+      width: 240px;
+      height: 600px;
     }
+  }
 
-    &__item {
-        width: 104px;
-        height: 260px;
-
-
-        @include tablet-lg-min {
-            width: 180px;
-            height: 450px;
-        }
-
-        @include desktop-lg-min {
-            width: 240px;
-            height: 600px;
-        }
-    }
-
-    &__image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }

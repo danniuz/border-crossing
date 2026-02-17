@@ -58,7 +58,7 @@ export function initInfographListAnimation() {
           el.textContent = Math.round(counter.value);
         },
       },
-      index * 0.15 + 0.2,
+      index * 0.15 + 0.2
     );
   });
 }

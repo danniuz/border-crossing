@@ -1,271 +1,270 @@
 @use '../base/media' as *;
 
 html:dir(ltr) {
-    .place-popup {
-        &__wrapper {
-            transform: translateX(100%);
+  .place-popup {
+    &__wrapper {
+      transform: translateX(100%);
 
-            &--open {
-                transform: translateX(0);
-            }
-        }
-
-        &--closing {
-            transform: translateX(100%);
-        }
+      &--open {
+        transform: translateX(0);
+      }
     }
 
-    .place-popup__close {
-        // margin-right: ;
+    &--closing {
+      transform: translateX(100%);
     }
+  }
+
+  .place-popup__close {
+    // margin-right: ;
+  }
 }
 
 .place-popup {
-    position: relative;
+  position: relative;
 
-    .place-popup__header+.place-popup-section .place-popup-section__title {
-        margin-bottom: 0;
+  .place-popup__header + .place-popup-section .place-popup-section__title {
+    margin-bottom: 0;
 
-        @include tablet-sm-min {
-            margin-bottom: 24px;
-        }
+    @include tablet-sm-min {
+      margin-bottom: 24px;
+    }
+  }
+
+  .breadcrumbs {
+    inset-inline-start: 16px !important;
+    top: 15px;
+
+    @include tablet-min {
+      top: 17px;
+      inset-inline-start: 0 !important;
+    }
+  }
+
+  &__banner-image {
+    width: 100%;
+    height: 227px;
+    object-fit: cover;
+
+    @include desktop-sm-min {
+      height: 440px;
+    }
+  }
+
+  &__wrapper {
+    overflow-y: auto;
+    max-width: 1240px;
+    inset-inline-end: 0;
+    top: 106px;
+    position: fixed;
+    background-color: #fff;
+    z-index: 1990;
+    height: calc(100% - 106px);
+    width: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-out;
+    background-color: #dce2e7;
+
+    &--open {
+      transform: translateX(0);
     }
 
-    .breadcrumbs {
-        inset-inline-start: 16px !important;
-        top: 15px;
-
-        @include tablet-min {
-            top: 17px;
-            inset-inline-start: 0 !important;
-        }
+    &--closing {
+      transform: translateX(-100%);
     }
 
-    &__banner-image {
-        width: 100%;
-        height: 227px;
-        object-fit: cover;
-
-        @include desktop-sm-min {
-            height: 440px;
-        }
+    @include tablet-min {
+      max-width: 1244px;
+      top: 110px;
+      height: calc(100% - 110px);
     }
 
-    &__wrapper {
-        overflow-y: auto;
-        max-width: 1240px;
-        inset-inline-end: 0;
-        top: 106px;
-        position: fixed;
-        background-color: #fff;
-        z-index: 1990;
-        height: calc(100% - 106px);
-        width: 100%;
-        transform: translateX(-100%);
-        transition: transform 0.2s ease-out;
-        background-color: #DCE2E7;
-
-        &--open {
-            transform: translateX(0);
-        }
-
-        &--closing {
-            transform: translateX(-100%);
-        }
-
-        @include tablet-min {
-            max-width: 1244px;
-            top: 110px;
-            height: calc(100% - 110px);
-        }
-
-        @include desktop-sm-min {
-            height: calc(100% - 53px);
-            top: 53px;
-        }
-
-        @include desktop-lg-min {
-            max-width: 1356px;
-        }
+    @include desktop-sm-min {
+      height: calc(100% - 53px);
+      top: 53px;
     }
 
-    &__close {
-        z-index: 1;
-        position: sticky;
-        top: 0;
-        margin-inline-start: calc(100% - 40px);
-        background: none;
-        border: none;
-        cursor: pointer;
-        background-color: #fff;
-        width: 40px;
-        height: 40px;
-        transform: translateY(0);
+    @include desktop-lg-min {
+      max-width: 1356px;
+    }
+  }
 
-        img {
-            width: 14px;
-            height: 14px;
+  &__close {
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    margin-inline-start: calc(100% - 40px);
+    background: none;
+    border: none;
+    cursor: pointer;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    transform: translateY(0);
 
-            @include desktop-sm-min {
-                width: 24px;
-                height: 24px;
-            }
-        }
+    img {
+      width: 14px;
+      height: 14px;
 
-        @include desktop-sm-min {
-            margin-inline-start: calc(100% - 64px);
-            width: 64px;
-            height: 64px;
-            top: 0;
-        }
+      @include desktop-sm-min {
+        width: 24px;
+        height: 24px;
+      }
     }
 
-    &__top-shadow {
-        margin-top: -40px;
+    @include desktop-sm-min {
+      margin-inline-start: calc(100% - 64px);
+      width: 64px;
+      height: 64px;
+      top: 0;
+    }
+  }
 
-        @include desktop-sm-min {
-            margin-top: -64px;
-        }
+  &__top-shadow {
+    margin-top: -40px;
 
-        @include desktop-min {
-            &::after {
-                content: none;
-            }
-        }
+    @include desktop-sm-min {
+      margin-top: -64px;
     }
 
-    &__warning {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 16px;
-        padding: 8px;
-        background-color: var(--blue-tag);
+    @include desktop-min {
+      &::after {
+        content: none;
+      }
+    }
+  }
 
-        @include tablet-min {
-            padding-inline-start: 48px;
-            align-items: center;
-        }
+  &__warning {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 8px;
+    background-color: var(--blue-tag);
 
-        &-text {
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 500;
-            color: #fff;
-            font-size: 16px;
-            line-height: 130%;
-
-            @include tablet-min {
-                font-size: 24px;
-                line-height: 120%;
-            }
-        }
-
-        &-icon-wrapper {
-            width: 24px;
-            height: 24px;
-            flex-shrink: 0;
-            background-color: #fff;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            @include tablet-min {
-                width: 32px;
-                height: 32px;
-            }
-        }
+    @include tablet-min {
+      padding-inline-start: 48px;
+      align-items: center;
     }
 
-    &__content {
-        padding-inline-start: 16px;
-        padding-inline-end: 16px;
-        padding-bottom: 80px;
+    &-text {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 500;
+      color: #fff;
+      font-size: 16px;
+      line-height: 130%;
 
-        @include tablet-lg-min {
-            padding-inline-start: 108px;
-            padding-inline-end: 125px;
-            padding-bottom: 64px;
-        }
-
-        @include desktop-lg-min {
-            padding-inline-start: 144px;
-            padding-inline-end: 200px;
-            padding-bottom: 64px;
-        }
+      @include tablet-min {
+        font-size: 24px;
+        line-height: 120%;
+      }
     }
 
-    &__header {
-        margin-top: 24px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    &-icon-wrapper {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      background-color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
 
-        @include tablet-min {
-            align-items: flex-start;
-            margin-top: 40px;
-        }
+      @include tablet-min {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  &__content {
+    padding-inline-start: 16px;
+    padding-inline-end: 16px;
+    padding-bottom: 80px;
+
+    @include tablet-lg-min {
+      padding-inline-start: 108px;
+      padding-inline-end: 125px;
+      padding-bottom: 64px;
     }
 
-    &__title {
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 400;
-        font-size: 28px;
-        line-height: 130%;
-        text-align: right;
-        color: var(--dark-blue);
+    @include desktop-lg-min {
+      padding-inline-start: 144px;
+      padding-inline-end: 200px;
+      padding-bottom: 64px;
+    }
+  }
 
-        @include tablet-min {
-            font-size: 60px;
-            line-height: 110%;
-        }
+  &__header {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+    @include tablet-min {
+      align-items: flex-start;
+      margin-top: 40px;
+    }
+  }
+
+  &__title {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 130%;
+    text-align: right;
+    color: var(--dark-blue);
+
+    @include tablet-min {
+      font-size: 60px;
+      line-height: 110%;
+    }
+  }
+
+  &__nav-link {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    color: var(--dark-blue);
+    display: inline-flex;
+    gap: 8px;
+    padding: 10px 12px;
+    padding-inline-start: 24px;
+    background-color: var(--cyan-tag);
+    text-decoration: none;
+    align-items: center;
+
+    img {
+      width: 24px;
+      height: 24px;
+      padding: 4px;
     }
 
-    &__nav-link {
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 140%;
-        text-align: center;
-        color: var(--dark-blue);
-        display: inline-flex;
-        gap: 8px;
-        padding: 10px 12px;
-        padding-inline-start: 24px;
-        background-color: var(--cyan-tag);
-        text-decoration: none;
-        align-items: center;
+    &:hover {
+      color: var(--white);
+      background: var(--dark-blue);
 
-        img {
-            width: 24px;
-            height: 24px;
-            padding: 4px;
-        }
-
-        &:hover {
-            color: var(--white);
-            background: var(--dark-blue);
-
-            img {
-                filter: brightness(0) invert(1);
-            }
-        }
-
-        @include tablet-min {
-            font-size: 18px;
-            gap: 16px;
-            padding: 12px 16px;
-            padding-inline-start: 32px;
-
-            img {
-                width: 18px;
-                height: 18px;
-                padding: 1px;
-            }
-        }
+      img {
+        filter: brightness(0) invert(1);
+      }
     }
+
+    @include tablet-min {
+      font-size: 18px;
+      gap: 16px;
+      padding: 12px 16px;
+      padding-inline-start: 32px;
+
+      img {
+        width: 18px;
+        height: 18px;
+        padding: 1px;
+      }
+    }
+  }
 }
 
 .place-popup-section-graph {
-    position: relative;
+  position: relative;
 }

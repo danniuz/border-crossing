@@ -50,7 +50,7 @@ function showPopup(html) {
 
   initAsideTogglerAccordion(
     '.graph__toggle-filters',
-    '.graph__tag-list-wrapper',
+    '.graph__tag-list-wrapper'
   );
 
   // Trigger the slide-in animation after a small delay to ensure the element is rendered
@@ -83,7 +83,7 @@ function closePopup(popupElement) {
     if (popupElement.parentNode) {
       popupElement.remove();
       const crossingBreadcrumbs = document.getElementById(
-        'crossing-breadcrumbs',
+        'crossing-breadcrumbs'
       );
 
       if (crossingBreadcrumbs) {

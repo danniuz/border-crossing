@@ -1,13 +1,12 @@
 @use '../base/media' as *;
 
 .personal-area {
+  &__subtitle,
+  &__undertitle {
+    max-width: 317px;
+  }
 
-    &__subtitle,
-    &__undertitle {
-        max-width: 317px;
-    }
-
-    &__title {
-        max-width: 366px;
-    }
+  &__title {
+    max-width: 366px;
+  }
 }

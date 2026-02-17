@@ -41,7 +41,7 @@ export function initDropdowns() {
         dropdown.dispatchEvent(
           new CustomEvent('dropdown-change', {
             detail: { value },
-          }),
+          })
         );
       });
     });

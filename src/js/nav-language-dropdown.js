@@ -10,7 +10,7 @@ export function initNavLanguageDropdown() {
     e.stopPropagation();
 
     const isOpened = navLanguageDropdown.classList.toggle(
-        'nav-language-dropdown--opened'
+      'nav-language-dropdown--opened'
     );
 
     navLanguageMenuLink.classList.toggle('active', isOpened);
@@ -18,8 +18,8 @@ export function initNavLanguageDropdown() {
 
   document.addEventListener('click', function (e) {
     if (
-        !navLanguageMenuLink.contains(e.target) &&
-        !navLanguageDropdown.contains(e.target)
+      !navLanguageMenuLink.contains(e.target) &&
+      !navLanguageDropdown.contains(e.target)
     ) {
       navLanguageDropdown.classList.remove('nav-language-dropdown--opened');
       navLanguageMenuLink.classList.remove('active');

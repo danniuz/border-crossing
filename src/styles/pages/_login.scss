@@ -1,20 +1,19 @@
 @use '../base/media' as *;
 
 .main-content {
-    &__top {
-        @include desktop-sm-min {
-            margin-top: 45px;
-        }
-
-
-        &-header {
-            @include desktop-sm-min {
-                margin-top: 40px;
-            }
-        }
-
-        &-header-title {
-            max-width: 317px;
-        }
+  &__top {
+    @include desktop-sm-min {
+      margin-top: 45px;
     }
+
+    &-header {
+      @include desktop-sm-min {
+        margin-top: 40px;
+      }
+    }
+
+    &-header-title {
+      max-width: 317px;
+    }
+  }
 }

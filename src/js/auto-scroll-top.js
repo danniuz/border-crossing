@@ -1,8 +1,10 @@
-export function initAutoScrollTop(selectors = '#manager-speech-statement-list') {
+export function initAutoScrollTop(
+  selectors = '#manager-speech-statement-list'
+) {
   const list = Array.isArray(selectors) ? selectors : [selectors];
 
   const run = () => {
-    const hasAny = list.some(s => document.querySelector(s));
+    const hasAny = list.some((s) => document.querySelector(s));
     if (!hasAny) return;
 
     if ('scrollRestoration' in history) {

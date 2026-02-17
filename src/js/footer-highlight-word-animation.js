@@ -16,7 +16,7 @@ export function initFooterHighlightWordAnimation(selector, options = {}) {
   }
 
   const shadowWordEl = parent.querySelector(
-    '#footer-animated-title-shadow-word',
+    '#footer-animated-title-shadow-word'
   );
 
   if (!shadowWordEl) {
@@ -59,7 +59,7 @@ export function initFooterHighlightWordAnimation(selector, options = {}) {
         y: step,
         opacity: 0,
       },
-      0,
+      0
     );
 
     // Animate current word up and out (from center to top)
@@ -71,7 +71,7 @@ export function initFooterHighlightWordAnimation(selector, options = {}) {
         duration,
         ease,
       },
-      0,
+      0
     );
 
     // Animate next word in from bottom to center (starts slightly before current word finishes)
@@ -83,7 +83,7 @@ export function initFooterHighlightWordAnimation(selector, options = {}) {
         duration,
         ease,
       },
-      duration * 0.4,
+      duration * 0.4
     );
 
     currentIndex = nextIndex;

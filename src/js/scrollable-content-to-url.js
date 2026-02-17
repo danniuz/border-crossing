@@ -1,18 +1,20 @@
 export function initScrollableContentToUrl() {
   document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('[data-scrollable-content]');
-    
+
     if (!sections.length) return;
 
     const hash = window.location.hash.slice(1);
 
     if (hash) {
-      const targetSection = document.querySelector(`[data-scrollable-content="${hash}"]`);
-      
+      const targetSection = document.querySelector(
+        `[data-scrollable-content="${hash}"]`
+      );
+
       if (targetSection) {
         setTimeout(() => {
           targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          
+
           const activeLink = document.querySelector(`[href="#${hash}"]`);
 
           if (activeLink) {
@@ -31,20 +33,26 @@ export function initScrollableContentToUrl() {
     const observerOptions = {
       root: null,
       rootMargin: '-20% 0px -60% 0px',
-      threshold: 0
+      threshold: 0,
     };
 
     const observerCallback = (entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const sectionId = entry.target.getAttribute('data-scrollable-content');
-          
+          const sectionId = entry.target.getAttribute(
+            'data-scrollable-content'
+          );
+
           if (window.location.hash !== `#${sectionId}`) {
             history.replaceState(null, '', `#${sectionId}`);
-            const previousActiveLink = document.querySelector('.smooth-aside-link__item--active');
+            const previousActiveLink = document.querySelector(
+              '.smooth-aside-link__item--active'
+            );
 
             if (previousActiveLink) {
-              previousActiveLink.classList.remove('smooth-aside-link__item--active');
+              previousActiveLink.classList.remove(
+                'smooth-aside-link__item--active'
+              );
             }
 
             const activeLink = document.querySelector(`[href="#${sectionId}"]`);
@@ -57,23 +65,31 @@ export function initScrollableContentToUrl() {
       });
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
 
-    sections.forEach(section => {
+    sections.forEach((section) => {
       observer.observe(section);
     });
 
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    anchorLinks.forEach(link => {
+    anchorLinks.forEach((link) => {
       link.addEventListener('click', (e) => {
         const href = link.getAttribute('href');
         if (href && href !== '#') {
           const targetId = href.slice(1);
-          const targetSection = document.querySelector(`[data-scrollable-content="${targetId}"]`);
-          
+          const targetSection = document.querySelector(
+            `[data-scrollable-content="${targetId}"]`
+          );
+
           if (targetSection) {
             e.preventDefault();
-            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            targetSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
             history.pushState(null, '', href);
           }
         }

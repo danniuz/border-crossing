@@ -1,11 +1,15 @@
-export function initCustomVideoPauseControl(videoSelectorWrapperSelector, videoSelector, stopButtonSelector) {
+export function initCustomVideoPauseControl(
+  videoSelectorWrapperSelector,
+  videoSelector,
+  stopButtonSelector
+) {
   const videoWrappers = document.querySelectorAll(videoSelectorWrapperSelector);
 
   if (!videoWrappers?.length) {
     return;
   }
 
-  videoWrappers.forEach(videoWrapper => {
+  videoWrappers.forEach((videoWrapper) => {
     addVideoPauseControl(videoWrapper, videoSelector, stopButtonSelector);
   });
 }

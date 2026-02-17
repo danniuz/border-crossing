@@ -55,7 +55,7 @@ export function initAside({ opened }) {
           expandToFull();
         }
       },
-      { passive: true },
+      { passive: true }
     );
   }
 

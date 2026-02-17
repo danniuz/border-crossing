@@ -9,7 +9,7 @@ export function initAccordion(
   accordionSelector,
   accordionItemClass,
   accordionOpenedClass,
-  params = {},
+  params = {}
 ) {
   const {
     avoidEventBubbleClasses = [],
@@ -46,7 +46,7 @@ export function initAccordion(
       }
 
       const isAvoidEventBubble = avoidEventBubbleClasses.some((className) =>
-        target.closest(`.${className}`),
+        target.closest(`.${className}`)
       );
 
       if (isAvoidEventBubble) {
