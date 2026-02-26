@@ -29,7 +29,7 @@ export function initAside({ opened }) {
   )
     return;
 
-  const isMobile = () => window.innerWidth <= 980;
+  const isMobile = () => window.innerWidth <= 1240;
 
   let hasExpanded = false;
 
@@ -55,7 +55,32 @@ export function initAside({ opened }) {
           expandToFull();
         }
       },
-      { passive: true }
+      { passive: true },
+    );
+
+    let touchStartY = 0;
+
+    featureList.addEventListener(
+      'touchstart',
+      (event) => {
+        touchStartY = event.touches[0]?.clientY ?? 0;
+      },
+      { passive: true },
+    );
+
+    featureList.addEventListener(
+      'touchmove',
+      (event) => {
+        if (!isMobile() || !isOpened() || hasExpanded) return;
+
+        const currentY = event.touches[0]?.clientY ?? touchStartY;
+        const deltaY = touchStartY - currentY;
+
+        if (deltaY > 18) {
+          expandToFull();
+        }
+      },
+      { passive: true },
     );
   }
 

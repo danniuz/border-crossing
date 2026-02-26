@@ -18,6 +18,38 @@
     margin-top: 0;
   }
 
+  &__warning {
+    display: flex;
+    gap: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    align-items: center;
+    color: #fff;
+
+    @include desktop-sm-min {
+      font-size: 18px;
+      gap: 16px;
+      line-height: 140%;
+    }
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+      background-color: #ffffff;
+      flex-shrink: 0;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--dark-blue);
+
+      @include desktop-sm-min {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -42,6 +74,7 @@
 
     @include desktop-sm-min {
       display: block;
+      margin-inline-start: auto;
     }
   }
 

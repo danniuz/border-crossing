@@ -1,292 +1,326 @@
 @use '../base/media' as *;
-@use "../base/mixins" as mixin;
+@use '../base/mixins' as mixin;
 
 .mapboxgl-popup {
-    width: 343px;
-    max-width: 343px !important;
-    margin-top: 180px;
+  width: 343px;
+  max-width: 343px !important;
+  margin-top: 180px;
 
-    @include tablet-min {
-        width: 752px;
-        max-width: 752px !important;
-        margin-top: -30px;
-    }
+  @include tablet-min {
+    width: 752px;
+    max-width: 752px !important;
+    margin-top: -30px;
+  }
 }
 
 .popup--map-feature-item {
-    display: block;
-    text-decoration: none;
-    color: #003459 !important;
+  display: block;
+  text-decoration: none;
+  color: #003459 !important;
+}
+
+.popup--aside-feature-item--sm {
+  min-height: 80px !important;
+  height: 80px !important;
+  align-items: center;
+
+  @include tablet-min {
+    min-height: 96px !important;
+    height: 96px !important;
+  }
+
+  .popup__title {
+    margin-bottom: 4px !important;
+  }
+
+  .popup__image {
+    object-fit: initial !important;
+    margin-inline-end: 24px;
+    width: 48px !important;
+    height: 48px !important;
+
+    @include tablet-min {
+      width: 64px !important;
+      height: 64px !important;
+    }
+  }
+
+  .popup__content {
+    justify-content: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-inline-end: 24px;
+    padding-inline-start: 24px;
+  }
 }
 
 .mapboxgl-popup-content {
-    padding: 0;
+  padding: 0;
 }
 
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
-    border-top-color: transparent;
+  border-top-color: transparent;
 }
 
-.popup--aside-feature-item,
+.popup--aside-feature-item:not(.popup--aside-feature-item--sm),
 .mapboxgl-popup-content {
-    &:hover {
-        .popup__content {
-            background-color: #fff;
-        }
-
-        .popup__status {
-            background-color: var(--light-gray);
-        }
-
-        .popup__button {
-            background-color: var(--cyan-tag);
-
-            .popup__button-icon {
-                transform: rotate(-45deg);
-            }
-        }
+  &:hover {
+    .popup__content {
+      background-color: #fff;
     }
-}
 
+    .popup__status {
+      background-color: var(--light-gray);
+    }
+
+    .popup__button {
+      background-color: var(--cyan-tag);
+
+      .popup__button-icon {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
 
 .popup {
-    display: flex;
-    height: 120px;
-    text-align: start;
-    background-color: var(--light-gray);
-    color: var(--dark-blue);
+  display: flex;
+  height: 120px;
+  text-align: start;
+  background-color: var(--light-gray);
+  color: var(--dark-blue);
+
+  @include tablet-min {
+    height: 248px;
+  }
+
+  &__button-icon {
+    width: 26px;
+  }
+
+  &__image {
+    width: 88px;
 
     @include tablet-min {
-        height: 248px;
+      width: 256px;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    padding-inline-start: 12px;
+    transition: background-color 0.3s ease;
+
+    @include tablet-min {
+      padding-top: 24px;
+      padding-bottom: 16px;
+      padding-inline-start: 24px;
+      padding-inline-end: 64px;
     }
 
-    &__button-icon {
-        width: 26px;
+    @include desktop-min {
+      width: 640px;
+    }
+  }
+
+  &__region {
+    margin-bottom: 4px;
+  }
+
+  &__title {
+    margin-bottom: 17px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 110%;
+
+    @include tablet-min {
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 100%;
+    }
+  }
+
+  &__address {
+    margin-bottom: 8px;
+    align-items: flex-start;
+    gap: 8px;
+    display: none;
+
+    @include tablet-min {
+      display: flex;
+    }
+  }
+
+  &__contact {
+    margin-bottom: 24px;
+    align-items: center;
+    gap: 8px;
+    display: none;
+
+    @include tablet-min {
+      display: flex;
+    }
+  }
+
+  &__status-list {
+    display: flex;
+    gap: 6px;
+    margin-top: auto;
+
+    @include tablet-min {
+      gap: 8px;
+      margin-top: none;
+    }
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-block: 5.5px;
+    padding-inline-start: 4px;
+    padding-inline-end: 6px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+
+    @include tablet-min {
+      padding-block: 3px;
+      padding-inline-start: 6px;
+      padding-inline-end: 10px;
+      gap: 5px;
     }
 
-    &__image {
-        width: 88px;
+    &-icon {
+      width: 28px;
+      height: 28px;
 
-        @include tablet-min {
-            width: 256px;
-        }
+      @include tablet-sm-max {
+        width: 20px;
+        height: 20px;
+      }
+
+      @include mixin.ltr {
+        transform: rotateY(180deg);
+      }
     }
 
-    &__content {
-        flex: 1;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        padding-top: 12px;
-        padding-bottom: 8px;
-        padding-inline-start: 12px;
-        transition: background-color 0.3s ease;
+    &-label {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 120%;
+      letter-spacing: 0%;
+      color: var(--red-dark);
 
-        @include tablet-min {
-            padding-top: 24px;
-            padding-bottom: 16px;
-            padding-inline-start: 24px;
-            padding-inline-end: 64px;
-        }
-
-        @include desktop-min {
-            width: 640px;
-        }
+      @include tablet-sm-max {
+        line-height: 130%;
+      }
     }
 
-    &__region {
-        margin-bottom: 4px;
+    &--active {
+      .popup__status-label {
+        color: var(--green-dark);
+      }
     }
 
-    &__title {
-        margin-bottom: 17px;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 110%;
+    &--bg-gray {
+      background-color: var(--gray-tag);
+    }
+  }
 
-        @include tablet-min {
-            font-weight: 400;
-            font-size: 32px;
-            line-height: 100%;
-        }
+  &__status-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--new-red);
+    display: inline-flex;
+    flex-shrink: 0;
+
+    @include tablet-min {
+      width: 10px;
+      height: 10px;
     }
 
-    &__address {
-        margin-bottom: 8px;
-        align-items: flex-start;
-        gap: 8px;
-        display: none;
+    &--active {
+      background-color: var(--new-green);
+    }
+  }
 
-        @include tablet-min {
-            display: flex;
-        }
+  &__button {
+    position: absolute;
+    bottom: 0;
+    inset-inline-end: 0;
+    background-color: #fff;
+    width: 64px;
+    height: 64px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    display: none;
+    transition: background-color 0.3s ease;
+
+    @include tablet-min {
+      display: inline-flex;
+    }
+  }
+
+  // Aside popup variants
+  &--aside {
+    height: auto;
+    min-height: 120px;
+    margin: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    @include tablet-min {
+      min-height: 200px;
+    }
+  }
+
+  &--aside-feature-item {
+    text-decoration: none;
+    color: #003459 !important;
+    height: 120px;
+    min-height: 120px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+
+    @include tablet-min {
+      height: 230px;
     }
 
-    &__contact {
-        margin-bottom: 24px;
-        align-items: center;
-        gap: 8px;
-        display: none;
+    .popup__title {
+      font-size: 16px;
+      margin-bottom: 12px;
 
-        @include tablet-min {
-            display: flex;
-        }
+      @include tablet-min {
+        font-size: 32px;
+        margin-bottom: 16px;
+      }
     }
 
-    &__status-list {
-        display: flex;
-        gap: 6px;
-        margin-top: auto;
-
-        @include tablet-min {
-            gap: 8px;
-            margin-top: none;
-        }
+    .popup__status-list {
+      margin-top: auto;
     }
 
-    &__status {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        padding-block: 5.5px;
-        padding-inline-start: 4px;
-        padding-inline-end: 6px;
-        background-color: #fff;
-        transition: background-color 0.3s ease;
-        width: fit-content;
+    .popup__image {
+      width: 120px;
+      height: auto;
+      object-fit: cover;
 
-        @include tablet-min {
-            padding-block: 3px;
-            padding-inline-start: 6px;
-            padding-inline-end: 10px;
-            gap: 5px;
-        }
-
-        &-icon {
-            width: 28px;
-            height: 28px;
-
-            @include tablet-sm-max {
-                width: 20px;
-                height: 20px;
-            }
-
-            @include mixin.ltr {
-                transform: rotateY(180deg);
-            }
-        }
-
-        &-label {
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 120%;
-            letter-spacing: 0%;
-            color: var(--red-dark);
-
-            @include tablet-sm-max {
-                line-height: 130%;
-            }
-        }
-
-        &--active {
-            .popup__status-label {
-                color: var(--green-dark);
-            }
-        }
-
-        &--bg-gray {
-            background-color: var(--gray-tag);
-        }
-    }
-
-    &__status-indicator {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background-color: var(--new-red);
-        display: inline-flex;
-        flex-shrink: 0;
-
-        @include tablet-min {
-            width: 10px;
-            height: 10px;
-        }
-
-        &--active {
-            background-color: var(--new-green);
-        }
-    }
-
-    &__button {
-        position: absolute;
-        bottom: 0;
-        inset-inline-end: 0;
-        background-color: #fff;
-        width: 64px;
-        height: 64px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        display: none;
-        transition: background-color 0.3s ease;
-
-        @include tablet-min {
-            display: inline-flex;
-        }
-    }
-
-    // Aside popup variants
-    &--aside {
+      @include tablet-min {
+        width: 324px;
         height: auto;
-        min-height: 120px;
-        margin: 8px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-        @include tablet-min {
-            min-height: 200px;
-        }
+      }
     }
-
-    &--aside-feature-item {
-        text-decoration: none;
-        color: #003459 !important;
-        height: 120px;
-        min-height: 120px;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-        flex-shrink: 0;
-
-        @include tablet-min {
-            height: 230px;
-        }
-
-        .popup__title {
-            font-size: 16px;
-            margin-bottom: 12px;
-
-            @include tablet-min {
-                font-size: 32px;
-                margin-bottom: 16px;
-            }
-        }
-
-        .popup__status-list {
-            margin-top: auto;
-        }
-
-        .popup__image {
-            width: 120px;
-            height: auto;
-            object-fit: cover;
-
-            @include tablet-min {
-                width: 324px;
-                height: auto;
-            }
-        }
-    }
+  }
 }

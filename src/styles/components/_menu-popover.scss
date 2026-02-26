@@ -61,14 +61,19 @@
     color: #dce2e7;
     cursor: pointer;
     width: 100%;
-    padding-inline-start: 32px;
+    padding-inline-start: 26px;
+    padding-inline-end: 10px;
     padding-top: 8px;
     padding-bottom: 8px;
-    padding-inline-end: 12px;
     transition:
       border-color 160ms ease,
       color 160ms ease,
       background-color 160ms ease;
+
+    @include mobile-lg-min {
+      padding-inline-start: 32px;
+      padding-inline-end: 12px;
+    }
 
     @include desktop-sm-min {
       line-height: 140%;

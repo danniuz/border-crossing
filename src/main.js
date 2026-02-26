@@ -48,7 +48,7 @@ function loadMap() {
   }
 }
 initAutoScrollTop();
-initAside({ opened: false });
+initAside({ opened: true });
 initMenu();
 loadMap();
 initMarquee({ start: true });
