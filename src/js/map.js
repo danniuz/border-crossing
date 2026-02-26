@@ -43,40 +43,68 @@ export function initMap() {
  */
 function createMapboxPopup(feature, map) {
   const el = document.createElement('div');
-  el.className = 'map-marker';
+  const isDisabled = Boolean(feature.disabled ?? feature.properties?.disabled);
+  el.className = isDisabled ? 'map-marker map-marker--disabled' : 'map-marker';
 
-  el.addEventListener('click', () => {
-    el.classList.add('map-marker--selected');
+  if (!isDisabled) {
+    el.addEventListener('click', () => {
+      el.classList.add('map-marker--selected');
 
-    map.flyTo({
-      center: feature.geometry.coordinates,
-      essential: true,
+      map.flyTo({
+        center: feature.geometry.coordinates,
+        essential: true,
+      });
     });
+  }
+
+  const marker = new mapboxgl.Marker({
+    element: el,
   });
 
-  const popupHTML = `
+  marker.setLngLat(feature.geometry.coordinates);
+
+  if (feature.properties && !isDisabled) {
+    const popupHTML = createTooltip(feature.properties);
+
+    const tooltipPopup = new mapboxgl.Popup({
+      offset: 15,
+      closeButton: false,
+    }).setHTML(popupHTML);
+
+    tooltipPopup.on('close', () => {
+      el.classList.remove('map-marker--selected');
+    });
+
+    marker.setPopup(tooltipPopup);
+  }
+
+  marker.addTo(map);
+}
+
+function createTooltip(properties) {
+  return `
         <a class="popup popup--map-feature-item">
             <div class="popup__content">
-                <p class="popup__region text-xs">${feature.properties.area}</p>
-                <h2 class="popup__title">${feature.properties.title}</h2>
+                <p class="popup__region text-xs">${properties.area}</p>
+                <h2 class="popup__title">${properties.title}</h2>
                 <p class="popup__address text-s">
                     <img src="icons/location.svg" class="popup__address-icon" alt="Location">
-                    ${feature.properties.addressDescription}
+                    ${properties.addressDescription}
                 </p>
                 <p class="popup__contact text-s">
                     <img src="icons/call.svg" class="popup__contact-icon" alt="Phone">
-                    ${feature.properties.phoneNumber}
+                    ${properties.phoneNumber}
                 </p>
                 <div class="popup__status-list">
-                    <div class="popup__status ${feature.properties.statuses.pedestrians ? 'popup__status--active' : ''}">
+                    <div class="popup__status ${properties.statuses.pedestrians ? 'popup__status--active' : ''}">
                         <img src="icons/man.svg" class="popup__status-icon" alt="">
                         <span class="popup__status-label">פתוח</span>
                     </div>
-                    <div class="popup__status ${feature.properties.statuses.pedestrians ? 'popup__status--active' : ''}">
+                    <div class="popup__status ${properties.statuses.pedestrians ? 'popup__status--active' : ''}">
                         <img src="icons/car.svg" class="popup__status-icon" alt="">
                         <span class="popup__status-label">סגור</span>
                     </div>
-                    <div class="popup__status ${feature.properties.statuses.pedestrians ? 'popup__status--active' : ''}">
+                    <div class="popup__status ${properties.statuses.pedestrians ? 'popup__status--active' : ''}">
                         <img src="icons/truck.svg" class="popup__status-icon" alt="">
                         <span class="popup__status-label">סגור</span>
                     </div>
@@ -85,23 +113,7 @@ function createMapboxPopup(feature, map) {
                     <img src="icons/arrow-up-left-sm.svg" class="popup__button-icon" alt="Arrow Up Left">
                 </button>
             </div>
-            <img class="popup__image" src="${feature.properties.lobbyImage}" alt="${feature.properties.title}">
+            <img class="popup__image" src="${properties.lobbyImage}" alt="${properties.title}">
         </a>
     `;
-
-  const tooltipPopup = new mapboxgl.Popup({
-    offset: 15,
-    closeButton: false,
-  }).setHTML(popupHTML);
-
-  tooltipPopup.on('close', () => {
-    el.classList.remove('map-marker--selected');
-  });
-
-  new mapboxgl.Marker({
-    element: el,
-  })
-    .setLngLat(feature.geometry.coordinates)
-    .setPopup(tooltipPopup)
-    .addTo(map);
 }

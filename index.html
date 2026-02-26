@@ -300,6 +300,21 @@
                     <div class="aside-filter__title">סינון סוג פעילות</div>
 
                     <div class="aside-filter">
+                      <div class="hide-desktop-sm-min">
+                        <div class="menu-popover__title">הצגת סוג המעברים</div>
+
+                        <div class="menu-popover__option-list">
+                          <div class="menu-popover__option">
+                            <input class="menu-popover__option-input" type="radio" id="option1" name="option" value="option1" />
+                            <label class="menu-popover__option-label" for="option1">מעברי רמי״ם</label>
+                          </div>
+                          <div class="menu-popover__option">
+                            <input class="menu-popover__option-input" type="radio" id="option2" name="option" value="option2" />
+                            <label class="menu-popover__option-label" for="option2">מעברי רשויות אחרות</label>
+                          </div>
+                        </div>
+                      </div>
+
                       <div class="aside-filter__filter-list-title">סינון סוג פעילות</div>
 
                       <div class="aside-filter__filter-list">
@@ -906,7 +921,7 @@
           </div>
 
           <button id="aside-toggler-opened-mobile" class="aside-toggler-button aside-toggler-button--shown">
-            <div class="aside-toggler-button__content hide-tablet-min">
+            <div class="aside-toggler-button__content hide-desktop-sm-min">
               <span class="aside-toggler__icon-wrapper">
                 <img src="icons/map.svg" class="aside-toggler__icon" alt="Map" />
               </span>
@@ -914,12 +929,27 @@
           </button>
 
           <button id="aside-toggler-closed-mobile" class="aside-toggler-button aside-toggler-button--closed">
-            <div class="aside-toggler-button__content hide-tablet-min">
+            <div class="aside-toggler-button__content hide-desktop-sm-min">
               <span class="aside-toggler__icon-wrapper">
                 <img src="icons/list.svg" class="aside-toggler__icon aside-toggler__icon-burger" alt="List" />
               </span>
             </div>
           </button>
+        </div>
+
+        <div class="menu-popover hide-desktop-sm-max">
+          <div class="menu-popover__title">הצגת סוג המעברים</div>
+
+          <div class="menu-popover__option-list">
+            <div class="menu-popover__option">
+              <input class="menu-popover__option-input" type="radio" id="option1" name="option" value="option1" />
+              <label class="menu-popover__option-label" for="option1">מעברי רמי״ם</label>
+            </div>
+            <div class="menu-popover__option">
+              <input class="menu-popover__option-input" type="radio" id="option2" name="option" value="option2" />
+              <label class="menu-popover__option-label" for="option2">מעברי רשויות אחרות</label>
+            </div>
+          </div>
         </div>
 
         <div id="map"></div>
