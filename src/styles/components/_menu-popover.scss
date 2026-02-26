@@ -1,0 +1,138 @@
+@use '../base/media' as *;
+
+.menu-popover {
+  padding: 16px;
+  z-index: 1;
+
+  @include desktop-sm-min {
+    background-color: #ffffff29;
+    position: absolute;
+    bottom: 16px;
+
+    inset-inline-start: 16px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.5%;
+    margin-bottom: 8px;
+    color: #ffffff;
+
+    @include desktop-sm-min {
+      line-height: 130%;
+    }
+  }
+
+  &__option-list {
+    display: flex;
+    gap: 8px;
+    margin-inline-start: 1px;
+    margin-bottom: 1px;
+
+    @include desktop-sm-min {
+      flex-direction: column;
+      gap: 16px;
+      margin-inline-start: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__option {
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__option-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__option-label {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    border: 2px solid transparent;
+    outline: 1px solid #dce2e7;
+    color: #dce2e7;
+    cursor: pointer;
+    width: 100%;
+    padding-inline-start: 26px;
+    padding-inline-end: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    transition:
+      border-color 160ms ease,
+      color 160ms ease,
+      background-color 160ms ease;
+
+    @include mobile-lg-min {
+      padding-inline-start: 32px;
+      padding-inline-end: 12px;
+    }
+
+    @include desktop-sm-min {
+      line-height: 140%;
+      padding-inline-start: 40px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline-end: 12px;
+    }
+
+    &::after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 1px solid #dce2e7;
+      background: transparent;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      inset-inline-start: 10px;
+      transition:
+        border-color 160ms ease,
+        background-color 160ms ease;
+    }
+
+    @include desktop-sm-min {
+      inset-inline-start: 16px;
+    }
+
+    &:hover {
+      border-color: #4fd3ff;
+      outline-color: #4fd3ff;
+      color: #4fd3ff;
+      background: rgba(79, 211, 255, 0.1);
+
+      &::after {
+        border-color: #4fd3ff;
+      }
+    }
+  }
+
+  &__option-input:checked + &__option-label {
+    border-color: #4fd3ff;
+    outline-color: #4fd3ff;
+    color: #4fd3ff;
+    background: rgba(79, 211, 255, 0.12);
+
+    &::after {
+      border-color: #4fd3ff;
+      background: radial-gradient(
+        circle at center,
+        #4fd3ff 0 45%,
+        transparent 47% 100%
+      );
+    }
+  }
+
+  &__option-input:focus-visible + &__option-label {
+    outline: 3px solid rgba(79, 211, 255, 0.55);
+    outline-offset: 3px;
+  }
+}

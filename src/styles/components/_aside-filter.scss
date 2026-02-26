@@ -1,171 +1,208 @@
 @use '../base/media' as *;
-@use "../base/mixins" as mixin;
+@use '../base/mixins' as mixin;
 
 .aside-filter {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 16px;
+  justify-content: space-between;
+
+  .menu-popover__option-list {
+    margin-bottom: 16px;
+  }
+
+  @include desktop-sm-min {
+    flex-direction: row;
+    align-items: flex-end;
+    margin-top: 0;
+  }
+
+  &__warning {
     display: flex;
-    align-items: flex-start;
+    gap: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    align-items: center;
+    color: #fff;
+
+    @include desktop-sm-min {
+      font-size: 18px;
+      gap: 16px;
+      line-height: 140%;
+    }
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+      background-color: #ffffff;
+      flex-shrink: 0;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--dark-blue);
+
+      @include desktop-sm-min {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
     flex-direction: column;
-    margin-top: 16px;
-    justify-content: space-between;
+  }
+
+  &__title {
+    color: #fff;
+    margin-bottom: 6px;
+    display: none;
+    font-size: 14px;
 
     @include tablet-min {
-        flex-direction: row;
-        align-items: flex-end;
-        margin-top: 0;
+      display: block;
+    }
+  }
+
+  &__counter {
+    color: #fff;
+    font-size: 16px;
+    line-height: 130%;
+    display: none;
+
+    @include desktop-sm-min {
+      display: block;
+      margin-inline-start: auto;
+    }
+  }
+
+  &__filter-list-title {
+    display: none;
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--white);
+    margin-top: 7px;
+    margin-bottom: 7px;
+
+    @include tablet-max {
+      display: block;
+    }
+  }
+
+  &__filter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    align-items: flex-start;
+
+    @include tablet-min {
+      gap: 24px;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+    @include tablet-sm-max {
+      gap: 8px;
+    }
+  }
+
+  &__nav-item {
+    display: flex;
+    align-items: center;
+
+    &-label:hover,
+    .aside-filter__nav-item-input:checked + .aside-filter__nav-item-label {
+      background-color: var(--cyan);
+    }
+  }
+
+  &__nav-item-input {
+    display: none;
+  }
+
+  &__nav-item-label {
+    padding-block: 6px;
+    padding-inline-start: 6px;
+    padding-inline-end: 14px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background-color: #f2f4f5;
+    margin: 0;
+    transition: background-color 0.2s ease;
+
+    @include tablet-sm-max {
+      padding-inline-end: 10px;
     }
 
-    &__wrapper {
-        display: flex;
-        flex-direction: column;
+    &-icon {
+      width: 28px;
+      height: 28px;
+
+      @include mixin.ltr {
+        transform: rotateY(180deg);
+      }
     }
 
-    &__title {
-        color: #fff;
-        margin-bottom: 6px;
-        display: none;
-        font-size: 14px;
+    &-text {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 130%;
+      letter-spacing: 0%;
+      color: var(--dark-blue);
 
-        @include tablet-min {
-            display: block;
-        }
-    }
-
-    &__counter {
-        color: #fff;
+      @include tablet-sm-max {
         font-size: 16px;
-        line-height: 130%;
-        display: none;
+      }
+    }
+  }
 
-        @include tablet-min {
-            display: block;
-        }
+  &__radio-wrapper {
+    position: relative;
+
+    @include tablet-min {
+      padding-inline-start: 24px;
     }
 
-    &__filter-list-title {
-        display: none;
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 110%;
-        color: var(--white);
-        margin-top: 7px;
-        margin-bottom: 7px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      inset-inline-start: 0;
+      height: 100%;
+      width: 2px;
+      background-color: #fff;
+      display: none;
 
-        @include tablet-max {
-            display: block;
-        }
+      @include tablet-min {
+        display: block;
+      }
     }
+  }
 
-    &__filter-list {
-        display: flex;
-        flex-direction: column;
-        gap: 19px;
-        align-items: flex-start;
+  &__link {
+    color: #fff;
+    cursor: pointer;
+    text-decoration: underline;
+    display: none;
 
-        @include tablet-min {
-            gap: 24px;
-            flex-direction: row;
-            align-items: center;
-        }
+    @include tablet-min {
+      display: block;
     }
-
-    &__nav-list {
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-
-        @include tablet-sm-max {
-            gap: 8px;
-        }
-    }
-
-    &__nav-item {
-        display: flex;
-        align-items: center;
-
-        &-label:hover,
-        .aside-filter__nav-item-input:checked+.aside-filter__nav-item-label {
-            background-color: var(--cyan);
-        }
-    }
-
-    &__nav-item-input {
-        display: none;
-    }
-
-    &__nav-item-label {
-        padding-block: 6px;
-        padding-inline-start: 6px;
-        padding-inline-end: 14px;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 4px;
-        background-color: #F2F4F5;
-        margin: 0;
-        transition: background-color 0.2s ease;
-
-        @include tablet-sm-max {
-            padding-inline-end: 10px;
-        }
-
-        &-icon {
-            width: 28px;
-            height: 28px;
-
-            @include mixin.ltr {
-                transform: rotateY(180deg);
-            }
-        }
-
-        &-text {
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 130%;
-            letter-spacing: 0%;
-            color: var(--dark-blue);
-
-            @include tablet-sm-max {
-                font-size: 16px;
-            }
-        }
-    }
-
-    &__radio-wrapper {
-        position: relative;
-
-        @include tablet-min {
-            padding-inline-start: 24px;
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            inset-inline-start: 0;
-            height: 100%;
-            width: 2px;
-            background-color: #fff;
-            display: none;
-
-            @include tablet-min {
-                display: block;
-            }
-        }
-    }
-
-    &__link {
-        color: #fff;
-        cursor: pointer;
-        text-decoration: underline;
-        display: none;
-
-        @include tablet-min {
-            display: block;
-        }
-    }
+  }
 }

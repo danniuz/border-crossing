@@ -7,11 +7,16 @@
   justify-content: center;
   width: 10px;
   height: 10px;
-  background-color: #fff;
+  background-color: var(--cyan-tag);
   transition:
     background-color 0.3s ease-in-out,
     width 0.3s ease-in-out,
     height 0.3s ease-in-out;
+
+  &--disabled {
+    pointer-events: none;
+    background-color: #72878f;
+  }
 
   &:before {
     content: '';
@@ -41,7 +46,7 @@
     transition: border 0.3s ease-in-out;
   }
 
-  &:hover {
+  &:not(.map-marker--disabled):hover {
     background-color: var(--cyan);
     width: 18px;
     height: 18px;
