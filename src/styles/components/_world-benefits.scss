@@ -1,5 +1,5 @@
-@use "../base/media" as *;
-@use "../base/mixins" as mixin;
+@use '../base/media' as *;
+@use '../base/mixins' as mixin;
 
 .world-benefits {
   &__wrapper {
@@ -19,7 +19,7 @@
   }
 
   &__wrapper--black-grid {
-    background-image: url("/public/images/full-grid-bg-info.svg");
+    background-image: url('/public/images/full-grid-bg-info.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-color: #00171f;
@@ -72,7 +72,6 @@
         }
 
         @include desktop-min {
-
           &:nth-child(1),
           &:nth-child(5) {
             transform: translateY(-40px);
@@ -165,7 +164,6 @@
       }
     }
 
-
     @include desktop-lg-min {
       margin-bottom: 40px;
     }
@@ -219,10 +217,18 @@
   flex-direction: column;
   width: 224px;
 
-  background: linear-gradient(180.4deg, rgba(0, 0, 0, 0) 46.07%, rgba(0, 0, 0, 0.7) 71.84%);
+  background: linear-gradient(
+    180.4deg,
+    rgba(0, 0, 0, 0) 46.07%,
+    rgba(0, 0, 0, 0.7) 71.84%
+  );
 
   @include tablet-max {
-    background: linear-gradient(180.4deg, rgba(0, 0, 0, 0) 66.81%, rgba(0, 0, 0, 0.6) 74.03%);
+    background: linear-gradient(
+      180.4deg,
+      rgba(0, 0, 0, 0) 66.81%,
+      rgba(0, 0, 0, 0.6) 74.03%
+    );
   }
 
   @include tablet-min {
@@ -308,6 +314,7 @@
     &-image {
       width: 120px;
       height: 96px;
+      object-fit: cover;
 
       @include tablet-min {
         width: 105px;

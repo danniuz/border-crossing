@@ -1,6 +1,6 @@
-@use "../base/media" as *;
+@use '../base/media' as *;
 
-html[dir="ltr"] {
+html[dir='ltr'] {
   .swiper-video-clip-item {
     clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 90%);
   }
@@ -27,7 +27,6 @@ html[dir="ltr"] {
     height: 210px;
   }
 }
-
 
 .info-swiper {
   max-width: 704px;
@@ -106,7 +105,8 @@ html[dir="ltr"] {
 
         img {
           /* approximate #003459 using filter on white arrow */
-          filter: brightness(0) saturate(100%) invert(12%) sepia(86%) saturate(1350%) hue-rotate(173deg) brightness(99%) contrast(104%);
+          filter: brightness(0) saturate(100%) invert(12%) sepia(86%)
+            saturate(1350%) hue-rotate(173deg) brightness(99%) contrast(104%);
         }
       }
     }
@@ -147,6 +147,10 @@ html[dir="ltr"] {
 
     @include desktop-sm-max {
       margin-top: -75px;
+    }
+
+    @include tablet-sm-max {
+      margin-top: -35px;
     }
 
     @include desktop-sm-min {
@@ -235,7 +239,7 @@ html[dir="ltr"] {
       }
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         inset-inline-start: 0;
         top: 50%;
@@ -274,7 +278,6 @@ html[dir="ltr"] {
       @include tablet-min {
         gap: 16px;
       }
-
 
       &:hover {
         text-decoration: underline;
