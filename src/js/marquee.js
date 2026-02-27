@@ -66,7 +66,8 @@ export function initMarquee(params = { start: true }) {
     if (!oneSetWidth) recalc({ keepProgress: false });
 
     // Only direction changes by sign
-    x += isLTR ? speed : -speed;
+    // x += isLTR ? speed : -speed;
+    x += speed;
 
     normalize();
     apply();
