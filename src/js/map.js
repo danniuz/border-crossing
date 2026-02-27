@@ -1,6 +1,8 @@
 import { featureCollection } from './data/features.js';
 import mapboxgl from 'mapbox-gl';
 
+const markersByMap = new WeakMap();
+
 export function initMap() {
   const mapHtml = document.getElementById('map');
 
@@ -33,6 +35,8 @@ export function initMap() {
       createMapboxPopup(feature, map);
     }
   });
+
+  // removeMapboxPopups(map);
 
   return map;
 }
@@ -79,6 +83,41 @@ function createMapboxPopup(feature, map) {
   }
 
   marker.addTo(map);
+  trackMapMarker(map, marker);
+}
+
+/**
+ * Removes every marker and popup created by `createMapboxPopup` for a map.
+ * @param {mapboxgl.Map} map
+ */
+export function removeMapboxPopups(map) {
+  const markers = markersByMap.get(map);
+
+  if (!markers || markers.length === 0) {
+    return;
+  }
+
+  for (const marker of markers) {
+    const popup = marker.getPopup();
+
+    if (popup) {
+      popup.remove();
+    }
+
+    marker.remove();
+  }
+
+  markersByMap.delete(map);
+}
+
+/**
+ * @param {mapboxgl.Map} map
+ * @param {mapboxgl.Marker} marker
+ */
+function trackMapMarker(map, marker) {
+  const markers = markersByMap.get(map) ?? [];
+  markers.push(marker);
+  markersByMap.set(map, markers);
 }
 
 function createTooltip(properties) {
