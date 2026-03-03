@@ -1,281 +1,288 @@
 @use '../base/media' as *;
 
 html:dir(ltr) {
-    .graph__toggle-filters {
-        background-position: right 12px center;
-    }
+  .graph__toggle-filters {
+    background-position: right 12px center;
+  }
 
-    .graph-footer__action-button {
-        transform: rotate(180deg);
-    }
+  .graph-footer__action-button {
+    transform: rotate(180deg);
+  }
 }
 
 .graph-footer {
-    background-color: #fff;
-    display: flex;
-    position: relative;
+  background-color: #fff;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding: 16px;
+  padding-bottom: 16px !important;
+
+  @include tablet-min {
+    height: 73px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  &__action-list {
+    background-color: var(--color-blue);
+    display: inline-flex;
+    inset-inline-end: 0;
+    padding: 8px 16px;
     justify-content: space-between;
-    padding: 16px;
-    padding-bottom: 16px !important;
+
+    .flat-pagination {
+      align-items: center;
+      display: inline-flex;
+
+      @include desktop-sm-min {
+        display: none;
+      }
+
+      .swiper-pagination-bullet {
+        cursor: pointer;
+      }
+    }
+
+    @include desktop-sm-min {
+      position: absolute;
+      padding: 0;
+      bottom: 73px;
+    }
+  }
+
+  &__action-button {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: var(--cyan-tag);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+
+    @include desktop-sm-max {
+      background-color: transparent;
+
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+
+    @include desktop-sm-min {
+      width: 64px;
+      height: 64px;
+      background-color: var(--cyan-tag);
+
+      &:disabled {
+        background-color: #496e87;
+      }
+    }
+
+    // &:hover {
+    //     background-color: var(--cyan-tag);
+    // }
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__content {
+    padding-inline-end: 0;
 
     @include tablet-min {
-        height: 73px;
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
+      padding-inline-end: 120px;
     }
+  }
 
-    &__action-list {
-        background-color: var(--color-blue);
-        display: inline-flex;
-        inset-inline-end: 0;
-        padding: 8px 16px;
-        justify-content: space-between;
-
-        .flat-pagination {
-            align-items: center;
-            display: inline-flex;
-
-            @include desktop-sm-min {
-                display: none;
-            }
-
-            .swiper-pagination-bullet {
-                cursor: pointer;
-            }
-        }
-
-        @include desktop-sm-min {
-            position: absolute;
-            padding: 0;
-            bottom: 73px;
-        }
-    }
-
-    &__action-button {
-        width: 32px;
-        height: 32px;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        background-color: var(--cyan-tag);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition: background-color 0.3s ease;
-
-
-        @include desktop-sm-max {
-            background-color: transparent;
-
-            &:disabled {
-                opacity: 0.5;
-            }
-        }
-
-        @include desktop-sm-min {
-            width: 64px;
-            height: 64px;
-            background-color: var(--cyan-tag);
-
-            &:disabled {
-                background-color: #496E87;
-            }
-        }
-
-        // &:hover {
-        //     background-color: var(--cyan-tag);
-        // }
-
-        img {
-            width: 32px;
-            height: 32px;
-        }
-    }
-
-    &__content {
-        padding-inline-end: 0;
-
-
-        @include tablet-min {
-            padding-inline-end: 120px;
-        }
-
-    }
-
-    &__title {
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 140%;
-        text-align: right;
-        color: var(--dark-blue);
-        width: 100%;
-        display: inline-flex;
-        align-items: center;
-        height: 100%;
-    }
+  &__title {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: right;
+    color: var(--dark-blue);
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+  }
 }
 
 .graph-dd-filter {
-    max-width: 166px;
+  max-width: 166px;
 }
 
 .graph {
-    &__tag-list-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-
-        margin-top: 16px;
-
-        @include desktop-sm-max {
-            max-height: 0;
-            overflow: hidden;
-
-            &.active {
-                max-height: 500px;
-                overflow: visible;
-            }
-        }
-
-        @include desktop-sm-min {
-            max-height: auto;
-            margin-top: 0;
-            display: flex;
-            margin-bottom: 80px;
-            margin-top: 0;
-        }
-    }
-
-    &__toggle-filters {
-        display: inline-flex;
-        gap: 8px;
-        position: absolute;
-        top: 0;
-        inset-inline-end: 16px;
-        padding-inline-end: 8px;
-        padding-inline-start: 16px;
-        padding-top: 8px;
-        padding-bottom: 8px;
-        align-items: center;
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 130%;
-        color: var(--dark-blue);
-        background-color: #ECEEF0;
-        outline: none;
-        background-repeat: no-repeat;
-        background-position: left 12px center;
-        background-size: 14px 8px;
-        appearance: none;
-        outline: none;
-        border: none;
-
-        @include desktop-sm-min {
-            display: none;
-        }
-    }
-
-    &__tag-list-slot {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    &__tag-list-title {
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 130%;
-        color: #fff;
-    }
-
-    &__tag-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    &__tag-list-item {
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 400;
-        font-size: 16px;
-        color: var(--dark-blue);
-        padding: 6px 16px;
-        background-color: var(--gray-tag);
-        border: none;
-        outline: none;
-        transition: .2s;
-
-        &--active,
-        &:hover {
-            background-color: var(--cyan-tag);
-        }
-    }
-}
-
-.graph__legend {
+  &__tag-list-wrapper {
     display: flex;
-    gap: 16px;
-    padding-top: 5px;
-}
-
-.graph__content {
     flex-direction: column;
-    gap: 8px;
+    gap: 24px;
+
+    margin-top: 16px;
+
+    @include desktop-sm-max {
+      max-height: 0;
+      overflow: hidden;
+
+      &.active {
+        max-height: 500px;
+        overflow: visible;
+      }
+    }
 
     @include desktop-sm-min {
-        gap: 60px;
+      max-height: auto;
+      margin-top: 0;
+      display: flex;
+      margin-bottom: 80px;
+      margin-top: 0;
     }
-}
+  }
 
-.graph__legend-list {
-    display: flex;
-    gap: 16px;
-}
-
-.graph__legend-item {
+  &__toggle-filters {
+    display: inline-flex;
+    gap: 8px;
+    position: absolute;
+    top: 0;
+    inset-inline-end: 16px;
+    padding-inline-end: 8px;
+    padding-inline-start: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    align-items: center;
     font-family: IBM Plex Sans Hebrew;
     font-weight: 500;
     font-size: 16px;
-    line-height: 120%;
-    color: #fff;
-    display: inline-flex;
+    line-height: 130%;
+    color: var(--dark-blue);
+    background-color: #eceef0;
+    outline: none;
+    background-repeat: no-repeat;
+    background-position: left 12px center;
+    background-size: 14px 8px;
+    appearance: none;
+    outline: none;
+    border: none;
+
+    @include desktop-sm-min {
+      display: none;
+    }
+  }
+
+  &__tag-list-slot {
+    display: flex;
+    flex-direction: column;
     gap: 8px;
-    align-items: center;
+  }
+
+  &__tag-list-title {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #fff;
+  }
+
+  &__tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__tag-list-item {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--dark-blue);
+    padding: 6px 16px;
+    background-color: var(--gray-tag);
+    border: none;
+    outline: none;
+    transition: 0.2s;
+
+    &--active,
+    &:hover {
+      background-color: var(--cyan-tag);
+    }
+  }
+}
+
+.graph__legend {
+  display: flex;
+  gap: 16px;
+  padding-top: 5px;
+}
+
+.graph__place-popup-content {
+  flex-direction: column;
+  gap: 80px !important;
+
+  @include desktop-sm-min {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+
+.graph__content {
+  flex-direction: column;
+  gap: 8px;
+
+  @include desktop-sm-min {
+    gap: 60px;
+  }
+}
+
+.graph__legend-list {
+  display: flex;
+  gap: 16px;
+}
+
+.graph__legend-item {
+  font-family: IBM Plex Sans Hebrew;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  color: #fff;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .graph__legend-item-color {
-    width: 16px;
-    height: 16px;
-    display: inline-block;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
 
-    &--turquise {
-        background-color: #007EA7;
-    }
+  &--turquise {
+    background-color: #007ea7;
+  }
 
-    &--white {
-        background-color: #fff;
-    }
+  &--white {
+    background-color: #fff;
+  }
 
-    &--cyan {
-        background-color: var(--cyan-tag);
-    }
+  &--cyan {
+    background-color: var(--cyan-tag);
+  }
 }
 
 .graph__chart {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    height: 380px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  height: 380px;
 
-    @include desktop-sm-min {
-        height: 485px;
-    }
+  @include desktop-sm-min {
+    height: 504px;
+  }
 
-    canvas {
-        max-width: 100% !important;
-        width: 100% !important;
-    }
+  canvas {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
 }

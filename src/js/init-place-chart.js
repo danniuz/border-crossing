@@ -7,7 +7,7 @@ const originalData = {
   categories: [
     {
       label: 'Trucks',
-      data: [122, 570, 250, 1065],
+      data: [122, 570, 250, 10414],
       backgroundColor: '#007EA7',
       borderWidth: 0,
       iconPath: new URL(
@@ -17,7 +17,7 @@ const originalData = {
     },
     {
       label: 'Cars',
-      data: [507, 365, 105, 680],
+      data: [507, 365, 105, 4552],
       backgroundColor: '#FFFFFF',
       borderWidth: 0,
       iconPath: new URL(

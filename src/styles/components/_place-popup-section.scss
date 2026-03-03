@@ -1,105 +1,105 @@
 @use '../base/media' as *;
 
 .place-popup-section {
-    margin-top: 48px;
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include tablet-min {
+    gap: 16px;
+  }
+
+  @include desktop-min {
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 90px;
+  }
+
+  &-graph {
+    background-color: var(--dark-blue);
+    padding-top: 24px;
+    padding-bottom: 0 !important;
     display: flex;
     flex-direction: column;
-    gap: 16px;
 
-    @include tablet-min {
-        gap: 16px;
+    @include desktop-min {
+      padding-top: 40px;
+    }
+
+    .place-popup-section {
+      position: relative;
+      padding-bottom: 0;
+
+      @include desktop-max {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &-graph__title {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 166px;
+
+    @include desktop-min {
+      gap: 64px;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    flex-shrink: 0;
+
+    @include desktop-min {
+      max-width: 166px;
+    }
+
+    &-text {
+      font-family: IBM Plex Sans Hebrew;
+      font-weight: 500;
+
+      font-size: 18px;
+      line-height: 130%;
+      color: var(--dark-blue);
+
+      &--white {
+        color: #fff;
+      }
+
+      @include tablet-sm-min {
+        font-size: 24px;
+        line-height: 120%;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    flex-direction: column;
+
+    @include tablet-sm-min {
+      flex-direction: row;
     }
 
     @include desktop-min {
-        justify-content: space-between;
-        flex-direction: row;
-        gap: 90px;
+      max-width: 752px;
     }
+  }
 
-    &-graph {
-        background-color: var(--dark-blue);
-        padding-top: 24px;
-        padding-bottom: 0 !important;
-        display: flex;
-        flex-direction: column;
+  &__content-paragraph {
+    font-family: IBM Plex Sans Hebrew;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--dark-blue);
 
-        @include desktop-min {
-            padding-top: 40px;
-        }
-
-        .place-popup-section {
-            position: relative;
-            padding-bottom: 0;
-
-            @include desktop-max {
-                margin-top: 0;
-            }
-        }
+    @include tablet-sm-min {
+      font-size: 20px;
+      line-height: 130%;
     }
-
-    &-graph__title {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-
-        @include desktop-min {
-            gap: 64px;
-        }
-    }
-
-    &__title {
-        width: 100%;
-        flex-shrink: 0;
-
-        @include desktop-min {
-            max-width: 166px;
-        }
-
-        &-text {
-            font-family: IBM Plex Sans Hebrew;
-            font-weight: 500;
-
-            font-size: 18px;
-            line-height: 130%;
-            color: var(--dark-blue);
-
-            &--white {
-                color: #fff;
-            }
-
-            @include tablet-sm-min {
-                font-size: 24px;
-                line-height: 120%;
-            }
-        }
-
-    }
-
-    &__content {
-        display: flex;
-        gap: 16px;
-        width: 100%;
-        flex-direction: column;
-
-        @include tablet-sm-min {
-            flex-direction: row;
-        }
-
-        @include desktop-min {
-            max-width: 752px;
-        }
-    }
-
-    &__content-paragraph {
-        font-family: IBM Plex Sans Hebrew;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 140%;
-        color: var(--dark-blue);
-
-        @include tablet-sm-min {
-            font-size: 20px;
-            line-height: 130%;
-        }
-    }
+  }
 }
