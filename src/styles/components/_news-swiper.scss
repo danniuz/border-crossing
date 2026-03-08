@@ -1,10 +1,9 @@
-@use "../base/media" as *;
+@use '../base/media' as *;
 
 .news-swiper {
   max-width: 704px;
   width: 100%;
   margin-inline-end: auto;
-
 
   @include tablet-min {
     max-width: 704px;
@@ -28,7 +27,6 @@
 
   &__swiper-wrapper {
     position: relative;
-
 
     @include desktop-sm-min {
       padding: 0 16px;
@@ -78,6 +76,11 @@
     border: 1px solid #fff;
     position: static;
     background-color: var(--dark-blue);
+
+    &--disabled {
+      opacity: 0.5 !important;
+      pointer-events: none !important;
+    }
 
     &:after {
       display: none;
