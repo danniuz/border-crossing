@@ -61,6 +61,10 @@
 
     @include tablet-min {
       height: auto;
+
+      picture {
+        height: auto;
+      }
     }
   }
 

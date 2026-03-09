@@ -7,7 +7,7 @@ const originalData = {
   categories: [
     {
       label: 'Trucks',
-      data: [122, 570, 250, 10414],
+      data: [1222, 1222, 1222, 1222],
       backgroundColor: '#007EA7',
       borderWidth: 0,
       iconPath: new URL(
@@ -17,7 +17,7 @@ const originalData = {
     },
     {
       label: 'Cars',
-      data: [507, 365, 105, 4552],
+      data: [5107, 5107, 5107, 5107],
       backgroundColor: '#FFFFFF',
       borderWidth: 0,
       iconPath: new URL(
@@ -27,7 +27,7 @@ const originalData = {
     },
     {
       label: 'People',
-      data: [124, 138, 60, 250],
+      data: [10924, 10924, 10924, 10924],
       backgroundColor: '#5CD6FF',
       borderWidth: 0,
       iconPath: new URL(
@@ -92,6 +92,11 @@ function transformDataForSortedBars(originalData) {
 function calculateYAxisConfig(data) {
   const { labels, categories } = data;
   let maxBarHeight = 0;
+  const lineCount = isMobile ? 4 : 5;
+  const intervalCount = lineCount - 1;
+  const stepLadder = [
+    500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 20000,
+  ];
 
   // Find the maximum stacked bar height
   for (let i = 0; i < labels.length; i++) {
@@ -104,24 +109,28 @@ function calculateYAxisConfig(data) {
   // Add 20% to maxBarHeight
   const targetMax = maxBarHeight * 1.2;
 
-  // Determine rounding divisor based on target value
-  let divisor;
-  if (targetMax <= 10000) {
-    divisor = 1000;
-  } else {
-    divisor = 5000;
-  }
+  const rawStep = targetMax / intervalCount;
+  const stepSize =
+    stepLadder.find((step) => step >= rawStep) ||
+    10 ** Math.ceil(Math.log10(rawStep));
 
-  // Round up to nearest divisor
-  const maxY = Math.ceil(targetMax / divisor) * divisor;
-
-  // Calculate step size: 4 lines on mobile (4 ticks including 0), 5 lines on desktop (5 ticks including 0)
-  const stepSize = isMobile ? maxY / 3 : maxY / 4;
+  // Keep a fixed number of lines across breakpoints
+  const maxY = stepSize * intervalCount;
 
   return {
     maxY,
     stepSize,
+    lineCount,
   };
+}
+
+function buildTickValues({ stepSize, lineCount }) {
+  const ticks = [];
+  for (let i = 0; i < lineCount; i++) {
+    const value = i * stepSize;
+    ticks.push(value);
+  }
+  return ticks;
 }
 
 const data = transformDataForSortedBars(originalData);
@@ -193,10 +202,12 @@ export function initPlaceChart() {
       ctx.save();
 
       // Draw custom labels above the grid lines starting from left edge
-      yScale.ticks.forEach((tick, index) => {
-        if (tick.value === 0) return; // Skip the 0 label as in the original config
+      const customTicks = buildTickValues(yAxisConfig);
 
-        const y = yScale.getPixelForValue(tick.value);
+      customTicks.forEach((tickValue) => {
+        if (tickValue === 0) return; // Skip the 0 label as in the original config
+
+        const y = yScale.getPixelForValue(tickValue);
 
         // Draw the label above the grid line with 10px gap
         ctx.fillStyle = '#FFFFFF';
@@ -206,7 +217,7 @@ export function initPlaceChart() {
         ctx.textAlign = 'left';
         ctx.textBaseline = 'bottom';
 
-        const labelText = tick.value.toLocaleString();
+        const labelText = tickValue.toLocaleString();
         ctx.fillText(labelText, 0, y - 10); // 10px gap above the line
       });
 

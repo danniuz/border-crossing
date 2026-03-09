@@ -167,7 +167,13 @@
         </div>
 
         <div class="main-content__cover-top-wrapper-shadow">
-          <img class="main-content__cover-top main-content__cover-top--mobile" src="/src/assets/images/cars-header.png" alt="" />
+          <div class="main-content__cover-top-wrapper-shadow main-content__cover-top--mobile">
+            <picture src="/src/assets/images/cars-header.png">
+              <source media="(max-width: 980px)" srcset="/src/assets/images/cars-header.png" />
+              <source media="(max-width: 1440px)" srcset="/src/assets/images/cars-header.png" />
+              <img class="main-content__cover-top" src="/src/assets/images/cars-header.png" alt="" />
+            </picture>
+          </div>
         </div>
 
         <div class="main-content container">
