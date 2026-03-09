@@ -205,6 +205,14 @@ html:dir(ltr) {
     outline: none;
     transition: 0.2s;
 
+    @include desktop-sm-min {
+      &:nth-child(odd) {
+        width: 76px;
+      }
+      &:nth-child(even) {
+        width: 82px;
+      }
+    }
     &--active,
     &:hover {
       background-color: var(--cyan-tag);
